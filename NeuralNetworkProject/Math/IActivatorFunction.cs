@@ -9,7 +9,7 @@ namespace NeuralNetworkProject.Math
 {
     public interface IActivatorFunction
     {
-        Matrix<double> Apply(Matrix<double> value);
-        Matrix<double> Gradient(Matrix<double> value);
+        Vector<double> Apply(Vector<double> value);
+        Vector<double> Gradient(Vector<double> value);
     }
 }
