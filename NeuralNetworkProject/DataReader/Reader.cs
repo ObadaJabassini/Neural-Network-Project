@@ -9,7 +9,18 @@ namespace NeuralNetworkProject.DataReader
 {
     public class DataReader
     {
-        public DataReader Reader { get; } = new DataReader();
+        private static DataReader _reader = null;
+        public static DataReader Instance
+        {
+            get
+            {
+                if(_reader == null)
+                {
+                    _reader = new DataReader();
+                }
+                return _reader;
+            }
+        }
         private DataReader() { }
         public Matrix<double> ReadFromFile(string filePath)
         {
