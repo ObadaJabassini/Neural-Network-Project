@@ -10,11 +10,14 @@ namespace NeuralNetworkProject.Training
 {
     public class BackpropagationAlgorithm : ITrainingAlgorithm
     {
-        public Tuple<IList<Matrix<double>>, IList<double>, IList<double>> Train(NeuralNetwork.NeuralNetwork neuralNetwork, Matrix<double> trainingSet, Matrix<double> crossValidationSet, Matrix<double> trainingSetOutput, Matrix<double> crossValidationSetOutput, HyperParameters hyperParameters = null)
+        public Tuple<IList<IList<Matrix<double>>>, IList<double>, IList<double>> Train(NeuralNetwork.NeuralNetwork neuralNetwork, Matrix<double> trainingSet, Matrix<double> crossValidationSet, Matrix<double> trainingSetOutput, Matrix<double> crossValidationSetOutput, HyperParameters hyperParameters = null)
         {
             double[] learningRates;
             double maxError = 0.01, error = 5;
             int maxEpochs = 1000, epochs = 0;
+            IList<double> trainErrors      = new List<double>(),
+                          validationErrors = new List<double>();
+            IList<IList<Matrix<double>>> weights = new List<IList<Matrix<double>>>();
             if (hyperParameters == null)
             {
                 learningRates = new double[neuralNetwork.HiddenWeights.Count];
@@ -46,7 +49,7 @@ namespace NeuralNetworkProject.Training
 
                 }
             }
-            return null;
+            return new Tuple<IList<IList<Matrix<double>>>, IList<double>, IList<double>>(weights, trainErrors, validationErrors);
         }
 
         protected virtual Matrix<double> computeNextWeights()
@@ -56,7 +59,9 @@ namespace NeuralNetworkProject.Training
 
         protected virtual double computeError(Vector<double> outputs, Vector<double> realOutputs)
         {
-            return (outputs - realOutputs).Select(element => element * element).Sum();
+            //return (outputs - realOutputs).Select(element => element * element).Sum() / 2;
+            var temp = (outputs - realOutputs);
+            return (temp * temp.ToColumnMatrix())[0] / 2;
         }
     }
 }
