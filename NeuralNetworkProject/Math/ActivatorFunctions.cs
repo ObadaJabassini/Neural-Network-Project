@@ -14,7 +14,7 @@ namespace NeuralNetworkProject.Math
         {
             var modifiedName = functionName.ToLower();
             modifiedName = Char.ToUpper(modifiedName[0]) + modifiedName.Substring(1);
-            return Activator.CreateInstance(Type.GetType($"NeuralNetworkProject.Math.${modifiedName}Function")) as IActivatorFunction;
+            return Activator.CreateInstance(Type.GetType($"NeuralNetworkProject.Math.{modifiedName}Function")) as IActivatorFunction;
         }
 
         public static IActivatorFunction CreateFunction(FunctionName functionName)
@@ -24,7 +24,7 @@ namespace NeuralNetworkProject.Math
                 case FunctionName.SIGMOID:
                     return new SigmoidFunction();
             }
-            throw new ArgumentException($"There is no function whose name is ${functionName}");
+            throw new ArgumentException($"There is no function whose name is {functionName}");
         }
     }
 }
