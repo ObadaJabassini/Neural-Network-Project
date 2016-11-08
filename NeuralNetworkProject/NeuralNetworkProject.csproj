@@ -62,9 +62,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAdapter\IDataDivider.cs" />
+    <Compile Include="DataAdapter\StaticDivider.cs" />
+    <Compile Include="DataReader\Reader.cs" />
+    <Compile Include="Math\ActivatorFunctions.cs" />
+    <Compile Include="Math\FunctionApplier.cs" />
+    <Compile Include="Math\IActivatorFunction.cs" />
+    <Compile Include="Math\SigmoidFunction.cs" />
     <Compile Include="NeuralNetwork\NeuralNetwork.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Training\BackpropagationAlgorithm.cs" />
+    <Compile Include="Training\ITrainingAlgorithm.cs" />
+    <Compile Include="Training\Trainer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -82,9 +92,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Math\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
