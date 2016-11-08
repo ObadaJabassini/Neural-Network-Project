@@ -23,7 +23,7 @@ namespace NeuralNetworkProject.NeuralNetwork
             }
         }
 
-        public IList<Matrix<double>> ForwardInput(Matrix<double> inputs)
+        public IList<Matrix<double>> ForwardInput(Matrix<double> input)
         {
             return null;
         }
