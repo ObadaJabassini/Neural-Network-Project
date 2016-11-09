@@ -14,11 +14,7 @@ namespace NeuralNetworkProject.DataReader
         {
             get
             {
-                if(_reader == null)
-                {
-                    _reader = new DataReader();
-                }
-                return _reader;
+                return _reader != null ? _reader : (_reader = new DataReader());
             }
         }
         private DataReader() { }
