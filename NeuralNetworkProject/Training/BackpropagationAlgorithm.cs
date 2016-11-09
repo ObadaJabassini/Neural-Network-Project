@@ -10,14 +10,11 @@ namespace NeuralNetworkProject.Training
 {
     public class BackpropagationAlgorithm : TrainingAlgorithm
     {
-        public override Tuple<IList<IList<Matrix<double>>>, IList<double>, IList<double>> Train(NeuralNetwork.NeuralNetwork neuralNetwork, Matrix<double> trainingSet, Matrix<double> crossValidationSet, Matrix<double> trainingSetOutput, Matrix<double> crossValidationSetOutput, HyperParameters hyperParameters = null)
+        public override void Train(NeuralNetwork.NeuralNetwork neuralNetwork, Matrix<double> trainingSet, Matrix<double> crossValidationSet, Matrix<double> trainingSetOutput, Matrix<double> crossValidationSetOutput, HyperParameters hyperParameters = null)
         {
             double[] learningRates;
             double maxError = 0.01, error = 5;
             int maxEpochs = 1000, epochs = 0;
-            IList<double> trainErrors      = new List<double>(),
-                          validationErrors = new List<double>();
-            var weights = new List<IList<Matrix<double>>>();
             if (hyperParameters == null)
             {
                 learningRates = new double[neuralNetwork.HiddenWeights.Count];
@@ -39,19 +36,29 @@ namespace NeuralNetworkProject.Training
                 maxEpochs = hyperParameters.MaxEpochs;
             }
             TrainingErrorMessage message = new TrainingErrorMessage() { NeuralNetwork = neuralNetwork, TrainingSet = trainingSet, CrossValidationSet = crossValidationSet, TrainingSetOutput = trainingSetOutput, CrossValidationSetOutput = crossValidationSetOutput};
+            var layers = neuralNetwork.Layers;
+            var weights = neuralNetwork.HiddenWeights;
             while(error > maxError && epochs++ <= maxEpochs)
             {
                 for (int i = 0; i < trainingSet.RowCount; i++)
                 {
                     Vector<double> input  = trainingSet.Row(i),
                                    output = trainingSetOutput.Row(i);
-                    var activations = neuralNetwork.ForwardInput(input);
+                    var temp = neuralNetwork.ForwardInput(input);
+                    IList<Vector<double>> acs = temp.Item1, gs = temp.Item2;
+                    var d = (output - acs[acs.Count - 1]).PointwiseMultiply(gs[gs.Count - 1]);
+                    neuralNetwork.UpdateWeightsAt(weights[weights.Count - 1] + learningRates[learningRates.Length - 1] * d * acs[acs.Count - 2], weights.Count - 1);
+                    for (int j = 1; j < weights.Count; ++j)
+                    {
+                        d = (weights[weights.Count - j] * d).PointwiseMultiply(gs[gs.Count - 1 - j]);
+                        neuralNetwork.UpdateWeightsAt(weights[weights.Count - 1 - j] + learningRates[learningRates.Length - 1 - j] * d * acs[acs.Count - 2 - j], j);
+                    }
                 }
                 base.Notify(message);
                 error = message.Error; 
             }
             base.OnComplete();
-            return new Tuple<IList<IList<Matrix<double>>>, IList<double>, IList<double>>(weights, trainErrors, validationErrors);
+            //return new Tuple<IList<IList<Matrix<double>>>, IList<double>, IList<double>>(weights, trainErrors, validationErrors);
         }
 
         protected virtual Matrix<double> computeAdditionalTerms()
