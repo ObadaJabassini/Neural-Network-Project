@@ -23,9 +23,25 @@ namespace NeuralNetworkProject.NeuralNetwork
             }
         }
 
-        public IList<Vector<double>> ForwardInput(Vector<double> input)
+        public Tuple<IList<Vector<double>>, IList<Vector<double>>> ForwardInput(Vector<double> input)
         {
-            return null;
+            IList<Vector<double>> acs = new List<Vector<double>>(),
+                                  gs = new List<Vector<double>>();
+            Vector<double> temp = input, temp2;
+            for (int i = 0; i < HiddenWeights.Count; i++)
+            {
+                temp = HiddenWeights[i] * temp;
+                temp2 = Layers[i + 1].Applier.Apply(temp);
+                acs.Add(temp2);
+                gs.Add(Layers[i + 1].Applier.Gradient(temp));
+                temp = temp2;
+            }
+            return new Tuple<IList<Vector<double>>, IList<Vector<double>>>(acs, gs);
+        }
+
+        public void UpdateWeightsAt(Matrix<double> newWeights, int index)
+        {
+            HiddenWeights[index] = newWeights;
         }
     }
     
