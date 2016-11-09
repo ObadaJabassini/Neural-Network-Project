@@ -4,4 +4,5 @@ A uni project to implement some basic neural network algorithm like :
 * Backpropagation
 * Backpropagation with momentum
 * etc...
+
 ## This project is still in very early stage(most of the planned featured don't even exist)
