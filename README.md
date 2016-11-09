@@ -1,5 +1,5 @@
 # Neural-Network-Project
-A uni project to implement some basic neural network algorithm like : 
+A university project to implement some basic neural network algorithms like : 
 * Simple perceptron
 * Backpropagation
 * Backpropagation with momentum
@@ -8,6 +8,7 @@ A uni project to implement some basic neural network algorithm like :
 ## This project is still in very early stage(most of the planned featured don't even exist)
 
 ## Members:
+
 * Amal Alnouri
 * Baraa Salhany
 * Obada Jabassini
