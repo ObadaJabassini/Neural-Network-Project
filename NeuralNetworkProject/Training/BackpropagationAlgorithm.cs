@@ -17,7 +17,7 @@ namespace NeuralNetworkProject.Training
             int maxEpochs = 1000, epochs = 0;
             IList<double> trainErrors      = new List<double>(),
                           validationErrors = new List<double>();
-            IList<IList<Matrix<double>>> weights = new List<IList<Matrix<double>>>();
+            var weights = new List<IList<Matrix<double>>>();
             if (hyperParameters == null)
             {
                 learningRates = new double[neuralNetwork.HiddenWeights.Count];
@@ -35,8 +35,8 @@ namespace NeuralNetworkProject.Training
                 if(maxError > 2 || maxError < 0)
                     throw new ArgumentException("Max error cannot be negative or very large");
                 learningRates = hyperParameters.LearningRates;
-                maxError = hyperParameters.maxError;
-                maxEpochs = hyperParameters.maxEpochs;
+                maxError = hyperParameters.MaxError;
+                maxEpochs = hyperParameters.MaxEpochs;
             }
             while(error > maxError || epochs++ <= maxEpochs)
             {
@@ -44,7 +44,7 @@ namespace NeuralNetworkProject.Training
                 {
                     Vector<double> input  = trainingSet.Row(i),
                                    output = trainingSetOutput.Row(i);
-                    IList<Vector<double>> activations = neuralNetwork.ForwardInput(input);
+                    var activations = neuralNetwork.ForwardInput(input);
                     error = computeError(activations[activations.Count - 1], output);
 
                 }
