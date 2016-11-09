@@ -12,10 +12,10 @@ namespace NeuralNetworkProject.Training
         public TrainingAlgorithm TrainingAlgorithm { private get; set; }
         public IList<double> TrainingErrors { get; private set; } = new List<double>();
         public IList<double> CrossValidationErrors { get; private set; } = new List<double>();
-        public Tuple<IList<IList<Matrix<double>>>, IList<double>, IList<double>> Train(NeuralNetwork.NeuralNetwork neuralNetwork, Matrix<double> trainingSet, Matrix<double> crossValidationSet, Matrix<double> trainingSetOutput, Matrix<double> crossValidationSetOutput)
+        public void Train(NeuralNetwork.NeuralNetwork neuralNetwork, Matrix<double> trainingSet, Matrix<double> crossValidationSet, Matrix<double> trainingSetOutput, Matrix<double> crossValidationSetOutput)
         {
             TrainingAlgorithm.Subscribe(this);
-            return TrainingAlgorithm.Train(neuralNetwork, trainingSet, crossValidationSet, trainingSetOutput, crossValidationSetOutput);
+            TrainingAlgorithm.Train(neuralNetwork, trainingSet, crossValidationSet, trainingSetOutput, crossValidationSetOutput);
         }
 
         protected double computeError(Vector<double> outputs, Vector<double> realOutputs)
