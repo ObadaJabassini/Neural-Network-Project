@@ -38,7 +38,7 @@ namespace NeuralNetworkProject.Training
                 maxError = hyperParameters.MaxError;
                 maxEpochs = hyperParameters.MaxEpochs;
             }
-            while(error > maxError || epochs++ <= maxEpochs)
+            while(error > maxError && epochs++ <= maxEpochs)
             {
                 for (int i = 0; i < trainingSet.RowCount; i++)
                 {
