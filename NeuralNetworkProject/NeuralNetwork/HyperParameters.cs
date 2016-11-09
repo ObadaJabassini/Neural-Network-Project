@@ -9,7 +9,7 @@ namespace NeuralNetworkProject.NeuralNetwork
     public class HyperParameters
     {
         public double[] LearningRates { get; set; }
-        public int maxEpochs { get; set; }
-        public double maxError { get; set; }
+        public int MaxEpochs { get; set; }
+        public double MaxError { get; set; }
     }
 }

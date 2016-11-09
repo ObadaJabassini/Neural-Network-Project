@@ -44,10 +44,7 @@ namespace NeuralNetworkProject.NeuralNetwork
             return this;
         }
 
-        public NeuralNetwork Build()
-        {
-            return new NeuralNetwork(_layers);
-        }
+        public NeuralNetwork Build() => new NeuralNetwork(_layers);
     }
 
     public class Layer
