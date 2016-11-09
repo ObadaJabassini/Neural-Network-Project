@@ -8,9 +8,9 @@ using NeuralNetworkProject.NeuralNetwork;
 
 namespace NeuralNetworkProject.Training
 {
-    public class BackpropagationAlgorithm : ITrainingAlgorithm
+    public class BackpropagationAlgorithm : TrainingAlgorithm
     {
-        public Tuple<IList<IList<Matrix<double>>>, IList<double>, IList<double>> Train(NeuralNetwork.NeuralNetwork neuralNetwork, Matrix<double> trainingSet, Matrix<double> crossValidationSet, Matrix<double> trainingSetOutput, Matrix<double> crossValidationSetOutput, HyperParameters hyperParameters = null)
+        public override Tuple<IList<IList<Matrix<double>>>, IList<double>, IList<double>> Train(NeuralNetwork.NeuralNetwork neuralNetwork, Matrix<double> trainingSet, Matrix<double> crossValidationSet, Matrix<double> trainingSetOutput, Matrix<double> crossValidationSetOutput, HyperParameters hyperParameters = null)
         {
             double[] learningRates;
             double maxError = 0.01, error = 5;
@@ -38,6 +38,7 @@ namespace NeuralNetworkProject.Training
                 maxError = hyperParameters.MaxError;
                 maxEpochs = hyperParameters.MaxEpochs;
             }
+            TrainingErrorMessage message = new TrainingErrorMessage() { NeuralNetwork = neuralNetwork, TrainingSet = trainingSet, CrossValidationSet = crossValidationSet, TrainingSetOutput = trainingSetOutput, CrossValidationSetOutput = crossValidationSetOutput};
             while(error > maxError && epochs++ <= maxEpochs)
             {
                 for (int i = 0; i < trainingSet.RowCount; i++)
@@ -45,24 +46,19 @@ namespace NeuralNetworkProject.Training
                     Vector<double> input  = trainingSet.Row(i),
                                    output = trainingSetOutput.Row(i);
                     var activations = neuralNetwork.ForwardInput(input);
-                    error = computeError(activations[activations.Count - 1], output);
-
                 }
+                base.Notify(message);
+                error = message.Error; 
             }
+            base.OnComplete();
             return new Tuple<IList<IList<Matrix<double>>>, IList<double>, IList<double>>(weights, trainErrors, validationErrors);
         }
 
-        protected virtual Matrix<double> computeNextWeights()
+        protected virtual Matrix<double> computeAdditionalTerms()
         {
             return null;
         }
 
-        protected virtual double computeError(Vector<double> outputs, Vector<double> realOutputs)
-        {
-            //return (outputs - realOutputs).Select(element => element * element).Sum() / 2;
-            var temp = (outputs - realOutputs);
-            return (temp * temp.ToColumnMatrix())[0] / 2;
-        }
     }
 }
 
