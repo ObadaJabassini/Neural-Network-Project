@@ -11,15 +11,12 @@ namespace NeuralNetworkProject.Math
     internal class SigmoidFunction : IActivatorFunction
     {
         internal SigmoidFunction() { }
-        public Vector<double> Apply(Vector<double> value)
-        {
-            return value.Map(element => SpecialFunctions.Logistic(element));
-        }
+        public Vector<double> Apply(Vector<double> value) => value.Map(element => SpecialFunctions.Logistic(element));
 
         public Vector<double> Gradient(Vector<double> value)
         {
             var applyResult = Apply(value);
-            return applyResult * (1 - applyResult);
+            return applyResult.PointwiseMultiply(1 - applyResult);
         }
     }
 }
