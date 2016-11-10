@@ -9,7 +9,7 @@ namespace NeuralNetworkProject.Math
     public class ActivatorFunctions
     {
         private ActivatorFunctions() { }
-        public enum FunctionName { SIGMOID}
+        public enum FunctionName {SIGMOID}
         public static IActivatorFunction CreateFunction(string functionName)
         {
             var modifiedName = functionName.ToLower();
@@ -22,9 +22,9 @@ namespace NeuralNetworkProject.Math
             switch(functionName)
             {
                 case FunctionName.SIGMOID:
+                default:
                     return new SigmoidFunction();
             }
-            throw new ArgumentException($"There is no function whose name is {functionName}");
         }
     }
 }
