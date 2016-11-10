@@ -9,6 +9,8 @@ namespace NeuralNetworkProject.DataAdapter
 {
     public class IndexDivider : IDataDivider
     {
+        internal IndexDivider() { }
+
         public Tuple<Matrix<double>, Matrix<double>, Matrix<double>, Matrix<double>> Divide(Matrix<double> inputs, Matrix<double> outputs, params object[] paramters)
         {
             IList<int> trainingIndices = (IList<int>) paramters[0],

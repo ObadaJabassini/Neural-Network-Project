@@ -9,6 +9,6 @@ namespace NeuralNetworkProject.DataAdapter
 {
     public interface IDataDivider
     {
-        Tuple<Matrix<double>, Matrix<double>, Matrix<double>, Matrix<double>> Divide(Matrix<double> inputs, Matrix<double> outputs);
+        Tuple<Matrix<double>, Matrix<double>, Matrix<double>, Matrix<double>> Divide(Matrix<double> inputs, Matrix<double> outputs, params object[] parameters);
     }
 }
