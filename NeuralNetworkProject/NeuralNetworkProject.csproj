@@ -63,7 +63,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAdapter\DataDivider.cs" />
+    <Compile Include="DataAdapter\Dividers.cs" />
     <Compile Include="DataAdapter\IDataDivider.cs" />
+    <Compile Include="DataAdapter\IndexDivider.cs" />
     <Compile Include="DataAdapter\StaticDivider.cs" />
     <Compile Include="DataReader\Reader.cs" />
     <Compile Include="Math\ActivatorFunctions.cs" />
