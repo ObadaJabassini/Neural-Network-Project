@@ -29,7 +29,7 @@ namespace NeuralNetworkProject.DataAdapter
                 crossSet.SetRow(j, inputs.Row(j + firstSize));
                 crossOut.SetRow(j, outputs.Row(j + firstSize));
             }
-            return new Tuple<Matrix<double>, Matrix<double>, Matrix<double>, Matrix<double>>(trainSet, trainOut, crossSet, crossOut);
+            return new Tuple<Matrix<double>, Matrix<double>, Matrix<double>, Matrix<double>>(trainSet, trainOut.Transpose(), crossSet, crossOut.Transpose());
         }
     }
 
