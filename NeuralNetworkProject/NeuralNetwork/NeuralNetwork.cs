@@ -19,7 +19,7 @@ namespace NeuralNetworkProject.NeuralNetwork
             HiddenWeights = new List<Matrix<double>>(layers.Count - 1);
             for (int i = 0; i < HiddenWeights.Count; ++i)
             {
-                HiddenWeights[i] = Matrix<double>.Build.Random(layers[i + 1].NeuronNumber, layers[i].NeuronNumber + 1);
+                HiddenWeights[i] = Matrix<double>.Build.Random(layers[i + 1].NeuronsNumber, layers[i].NeuronsNumber + 1);
             }
         }
 
@@ -56,7 +56,7 @@ namespace NeuralNetworkProject.NeuralNetwork
 
         public NeuralNetworkBuilder Layer(int numOfNeurons, FunctionApplier functionApplier)
         {
-            _layers.Add(new Layer() { Applier = functionApplier, NeuronNumber = numOfNeurons});
+            _layers.Add(new Layer() { Applier = functionApplier, NeuronsNumber = numOfNeurons});
             return this;
         }
 
@@ -65,7 +65,7 @@ namespace NeuralNetworkProject.NeuralNetwork
 
     public class Layer
     {
-        public int NeuronNumber { get; internal set; }
+        public int NeuronsNumber { get; internal set; }
         public FunctionApplier Applier { get; internal set; }
     }
 }
