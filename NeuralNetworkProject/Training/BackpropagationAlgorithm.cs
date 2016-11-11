@@ -29,6 +29,12 @@ namespace NeuralNetworkProject.Training
             var layers = neuralNetwork.Layers;
             var weights = neuralNetwork.HiddenWeights;
 
+            //for momentum
+            IList<Matrix<double>> prevDeltaW = new List<Matrix<double>>();
+            for (int i = 0; i < weights.Count; ++i)
+                prevDeltaW.Add(Matrix<double>.Build.Dense(layers[i + 1].NeuronsNumber, layers[i].NeuronsNumber + 1));
+            //end
+
             while(error > maxError && epochs++ <= maxEpochs)
             {
                 for (int i = 0; i < trainingSet.RowCount; i++)
@@ -40,12 +46,20 @@ namespace NeuralNetworkProject.Training
 
                     var D = (output - acs[acs.Count - 1]).PointwiseMultiply(gs[gs.Count - 1]).ToColumnMatrix(); // n(output) * 1
                     var deltaW = layers[layers.Count - 1].LearningRate * D * acs[acs.Count - 2].ToRowMatrix(); // (n(output) * 1) * ((n(output-1)+1) * 1)' = n(output) * (n(output-1)+1)
+                    //for momentum
+                    deltaW += computeAdditionalTerms(deltaW, prevDeltaW[weights.Count - 1]);
+                    prevDeltaW[weights.Count - 1] = deltaW;
+                    //end
                     neuralNetwork.UpdateWeightsAt(deltaW, weights.Count - 1);
 
                     for (int j = layers.Count - 2; j > 0; j--)
                     {
                         D = (weights[j].Transpose() * D).RemoveRow(0).PointwiseMultiply(gs[j - 1].ToColumnMatrix()); // (n(j+1) * (n(j)+1))' * (n(j+1) * 1) = (n(j)+1) * 1, then => (n(j) * 1) .* (n(j) * 1)
                         deltaW = layers[j].LearningRate * D * acs[j - 1].ToRowMatrix(); // (n(j) * 1) * ((n(j-1)+1) * 1)' = n(j) * (n(j-1)+1)
+                        //for momentum
+                        deltaW += computeAdditionalTerms(deltaW, prevDeltaW[j - 1]);
+                        prevDeltaW[j - 1] = deltaW;
+                        //end                        
                         neuralNetwork.UpdateWeightsAt(deltaW, j - 1);
                     }
                 }
@@ -55,9 +69,10 @@ namespace NeuralNetworkProject.Training
             base.OnComplete();
         }
 
-        protected virtual Matrix<double> computeAdditionalTerms()
+        protected virtual Matrix<double> computeAdditionalTerms(Matrix<double> currentDeltaW, Matrix<double> prevDeltaW)
         {
-            return null;
+            //return a matrix of zeros for standard BP without momentum
+            return Matrix<double>.Build.Dense(currentDeltaW.RowCount, currentDeltaW.ColumnCount);
         }
 
     }
