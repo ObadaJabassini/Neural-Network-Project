@@ -68,7 +68,7 @@ namespace NeuralNetworkProject.NeuralNetwork
             _layers = new List<Layer>();
         }
 
-        public NeuralNetworkBuilder Layer(int numOfNeurons, FunctionApplier functionApplier, double learningRate = 0.1)
+        public NeuralNetworkBuilder Layer(int numOfNeurons, FunctionApplier functionApplier, double learningRate = 0.01)
         {
             _layers.Add(new Layer() { Applier = functionApplier, NeuronsNumber = numOfNeurons, LearningRate = learningRate });
             return this;

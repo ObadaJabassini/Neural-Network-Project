@@ -81,6 +81,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Training\BackpropagationAlgorithm.cs" />
+    <Compile Include="Training\BackPropagationWithMomentum.cs" />
     <Compile Include="Training\TrainingAlgorithm.cs" />
     <Compile Include="Training\Trainer.cs" />
     <Compile Include="Training\TrainingErrorMessage.cs" />

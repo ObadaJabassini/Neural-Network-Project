@@ -10,5 +10,6 @@ namespace NeuralNetworkProject.NeuralNetwork
     {
         public int MaxEpochs { get; set; }
         public double MaxError { get; set; }
+        public double Momentum { get; set; }
     }
 }

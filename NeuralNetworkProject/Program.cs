@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MathNet.Numerics.LinearAlgebra;
+using NeuralNetworkProject.Training;
 
 namespace NeuralNetworkProject
 {
@@ -13,10 +14,11 @@ namespace NeuralNetworkProject
         public static void Main(string[] args)
         {
             var t = DataReader.DataReader.Instance.ReadFromFile(@"C:\Users\DELL\Desktop\Datasets\test.txt");
-            Training.Trainer trainer = new Training.Trainer() { };
+            Trainer trainer = new Training.Trainer() { };
+            trainer.TrainingAlgorithm = new BackPropagationWithMomentum();
             NeuralNetwork.NeuralNetwork nn = new NeuralNetwork.NeuralNetworkBuilder().
                                                               Layer(4, new Math.FunctionApplier()).
-                                                              Layer(5, new Math.FunctionApplier()).
+                                                              Layer(2, new Math.FunctionApplier()).
                                                               Layer(3, new Math.FunctionApplier()).
                                                               Build();
             trainer.Train(nn, t.Item1, t.Item2);
