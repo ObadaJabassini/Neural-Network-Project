@@ -17,6 +17,7 @@ namespace NeuralNetworkProject.NeuralNetwork
         {
             this.Layers = layers;
             HiddenWeights = new List<Matrix<double>>(layers.Count - 1);
+
             for (int i = 0; i < HiddenWeights.Count; ++i)
             {
                 HiddenWeights[i] = Matrix<double>.Build.Random(layers[i + 1].NeuronsNumber, layers[i].NeuronsNumber + 1);
@@ -27,21 +28,39 @@ namespace NeuralNetworkProject.NeuralNetwork
         {
             IList<Vector<double>> acs = new List<Vector<double>>(),
                                   gs = new List<Vector<double>>();
+
+            acs.Add(input);
+
             Vector<double> temp = input, temp2;
-            for (int i = 0; i < HiddenWeights.Count; i++)
+
+            for (int i = 1; i < Layers.Count; i++)
             {
-                temp = HiddenWeights[i] * temp;
-                temp2 = Layers[i + 1].Applier.Apply(temp);
+                temp = HiddenWeights[i - 1]*temp; // (n(i)*(n(i-1)+1)) * ((n(i-1)+1)*1) = n(i)*1
+
+                gs.Add(Layers[i].Applier.Gradient(temp));
+
+                temp2 = Layers[i].Applier.Apply(temp);
+
+                if (i < Layers.Count - 1)
+                {
+                    //add bias
+                    double[] d = new double[Layers[i].NeuronsNumber + 1];
+                    d[0] = 1;
+                    temp2.ToArray().CopyTo(d, 1);
+                    temp2 = Vector<double>.Build.Dense(d);
+                }
+
                 acs.Add(temp2);
-                gs.Add(Layers[i + 1].Applier.Gradient(temp));
+
                 temp = temp2;
             }
+
             return new Tuple<IList<Vector<double>>, IList<Vector<double>>>(acs, gs);
         }
 
-        public void UpdateWeightsAt(Matrix<double> newWeights, int index)
+        public void UpdateWeightsAt(Matrix<double> deltaW, int index)
         {
-            HiddenWeights[index] = newWeights;
+            HiddenWeights[index] -= deltaW;
         }
     }
     

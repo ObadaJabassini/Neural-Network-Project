@@ -51,7 +51,7 @@ namespace NeuralNetworkProject.Training
 
         public void OnCompleted()
         {
-            
+            throw new NotImplementedException();   
         }
     }
 }
