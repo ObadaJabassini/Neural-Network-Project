@@ -34,7 +34,6 @@ namespace NeuralNetworkProject.Training
             for (int i = 0; i < weights.Count; ++i)
                 prevDeltaW.Add(Matrix<double>.Build.Dense(layers[i + 1].NeuronsNumber, layers[i].NeuronsNumber + 1));
             //end
-            var p_e = error;
             while(error > maxError && epochs++ <= maxEpochs)
             {
                 for (int i = 0; i < trainingSet.RowCount; i++)
