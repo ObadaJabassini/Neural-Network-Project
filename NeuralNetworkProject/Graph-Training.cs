@@ -9,16 +9,11 @@ using Telerik.WinControls;
 
 namespace NeuralNetworkProject
 {
-    public partial class LoadData : Telerik.WinControls.UI.RadForm
+    public partial class Graph_Training : Telerik.WinControls.UI.RadForm
     {
-        public LoadData()
+        public Graph_Training()
         {
             InitializeComponent();
-        }
-
-        private void LoadData_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

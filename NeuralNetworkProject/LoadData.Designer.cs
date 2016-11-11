@@ -140,7 +140,7 @@
             this.Input.Cursor = System.Windows.Forms.Cursors.Arrow;
             legend1.Name = "Legend1";
             this.Input.Legends.Add(legend1);
-            this.Input.Location = new System.Drawing.Point(261, 42);
+            this.Input.Location = new System.Drawing.Point(245, 22);
             this.Input.Name = "Input";
             this.Input.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
             series1.ChartArea = "Input";
@@ -157,7 +157,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 398);
+            this.ClientSize = new System.Drawing.Size(795, 442);
             this.Controls.Add(this.Input);
             this.Controls.Add(this.Train);
             this.Controls.Add(this.BP);
