@@ -9,7 +9,7 @@ namespace NeuralNetworkProject.DataAdapter
     public class Dividers
     {
         private Dividers() { }
-        public enum DividerType {STATIC}
+        public enum DividerType {STATIC, RANDOMIZED, INDEXED}
         public static IDataDivider CreateDivider(DividerType dividerType)
         {
             switch (dividerType)
@@ -17,6 +17,10 @@ namespace NeuralNetworkProject.DataAdapter
                 case DividerType.STATIC:
                 default:
                     return new StaticDivider();
+                case DividerType.RANDOMIZED:
+                    return new RandomizedDivider();
+                case DividerType.INDEXED:
+                    return new IndexedDivider();
             }
         }
 
