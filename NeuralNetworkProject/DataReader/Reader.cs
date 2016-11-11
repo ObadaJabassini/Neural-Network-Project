@@ -52,7 +52,7 @@ namespace NeuralNetworkProject.DataReader
                             arr[(int)outputs.At(i) - 1] = 1;
                             output.SetRow(i, Vector<double>.Build.Dense(arr));
                         }
-                        return new Tuple<Matrix<double>, Matrix<double>>(mat.InsertColumn(0, Vector<double>.Build.DenseOfEnumerable(Enumerable.Repeat(1, mat.RowCount).Select(r => Convert.ToDouble(r)))), output);
+                        return new Tuple<Matrix<double>, Matrix<double>>(mat, output);
                     }
                     else
                     {

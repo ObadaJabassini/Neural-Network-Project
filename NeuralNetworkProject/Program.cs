@@ -21,7 +21,7 @@ namespace NeuralNetworkProject
                                                               Build();
             trainer.Train(nn, t.Item1, t.Item2);
             // test case (should belong to the second class = [0 1 0])
-            var tt = nn.ForwardInput(Vector<double>.Build.DenseOfArray(new double[] { 1.0, 5.5, 2.5, 4.0, 1.3 }));
+            var tt = nn.ForwardInput(Vector<double>.Build.DenseOfArray(new double[] { 5.5, 2.5, 4.0, 1.3 }));
             Console.WriteLine(tt.Item1[tt.Item1.Count - 1]);
             Console.ReadLine();
         }

@@ -27,6 +27,8 @@ namespace NeuralNetworkProject.NeuralNetwork
             IList<Vector<double>> acs = new List<Vector<double>>(),
                                   gs = new List<Vector<double>>();
 
+            input = input.ToColumnMatrix().InsertRow(0, Vector<double>.Build.Dense(new double[] {1})).Column(0);
+
             acs.Add(input);
             
             Vector<double> temp = input, temp2;
@@ -53,7 +55,7 @@ namespace NeuralNetworkProject.NeuralNetwork
 
         public void UpdateWeightsAt(Matrix<double> deltaW, int index)
         {
-            HiddenWeights[index] -= deltaW;
+            HiddenWeights[index] += deltaW;
         }
     }
     

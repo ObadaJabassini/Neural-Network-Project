@@ -45,7 +45,7 @@ namespace NeuralNetworkProject.Training
                     IList<Vector<double>> acs = temp.Item1, gs = temp.Item2;
 
                     var D = (output - acs[acs.Count - 1]).PointwiseMultiply(gs[gs.Count - 1]).ToColumnMatrix(); // n(output) * 1
-                    var deltaW = layers[layers.Count - 1].LearningRate * D * acs[acs.Count - 2].ToRowMatrix(); // (n(output) * 1) * ((n(output-1)+1) * 1)' = n(output) * (n(output-1)+1)
+                    var deltaW = D * acs[acs.Count - 2].ToRowMatrix() * layers[layers.Count - 1].LearningRate; // (n(output) * 1) * ((n(output-1)+1) * 1)' = n(output) * (n(output-1)+1)
                     //for momentum
                     deltaW += computeAdditionalTerms(deltaW, prevDeltaW[weights.Count - 1]);
                     prevDeltaW[weights.Count - 1] = deltaW;
@@ -55,7 +55,7 @@ namespace NeuralNetworkProject.Training
                     for (int j = layers.Count - 2; j > 0; j--)
                     {
                         D = (weights[j].Transpose() * D).RemoveRow(0).PointwiseMultiply(gs[j - 1].ToColumnMatrix()); // (n(j+1) * (n(j)+1))' * (n(j+1) * 1) = (n(j)+1) * 1, then => (n(j) * 1) .* (n(j) * 1)
-                        deltaW = layers[j].LearningRate * D * acs[j - 1].ToRowMatrix(); // (n(j) * 1) * ((n(j-1)+1) * 1)' = n(j) * (n(j-1)+1)
+                        deltaW = D * acs[j - 1].ToRowMatrix() * layers[j].LearningRate; // (n(j) * 1) * ((n(j-1)+1) * 1)' = n(j) * (n(j-1)+1)
                         //for momentum
                         deltaW += computeAdditionalTerms(deltaW, prevDeltaW[j - 1]);
                         prevDeltaW[j - 1] = deltaW;
@@ -65,8 +65,7 @@ namespace NeuralNetworkProject.Training
                 }
                 base.Notify(message);
                 error = message.Error; 
-                Console.WriteLine(p_e-error);
-                p_e = error;
+                Console.WriteLine(error);
             }
             base.OnComplete();
         }
