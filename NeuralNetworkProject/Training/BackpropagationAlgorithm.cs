@@ -34,7 +34,7 @@ namespace NeuralNetworkProject.Training
                 for (int i = 0; i < trainingSet.RowCount; i++)
                 {
                     Vector<double> input  = trainingSet.Row(i),
-                                   output = trainingSetOutput.Row(i);
+                                   output = trainingSetOutput.Column(i);
                     var temp = neuralNetwork.ForwardInput(input);
                     IList<Vector<double>> acs = temp.Item1, gs = temp.Item2;
 
