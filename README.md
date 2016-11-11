@@ -12,4 +12,4 @@ A university project to implement some basic neural network algorithms like :
 * Amal Alnouri
 * Baraa Salhany
 * Obada Jabassini
-* Raoudah Sandouk
+* Raodah Sandouk
