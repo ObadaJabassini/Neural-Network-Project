@@ -42,13 +42,8 @@ namespace NeuralNetworkProject.NeuralNetwork
                 temp2 = Layers[i].Applier.Apply(temp);
 
                 if (i < Layers.Count - 1)
-                {
                     //add bias
-                    double[] d = new double[Layers[i].NeuronsNumber + 1];
-                    d[0] = 1;
-                    temp2.ToArray().CopyTo(d, 1);
-                    temp2 = Vector<double>.Build.Dense(d);
-                }
+                    temp2 = temp2.ToColumnMatrix().InsertRow(0, Vector<double>.Build.Dense(new double[] {1})).Column(0);
 
                 acs.Add(temp2);
 
