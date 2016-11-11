@@ -18,7 +18,7 @@ namespace NeuralNetworkProject.NeuralNetwork
             this.Layers = layers;
             HiddenWeights = new List<Matrix<double>>(layers.Count - 1);
 
-            for (int i = 0; i < HiddenWeights.Count; ++i)
+            for (int i = 0; i < layers.Count-1; ++i)
                 HiddenWeights.Add(Matrix<double>.Build.Random(layers[i + 1].NeuronsNumber, layers[i].NeuronsNumber + 1));
         }
 
@@ -28,9 +28,9 @@ namespace NeuralNetworkProject.NeuralNetwork
                                   gs = new List<Vector<double>>();
 
             acs.Add(input);
-
+            
             Vector<double> temp = input, temp2;
-
+            
             for (int i = 1; i < Layers.Count; i++)
             {
                 temp = HiddenWeights[i - 1]*temp; // (n(i)*(n(i-1)+1)) * ((n(i-1)+1)*1) = n(i)*1
@@ -66,7 +66,7 @@ namespace NeuralNetworkProject.NeuralNetwork
             _layers = new List<Layer>();
         }
 
-        public NeuralNetworkBuilder Layer(int numOfNeurons, FunctionApplier functionApplier, double learningRate = 0.01)
+        public NeuralNetworkBuilder Layer(int numOfNeurons, FunctionApplier functionApplier, double learningRate = 0.1)
         {
             _layers.Add(new Layer() { Applier = functionApplier, NeuronsNumber = numOfNeurons, LearningRate = learningRate });
             return this;

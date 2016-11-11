@@ -10,7 +10,7 @@ namespace NeuralNetworkProject.Training
 {
     public class Trainer : IObserver<TrainingErrorMessage>
     {
-        public TrainingAlgorithm TrainingAlgorithm { private get; set; }
+        public TrainingAlgorithm TrainingAlgorithm { private get; set; } = new BackpropagationAlgorithm();
         public DataDivider Divider { private get; set; } = new DataDivider() { Divider = Dividers.CreateDivider(Dividers.DividerType.STATIC) };
         public IList<double> TrainingErrors { get; private set; } = new List<double>();
         public IList<double> CrossValidationErrors { get; private set; } = new List<double>();
@@ -18,6 +18,8 @@ namespace NeuralNetworkProject.Training
         {
             TrainingAlgorithm.Subscribe(this);
             var temp = Divider.Divide(inputs, outputs);
+            Console.WriteLine(temp.Item1);
+            Console.WriteLine(temp.Item2);
             _train(neuralNetwork, temp.Item1, temp.Item3, temp.Item2, temp.Item4);
         }
 
@@ -38,9 +40,9 @@ namespace NeuralNetworkProject.Training
         {
             NeuralNetwork.NeuralNetwork neuralNetwork = value.NeuralNetwork;
             Matrix<double> trainingSet = value.TrainingSet, trainingSetOutput = value.TrainingSetOutput, crossValidationSet = value.CrossValidationSet, crossValidationSetOutput = value.CrossValidationSetOutput;
-            var error = trainingSet.EnumerateRows().Zip(trainingSetOutput.EnumerateRows(), (first, second) => computeError(first, second)).Sum();
+            var error = trainingSet.EnumerateRows().Select(row => { var temp = neuralNetwork.ForwardInput(row); return temp.Item1[temp.Item1.Count - 1]; }).Zip(trainingSetOutput.EnumerateColumns(), (first, second) => computeError(first, second)).Sum();
             TrainingErrors.Add(error);
-            CrossValidationErrors.Add(crossValidationSet.EnumerateRows().Zip(crossValidationSetOutput.EnumerateRows(), (first, second) => computeError(first, second)).Sum());
+            CrossValidationErrors.Add(crossValidationSet.EnumerateRows().Select(row => { var temp = neuralNetwork.ForwardInput(row); return temp.Item1[temp.Item1.Count - 1]; }).Zip(crossValidationSetOutput.EnumerateColumns(), (first, second) => computeError(first, second)).Sum());
             value.Error = error;
         }
 
@@ -51,7 +53,7 @@ namespace NeuralNetworkProject.Training
 
         public void OnCompleted()
         {
-            throw new NotImplementedException();   
+            
         }
     }
 }

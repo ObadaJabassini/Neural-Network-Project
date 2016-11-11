@@ -12,8 +12,6 @@ namespace NeuralNetworkProject.DataAdapter
         internal StaticDivider() { }
         public Tuple<Matrix<double>, Matrix<double>, Matrix<double>, Matrix<double>> Divide(Matrix<double> inputs, Matrix<double> outputs, params object[] paramters)
         {
-            Console.WriteLine(inputs);
-            Console.WriteLine(outputs);
             int firstSize = inputs.RowCount * 6 / 10, secondSize = inputs.RowCount * 3 / 10;
             Matrix<double> trainSet = Matrix<double>.Build.Random(firstSize, inputs.ColumnCount),
                            crossSet = Matrix<double>.Build.Random(secondSize, inputs.ColumnCount),
