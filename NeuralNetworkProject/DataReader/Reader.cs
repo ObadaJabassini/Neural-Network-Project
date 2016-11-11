@@ -69,6 +69,7 @@ namespace NeuralNetworkProject.DataReader
                         mat = mat.RemoveColumn(mat.ColumnCount - 1);
                         return new Tuple<Matrix<double>, Matrix<double>>(mat, Matrix<double>.Build.DenseOfRowVectors(output));
                     }
+
                 case "xml":
                     break;
             }
