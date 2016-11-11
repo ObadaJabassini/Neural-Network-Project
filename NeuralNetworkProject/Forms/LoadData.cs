@@ -20,5 +20,10 @@ namespace NeuralNetworkProject
         {
 
         }
+
+        private void LoadData_btn_Click(object sender, EventArgs e)
+        {
+            LoadData_dlg.ShowDialog();
+        }
     }
 }

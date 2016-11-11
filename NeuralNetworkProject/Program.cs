@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using MathNet.Numerics.LinearAlgebra;
 
 namespace NeuralNetworkProject
@@ -24,6 +25,11 @@ namespace NeuralNetworkProject
             var tt = nn.ForwardInput(Vector<double>.Build.DenseOfArray(new double[] { 5.5, 2.5, 4.0, 1.3 }));
             Console.WriteLine(tt.Item1[tt.Item1.Count - 1]);
             Console.ReadLine();
+
+            //Start Form
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new LoadData());
         }
     }
 }

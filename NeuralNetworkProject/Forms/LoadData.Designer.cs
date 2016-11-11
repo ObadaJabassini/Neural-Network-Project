@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.Train = new Telerik.WinControls.UI.RadButton();
             this.BP = new Telerik.WinControls.UI.RadPanel();
             this.Epochs = new Telerik.WinControls.UI.RadLabel();
@@ -39,8 +39,8 @@
             this.Hdn_num = new System.Windows.Forms.NumericUpDown();
             this.Algorithem = new Telerik.WinControls.UI.RadDropDownList();
             this.LoadData_btn = new Telerik.WinControls.UI.RadButton();
-            this.radTextBox1 = new Telerik.WinControls.UI.RadTextBox();
             this.Input = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.LoadData_dlg = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.Train)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BP)).BeginInit();
             this.BP.SuspendLayout();
@@ -50,7 +50,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Hdn_num)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Algorithem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoadData_btn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Input)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -118,40 +117,41 @@
             // 
             // LoadData_btn
             // 
-            this.LoadData_btn.Location = new System.Drawing.Point(53, 22);
+            this.LoadData_btn.Location = new System.Drawing.Point(53, 40);
             this.LoadData_btn.Name = "LoadData_btn";
             this.LoadData_btn.Size = new System.Drawing.Size(110, 24);
             this.LoadData_btn.TabIndex = 5;
             this.LoadData_btn.Text = "Load Data";
-            // 
-            // radTextBox1
-            // 
-            this.radTextBox1.Location = new System.Drawing.Point(37, 52);
-            this.radTextBox1.Name = "radTextBox1";
-            this.radTextBox1.Size = new System.Drawing.Size(142, 20);
-            this.radTextBox1.TabIndex = 6;
+            this.LoadData_btn.Click += new System.EventHandler(this.LoadData_btn_Click);
             // 
             // Input
             // 
-            chartArea1.AxisX.MajorGrid.Enabled = false;
-            chartArea1.AxisY.MajorGrid.Enabled = false;
-            chartArea1.Name = "Input";
-            this.Input.ChartAreas.Add(chartArea1);
+            chartArea3.AxisX.MajorGrid.Enabled = false;
+            chartArea3.AxisY.MajorGrid.Enabled = false;
+            chartArea3.Name = "Input";
+            this.Input.ChartAreas.Add(chartArea3);
             this.Input.Cursor = System.Windows.Forms.Cursors.Arrow;
-            legend1.Name = "Legend1";
-            this.Input.Legends.Add(legend1);
+            legend3.Name = "Legend1";
+            this.Input.Legends.Add(legend3);
             this.Input.Location = new System.Drawing.Point(245, 22);
             this.Input.Name = "Input";
             this.Input.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series1.ChartArea = "Input";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Legend = "Legend1";
-            series1.Name = "Data";
-            series1.YValuesPerPoint = 2;
-            this.Input.Series.Add(series1);
+            series3.ChartArea = "Input";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Legend = "Legend1";
+            series3.Name = "Data";
+            series3.YValuesPerPoint = 2;
+            this.Input.Series.Add(series3);
             this.Input.Size = new System.Drawing.Size(519, 373);
             this.Input.TabIndex = 0;
             this.Input.Text = "chart1";
+            // 
+            // LoadData_dlg
+            // 
+            this.LoadData_dlg.DefaultExt = "txt";
+            this.LoadData_dlg.DereferenceLinks = false;
+            this.LoadData_dlg.FileName = "openFileDialog1";
+            this.LoadData_dlg.Filter = "\"Excel files (*.csv)|*.csv|Text files (*.txt)|*.txt|All files (*.*)|*.*\"";
             // 
             // LoadData
             // 
@@ -163,7 +163,6 @@
             this.Controls.Add(this.BP);
             this.Controls.Add(this.Algorithem);
             this.Controls.Add(this.LoadData_btn);
-            this.Controls.Add(this.radTextBox1);
             this.Name = "LoadData";
             // 
             // 
@@ -181,7 +180,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Hdn_num)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Algorithem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoadData_btn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Input)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
@@ -199,7 +197,7 @@
         private System.Windows.Forms.NumericUpDown Hdn_num;
         private Telerik.WinControls.UI.RadDropDownList Algorithem;
         private Telerik.WinControls.UI.RadButton LoadData_btn;
-        private Telerik.WinControls.UI.RadTextBox radTextBox1;
         private System.Windows.Forms.DataVisualization.Charting.Chart Input;
+        private System.Windows.Forms.OpenFileDialog LoadData_dlg;
     }
 }

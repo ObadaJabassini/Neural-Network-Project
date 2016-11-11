@@ -30,15 +30,17 @@
         {
             this.radTrackBar1 = new Telerik.WinControls.UI.RadTrackBar();
             this.radDiagram1 = new Telerik.WinControls.UI.RadDiagram();
+            this.radButton1 = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radTrackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDiagram1)).BeginInit();
             this.radDiagram1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // radTrackBar1
             // 
-            this.radTrackBar1.Location = new System.Drawing.Point(3, 99);
+            this.radTrackBar1.Location = new System.Drawing.Point(3, 123);
             this.radTrackBar1.Name = "radTrackBar1";
             this.radTrackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
             // 
@@ -61,11 +63,20 @@
             this.radDiagram1.TabIndex = 2;
             this.radDiagram1.Text = "radDiagram1";
             // 
+            // radButton1
+            // 
+            this.radButton1.Location = new System.Drawing.Point(58, 96);
+            this.radButton1.Name = "radButton1";
+            this.radButton1.Size = new System.Drawing.Size(110, 24);
+            this.radButton1.TabIndex = 3;
+            this.radButton1.Text = "radButton1";
+            // 
             // Graph_Training
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(681, 409);
+            this.Controls.Add(this.radButton1);
             this.Controls.Add(this.radDiagram1);
             this.Name = "Graph_Training";
             // 
@@ -77,6 +88,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radDiagram1)).EndInit();
             this.radDiagram1.ResumeLayout(false);
             this.radDiagram1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -86,5 +98,6 @@
 
         private Telerik.WinControls.UI.RadTrackBar radTrackBar1;
         private Telerik.WinControls.UI.RadDiagram radDiagram1;
+        private Telerik.WinControls.UI.RadButton radButton1;
     }
 }
