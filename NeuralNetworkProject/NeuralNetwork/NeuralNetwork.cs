@@ -19,9 +19,7 @@ namespace NeuralNetworkProject.NeuralNetwork
             HiddenWeights = new List<Matrix<double>>(layers.Count - 1);
 
             for (int i = 0; i < HiddenWeights.Count; ++i)
-            {
-                HiddenWeights[i] = Matrix<double>.Build.Random(layers[i + 1].NeuronsNumber, layers[i].NeuronsNumber + 1);
-            }
+                HiddenWeights.Add(Matrix<double>.Build.Random(layers[i + 1].NeuronsNumber, layers[i].NeuronsNumber + 1));
         }
 
         public Tuple<IList<Vector<double>>, IList<Vector<double>>> ForwardInput(Vector<double> input)
