@@ -60,7 +60,7 @@ namespace NeuralNetworkProject
             // 
             // Network_creat
             // 
-            this.Network_creat.Location = new System.Drawing.Point(115, 393);
+            this.Network_creat.Location = new System.Drawing.Point(84, 413);
             this.Network_creat.Name = "Network_creat";
             this.Network_creat.Size = new System.Drawing.Size(106, 24);
             this.Network_creat.TabIndex = 7;
@@ -71,9 +71,13 @@ namespace NeuralNetworkProject
             // 
             this.BP.Controls.Add(this.flowLayoutPanel1);
             this.BP.Controls.Add(this.AddNewLayer);
-            this.BP.Location = new System.Drawing.Point(27, 148);
+            this.BP.Controls.Add(this.Network_creat);
+            this.BP.Controls.Add(this.Algorithem);
+            this.BP.Controls.Add(this.LoadData_btn);
+            this.BP.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BP.Location = new System.Drawing.Point(0, 0);
             this.BP.Name = "BP";
-            this.BP.Size = new System.Drawing.Size(277, 224);
+            this.BP.Size = new System.Drawing.Size(277, 442);
             this.BP.TabIndex = 4;
             this.BP.Text = "Build the network";
             this.BP.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
@@ -84,9 +88,9 @@ namespace NeuralNetworkProject
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Controls.Add(this.layers2);
             this.flowLayoutPanel1.Controls.Add(this.layers1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 19);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 66);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(271, 177);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(271, 299);
             this.flowLayoutPanel1.TabIndex = 8;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
@@ -100,7 +104,7 @@ namespace NeuralNetworkProject
             // 
             // AddNewLayer
             // 
-            this.AddNewLayer.Location = new System.Drawing.Point(84, 197);
+            this.AddNewLayer.Location = new System.Drawing.Point(84, 371);
             this.AddNewLayer.Name = "AddNewLayer";
             this.AddNewLayer.Size = new System.Drawing.Size(110, 24);
             this.AddNewLayer.TabIndex = 9;
@@ -123,7 +127,7 @@ namespace NeuralNetworkProject
             this.Algorithem.Items.Add(radListDataItem1);
             this.Algorithem.Items.Add(radListDataItem2);
             this.Algorithem.Items.Add(radListDataItem3);
-            this.Algorithem.Location = new System.Drawing.Point(68, 107);
+            this.Algorithem.Location = new System.Drawing.Point(37, 31);
             this.Algorithem.Name = "Algorithem";
             this.Algorithem.Size = new System.Drawing.Size(197, 20);
             this.Algorithem.TabIndex = 3;
@@ -131,7 +135,7 @@ namespace NeuralNetworkProject
             // 
             // LoadData_btn
             // 
-            this.LoadData_btn.Location = new System.Drawing.Point(111, 43);
+            this.LoadData_btn.Location = new System.Drawing.Point(84, 3);
             this.LoadData_btn.Name = "LoadData_btn";
             this.LoadData_btn.Size = new System.Drawing.Size(110, 24);
             this.LoadData_btn.TabIndex = 5;
@@ -148,9 +152,10 @@ namespace NeuralNetworkProject
             // 
             // radDiagram1
             // 
-            this.radDiagram1.Location = new System.Drawing.Point(312, 11);
+            this.radDiagram1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radDiagram1.Location = new System.Drawing.Point(277, 0);
             this.radDiagram1.Name = "radDiagram1";
-            this.radDiagram1.Size = new System.Drawing.Size(437, 400);
+            this.radDiagram1.Size = new System.Drawing.Size(484, 442);
             this.radDiagram1.TabIndex = 9;
             this.radDiagram1.Text = "radDiagram1";
             this.radDiagram1.Zoom = 0.5D;
@@ -177,11 +182,8 @@ namespace NeuralNetworkProject
             this.ClientSize = new System.Drawing.Size(761, 442);
             this.Controls.Add(this.radDiagram1);
             this.Controls.Add(this.Epochs);
-            this.Controls.Add(this.Network_creat);
             this.Controls.Add(this.BP);
             this.Controls.Add(this.epochs_num);
-            this.Controls.Add(this.Algorithem);
-            this.Controls.Add(this.LoadData_btn);
             this.Name = "LoadData";
             // 
             // 
@@ -192,6 +194,7 @@ namespace NeuralNetworkProject
             ((System.ComponentModel.ISupportInitialize)(this.Network_creat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BP)).EndInit();
             this.BP.ResumeLayout(false);
+            this.BP.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Epochs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddNewLayer)).EndInit();

@@ -28,23 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.radCollapsiblePanel1 = new Telerik.WinControls.UI.RadCollapsiblePanel();
             this.Input_plt = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.I_O = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radCollapsiblePanel1)).BeginInit();
             this.radCollapsiblePanel1.PanelContainer.SuspendLayout();
             this.radCollapsiblePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Input_plt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.I_O)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // radButton1
             // 
-            this.radButton1.Location = new System.Drawing.Point(58, 96);
+            this.radButton1.Location = new System.Drawing.Point(106, 370);
             this.radButton1.Name = "radButton1";
             this.radButton1.Size = new System.Drawing.Size(110, 24);
             this.radButton1.TabIndex = 3;
@@ -54,7 +60,7 @@
             // radCollapsiblePanel1
             // 
             this.radCollapsiblePanel1.ExpandDirection = Telerik.WinControls.UI.RadDirection.Right;
-            this.radCollapsiblePanel1.Location = new System.Drawing.Point(124, 18);
+            this.radCollapsiblePanel1.Location = new System.Drawing.Point(212, 24);
             this.radCollapsiblePanel1.Name = "radCollapsiblePanel1";
             // 
             // radCollapsiblePanel1.PanelContainer
@@ -67,31 +73,59 @@
             // 
             // Input_plt
             // 
-            chartArea1.AxisX.MajorGrid.Enabled = false;
-            chartArea1.AxisY.MajorGrid.Enabled = false;
-            chartArea1.Name = "Input";
-            this.Input_plt.ChartAreas.Add(chartArea1);
+            chartArea3.AxisX.MajorGrid.Enabled = false;
+            chartArea3.AxisY.MajorGrid.Enabled = false;
+            chartArea3.Name = "Input";
+            this.Input_plt.ChartAreas.Add(chartArea3);
             this.Input_plt.Cursor = System.Windows.Forms.Cursors.Arrow;
-            legend1.Name = "Legend1";
-            this.Input_plt.Legends.Add(legend1);
+            legend3.Name = "Legend1";
+            this.Input_plt.Legends.Add(legend3);
             this.Input_plt.Location = new System.Drawing.Point(0, 3);
             this.Input_plt.Name = "Input_plt";
             this.Input_plt.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series1.ChartArea = "Input";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Legend = "Legend1";
-            series1.Name = "Data";
-            series1.YValuesPerPoint = 2;
-            this.Input_plt.Series.Add(series1);
+            series3.ChartArea = "Input";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Legend = "Legend1";
+            series3.Name = "Data";
+            series3.YValuesPerPoint = 2;
+            this.Input_plt.Series.Add(series3);
             this.Input_plt.Size = new System.Drawing.Size(402, 365);
             this.Input_plt.TabIndex = 0;
             this.Input_plt.Text = "chart1";
+            // 
+            // I_O
+            // 
+            chartArea4.AxisX.MajorGrid.Enabled = false;
+            chartArea4.AxisY.MajorGrid.Enabled = false;
+            chartArea4.Name = "Input";
+            this.I_O.ChartAreas.Add(chartArea4);
+            this.I_O.Cursor = System.Windows.Forms.Cursors.Arrow;
+            legend4.Name = "Legend1";
+            this.I_O.Legends.Add(legend4);
+            this.I_O.Location = new System.Drawing.Point(12, 38);
+            this.I_O.Name = "I_O";
+            this.I_O.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
+            series4.ChartArea = "Input";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series4.Legend = "Legend1";
+            series4.Name = "Data";
+            series4.YValuesPerPoint = 2;
+            series5.ChartArea = "Input";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series5.Legend = "Legend1";
+            series5.Name = "Output";
+            this.I_O.Series.Add(series4);
+            this.I_O.Series.Add(series5);
+            this.I_O.Size = new System.Drawing.Size(432, 315);
+            this.I_O.TabIndex = 10;
+            this.I_O.Text = "chart1";
             // 
             // Graph_Training
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(681, 409);
+            this.Controls.Add(this.I_O);
             this.Controls.Add(this.radCollapsiblePanel1);
             this.Controls.Add(this.radButton1);
             this.Name = "Graph_Training";
@@ -106,6 +140,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radCollapsiblePanel1)).EndInit();
             this.radCollapsiblePanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Input_plt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.I_O)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -116,5 +151,6 @@
         private Telerik.WinControls.UI.RadButton radButton1;
         private Telerik.WinControls.UI.RadCollapsiblePanel radCollapsiblePanel1;
         public System.Windows.Forms.DataVisualization.Charting.Chart Input_plt;
+        private System.Windows.Forms.DataVisualization.Charting.Chart I_O;
     }
 }

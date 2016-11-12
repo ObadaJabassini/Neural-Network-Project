@@ -83,9 +83,6 @@ namespace NeuralNetworkProject.NeuralNetwork
         public double LearningRate { get; internal set; }
         public FunctionApplier Applier { get; internal set; }
 
-        public override string ToString()
-        {
-            return "\nNeuronsNumber :"+NeuronsNumber +"\nLearningRate :"+LearningRate+"\nApplier"+Applier;
-        }
+
     }
 }

@@ -61,13 +61,23 @@ namespace NeuralNetworkProject.GUI
             Graph_Training GraphTraining = new Graph_Training(nn);
             for(int i=0;i< nn.Layers.Count;i++)
             {
-               radDiagram1.AddShape(new Layer_shape("Layer"+i+nn.Layers[i]), null,new Point(i*  250,0));
+               radDiagram1.AddShape(new Layer_shape("Layer"+i+Layerinfo(nn.Layers[i])), null,new Point(i*  250,0));
             }
             for(int i=1;i<radDiagram1.Shapes.Count;i++)
                 {
                     radDiagram1.AddConnection((IShape)radDiagram1.Shapes[i],
                         (IShape)radDiagram1.Shapes[i - 1]);
                 }
+        }
+
+        private static string Layerinfo(Layer layer)
+        {
+            return "\n\nNeuronsNumber :\n" +
+                   layer.NeuronsNumber +
+                   "\nLearningRate :\n" +
+                   layer.LearningRate
+                  // + "AF :\n" + layer.Applier.ActivatorFunction.ToString();
+                ;
         }
     }
 }
