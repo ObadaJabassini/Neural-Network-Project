@@ -23,5 +23,10 @@ namespace NeuralNetworkProject
         {
             this.radLabel1.Text += " "+num+" :";
         }
+
+        private void radButton1_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

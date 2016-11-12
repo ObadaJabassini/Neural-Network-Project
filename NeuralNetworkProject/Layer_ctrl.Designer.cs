@@ -48,6 +48,7 @@ namespace NeuralNetworkProject
             this.radButton1.Size = new System.Drawing.Size(36, 21);
             this.radButton1.TabIndex = 0;
             this.radButton1.Text = "radButton1";
+            this.radButton1.Click += new System.EventHandler(this.radButton1_Click);
             // 
             // radLabel1
             // 
@@ -59,7 +60,7 @@ namespace NeuralNetworkProject
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(123, 0);
+            this.numericUpDown1.Location = new System.Drawing.Point(123, 2);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(53, 20);
             this.numericUpDown1.TabIndex = 3;
@@ -69,7 +70,7 @@ namespace NeuralNetworkProject
             this.AF_drpdn.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
             radListDataItem2.Text = "SIGMOID";
             this.AF_drpdn.Items.Add(radListDataItem2);
-            this.AF_drpdn.Location = new System.Drawing.Point(39, 0);
+            this.AF_drpdn.Location = new System.Drawing.Point(39, 1);
             this.AF_drpdn.Name = "AF_drpdn";
             this.AF_drpdn.Size = new System.Drawing.Size(78, 20);
             this.AF_drpdn.TabIndex = 0;
