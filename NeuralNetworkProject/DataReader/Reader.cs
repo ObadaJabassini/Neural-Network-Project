@@ -34,7 +34,7 @@ namespace NeuralNetworkProject.DataReader
                     if (type == "class")
                     {
                         /*GUI :For Plottin Data*/
-                        LoadData.Input_plt.Series[0].ChartType=SeriesChartType.Point;
+                        //LoadData.Input_plt.Series[0].ChartType=SeriesChartType.Point;
                         /*GUI :For Plottin Data*/
 
                         Console.WriteLine("Arrived");
@@ -63,7 +63,7 @@ namespace NeuralNetworkProject.DataReader
                     else
                     {
                         /*GUI :For Plottin Data*/
-                        LoadData.Input_plt.Series[0].ChartType = SeriesChartType.Spline;
+                        //LoadData.Input_plt.Series[0].ChartType = SeriesChartType.Spline;
                         /*GUI :For Plottin Data*/
 
                         Console.WriteLine("arrived");

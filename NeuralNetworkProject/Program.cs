@@ -14,6 +14,11 @@ namespace NeuralNetworkProject
          [STAThread]
         public static void Main(string[] args)
         {
+            //Startup Form
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new LoadData());
+
             //var t = DataReader.DataReader.Instance.ReadFromFile(@"C:\Users\DELL\Desktop\Datasets\test.txt");
             //Training.Trainer trainer = new Training.Trainer() { };
             //NeuralNetwork.NeuralNetwork nn = new NeuralNetwork.NeuralNetworkBuilder().
@@ -27,10 +32,7 @@ namespace NeuralNetworkProject
             //Console.WriteLine(tt.Item1[tt.Item1.Count - 1]);
             //Console.ReadLine();
 
-            //Startup Form
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoadData());
+            
         }
     }
 }
