@@ -39,7 +39,7 @@
             // 
             // LC_GC
             // 
-            this.LC_GC.BackColor = System.Drawing.Color.DarkSalmon;
+            this.LC_GC.BackColor = System.Drawing.Color.LightSalmon;
             chartArea1.AxisX.MajorGrid.Enabled = false;
             chartArea1.AxisY.MajorGrid.Enabled = false;
             chartArea1.Name = "Input";
