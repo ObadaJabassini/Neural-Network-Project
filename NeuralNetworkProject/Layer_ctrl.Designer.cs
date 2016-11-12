@@ -97,9 +97,9 @@ namespace NeuralNetworkProject
 
         #endregion
 
-        private Telerik.WinControls.UI.RadButton radButton1;
-        private Telerik.WinControls.UI.RadLabel radLabel1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private Telerik.WinControls.UI.RadDropDownList AF_drpdn;
+        public Telerik.WinControls.UI.RadButton radButton1;
+        public Telerik.WinControls.UI.RadLabel radLabel1;
+        public System.Windows.Forms.NumericUpDown numericUpDown1;
+        public Telerik.WinControls.UI.RadDropDownList AF_drpdn;
     }
 }

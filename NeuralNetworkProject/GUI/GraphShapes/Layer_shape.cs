@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
 
-namespace ANN_test
+namespace NeuralNetworkProject.GUI
 {
     class Layer_shape: RadDiagramContainerShape
     {

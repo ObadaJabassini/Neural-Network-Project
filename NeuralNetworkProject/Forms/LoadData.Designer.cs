@@ -33,9 +33,6 @@ namespace NeuralNetworkProject
             Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.Network_creat = new Telerik.WinControls.UI.RadButton();
             this.BP = new Telerik.WinControls.UI.RadPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -44,11 +41,10 @@ namespace NeuralNetworkProject
             this.epochs_num = new System.Windows.Forms.NumericUpDown();
             this.Algorithem = new Telerik.WinControls.UI.RadDropDownList();
             this.LoadData_btn = new Telerik.WinControls.UI.RadButton();
-            this.Input_plt = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.LoadData_dlg = new System.Windows.Forms.OpenFileDialog();
             this.layers2 = new NeuralNetworkProject.Layer_ctrl();
             this.layers1 = new NeuralNetworkProject.Layer_ctrl();
-            this.radCollapsiblePanel1 = new Telerik.WinControls.UI.RadCollapsiblePanel();
+            this.radDiagram1 = new Telerik.WinControls.UI.RadDiagram();
             ((System.ComponentModel.ISupportInitialize)(this.Network_creat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BP)).BeginInit();
             this.BP.SuspendLayout();
@@ -58,20 +54,18 @@ namespace NeuralNetworkProject
             ((System.ComponentModel.ISupportInitialize)(this.epochs_num)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Algorithem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoadData_btn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Input_plt)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radCollapsiblePanel1)).BeginInit();
-            this.radCollapsiblePanel1.PanelContainer.SuspendLayout();
-            this.radCollapsiblePanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radDiagram1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // Network_creat
             // 
-            this.Network_creat.Location = new System.Drawing.Point(103, 391);
+            this.Network_creat.Location = new System.Drawing.Point(115, 393);
             this.Network_creat.Name = "Network_creat";
             this.Network_creat.Size = new System.Drawing.Size(106, 24);
             this.Network_creat.TabIndex = 7;
-            this.Network_creat.Text = "Creat Network";
+            this.Network_creat.Text = "Create Network";
+            this.Network_creat.Click += new System.EventHandler(this.Network_creat_Click);
             // 
             // BP
             // 
@@ -144,28 +138,6 @@ namespace NeuralNetworkProject
             this.LoadData_btn.Text = "Load Data";
             this.LoadData_btn.Click += new System.EventHandler(this.LoadData_btn_Click);
             // 
-            // Input_plt
-            // 
-            chartArea1.AxisX.MajorGrid.Enabled = false;
-            chartArea1.AxisY.MajorGrid.Enabled = false;
-            chartArea1.Name = "Input";
-            this.Input_plt.ChartAreas.Add(chartArea1);
-            this.Input_plt.Cursor = System.Windows.Forms.Cursors.Arrow;
-            legend1.Name = "Legend1";
-            this.Input_plt.Legends.Add(legend1);
-            this.Input_plt.Location = new System.Drawing.Point(0, 3);
-            this.Input_plt.Name = "Input_plt";
-            this.Input_plt.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series1.ChartArea = "Input";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Legend = "Legend1";
-            series1.Name = "Data";
-            series1.YValuesPerPoint = 2;
-            this.Input_plt.Series.Add(series1);
-            this.Input_plt.Size = new System.Drawing.Size(402, 365);
-            this.Input_plt.TabIndex = 0;
-            this.Input_plt.Text = "chart1";
-            // 
             // LoadData_dlg
             // 
             this.LoadData_dlg.DefaultExt = "txt";
@@ -188,26 +160,21 @@ namespace NeuralNetworkProject
             this.layers1.Size = new System.Drawing.Size(241, 24);
             this.layers1.TabIndex = 0;
             // 
-            // radCollapsiblePanel1
+            // radDiagram1
             // 
-            this.radCollapsiblePanel1.ExpandDirection = Telerik.WinControls.UI.RadDirection.Right;
-            this.radCollapsiblePanel1.Location = new System.Drawing.Point(310, 27);
-            this.radCollapsiblePanel1.Name = "radCollapsiblePanel1";
-            // 
-            // radCollapsiblePanel1.PanelContainer
-            // 
-            this.radCollapsiblePanel1.PanelContainer.Controls.Add(this.Input_plt);
-            this.radCollapsiblePanel1.PanelContainer.Size = new System.Drawing.Size(404, 371);
-            this.radCollapsiblePanel1.Size = new System.Drawing.Size(432, 373);
-            this.radCollapsiblePanel1.TabIndex = 8;
-            this.radCollapsiblePanel1.Text = "radCollapsiblePanel1";
+            this.radDiagram1.Location = new System.Drawing.Point(312, 11);
+            this.radDiagram1.Name = "radDiagram1";
+            this.radDiagram1.Size = new System.Drawing.Size(437, 400);
+            this.radDiagram1.TabIndex = 9;
+            this.radDiagram1.Text = "radDiagram1";
+            this.radDiagram1.Zoom = 0.5D;
             // 
             // LoadData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(761, 442);
-            this.Controls.Add(this.radCollapsiblePanel1);
+            this.Controls.Add(this.radDiagram1);
             this.Controls.Add(this.Epochs);
             this.Controls.Add(this.Network_creat);
             this.Controls.Add(this.BP);
@@ -230,10 +197,7 @@ namespace NeuralNetworkProject
             ((System.ComponentModel.ISupportInitialize)(this.epochs_num)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Algorithem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoadData_btn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Input_plt)).EndInit();
-            this.radCollapsiblePanel1.PanelContainer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radCollapsiblePanel1)).EndInit();
-            this.radCollapsiblePanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radDiagram1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -252,8 +216,7 @@ namespace NeuralNetworkProject
         private Layer_ctrl layers2;
         private Layer_ctrl layers1;
         public System.Windows.Forms.OpenFileDialog LoadData_dlg;
-        public System.Windows.Forms.DataVisualization.Charting.Chart Input_plt;
         private Telerik.WinControls.UI.RadButton AddNewLayer;
-        private Telerik.WinControls.UI.RadCollapsiblePanel radCollapsiblePanel1;
+        private Telerik.WinControls.UI.RadDiagram radDiagram1;
     }
 }

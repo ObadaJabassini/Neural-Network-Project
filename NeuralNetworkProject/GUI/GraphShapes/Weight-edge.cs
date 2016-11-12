@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Telerik.WinControls.UI;
 
-namespace ANN_test
+namespace NeuralNetworkProject.GUI
 {
     class Weight_edge : RadDiagramConnection
     {

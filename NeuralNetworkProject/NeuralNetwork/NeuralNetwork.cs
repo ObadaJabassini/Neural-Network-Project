@@ -13,7 +13,7 @@ namespace NeuralNetworkProject.NeuralNetwork
         public IList<Layer> Layers { get; private set; }
         public IList<Matrix<double>> HiddenWeights { get; private set; }
 
-        internal NeuralNetwork(IList<Layer> layers)
+        public NeuralNetwork(IList<Layer> layers)
         {
             this.Layers = layers;
             HiddenWeights = new List<Matrix<double>>(layers.Count - 1);

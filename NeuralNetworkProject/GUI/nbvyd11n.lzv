@@ -65,15 +65,21 @@ namespace NeuralNetworkProject.GUI
             //Console.WriteLine(tt.Item1[tt.Item1.Count - 1]);
             //Console.ReadLine();
             Graph_Training GraphTraining = new Graph_Training(nn);
-            for(int i=0;i< nn.Layers.Count;i++)
+            foreach (var layer in nn.Layers)
             {
-               radDiagram1.AddShape(new Layer_shape(), null,new Point(i*  150,0));
-            }
-            for(int i=1;i<radDiagram1.Shapes.Count;i++)
+                if (radDiagram1.Items.Count == 0)
+                    radDiagram1.AddShape(new Layer_shape());
+                else
                 {
-                    radDiagram1.AddConnection((IShape)radDiagram1.Shapes[i],
-                        (IShape)radDiagram1.Shapes[i - 1]);
+                    radDiagram1.AddShape(new Layer_shape(), null,
+                        new Point(radDiagram1.Items[radDiagram1.Items.Count - 2].Location.X + 150,
+                            radDiagram1.Items[radDiagram1.Items.Count - 1].Location.Y)
+                        );
+                    radDiagram1.AddConnection((IShape)radDiagram1.Items[radDiagram1.Items.Count -3],
+                        (IShape)radDiagram1.Items[radDiagram1.Items.Count - 1]);
                 }
+            }
+           // GraphTraining.Show();
         }
     }
 }
