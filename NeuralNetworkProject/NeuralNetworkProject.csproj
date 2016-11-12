@@ -50,7 +50,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject />
+    <StartupObject>
+    </StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="clipper_library">
@@ -93,19 +94,20 @@
     <Compile Include="DataAdapter\IndexDivider.cs" />
     <Compile Include="DataAdapter\StaticDivider.cs" />
     <Compile Include="DataReader\Reader.cs" />
-    <Compile Include="Graph-Training.cs">
+    <Compile Include="Forms\Graph-Training.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Graph-Training.Designer.cs">
+    <Compile Include="Forms\Graph-Training.Designer.cs">
       <DependentUpon>Graph-Training.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Controller.cs" />
     <Compile Include="GUI\GraphShapes\Feature_shape.cs" />
     <Compile Include="GUI\GraphShapes\Layer_shape.cs" />
     <Compile Include="GUI\GraphShapes\Weight-edge.cs" />
-    <Compile Include="LoadData.cs">
+    <Compile Include="Forms\LoadData.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoadData.Designer.cs">
+    <Compile Include="Forms\LoadData.Designer.cs">
       <DependentUpon>LoadData.cs</DependentUpon>
     </Compile>
     <Compile Include="Math\ActivatorFunctions.cs" />
@@ -116,10 +118,10 @@
     <Compile Include="NeuralNetwork\NeuralNetwork.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Result.cs">
+    <Compile Include="Forms\Result.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Result.Designer.cs">
+    <Compile Include="Forms\Result.Designer.cs">
       <DependentUpon>Result.cs</DependentUpon>
     </Compile>
     <Compile Include="Training\BackpropagationAlgorithm.cs" />
@@ -149,14 +151,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Graph-Training.resx">
+    <EmbeddedResource Include="Forms\Graph-Training.resx">
       <DependentUpon>Graph-Training.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoadData.resx">
+    <EmbeddedResource Include="Forms\LoadData.resx">
       <DependentUpon>LoadData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
-    <EmbeddedResource Include="Result.resx">
+    <EmbeddedResource Include="Forms\Result.resx">
       <DependentUpon>Result.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

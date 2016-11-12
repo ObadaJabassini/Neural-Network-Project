@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.Train = new Telerik.WinControls.UI.RadButton();
             this.BP = new Telerik.WinControls.UI.RadPanel();
             this.Epochs = new Telerik.WinControls.UI.RadLabel();
@@ -109,11 +112,16 @@
             // 
             // Algorithem
             // 
-            this.Algorithem.Location = new System.Drawing.Point(37, 100);
+            radListDataItem1.Text = "BackProbagation";
+            radListDataItem2.Text = "BackProbagation with Momentum";
+            radListDataItem3.Text = "Simple Perceptron";
+            this.Algorithem.Items.Add(radListDataItem1);
+            this.Algorithem.Items.Add(radListDataItem2);
+            this.Algorithem.Items.Add(radListDataItem3);
+            this.Algorithem.Location = new System.Drawing.Point(12, 100);
             this.Algorithem.Name = "Algorithem";
-            this.Algorithem.Size = new System.Drawing.Size(142, 20);
+            this.Algorithem.Size = new System.Drawing.Size(197, 20);
             this.Algorithem.TabIndex = 3;
-            this.Algorithem.Text = "Choose Algorithem";
             // 
             // LoadData_btn
             // 
@@ -126,22 +134,22 @@
             // 
             // Input
             // 
-            chartArea3.AxisX.MajorGrid.Enabled = false;
-            chartArea3.AxisY.MajorGrid.Enabled = false;
-            chartArea3.Name = "Input";
-            this.Input.ChartAreas.Add(chartArea3);
+            chartArea1.AxisX.MajorGrid.Enabled = false;
+            chartArea1.AxisY.MajorGrid.Enabled = false;
+            chartArea1.Name = "Input";
+            this.Input.ChartAreas.Add(chartArea1);
             this.Input.Cursor = System.Windows.Forms.Cursors.Arrow;
-            legend3.Name = "Legend1";
-            this.Input.Legends.Add(legend3);
+            legend1.Name = "Legend1";
+            this.Input.Legends.Add(legend1);
             this.Input.Location = new System.Drawing.Point(245, 22);
             this.Input.Name = "Input";
             this.Input.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series3.ChartArea = "Input";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series3.Legend = "Legend1";
-            series3.Name = "Data";
-            series3.YValuesPerPoint = 2;
-            this.Input.Series.Add(series3);
+            series1.ChartArea = "Input";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Legend = "Legend1";
+            series1.Name = "Data";
+            series1.YValuesPerPoint = 2;
+            this.Input.Series.Add(series1);
             this.Input.Size = new System.Drawing.Size(519, 373);
             this.Input.TabIndex = 0;
             this.Input.Text = "chart1";
@@ -151,7 +159,8 @@
             this.LoadData_dlg.DefaultExt = "txt";
             this.LoadData_dlg.DereferenceLinks = false;
             this.LoadData_dlg.FileName = "openFileDialog1";
-            this.LoadData_dlg.Filter = "\"Excel files (*.csv)|*.csv|Text files (*.txt)|*.txt|All files (*.*)|*.*\"";
+            this.LoadData_dlg.Filter = "Excel files (*.csv)|*.csv|Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            this.LoadData_dlg.FileOk += new System.ComponentModel.CancelEventHandler(this.LoadData_dlg_FileOk);
             // 
             // LoadData
             // 
@@ -198,6 +207,6 @@
         private Telerik.WinControls.UI.RadDropDownList Algorithem;
         private Telerik.WinControls.UI.RadButton LoadData_btn;
         private System.Windows.Forms.DataVisualization.Charting.Chart Input;
-        private System.Windows.Forms.OpenFileDialog LoadData_dlg;
+        public static System.Windows.Forms.OpenFileDialog LoadData_dlg;
     }
 }
