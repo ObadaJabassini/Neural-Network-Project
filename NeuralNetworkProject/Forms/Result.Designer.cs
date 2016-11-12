@@ -39,6 +39,7 @@
             // 
             // LC_GC
             // 
+            this.LC_GC.BackColor = System.Drawing.Color.DarkSalmon;
             chartArea1.AxisX.MajorGrid.Enabled = false;
             chartArea1.AxisY.MajorGrid.Enabled = false;
             chartArea1.Name = "Input";
@@ -82,6 +83,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "Result";
+            this.ThemeName = "Office2010Black";
             ((System.ComponentModel.ISupportInitialize)(this.LC_GC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);

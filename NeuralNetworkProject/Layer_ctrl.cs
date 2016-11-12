@@ -21,10 +21,15 @@ namespace NeuralNetworkProject
 
         public Layer_ctrl(string num)
         {
-            this.radLabel1.Text += " "+num+" :";
+        //    this.radLabel1.Text += " "+num+" :";
         }
 
         private void radButton1_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }

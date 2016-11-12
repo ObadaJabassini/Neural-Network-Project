@@ -67,6 +67,11 @@ namespace NeuralNetworkProject
         {
 
         }
+
+        private void Algorithem_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
+        {
+
+        }
         
     }
 }
