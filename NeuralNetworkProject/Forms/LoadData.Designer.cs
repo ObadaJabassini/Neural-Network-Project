@@ -1,4 +1,6 @@
-﻿namespace NeuralNetworkProject
+﻿using static NeuralNetworkProject.LoadData;
+
+namespace NeuralNetworkProject
 {
     partial class LoadData
     {
@@ -42,8 +44,8 @@
             this.Hdn_num = new System.Windows.Forms.NumericUpDown();
             this.Algorithem = new Telerik.WinControls.UI.RadDropDownList();
             this.LoadData_btn = new Telerik.WinControls.UI.RadButton();
-            this.Input = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.LoadData_dlg = new System.Windows.Forms.OpenFileDialog();
+            Input_plt = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            LoadData_dlg = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.Train)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BP)).BeginInit();
             this.BP.SuspendLayout();
@@ -53,7 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Hdn_num)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Algorithem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoadData_btn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Input)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(Input_plt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,42 +134,42 @@
             this.LoadData_btn.Text = "Load Data";
             this.LoadData_btn.Click += new System.EventHandler(this.LoadData_btn_Click);
             // 
-            // Input
+            // Input_plt
             // 
             chartArea1.AxisX.MajorGrid.Enabled = false;
             chartArea1.AxisY.MajorGrid.Enabled = false;
             chartArea1.Name = "Input";
-            this.Input.ChartAreas.Add(chartArea1);
-            this.Input.Cursor = System.Windows.Forms.Cursors.Arrow;
+            Input_plt.ChartAreas.Add(chartArea1);
+            Input_plt.Cursor = System.Windows.Forms.Cursors.Arrow;
             legend1.Name = "Legend1";
-            this.Input.Legends.Add(legend1);
-            this.Input.Location = new System.Drawing.Point(245, 22);
-            this.Input.Name = "Input";
-            this.Input.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
+            Input_plt.Legends.Add(legend1);
+            Input_plt.Location = new System.Drawing.Point(245, 22);
+            Input_plt.Name = "Input_plt";
+            Input_plt.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
             series1.ChartArea = "Input";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series1.Legend = "Legend1";
             series1.Name = "Data";
             series1.YValuesPerPoint = 2;
-            this.Input.Series.Add(series1);
-            this.Input.Size = new System.Drawing.Size(519, 373);
-            this.Input.TabIndex = 0;
-            this.Input.Text = "chart1";
+            Input_plt.Series.Add(series1);
+            Input_plt.Size = new System.Drawing.Size(519, 373);
+            Input_plt.TabIndex = 0;
+            Input_plt.Text = "chart1";
             // 
             // LoadData_dlg
             // 
-            this.LoadData_dlg.DefaultExt = "txt";
-            this.LoadData_dlg.DereferenceLinks = false;
-            this.LoadData_dlg.FileName = "openFileDialog1";
-            this.LoadData_dlg.Filter = "Excel files (*.csv)|*.csv|Text files (*.txt)|*.txt|All files (*.*)|*.*";
-            this.LoadData_dlg.FileOk += new System.ComponentModel.CancelEventHandler(this.LoadData_dlg_FileOk);
+            LoadData_dlg.DefaultExt = "txt";
+            LoadData_dlg.DereferenceLinks = false;
+            LoadData_dlg.FileName = "openFileDialog1";
+            LoadData_dlg.Filter = "Excel files (*.csv)|*.csv|Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            LoadData_dlg.FileOk += new System.ComponentModel.CancelEventHandler(this.LoadData_dlg_FileOk);
             // 
             // LoadData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(795, 442);
-            this.Controls.Add(this.Input);
+            this.Controls.Add(Input_plt);
             this.Controls.Add(this.Train);
             this.Controls.Add(this.BP);
             this.Controls.Add(this.Algorithem);
@@ -189,7 +191,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Hdn_num)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Algorithem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoadData_btn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Input)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(Input_plt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -206,7 +208,7 @@
         private System.Windows.Forms.NumericUpDown Hdn_num;
         private Telerik.WinControls.UI.RadDropDownList Algorithem;
         private Telerik.WinControls.UI.RadButton LoadData_btn;
-        private System.Windows.Forms.DataVisualization.Charting.Chart Input;
         public static System.Windows.Forms.OpenFileDialog LoadData_dlg;
+        public static System.Windows.Forms.DataVisualization.Charting.Chart Input_plt;
     }
 }

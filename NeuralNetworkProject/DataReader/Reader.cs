@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace NeuralNetworkProject.DataReader
 {
@@ -32,6 +33,10 @@ namespace NeuralNetworkProject.DataReader
                     Console.WriteLine(type);
                     if (type == "class")
                     {
+                        /*GUI :For Plottin Data*/
+                        LoadData.Input_plt.Series[0].ChartType=SeriesChartType.Point;
+                        /*GUI :For Plottin Data*/
+
                         Console.WriteLine("Arrived");
                         int maxClassified = -1;
                         char delimiter = lines[0].Contains(",") ? ',' : ' ';
@@ -53,9 +58,14 @@ namespace NeuralNetworkProject.DataReader
                             output.SetRow(i, Vector<double>.Build.Dense(arr));
                         }
                         return new Tuple<Matrix<double>, Matrix<double>>(mat, output);
+
                     }
                     else
                     {
+                        /*GUI :For Plottin Data*/
+                        LoadData.Input_plt.Series[0].ChartType = SeriesChartType.Spline;
+                        /*GUI :For Plottin Data*/
+
                         Console.WriteLine("arrived");
                         char delimiter = lines[0].Contains(",") ? ',' : ' ';
                         var mat = Matrix<double>.Build.Random(lines.Length, lines[0].Split(delimiter).Length);

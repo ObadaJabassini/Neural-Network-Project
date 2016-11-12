@@ -30,6 +30,7 @@ namespace NeuralNetworkProject
         private void LoadData_dlg_FileOk(object sender, CancelEventArgs e)
         {
             Controller.ParseFile();
+
         }
     }
 }
