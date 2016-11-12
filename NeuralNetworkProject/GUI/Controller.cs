@@ -28,6 +28,8 @@ namespace NeuralNetworkProject.GUI
             Layer_ctrl temp;
             int neuronsnumber;
             //ActivatorFunctions.FunctionName applier ;
+            NeuralNetwork.NeuralNetworkBuilder b = new NeuralNetwork.NeuralNetworkBuilder();
+            
             foreach (var layer  in layers.Controls)
             {
                 temp= layer as Layer_ctrl;
@@ -35,17 +37,9 @@ namespace NeuralNetworkProject.GUI
 
                 //if (ActivatorFunctions.FunctionName.SIGMOID.ToString() == temp.AF_drpdn.SelectedItem.Text)
                 //    applier = ActivatorFunctions.FunctionName.SIGMOID;
-                 layersent.Add(new Layer() { Applier = new Math.FunctionApplier(), NeuronsNumber = neuronsnumber });
+                 b.Layer( neuronsnumber,new Math.FunctionApplier());
             }
-            NeuralNetwork.NeuralNetwork nn = new NeuralNetwork.NeuralNetwork(layersent);
-            //NeuralNetwork.NeuralNetwork nn = new NeuralNetwork.NeuralNetworkBuilder().
-            //Layer(4, new Math.FunctionApplier()).
-            //Layer(5, new Math.FunctionApplier()).
-            //Layer(3, new Math.FunctionApplier()).
-            //Build();
-            
-            //if (LoadData_dlg.CheckFileExists == false) return false;
-
+            NeuralNetwork.NeuralNetwork nn=b.Build();
             string FileName = LoadData_dlg.FileName;
 
             var tuples = DataReader.DataReader.Instance.ReadFromFile(FileName);
@@ -67,7 +61,7 @@ namespace NeuralNetworkProject.GUI
             Graph_Training GraphTraining = new Graph_Training(nn);
             for(int i=0;i< nn.Layers.Count;i++)
             {
-               radDiagram1.AddShape(new Layer_shape(), null,new Point(i*  150,0));
+               radDiagram1.AddShape(new Layer_shape("Layer"+i+nn.Layers[i]), null,new Point(i*  250,0));
             }
             for(int i=1;i<radDiagram1.Shapes.Count;i++)
                 {

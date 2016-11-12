@@ -42,9 +42,9 @@ namespace NeuralNetworkProject
             this.Algorithem = new Telerik.WinControls.UI.RadDropDownList();
             this.LoadData_btn = new Telerik.WinControls.UI.RadButton();
             this.LoadData_dlg = new System.Windows.Forms.OpenFileDialog();
+            this.radDiagram1 = new Telerik.WinControls.UI.RadDiagram();
             this.layers2 = new NeuralNetworkProject.Layer_ctrl();
             this.layers1 = new NeuralNetworkProject.Layer_ctrl();
-            this.radDiagram1 = new Telerik.WinControls.UI.RadDiagram();
             ((System.ComponentModel.ISupportInitialize)(this.Network_creat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BP)).BeginInit();
             this.BP.SuspendLayout();
@@ -146,6 +146,16 @@ namespace NeuralNetworkProject
             this.LoadData_dlg.Title = "Open Dataset File";
             this.LoadData_dlg.FileOk += new System.ComponentModel.CancelEventHandler(this.LoadData_dlg_FileOk);
             // 
+            // radDiagram1
+            // 
+            this.radDiagram1.Location = new System.Drawing.Point(312, 11);
+            this.radDiagram1.Name = "radDiagram1";
+            this.radDiagram1.Size = new System.Drawing.Size(437, 400);
+            this.radDiagram1.TabIndex = 9;
+            this.radDiagram1.Text = "radDiagram1";
+            this.radDiagram1.Zoom = 0.5D;
+            this.radDiagram1.Click += new System.EventHandler(this.radDiagram1_Click);
+            // 
             // layers2
             // 
             this.layers2.Location = new System.Drawing.Point(3, 3);
@@ -159,15 +169,6 @@ namespace NeuralNetworkProject
             this.layers1.Name = "layers1";
             this.layers1.Size = new System.Drawing.Size(241, 24);
             this.layers1.TabIndex = 0;
-            // 
-            // radDiagram1
-            // 
-            this.radDiagram1.Location = new System.Drawing.Point(312, 11);
-            this.radDiagram1.Name = "radDiagram1";
-            this.radDiagram1.Size = new System.Drawing.Size(437, 400);
-            this.radDiagram1.TabIndex = 9;
-            this.radDiagram1.Text = "radDiagram1";
-            this.radDiagram1.Zoom = 0.5D;
             // 
             // LoadData
             // 

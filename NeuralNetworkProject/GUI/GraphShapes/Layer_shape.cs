@@ -10,11 +10,13 @@ using Telerik.WinControls.UI;
 namespace NeuralNetworkProject.GUI
 {
     class Layer_shape: RadDiagramContainerShape
-    {
-        public Layer_shape()
+    {      
+        public Layer_shape(string text)
         {
-            this.Shape=new RoundRectShape();
-            this.BackColor=Color.Bisque;
+            this.Text = text;
+            this.Shape = new RoundRectShape();
+            this.BackColor = Color.Bisque;
+            this.Size=new Size(150,150);
         }
     }
 }

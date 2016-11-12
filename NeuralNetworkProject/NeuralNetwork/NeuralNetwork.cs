@@ -13,7 +13,7 @@ namespace NeuralNetworkProject.NeuralNetwork
         public IList<Layer> Layers { get; private set; }
         public IList<Matrix<double>> HiddenWeights { get; private set; }
 
-        public NeuralNetwork(IList<Layer> layers)
+        internal NeuralNetwork(IList<Layer> layers)
         {
             this.Layers = layers;
             HiddenWeights = new List<Matrix<double>>(layers.Count - 1);
@@ -82,5 +82,10 @@ namespace NeuralNetworkProject.NeuralNetwork
         public int NeuronsNumber { get; internal set; }
         public double LearningRate { get; internal set; }
         public FunctionApplier Applier { get; internal set; }
+
+        public override string ToString()
+        {
+            return "\nNeuronsNumber :"+NeuronsNumber +"\nLearningRate :"+LearningRate+"\nApplier"+Applier;
+        }
     }
 }

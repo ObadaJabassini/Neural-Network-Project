@@ -62,6 +62,11 @@ namespace NeuralNetworkProject
             
             //this.Hide();
         }
+
+        private void radDiagram1_Click(object sender, EventArgs e)
+        {
+
+        }
         
     }
 }
