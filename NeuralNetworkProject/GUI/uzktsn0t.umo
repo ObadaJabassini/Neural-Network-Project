@@ -79,10 +79,7 @@ namespace NeuralNetworkProject.GUI
                     radDiagram1.Connections[i - 1].TargetCapSize=new SizeF(20,25);
                     //I don't know how!!
                     RadDiagramConnection connection1 = (RadDiagramConnection) radDiagram1.Connections[i - 1];
-                    //connection1.BackColor = Color.Crimson;
-                   // connection1.BackColor = Color.LightCoral;
-                    connection1.BackColor = Color.LightSalmon;
-                    //connection1.BackColor = Color.Tomato;
+                    connection1.BackColor = Color.Salmon;
                     //radDiagram1.Connections[i - 1].
 
 

@@ -36,11 +36,11 @@ namespace NeuralNetworkProject
             this.Network_creat = new Telerik.WinControls.UI.RadButton();
             this.BP = new Telerik.WinControls.UI.RadPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.Epochs = new Telerik.WinControls.UI.RadLabel();
             this.AddNewLayer = new Telerik.WinControls.UI.RadButton();
-            this.epochs_num = new System.Windows.Forms.NumericUpDown();
             this.Algorithem = new Telerik.WinControls.UI.RadDropDownList();
             this.LoadData_btn = new Telerik.WinControls.UI.RadButton();
+            this.Epochs = new Telerik.WinControls.UI.RadLabel();
+            this.epochs_num = new System.Windows.Forms.NumericUpDown();
             this.LoadData_dlg = new System.Windows.Forms.OpenFileDialog();
             this.radDiagram1 = new Telerik.WinControls.UI.RadDiagram();
             this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
@@ -50,11 +50,11 @@ namespace NeuralNetworkProject
             ((System.ComponentModel.ISupportInitialize)(this.BP)).BeginInit();
             this.BP.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Epochs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddNewLayer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epochs_num)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Algorithem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoadData_btn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Epochs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epochs_num)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDiagram1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -99,14 +99,6 @@ namespace NeuralNetworkProject
             this.flowLayoutPanel1.TabIndex = 8;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
-            // Epochs
-            // 
-            this.Epochs.Location = new System.Drawing.Point(583, 419);
-            this.Epochs.Name = "Epochs";
-            this.Epochs.Size = new System.Drawing.Size(42, 18);
-            this.Epochs.TabIndex = 3;
-            this.Epochs.Text = "Epochs";
-            // 
             // AddNewLayer
             // 
             this.AddNewLayer.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -117,14 +109,6 @@ namespace NeuralNetworkProject
             this.AddNewLayer.Text = "Add New Layer";
             this.AddNewLayer.ThemeName = "Office2010Black";
             this.AddNewLayer.Click += new System.EventHandler(this.AddNewLayer_Click);
-            // 
-            // epochs_num
-            // 
-            this.epochs_num.Location = new System.Drawing.Point(407, 417);
-            this.epochs_num.Name = "epochs_num";
-            this.epochs_num.Size = new System.Drawing.Size(104, 20);
-            this.epochs_num.TabIndex = 2;
-            this.epochs_num.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Algorithem
             // 
@@ -152,6 +136,22 @@ namespace NeuralNetworkProject
             this.LoadData_btn.ThemeName = "Office2010Black";
             this.LoadData_btn.Click += new System.EventHandler(this.LoadData_btn_Click);
             // 
+            // Epochs
+            // 
+            this.Epochs.Location = new System.Drawing.Point(583, 419);
+            this.Epochs.Name = "Epochs";
+            this.Epochs.Size = new System.Drawing.Size(42, 18);
+            this.Epochs.TabIndex = 3;
+            this.Epochs.Text = "Epochs";
+            // 
+            // epochs_num
+            // 
+            this.epochs_num.Location = new System.Drawing.Point(407, 417);
+            this.epochs_num.Name = "epochs_num";
+            this.epochs_num.Size = new System.Drawing.Size(104, 20);
+            this.epochs_num.TabIndex = 2;
+            this.epochs_num.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // LoadData_dlg
             // 
             this.LoadData_dlg.DefaultExt = "txt";
@@ -162,6 +162,7 @@ namespace NeuralNetworkProject
             // 
             // radDiagram1
             // 
+            this.radDiagram1.BackColor = System.Drawing.Color.Gray;
             this.radDiagram1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radDiagram1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radDiagram1.Location = new System.Drawing.Point(277, 0);
@@ -173,7 +174,25 @@ namespace NeuralNetworkProject
             this.radDiagram1.Zoom = 0.5D;
             this.radDiagram1.Click += new System.EventHandler(this.radDiagram1_Click);
             ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).ActiveTool = Telerik.Windows.Diagrams.Core.MouseTool.PanTool;
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).ConnectionBridge = Telerik.Windows.Diagrams.Core.BridgeType.None;
             ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).Zoom = 0.5D;
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(11)))), ((int)(((byte)(11)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderInnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(14)))), ((int)(((byte)(14)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderInnerColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderInnerColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderInnerColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(8)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BackColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BackColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).HorizontalLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderLeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(11)))), ((int)(((byte)(11)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderRightColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(11)))), ((int)(((byte)(11)))));
             // 
             // layers2
             // 
@@ -211,11 +230,11 @@ namespace NeuralNetworkProject
             this.BP.ResumeLayout(false);
             this.BP.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Epochs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddNewLayer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epochs_num)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Algorithem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoadData_btn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Epochs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epochs_num)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDiagram1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
@@ -236,7 +255,7 @@ namespace NeuralNetworkProject
         private Layer_ctrl layers1;
         public System.Windows.Forms.OpenFileDialog LoadData_dlg;
         private Telerik.WinControls.UI.RadButton AddNewLayer;
-        private Telerik.WinControls.UI.RadDiagram radDiagram1;
         private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
+        private Telerik.WinControls.UI.RadDiagram radDiagram1;
     }
 }

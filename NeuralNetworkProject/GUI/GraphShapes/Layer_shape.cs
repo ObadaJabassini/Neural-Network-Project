@@ -13,10 +13,18 @@ namespace NeuralNetworkProject.GUI
     {      
         public Layer_shape(string text)
         {
+            
             this.Text = text;
+            //this.BackColor = Color.Khaki;
+            //this.BackColor = Color.Cornsilk;
+            this.BackColor = Color.PaleGoldenrod;
+
+            //this.BackColor = Color.Bisque;
+            this.Size = new Size(150, 150);
+            this.IsConnectorsManipulationEnabled = false;
+            this.IsRotationEnabled = false;
+            this.IsResizingEnabled = false;
             this.Shape = new RoundRectShape();
-            this.BackColor = Color.Bisque;
-            this.Size=new Size(150,150);
         }
     }
 }
