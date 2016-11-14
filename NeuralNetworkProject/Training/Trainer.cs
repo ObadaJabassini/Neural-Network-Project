@@ -58,14 +58,12 @@ namespace NeuralNetworkProject.Training
             //    return temp.Item1[temp.Item1.Count - 1];
             //}).Zip(trainingSetOutput.EnumerateColumns(), (first, second) => computeError(first, second)).Sum();
             //TrainingErrors.Add(error);
-            //trainingERR = error;
             //CrossValidationErrors.Add(crossValidationSet.EnumerateRows().Select(row =>
             //{
             //    var temp = neuralNetwork.ForwardInput(row);
             //    return temp.Item1[temp.Item1.Count - 1];
             //}).Zip(crossValidationSetOutput.EnumerateColumns(), (first, second) => computeError(first, second)).Sum());
             //value.Error = error;
-            // validationERR=error;
            
             /*Trainer as observer*/
                 double validationERR=0,trainingERR=0;

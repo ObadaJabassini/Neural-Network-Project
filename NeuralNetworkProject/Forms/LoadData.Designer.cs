@@ -36,8 +36,6 @@ namespace NeuralNetworkProject
             this.Network_creat = new Telerik.WinControls.UI.RadButton();
             this.BP = new Telerik.WinControls.UI.RadPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.layers2 = new NeuralNetworkProject.Layer_ctrl();
-            this.layers1 = new NeuralNetworkProject.Layer_ctrl();
             this.AddNewLayer = new Telerik.WinControls.UI.RadButton();
             this.Algorithem = new Telerik.WinControls.UI.RadDropDownList();
             this.LoadData_btn = new Telerik.WinControls.UI.RadButton();
@@ -50,6 +48,9 @@ namespace NeuralNetworkProject
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.Train = new Telerik.WinControls.UI.RadButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.layers2 = new NeuralNetworkProject.Layer_ctrl();
+            this.layers1 = new NeuralNetworkProject.Layer_ctrl();
             ((System.ComponentModel.ISupportInitialize)(this.Network_creat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BP)).BeginInit();
             this.BP.SuspendLayout();
@@ -64,13 +65,14 @@ namespace NeuralNetworkProject
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Train)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // Network_creat
             // 
             this.Network_creat.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Network_creat.Location = new System.Drawing.Point(0, 270);
+            this.Network_creat.Location = new System.Drawing.Point(0, 259);
             this.Network_creat.Name = "Network_creat";
             this.Network_creat.Size = new System.Drawing.Size(210, 24);
             this.Network_creat.TabIndex = 7;
@@ -81,12 +83,9 @@ namespace NeuralNetworkProject
             // BP
             // 
             this.BP.BackColor = System.Drawing.Color.DarkSalmon;
+            this.BP.Controls.Add(this.panel2);
             this.BP.Controls.Add(this.panel1);
             this.BP.Controls.Add(this.Train);
-            this.BP.Controls.Add(this.radLabel1);
-            this.BP.Controls.Add(this.EpochsNum);
-            this.BP.Controls.Add(this.Algorithem);
-            this.BP.Controls.Add(this.LoadData_btn);
             this.BP.Dock = System.Windows.Forms.DockStyle.Left;
             this.BP.Location = new System.Drawing.Point(0, 0);
             this.BP.Name = "BP";
@@ -102,30 +101,16 @@ namespace NeuralNetworkProject
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.DarkSalmon;
             this.flowLayoutPanel1.Controls.Add(this.layers2);
             this.flowLayoutPanel1.Controls.Add(this.layers1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 3);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 1);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(210, 237);
             this.flowLayoutPanel1.TabIndex = 8;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
-            // layers2
-            // 
-            this.layers2.Location = new System.Drawing.Point(3, 3);
-            this.layers2.Name = "layers2";
-            this.layers2.Size = new System.Drawing.Size(182, 24);
-            this.layers2.TabIndex = 1;
-            // 
-            // layers1
-            // 
-            this.layers1.Location = new System.Drawing.Point(3, 33);
-            this.layers1.Name = "layers1";
-            this.layers1.Size = new System.Drawing.Size(182, 24);
-            this.layers1.TabIndex = 0;
-            // 
             // AddNewLayer
             // 
             this.AddNewLayer.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.AddNewLayer.Location = new System.Drawing.Point(0, 246);
+            this.AddNewLayer.Location = new System.Drawing.Point(0, 235);
             this.AddNewLayer.Name = "AddNewLayer";
             this.AddNewLayer.Size = new System.Drawing.Size(210, 24);
             this.AddNewLayer.TabIndex = 9;
@@ -141,7 +126,7 @@ namespace NeuralNetworkProject
             this.Algorithem.Items.Add(radListDataItem1);
             this.Algorithem.Items.Add(radListDataItem2);
             this.Algorithem.Items.Add(radListDataItem3);
-            this.Algorithem.Location = new System.Drawing.Point(45, 92);
+            this.Algorithem.Location = new System.Drawing.Point(40, 92);
             this.Algorithem.Name = "Algorithem";
             this.Algorithem.Size = new System.Drawing.Size(197, 20);
             this.Algorithem.TabIndex = 3;
@@ -151,9 +136,10 @@ namespace NeuralNetworkProject
             // 
             // LoadData_btn
             // 
-            this.LoadData_btn.Location = new System.Drawing.Point(76, 12);
+            this.LoadData_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LoadData_btn.Location = new System.Drawing.Point(0, 0);
             this.LoadData_btn.Name = "LoadData_btn";
-            this.LoadData_btn.Size = new System.Drawing.Size(110, 24);
+            this.LoadData_btn.Size = new System.Drawing.Size(277, 37);
             this.LoadData_btn.TabIndex = 5;
             this.LoadData_btn.Text = "Load Data";
             this.LoadData_btn.ThemeName = "Office2010Black";
@@ -219,14 +205,19 @@ namespace NeuralNetworkProject
             // 
             // EpochsNum
             // 
-            this.EpochsNum.Location = new System.Drawing.Point(123, 55);
+            this.EpochsNum.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.EpochsNum.Location = new System.Drawing.Point(118, 55);
             this.EpochsNum.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
             this.EpochsNum.Name = "EpochsNum";
-            this.EpochsNum.Size = new System.Drawing.Size(61, 20);
+            this.EpochsNum.Size = new System.Drawing.Size(61, 22);
             this.EpochsNum.TabIndex = 1;
             this.EpochsNum.Value = new decimal(new int[] {
             1000,
@@ -238,7 +229,7 @@ namespace NeuralNetworkProject
             // radLabel1
             // 
             this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.radLabel1.Location = new System.Drawing.Point(76, 55);
+            this.radLabel1.Location = new System.Drawing.Point(71, 55);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(43, 18);
             this.radLabel1.TabIndex = 10;
@@ -247,22 +238,49 @@ namespace NeuralNetworkProject
             // Train
             // 
             this.Train.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Train.Location = new System.Drawing.Point(0, 418);
+            this.Train.Location = new System.Drawing.Point(0, 408);
             this.Train.Name = "Train";
-            this.Train.Size = new System.Drawing.Size(277, 24);
+            this.Train.Size = new System.Drawing.Size(277, 34);
             this.Train.TabIndex = 2;
             this.Train.Text = "Train";
             this.Train.ThemeName = "Office2010Black";
+            this.Train.Click += new System.EventHandler(this.Train_Click);
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.AddNewLayer);
             this.panel1.Controls.Add(this.Network_creat);
-            this.panel1.Location = new System.Drawing.Point(32, 118);
+            this.panel1.Location = new System.Drawing.Point(31, 125);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(210, 294);
+            this.panel1.Size = new System.Drawing.Size(210, 283);
             this.panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.LoadData_btn);
+            this.panel2.Controls.Add(this.Algorithem);
+            this.panel2.Controls.Add(this.EpochsNum);
+            this.panel2.Controls.Add(this.radLabel1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(277, 123);
+            this.panel2.TabIndex = 11;
+            // 
+            // layers2
+            // 
+            this.layers2.Location = new System.Drawing.Point(3, 3);
+            this.layers2.Name = "layers2";
+            this.layers2.Size = new System.Drawing.Size(182, 24);
+            this.layers2.TabIndex = 1;
+            // 
+            // layers1
+            // 
+            this.layers1.Location = new System.Drawing.Point(3, 33);
+            this.layers1.Name = "layers1";
+            this.layers1.Size = new System.Drawing.Size(182, 24);
+            this.layers1.TabIndex = 0;
             // 
             // LoadData
             // 
@@ -284,7 +302,6 @@ namespace NeuralNetworkProject
             ((System.ComponentModel.ISupportInitialize)(this.Network_creat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BP)).EndInit();
             this.BP.ResumeLayout(false);
-            this.BP.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.AddNewLayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Algorithem)).EndInit();
@@ -296,6 +313,8 @@ namespace NeuralNetworkProject
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Train)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -321,5 +340,6 @@ namespace NeuralNetworkProject
         private System.Windows.Forms.NumericUpDown EpochsNum;
         private System.Windows.Forms.Panel panel1;
         private Telerik.WinControls.UI.RadButton Train;
+        private System.Windows.Forms.Panel panel2;
     }
 }
