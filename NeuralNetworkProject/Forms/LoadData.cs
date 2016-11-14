@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using NeuralNetworkProject.GUI;
+using NeuralNetworkProject.Training;
 using Telerik.WinControls;
 using Telerik.Windows.Diagrams.Core;
 using Point = Telerik.Windows.Diagrams.Core.Point;
@@ -14,7 +15,12 @@ namespace NeuralNetworkProject
 {
     public partial class LoadData : Telerik.WinControls.UI.RadForm
     {
-        private Layer_ctrl l=new Layer_ctrl();
+        private readonly Result r=new Result();
+
+        public void su()
+        {
+          
+        }
         public LoadData()
         {
             InitializeComponent();
@@ -58,7 +64,8 @@ namespace NeuralNetworkProject
         private void Network_creat_Click(object sender, EventArgs e)
         {
             //Controller.ParseFile();
-            Controller.CreateNet(this.flowLayoutPanel1, LoadData_dlg, radDiagram1);
+            r.Show();
+            Controller.CreateNet(this.flowLayoutPanel1, LoadData_dlg, radDiagram1,r);
             
             //this.Hide();
         }
@@ -69,6 +76,11 @@ namespace NeuralNetworkProject
         }
 
         private void Algorithem_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
+        {
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
 
         }

@@ -24,9 +24,10 @@ namespace NeuralNetworkProject.GUI
             return true;
         }
 
-        public static void CreateNet(FlowLayoutPanel layers, FileDialog LoadData_dlg, Telerik.WinControls.UI.RadDiagram radDiagram1)
+        public static void CreateNet(FlowLayoutPanel layers, FileDialog LoadData_dlg, Telerik.WinControls.UI.RadDiagram radDiagram1,Result r)
         {
             Training.Trainer trainer = new Training.Trainer();
+            trainer.Subscribe(r);
             List<Layer> layersent=new List<Layer>();
             Layer_ctrl temp;
             int neuronsnumber;
@@ -99,6 +100,7 @@ namespace NeuralNetworkProject.GUI
 
                     //        ;
                 }
+            
           
         }
 

@@ -52,6 +52,9 @@ namespace NeuralNetworkProject.Training
                 trainingSetOutput = value.TrainingSetOutput,
                 crossValidationSet = value.CrossValidationSet,
                 crossValidationSetOutput = value.CrossValidationSetOutput;
+            /*Trainer as observer*/
+                double validationERR=0,trainingERR=0;
+            /**/
             //var error = trainingSet.EnumerateRows().Select(row =>
             //{
             //    var temp = neuralNetwork.ForwardInput(row);
@@ -66,11 +69,7 @@ namespace NeuralNetworkProject.Training
             //}).Zip(crossValidationSetOutput.EnumerateColumns(), (first, second) => computeError(first, second)).Sum());
             //value.Error = error;
             // validationERR=error;
-           
-            /*Trainer as observer*/
-                double validationERR=0,trainingERR=0;
-            //int epochsNUM=0;
-             var Terror = trainingSet.EnumerateRows().Select(row =>
+            var Terror = trainingSet.EnumerateRows().Select(row =>
             {
                 var temp = neuralNetwork.ForwardInput(row);
                 return temp.Item1[temp.Item1.Count - 1];
@@ -78,19 +77,16 @@ namespace NeuralNetworkProject.Training
             TrainingErrors.Add(Terror);
             trainingERR = Terror;
             var Verror =crossValidationSet.EnumerateRows().Select(row =>
-            { 
+            {
                 var temp = neuralNetwork.ForwardInput(row);
-                //epochsNUM = temp.Item1.Count;
                 return temp.Item1[temp.Item1.Count - 1];
-            }).Zip(crossValidationSetOutput.EnumerateColumns(), (first, second) => computeError(first, second)).Sum();
+            }).Zip(crossValidationSetOutput.EnumerateColumns(), (first, second) => computeError(first, second)).Sum());
             value.Error = Terror;
             CrossValidationErrors.Add(Terror);
              validationERR=Verror;
-           //Console.WriteLine("{0}\t{1}\t*****{2}",value.EPochs,validationERR,trainingERR);
             //Trainer as observer
-            ResultMesssage messsage=new ResultMesssage(trainingERR,validationERR,value.EPochs);
+            ResultMesssage messsage=new ResultMesssage(trainingERR,validationERR);
             NotifyResults(messsage);
-            /*Trainer as observer*/
         }
 
         public void OnError(Exception error)

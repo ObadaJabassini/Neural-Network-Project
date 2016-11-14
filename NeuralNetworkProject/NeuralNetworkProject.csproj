@@ -6,7 +6,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E8AA09A8-445A-449E-BBA8-7901AB6F6055}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NeuralNetworkProject</RootNamespace>
     <AssemblyName>NeuralNetworkProject</AssemblyName>
@@ -137,6 +137,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Training\BackpropagationAlgorithm.cs" />
+    <Compile Include="GUI\ResultMesssage.cs" />
+    <Compile Include="Forms\ShowResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Training\TrainingAlgorithm.cs" />
     <Compile Include="Training\Trainer.cs" />
     <Compile Include="Training\TrainingErrorMessage.cs" />

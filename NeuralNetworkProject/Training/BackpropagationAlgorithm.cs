@@ -63,6 +63,7 @@ namespace NeuralNetworkProject.Training
                         neuralNetwork.UpdateWeightsAt(deltaW, j - 1);
                     }
                 }
+                message.EPochs = epochs;
                 base.Notify(message);
                 error = message.Error; 
                 Console.WriteLine(error);
