@@ -72,9 +72,9 @@ namespace NeuralNetworkProject
             // Network_creat
             // 
             this.Network_creat.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Network_creat.Location = new System.Drawing.Point(0, 259);
+            this.Network_creat.Location = new System.Drawing.Point(0, 249);
             this.Network_creat.Name = "Network_creat";
-            this.Network_creat.Size = new System.Drawing.Size(210, 24);
+            this.Network_creat.Size = new System.Drawing.Size(249, 24);
             this.Network_creat.TabIndex = 7;
             this.Network_creat.Text = "Create Network";
             this.Network_creat.ThemeName = "Office2010Black";
@@ -103,16 +103,16 @@ namespace NeuralNetworkProject
             this.flowLayoutPanel1.Controls.Add(this.layers1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 1);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(210, 237);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(249, 228);
             this.flowLayoutPanel1.TabIndex = 8;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // AddNewLayer
             // 
             this.AddNewLayer.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.AddNewLayer.Location = new System.Drawing.Point(0, 235);
+            this.AddNewLayer.Location = new System.Drawing.Point(0, 225);
             this.AddNewLayer.Name = "AddNewLayer";
-            this.AddNewLayer.Size = new System.Drawing.Size(210, 24);
+            this.AddNewLayer.Size = new System.Drawing.Size(249, 24);
             this.AddNewLayer.TabIndex = 9;
             this.AddNewLayer.Text = "Add New Layer";
             this.AddNewLayer.ThemeName = "Office2010Black";
@@ -126,7 +126,7 @@ namespace NeuralNetworkProject
             this.Algorithem.Items.Add(radListDataItem1);
             this.Algorithem.Items.Add(radListDataItem2);
             this.Algorithem.Items.Add(radListDataItem3);
-            this.Algorithem.Location = new System.Drawing.Point(40, 92);
+            this.Algorithem.Location = new System.Drawing.Point(37, 92);
             this.Algorithem.Name = "Algorithem";
             this.Algorithem.Size = new System.Drawing.Size(197, 20);
             this.Algorithem.TabIndex = 3;
@@ -224,6 +224,7 @@ namespace NeuralNetworkProject
             0,
             0,
             0});
+            this.EpochsNum.Visible = false;
             this.EpochsNum.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // radLabel1
@@ -234,6 +235,7 @@ namespace NeuralNetworkProject
             this.radLabel1.Size = new System.Drawing.Size(43, 18);
             this.radLabel1.TabIndex = 10;
             this.radLabel1.Text = "Epochs";
+            this.radLabel1.Visible = false;
             // 
             // Train
             // 
@@ -251,9 +253,9 @@ namespace NeuralNetworkProject
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.AddNewLayer);
             this.panel1.Controls.Add(this.Network_creat);
-            this.panel1.Location = new System.Drawing.Point(31, 125);
+            this.panel1.Location = new System.Drawing.Point(13, 129);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(210, 283);
+            this.panel1.Size = new System.Drawing.Size(249, 273);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -272,14 +274,14 @@ namespace NeuralNetworkProject
             // 
             this.layers2.Location = new System.Drawing.Point(3, 3);
             this.layers2.Name = "layers2";
-            this.layers2.Size = new System.Drawing.Size(182, 24);
+            this.layers2.Size = new System.Drawing.Size(222, 24);
             this.layers2.TabIndex = 1;
             // 
             // layers1
             // 
             this.layers1.Location = new System.Drawing.Point(3, 33);
             this.layers1.Name = "layers1";
-            this.layers1.Size = new System.Drawing.Size(182, 24);
+            this.layers1.Size = new System.Drawing.Size(222, 24);
             this.layers1.TabIndex = 0;
             // 
             // LoadData

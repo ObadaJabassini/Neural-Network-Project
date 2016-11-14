@@ -84,7 +84,7 @@ namespace NeuralNetworkProject.Training
             value.Error = Terror;
             CrossValidationErrors.Add(Terror);
              validationERR=Verror;
-           //Console.WriteLine("{0}\t{1}\t*****{2}",value.EPochs,validationERR,trainingERR);
+           Console.WriteLine("{0}\t{1}\t*****{2}",value.EPochs,validationERR,trainingERR);
             //Trainer as observer
             ResultMesssage messsage=new ResultMesssage(trainingERR,validationERR,value.EPochs);
             NotifyResults(messsage);

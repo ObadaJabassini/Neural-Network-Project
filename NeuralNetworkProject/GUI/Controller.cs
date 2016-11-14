@@ -34,10 +34,10 @@ namespace NeuralNetworkProject.GUI
             foreach (var layer in layers.Controls)
             {
                 temp = layer as Layer_ctrl;
-                neuronsnumber = Convert.ToInt16(temp.numericUpDown1.Value);
+                neuronsnumber = Convert.ToInt16(temp.NN_drpdn.Value);
                 //if (ActivatorFunctions.FunctionName.SIGMOID.ToString() == temp.AF_drpdn.SelectedItem.Text)
                 //    applier = ActivatorFunctions.FunctionName.SIGMOID;
-                b.Layer(neuronsnumber, new Math.FunctionApplier());
+                b.Layer(neuronsnumber, new Math.FunctionApplier(),(double)temp.Lr_drpdn.Value);
             }
             NeuralNetwork.NeuralNetwork nn = b.Build();
             string FileName = LoadData_dlg.FileName;
