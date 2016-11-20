@@ -18,16 +18,14 @@ namespace NeuralNetworkProject
             this.LC_GC.Series[0].Points.Add(value.LCError,value.Epochs);
             this.LC_GC.Series[1].Points.Add(value.GCError, value.Epochs);
             this.LC_GC.Refresh();
-             //Epochs_prgbr.Text = Convert.ToString(value.Epochs);
-             //Epochs_prgbr.Value1 = value.Epochs;
-             //Epochs_prgbr.CreateGraphics();
-             //Epochs_prgbr.Value1++;
+            Epochs_prgbr.Text = Convert.ToString(value.Epochs);
+            Epochs_prgbr.Value1 = value.Epochs;
+            System.Windows.Forms.Application.DoEvents();
              Epochs_prgbr.Refresh();
-             EpochsBar.Text = Convert.ToString(value.Epochs);
-             EpochsBar.Value = value.Epochs;
-             EpochsBar.Refresh();
-
-             EpochsValue.Text = Convert.ToString(value.Epochs);
+             //EpochsBar.Text = Convert.ToString(value.Epochs);
+             //EpochsBar.Value = value.Epochs;
+             //EpochsBar.Refresh();
+             //EpochsValue.Text = Convert.ToString(value.Epochs);
          }
 
         public void OnError(Exception error)

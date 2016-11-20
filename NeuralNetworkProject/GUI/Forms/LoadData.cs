@@ -97,7 +97,8 @@ namespace NeuralNetworkProject
             _hyperParameters.MaxEpochs = (int)EpochsNum.Value;
 
             r.MaxEpochs.Text = ((int)EpochsNum.Value).ToString();
-            r.EpochsBar.Maximum = (int)EpochsNum.Value+1;
+            //r.EpochsBar.Maximum = (int)EpochsNum.Value+1;
+            r.Epochs_prgbr.Maximum = (int)EpochsNum.Value;
         }
 
         private void Train_Click(object sender, EventArgs e)
