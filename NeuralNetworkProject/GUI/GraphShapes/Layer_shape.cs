@@ -6,12 +6,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
+using Telerik.Windows.Diagrams.Core;
+using Point = System.Drawing.Point;
+using Size = System.Drawing.Size;
 
 namespace NeuralNetworkProject.GUI
 {
     class Layer_shape: RadDiagramContainerShape
     {      
-        public Layer_shape(string text)
+        public Layer_shape(string text):base()
         {
             
             this.Text = text;
@@ -25,6 +28,13 @@ namespace NeuralNetworkProject.GUI
             this.IsRotationEnabled = false;
             this.IsResizingEnabled = false;
             this.Shape = new RoundRectShape();
+
+            this.addnodes();
+        }
+
+        private void addnodes()
+        {
+            Items.Add(new Feature_shape());
         }
     }
 }

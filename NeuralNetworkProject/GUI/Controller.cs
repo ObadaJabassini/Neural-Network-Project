@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MathNet.Numerics.LinearAlgebra;
 using NeuralNetworkProject.DataAdapter;
+using NeuralNetworkProject.GUI.GraphShapes;
 using NeuralNetworkProject.Math;
 using NeuralNetworkProject.NeuralNetwork;
 using NeuralNetworkProject.Training;
@@ -62,10 +63,13 @@ namespace NeuralNetworkProject.GUI
 
         public static void NetGraph(NeuralNetwork.NeuralNetwork nn, Telerik.WinControls.UI.RadDiagram radDiagram1)
         {
+            radDiagram1.AddShape(new Input_shape(),null,new Point(0,90));
             for (int i = 0; i < nn.Layers.Count; i++)
             {
-                radDiagram1.AddShape(new Layer_shape("Layer" + i + Layerinfo(nn.Layers[i])), null, new Point(i*250, 0));
+                
+                radDiagram1.AddShape(new Layer_shape("Layer" + i + Layerinfo(nn.Layers[i])), null, new Point(i*250+100, 0));     
             }
+            radDiagram1.AddShape(new Output_shape(), null,new Point( nn.Layers.Count*250+100,90));
             Weight_edge edge;
             for (int i = 1; i < radDiagram1.Shapes.Count; i++)
             {
@@ -88,6 +92,7 @@ namespace NeuralNetworkProject.GUI
 
                 //        ;
             }
+            
         }
 
         private static string Layerinfo(Layer layer)

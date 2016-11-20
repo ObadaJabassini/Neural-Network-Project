@@ -11,9 +11,11 @@ namespace NeuralNetworkProject.Training
 {
     public partial class Trainer : IObserver<TrainingErrorMessage>
     {
-        public TrainingAlgorithm TrainingAlgorithm { private get; set; } = new BackpropagationAlgorithm();
+        //GUI :remove    == new BackpropagationAlgorithm();      to be added from the interface manually
+        public TrainingAlgorithm TrainingAlgorithm { private get; set; } 
 
-        public DataDivider Divider { private get; set; } = new DataDivider()
+        //GUI :public get 
+        public DataDivider Divider {  get; set; } = new DataDivider()
         {
             Divider = Dividers.CreateDivider(Dividers.DividerType.STATIC)
         };
@@ -104,7 +106,7 @@ namespace NeuralNetworkProject.Training
 
     public partial class Trainer : IObservable<ResultMesssage>
     {
-        //
+        
         private List<IObserver<ResultMesssage>> _observers = new List<IObserver<ResultMesssage>>();
 
         public IDisposable Subscribe(IObserver<ResultMesssage> observer)

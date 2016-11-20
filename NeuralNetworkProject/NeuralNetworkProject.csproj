@@ -103,6 +103,7 @@
     </Compile>
     <Compile Include="GUI\Controller.cs" />
     <Compile Include="GUI\GraphShapes\Feature_shape.cs" />
+    <Compile Include="GUI\GraphShapes\IO_shape.cs" />
     <Compile Include="GUI\GraphShapes\Layer_shape.cs" />
     <Compile Include="GUI\GraphShapes\Weight-edge.cs" />
     <Compile Include="Forms\LoadData.cs">

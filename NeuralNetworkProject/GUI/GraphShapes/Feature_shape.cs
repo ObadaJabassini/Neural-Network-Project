@@ -15,6 +15,7 @@ namespace NeuralNetworkProject.GUI
         {
             this.Shape=new EllipseShape();
             this.BackColor=Color.DodgerBlue;
+           
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using GeometryClassLibrary;
 using NeuralNetworkProject.GUI;
 using NeuralNetworkProject.NeuralNetwork;
 using NeuralNetworkProject.Training;
@@ -18,8 +19,10 @@ namespace NeuralNetworkProject
     {
         private readonly Result r=new Result();
         private  Trainer Trainer=new Trainer();
-        private Controller.trainerParams Params=new Controller.trainerParams();
+        private Controller.trainerParams Params;
         private HyperParameters Hparameters = null;
+        private BackpropagationAlgorithm _backpropagationAlgorithm = new BackpropagationAlgorithm();
+
         public void su()
         {
           
@@ -83,6 +86,8 @@ namespace NeuralNetworkProject
 
         private void Algorithem_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
+           // Trainer.TrainingAlgorithm=new BackpropagationAlgorithm();
+            
 
         }
 
@@ -94,8 +99,13 @@ namespace NeuralNetworkProject
 
         private void Train_Click(object sender, EventArgs e)
         {
+           // var temp = Trainer.Divider.Divide(Params.Tuple.Item1, Params.Tuple.Item2);
+           
+            Trainer.TrainingAlgorithm = _backpropagationAlgorithm;
             r.Show();
             Trainer.Subscribe(r);
+            //_backpropagationAlgorithm.Train(Params.nn, temp.Item1, temp.Item3, temp.Item2, temp.Item4, Hparameters);
+
             Trainer.Train(Params.nn, Params.Tuple.Item1, Params.Tuple.Item2);
         }
         
