@@ -15,6 +15,9 @@ namespace NeuralNetworkProject
         public Result()
         {
             InitializeComponent();
+           
         }
+
+
     }
 }

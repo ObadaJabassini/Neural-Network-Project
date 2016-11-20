@@ -81,6 +81,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="Telerik.WinControls, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.RadDiagram, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.RadDock, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.Themes.Office2010Black, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.UI, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="TelerikCommon, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
@@ -95,10 +96,16 @@
     <Compile Include="DataAdapter\IndexDivider.cs" />
     <Compile Include="DataAdapter\StaticDivider.cs" />
     <Compile Include="DataReader\Reader.cs" />
-    <Compile Include="Forms\Graph-Training.cs">
+    <Compile Include="GUI\CostumControls\ProgressCounter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\CostumControls\ProgressCounter.Designer.cs">
+      <DependentUpon>ProgressCounter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Forms\Graph-Training.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Graph-Training.Designer.cs">
+    <Compile Include="GUI\Forms\Graph-Training.Designer.cs">
       <DependentUpon>Graph-Training.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Controller.cs" />
@@ -106,16 +113,19 @@
     <Compile Include="GUI\GraphShapes\IO_shape.cs" />
     <Compile Include="GUI\GraphShapes\Layer_shape.cs" />
     <Compile Include="GUI\GraphShapes\Weight-edge.cs" />
-    <Compile Include="Forms\LoadData.cs">
+    <Compile Include="GUI\Forms\LoadData.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\LoadData.Designer.cs">
+    <Compile Include="GUI\Forms\LoadData.Designer.cs">
       <DependentUpon>LoadData.cs</DependentUpon>
     </Compile>
-    <Compile Include="Layer_ctrl.cs">
+    <Compile Include="GUI\ProgressCounters.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\CostumControls\Layer_ctrl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Layer_ctrl.Designer.cs">
+    <Compile Include="GUI\CostumControls\Layer_ctrl.Designer.cs">
       <DependentUpon>Layer_ctrl.cs</DependentUpon>
     </Compile>
     <Compile Include="Math\ActivatorFunctions.cs" />
@@ -126,10 +136,10 @@
     <Compile Include="NeuralNetwork\NeuralNetwork.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Forms\Result.cs">
+    <Compile Include="GUI\Forms\Result.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Result.Designer.cs">
+    <Compile Include="GUI\Forms\Result.Designer.cs">
       <DependentUpon>Result.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -139,7 +149,7 @@
     </Compile>
     <Compile Include="Training\BackpropagationAlgorithm.cs" />
     <Compile Include="GUI\ResultMesssage.cs" />
-    <Compile Include="Forms\ShowResult.cs">
+    <Compile Include="GUI\Forms\ShowResult.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Training\TrainingAlgorithm.cs" />
@@ -148,6 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -168,17 +179,20 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\Graph-Training.resx">
+    <EmbeddedResource Include="GUI\CostumControls\ProgressCounter.resx">
+      <DependentUpon>ProgressCounter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Forms\Graph-Training.resx">
       <DependentUpon>Graph-Training.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\LoadData.resx">
+    <EmbeddedResource Include="GUI\Forms\LoadData.resx">
       <DependentUpon>LoadData.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Layer_ctrl.resx">
+    <EmbeddedResource Include="GUI\CostumControls\Layer_ctrl.resx">
       <DependentUpon>Layer_ctrl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
-    <EmbeddedResource Include="Forms\Result.resx">
+    <EmbeddedResource Include="GUI\Forms\Result.resx">
       <DependentUpon>Result.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

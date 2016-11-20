@@ -1,0 +1,64 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using NeuralNetworkProject.GUI;
+using NeuralNetworkProject.Training;
+
+namespace NeuralNetworkProject
+{
+    public partial class  Result :IObserver<ResultMesssage>
+    {
+         public void OnNext(ResultMesssage value)
+         {
+             //this.LC_GC.Series[0].Points.Add( value.Epochs,value.LCError);
+             //this.LC_GC.Series[1].Points.Add(value.Epochs, value.GCError);
+            this.LC_GC.Series[0].Points.Add(value.LCError,value.Epochs);
+            this.LC_GC.Series[1].Points.Add(value.GCError, value.Epochs);
+            this.LC_GC.Refresh();
+             Epochs_prgbr.Text = Convert.ToString(value.Epochs);
+             Epochs_prgbr.Value1 = value.Epochs;
+             Thread backgroundThread = new Thread(
+           new ThreadStart(() =>
+           {
+               for (int n = 0; n < 100; n++)
+               {
+                   Thread.Sleep(50);
+                   this.Epochs_prgbr.BeginInvoke(
+                       new Action(() =>
+                       {
+                           this.Epochs_prgbr.Value1 = n;
+                       }
+                   ));
+               }
+
+               this.Epochs_prgbr.BeginInvoke(
+                   new Action(() =>
+                   {
+                       this.Epochs_prgbr.Value1 = 0;
+                   }
+               ));
+           }
+           ));
+
+             backgroundThread.Start();
+             //Epochs_prgbr.Value1++;
+             Epochs_prgbr.Refresh();
+             progressBar1.Text = Convert.ToString(value.Epochs);
+             progressBar1.Value = value.Epochs;
+             progressBar1.Refresh();
+         }
+
+        public void OnError(Exception error)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void OnCompleted()
+        {
+            this.LC_GC.Refresh();
+        }
+    }
+}

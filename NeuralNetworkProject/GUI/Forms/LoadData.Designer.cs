@@ -42,8 +42,6 @@ namespace NeuralNetworkProject
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.layers2 = new NeuralNetworkProject.Layer_ctrl();
-            this.layers1 = new NeuralNetworkProject.Layer_ctrl();
             this.AddNewLayer = new Telerik.WinControls.UI.RadButton();
             this.Train = new Telerik.WinControls.UI.RadButton();
             this.Epochs = new Telerik.WinControls.UI.RadLabel();
@@ -51,6 +49,8 @@ namespace NeuralNetworkProject
             this.LoadData_dlg = new System.Windows.Forms.OpenFileDialog();
             this.radDiagram1 = new Telerik.WinControls.UI.RadDiagram();
             this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
+            this.layers2 = new NeuralNetworkProject.Layer_ctrl();
+            this.layers1 = new NeuralNetworkProject.Layer_ctrl();
             ((System.ComponentModel.ISupportInitialize)(this.Network_creat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BP)).BeginInit();
             this.BP.SuspendLayout();
@@ -148,14 +148,13 @@ namespace NeuralNetworkProject
             0,
             0});
             this.EpochsNum.Name = "EpochsNum";
-            this.EpochsNum.Size = new System.Drawing.Size(61, 20);
+            this.EpochsNum.Size = new System.Drawing.Size(61, 22);
             this.EpochsNum.TabIndex = 1;
             this.EpochsNum.Value = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.EpochsNum.Visible = false;
             this.EpochsNum.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // radLabel1
@@ -166,7 +165,6 @@ namespace NeuralNetworkProject
             this.radLabel1.Size = new System.Drawing.Size(43, 18);
             this.radLabel1.TabIndex = 10;
             this.radLabel1.Text = "Epochs";
-            this.radLabel1.Visible = false;
             // 
             // panel1
             // 
@@ -186,23 +184,9 @@ namespace NeuralNetworkProject
             this.flowLayoutPanel1.Controls.Add(this.layers1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 1);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(249, 228);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(249, 218);
             this.flowLayoutPanel1.TabIndex = 8;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
-            // 
-            // layers2
-            // 
-            this.layers2.Location = new System.Drawing.Point(3, 3);
-            this.layers2.Name = "layers2";
-            this.layers2.Size = new System.Drawing.Size(222, 24);
-            this.layers2.TabIndex = 1;
-            // 
-            // layers1
-            // 
-            this.layers1.Location = new System.Drawing.Point(3, 33);
-            this.layers1.Name = "layers1";
-            this.layers1.Size = new System.Drawing.Size(222, 24);
-            this.layers1.TabIndex = 0;
             // 
             // AddNewLayer
             // 
@@ -283,6 +267,20 @@ namespace NeuralNetworkProject
             ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderRightColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(11)))), ((int)(((byte)(11)))));
+            // 
+            // layers2
+            // 
+            this.layers2.Location = new System.Drawing.Point(3, 3);
+            this.layers2.Name = "layers2";
+            this.layers2.Size = new System.Drawing.Size(222, 24);
+            this.layers2.TabIndex = 1;
+            // 
+            // layers1
+            // 
+            this.layers1.Location = new System.Drawing.Point(3, 33);
+            this.layers1.Name = "layers1";
+            this.layers1.Size = new System.Drawing.Size(222, 24);
+            this.layers1.TabIndex = 0;
             // 
             // LoadData
             // 

@@ -20,7 +20,7 @@ namespace NeuralNetworkProject
         private readonly Result r=new Result();
         private  Trainer Trainer=new Trainer();
         private Controller.trainerParams Params;
-        private HyperParameters Hparameters = null;
+        private HyperParameters _hyperParameters = null;
         private BackpropagationAlgorithm _backpropagationAlgorithm = new BackpropagationAlgorithm();
 
         public void su()
@@ -93,20 +93,20 @@ namespace NeuralNetworkProject
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            Hparameters=new HyperParameters();
-            Hparameters.MaxEpochs = (int) EpochsNum.Value;
+            _hyperParameters = new HyperParameters();
+            _hyperParameters.MaxEpochs = (int)EpochsNum.Value;
+
+            r.MaxEpochs.Text = ((int)EpochsNum.Value).ToString();
+            r.EpochsBar.Maximum = (int)EpochsNum.Value+1;
         }
 
         private void Train_Click(object sender, EventArgs e)
         {
-           // var temp = Trainer.Divider.Divide(Params.Tuple.Item1, Params.Tuple.Item2);
-           
             Trainer.TrainingAlgorithm = _backpropagationAlgorithm;
             r.Show();
             Trainer.Subscribe(r);
-            //_backpropagationAlgorithm.Train(Params.nn, temp.Item1, temp.Item3, temp.Item2, temp.Item4, Hparameters);
-
-            Trainer.Train(Params.nn, Params.Tuple.Item1, Params.Tuple.Item2);
+            
+            Trainer.Train(Params.nn, Params.Tuple.Item1, Params.Tuple.Item2, _hyperParameters);
         }
         
     }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NeuralNetworkProject.GUI;
+using NeuralNetworkProject.NeuralNetwork;
 
 namespace NeuralNetworkProject.Training
 {
@@ -23,20 +24,20 @@ namespace NeuralNetworkProject.Training
         public IList<double> TrainingErrors { get; private set; } = new List<double>();
         public IList<double> CrossValidationErrors { get; private set; } = new List<double>();
 
-        public void Train(NeuralNetwork.NeuralNetwork neuralNetwork, Matrix<double> inputs, Matrix<double> outputs)
+        public void Train(NeuralNetwork.NeuralNetwork neuralNetwork, Matrix<double> inputs, Matrix<double> outputs, HyperParameters hyperParamters = null)
         {
             TrainingAlgorithm.Subscribe(this);
             var temp = Divider.Divide(inputs, outputs);
             Console.WriteLine(temp.Item1);
             Console.WriteLine(temp.Item2);
-            _train(neuralNetwork, temp.Item1, temp.Item3, temp.Item2, temp.Item4);
+            _train(neuralNetwork, temp.Item1, temp.Item3, temp.Item2, temp.Item4,hyperParamters);
         }
 
         private void _train(NeuralNetwork.NeuralNetwork neuralNetwork, Matrix<double> trainingSet,
-            Matrix<double> crossValidationSet, Matrix<double> trainingSetOutput, Matrix<double> crossValidationSetOutput)
+            Matrix<double> crossValidationSet, Matrix<double> trainingSetOutput, Matrix<double> crossValidationSetOutput, HyperParameters hyperParamters = null)
         {
             TrainingAlgorithm.Train(neuralNetwork, trainingSet, crossValidationSet, trainingSetOutput,
-                crossValidationSetOutput);
+                crossValidationSetOutput,hyperParamters);
         }
 
         protected double computeError(Vector<double> outputs, Vector<double> realOutputs)
