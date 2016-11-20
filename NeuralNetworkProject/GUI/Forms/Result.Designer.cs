@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.LC_GC = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.MaxEpochs = new System.Windows.Forms.Label();
@@ -49,14 +49,14 @@
             // LC_GC
             // 
             this.LC_GC.BackColor = System.Drawing.Color.LightSalmon;
-            chartArea4.AxisX.MajorGrid.Enabled = false;
-            chartArea4.AxisY.MajorGrid.Enabled = false;
-            chartArea4.Name = "Input";
-            this.LC_GC.ChartAreas.Add(chartArea4);
+            chartArea5.AxisX.MajorGrid.Enabled = false;
+            chartArea5.AxisY.MajorGrid.Enabled = false;
+            chartArea5.Name = "Input";
+            this.LC_GC.ChartAreas.Add(chartArea5);
             this.LC_GC.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.LC_GC.Dock = System.Windows.Forms.DockStyle.Top;
-            legend4.Name = "Legend1";
-            this.LC_GC.Legends.Add(legend4);
+            legend5.Name = "Legend1";
+            this.LC_GC.Legends.Add(legend5);
             this.LC_GC.Location = new System.Drawing.Point(0, 0);
             this.LC_GC.Name = "LC_GC";
             this.LC_GC.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
@@ -65,17 +65,17 @@
         System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192))))),
         System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0))))),
         System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))))};
-            series7.ChartArea = "Input";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series7.Legend = "Legend1";
-            series7.Name = "LC";
-            series7.YValuesPerPoint = 2;
-            series8.ChartArea = "Input";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series8.Legend = "Legend1";
-            series8.Name = "GC";
-            this.LC_GC.Series.Add(series7);
-            this.LC_GC.Series.Add(series8);
+            series9.ChartArea = "Input";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series9.Legend = "Legend1";
+            series9.Name = "LC";
+            series9.YValuesPerPoint = 2;
+            series10.ChartArea = "Input";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series10.Legend = "Legend1";
+            series10.Name = "GC";
+            this.LC_GC.Series.Add(series9);
+            this.LC_GC.Series.Add(series10);
             this.LC_GC.Size = new System.Drawing.Size(600, 391);
             this.LC_GC.TabIndex = 1;
             this.LC_GC.Text = "chart1";
@@ -115,9 +115,11 @@
             // Epochs_prgbr
             // 
             this.Epochs_prgbr.AutoScroll = true;
+            this.Epochs_prgbr.BackColor = System.Drawing.Color.White;
             this.Epochs_prgbr.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Epochs_prgbr.EnableCodedUITests = true;
             this.Epochs_prgbr.EnableKeyMap = true;
+            this.Epochs_prgbr.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Epochs_prgbr.Location = new System.Drawing.Point(122, 28);
             this.Epochs_prgbr.Maximum = 1001;
             this.Epochs_prgbr.Name = "Epochs_prgbr";
@@ -126,6 +128,18 @@
             this.Epochs_prgbr.TabIndex = 3;
             this.Epochs_prgbr.Text = "0 ";
             this.Epochs_prgbr.ThemeName = "ControlDefault";
+            this.Epochs_prgbr.Value1 = 100;
+            ((Telerik.WinControls.UI.RadProgressBarElement)(this.Epochs_prgbr.GetChildAt(0))).Value1 = 100;
+            ((Telerik.WinControls.UI.RadProgressBarElement)(this.Epochs_prgbr.GetChildAt(0))).Maximum = 1001;
+            ((Telerik.WinControls.UI.RadProgressBarElement)(this.Epochs_prgbr.GetChildAt(0))).Step = 10;
+            ((Telerik.WinControls.UI.RadProgressBarElement)(this.Epochs_prgbr.GetChildAt(0))).Text = "0 ";
+            ((Telerik.WinControls.UI.RadProgressBarElement)(this.Epochs_prgbr.GetChildAt(0))).GradientStyle = Telerik.WinControls.GradientStyles.Linear;
+            ((Telerik.WinControls.UI.RadProgressBarElement)(this.Epochs_prgbr.GetChildAt(0))).HorizontalLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            ((Telerik.WinControls.UI.RadProgressBarElement)(this.Epochs_prgbr.GetChildAt(0))).BorderBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            ((Telerik.WinControls.UI.UpperProgressIndicatorElement)(this.Epochs_prgbr.GetChildAt(0).GetChildAt(1))).BackColor2 = System.Drawing.Color.DarkSalmon;
+            ((Telerik.WinControls.UI.UpperProgressIndicatorElement)(this.Epochs_prgbr.GetChildAt(0).GetChildAt(1))).BackColor3 = System.Drawing.Color.LightSalmon;
+            ((Telerik.WinControls.UI.UpperProgressIndicatorElement)(this.Epochs_prgbr.GetChildAt(0).GetChildAt(1))).BackColor4 = System.Drawing.Color.DarkSalmon;
+            ((Telerik.WinControls.UI.UpperProgressIndicatorElement)(this.Epochs_prgbr.GetChildAt(0).GetChildAt(1))).BackColor = System.Drawing.Color.DarkSalmon;
             // 
             // customShape1
             // 
