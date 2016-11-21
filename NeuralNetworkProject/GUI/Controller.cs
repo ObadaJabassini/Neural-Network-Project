@@ -65,9 +65,10 @@ namespace NeuralNetworkProject.GUI
         {
             radDiagram1.AddShape(new Input_shape(),null,new Point(0,90));
             for (int i = 0; i < nn.Layers.Count; i++)
-            {
-                
-                radDiagram1.AddShape(new Layer_shape("Layer" + i + Layerinfo(nn.Layers[i])), null, new Point(i*250+100, 0));     
+            { 
+                radDiagram1.AddShape(new Layer_shape("Layer" + i + Layerinfo(nn.Layers[i])), null, new Point(i*250+100, 0));
+                radDiagram1.AddShape(new Feature_shape());
+                //(radDiagram1.Shapes[radDiagram1.Shapes.Count-1] as Layer_shape).addnodes();
             }
             radDiagram1.AddShape(new Output_shape(), null,new Point( nn.Layers.Count*250+100,90));
             Weight_edge edge;

@@ -97,7 +97,6 @@ namespace NeuralNetworkProject
             _hyperParameters.MaxEpochs = (int)EpochsNum.Value;
 
             r.MaxEpochs.Text = ((int)EpochsNum.Value).ToString();
-            //r.EpochsBar.Maximum = (int)EpochsNum.Value+1;
             r.Epochs_prgbr.Maximum = (int)EpochsNum.Value;
         }
 
@@ -105,9 +104,10 @@ namespace NeuralNetworkProject
         {
             Trainer.TrainingAlgorithm = _backpropagationAlgorithm;
             r.Show();
+            r.EllapsedTimer.Start();
             Trainer.Subscribe(r);
-            
             Trainer.Train(Params.nn, Params.Tuple.Item1, Params.Tuple.Item2, _hyperParameters);
+            r.EllapsedTimer.Stop();
         }
         
     }

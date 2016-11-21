@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.LC_GC = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,6 +42,8 @@
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.Epochs_prgbr = new Telerik.WinControls.UI.RadProgressBar();
             this.customShape1 = new Telerik.WinControls.OldShapeEditor.CustomShape();
+            this.EllapsedTimer = new System.Windows.Forms.Timer(this.components);
+            this.ElapsedTime = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.LC_GC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
@@ -48,20 +51,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.Performance_prgbr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Epochs_prgbr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ElapsedTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // LC_GC
             // 
             this.LC_GC.BackColor = System.Drawing.Color.LightSalmon;
-            chartArea3.AxisX.MajorGrid.Enabled = false;
-            chartArea3.AxisY.MajorGrid.Enabled = false;
-            chartArea3.Name = "Input";
-            this.LC_GC.ChartAreas.Add(chartArea3);
+            chartArea2.AxisX.MajorGrid.Enabled = false;
+            chartArea2.AxisY.MajorGrid.Enabled = false;
+            chartArea2.Name = "Input";
+            this.LC_GC.ChartAreas.Add(chartArea2);
             this.LC_GC.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.LC_GC.Dock = System.Windows.Forms.DockStyle.Top;
-            legend3.Name = "Legend1";
-            this.LC_GC.Legends.Add(legend3);
+            legend2.Name = "Legend1";
+            this.LC_GC.Legends.Add(legend2);
             this.LC_GC.Location = new System.Drawing.Point(0, 0);
             this.LC_GC.Name = "LC_GC";
             this.LC_GC.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
@@ -70,17 +74,17 @@
         System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192))))),
         System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0))))),
         System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))))};
-            series5.ChartArea = "Input";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series5.Legend = "Legend1";
-            series5.Name = "LC";
-            series5.YValuesPerPoint = 2;
-            series6.ChartArea = "Input";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series6.Legend = "Legend1";
-            series6.Name = "GC";
-            this.LC_GC.Series.Add(series5);
-            this.LC_GC.Series.Add(series6);
+            series3.ChartArea = "Input";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Legend = "Legend1";
+            series3.Name = "LC";
+            series3.YValuesPerPoint = 2;
+            series4.ChartArea = "Input";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series4.Legend = "Legend1";
+            series4.Name = "GC";
+            this.LC_GC.Series.Add(series3);
+            this.LC_GC.Series.Add(series4);
             this.LC_GC.Size = new System.Drawing.Size(600, 391);
             this.LC_GC.TabIndex = 1;
             this.LC_GC.Text = "chart1";
@@ -94,7 +98,7 @@
             this.radPanel1.Controls.Add(this.MaxEpochs);
             this.radPanel1.Controls.Add(this.radLabel1);
             this.radPanel1.Controls.Add(this.Epochs_prgbr);
-            this.radPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.radPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPanel1.Location = new System.Drawing.Point(0, 391);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(600, 106);
@@ -129,17 +133,18 @@
             this.Performance_prgbr.EnableKeyMap = true;
             this.Performance_prgbr.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Performance_prgbr.Location = new System.Drawing.Point(143, 53);
-            this.Performance_prgbr.Maximum = 10000;
+            this.Performance_prgbr.Maximum = 1000;
             this.Performance_prgbr.Name = "Performance_prgbr";
+            this.Performance_prgbr.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Performance_prgbr.Size = new System.Drawing.Size(306, 24);
-            this.Performance_prgbr.StepWidth = 10;
+            this.Performance_prgbr.Step = 1;
+            this.Performance_prgbr.StepWidth = 1;
             this.Performance_prgbr.TabIndex = 7;
             this.Performance_prgbr.Text = "0 ";
             this.Performance_prgbr.ThemeName = "ControlDefault";
-            this.Performance_prgbr.Value1 = 10000;
-            ((Telerik.WinControls.UI.RadProgressBarElement)(this.Performance_prgbr.GetChildAt(0))).Value1 = 10000;
-            ((Telerik.WinControls.UI.RadProgressBarElement)(this.Performance_prgbr.GetChildAt(0))).Maximum = 10000;
-            ((Telerik.WinControls.UI.RadProgressBarElement)(this.Performance_prgbr.GetChildAt(0))).Step = 10;
+            ((Telerik.WinControls.UI.RadProgressBarElement)(this.Performance_prgbr.GetChildAt(0))).Value1 = 0;
+            ((Telerik.WinControls.UI.RadProgressBarElement)(this.Performance_prgbr.GetChildAt(0))).Maximum = 1000;
+            ((Telerik.WinControls.UI.RadProgressBarElement)(this.Performance_prgbr.GetChildAt(0))).Step = 1;
             ((Telerik.WinControls.UI.RadProgressBarElement)(this.Performance_prgbr.GetChildAt(0))).Text = "0 ";
             ((Telerik.WinControls.UI.RadProgressBarElement)(this.Performance_prgbr.GetChildAt(0))).GradientStyle = Telerik.WinControls.GradientStyles.Linear;
             ((Telerik.WinControls.UI.RadProgressBarElement)(this.Performance_prgbr.GetChildAt(0))).HorizontalLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
@@ -148,6 +153,7 @@
             ((Telerik.WinControls.UI.UpperProgressIndicatorElement)(this.Performance_prgbr.GetChildAt(0).GetChildAt(1))).BackColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(199)))), ((int)(((byte)(96)))));
             ((Telerik.WinControls.UI.UpperProgressIndicatorElement)(this.Performance_prgbr.GetChildAt(0).GetChildAt(1))).BackColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(199)))), ((int)(((byte)(96)))));
             ((Telerik.WinControls.UI.UpperProgressIndicatorElement)(this.Performance_prgbr.GetChildAt(0).GetChildAt(1))).BackColor = System.Drawing.Color.LightSalmon;
+            ((Telerik.WinControls.UI.UpperProgressIndicatorElement)(this.Performance_prgbr.GetChildAt(0).GetChildAt(1))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
             // 
             // MaxEpochs
             // 
@@ -155,9 +161,9 @@
             this.MaxEpochs.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.MaxEpochs.Location = new System.Drawing.Point(455, 28);
             this.MaxEpochs.Name = "MaxEpochs";
-            this.MaxEpochs.Size = new System.Drawing.Size(30, 13);
+            this.MaxEpochs.Size = new System.Drawing.Size(31, 13);
             this.MaxEpochs.TabIndex = 6;
-            this.MaxEpochs.Text = "Max";
+            this.MaxEpochs.Text = "1000";
             // 
             // radLabel1
             // 
@@ -201,11 +207,25 @@
             // 
             this.customShape1.Dimension = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
+            // EllapsedTimer
+            // 
+            this.EllapsedTimer.Interval = 1000;
+            this.EllapsedTimer.Tick += new System.EventHandler(this.EllapsedTime_Tick);
+            // 
+            // ElapsedTime
+            // 
+            this.ElapsedTime.Location = new System.Drawing.Point(531, 357);
+            this.ElapsedTime.Name = "ElapsedTime";
+            this.ElapsedTime.Size = new System.Drawing.Size(33, 18);
+            this.ElapsedTime.TabIndex = 3;
+            this.ElapsedTime.Text = "00:00";
+            // 
             // Result
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 497);
+            this.Controls.Add(this.ElapsedTime);
             this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.LC_GC);
             this.Name = "Result";
@@ -223,8 +243,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.Performance_prgbr)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Epochs_prgbr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ElapsedTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -239,5 +261,7 @@
         public System.Windows.Forms.Label label1;
         private Telerik.WinControls.UI.RadLabel radLabel2;
         public Telerik.WinControls.UI.RadProgressBar Performance_prgbr;
+        public System.Windows.Forms.Timer EllapsedTimer;
+        private Telerik.WinControls.UI.RadLabel ElapsedTime;
     }
 }

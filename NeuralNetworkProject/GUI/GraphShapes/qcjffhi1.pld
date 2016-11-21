@@ -23,7 +23,7 @@ namespace NeuralNetworkProject.GUI
             this.BackColor = Color.PaleGoldenrod;
 
             //this.BackColor = Color.Bisque;
-            this.Size = new Size(150, 150);
+            //this.Size = new Size(150, 150);
             this.IsConnectorsManipulationEnabled = false;
             this.IsRotationEnabled = false;
             this.IsResizingEnabled = false;

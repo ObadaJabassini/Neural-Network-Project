@@ -119,9 +119,6 @@
     <Compile Include="GUI\Forms\LoadData.Designer.cs">
       <DependentUpon>LoadData.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ProgressCounters.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="GUI\CostumControls\Layer_ctrl.cs">
       <SubType>UserControl</SubType>
     </Compile>

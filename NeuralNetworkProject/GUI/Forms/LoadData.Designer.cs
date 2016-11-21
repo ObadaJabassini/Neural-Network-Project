@@ -47,8 +47,8 @@ namespace NeuralNetworkProject
             this.Epochs = new Telerik.WinControls.UI.RadLabel();
             this.epochs_num = new System.Windows.Forms.NumericUpDown();
             this.LoadData_dlg = new System.Windows.Forms.OpenFileDialog();
-            this.radDiagram1 = new Telerik.WinControls.UI.RadDiagram();
             this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
+            this.radDiagram1 = new Telerik.WinControls.UI.RadDiagram();
             this.layers2 = new NeuralNetworkProject.Layer_ctrl();
             this.layers1 = new NeuralNetworkProject.Layer_ctrl();
             ((System.ComponentModel.ISupportInitialize)(this.Network_creat)).BeginInit();
@@ -335,11 +335,11 @@ namespace NeuralNetworkProject
         public System.Windows.Forms.OpenFileDialog LoadData_dlg;
         private Telerik.WinControls.UI.RadButton AddNewLayer;
         private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
-        private Telerik.WinControls.UI.RadDiagram radDiagram1;
         private Telerik.WinControls.UI.RadLabel radLabel1;
         private System.Windows.Forms.NumericUpDown EpochsNum;
         private System.Windows.Forms.Panel panel1;
         private Telerik.WinControls.UI.RadButton Train;
         private System.Windows.Forms.Panel panel2;
+        private Telerik.WinControls.UI.RadDiagram radDiagram1;
     }
 }
