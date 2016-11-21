@@ -82,7 +82,7 @@ namespace NeuralNetworkProject
             // 
             // BP
             // 
-            this.BP.BackColor = System.Drawing.Color.DarkSalmon;
+            this.BP.BackColor = System.Drawing.Color.LightSalmon;
             this.BP.Controls.Add(this.panel2);
             this.BP.Controls.Add(this.panel1);
             this.BP.Controls.Add(this.Train);
@@ -179,7 +179,7 @@ namespace NeuralNetworkProject
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.DarkSalmon;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.LightSalmon;
             this.flowLayoutPanel1.Controls.Add(this.layers2);
             this.flowLayoutPanel1.Controls.Add(this.layers1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 1);

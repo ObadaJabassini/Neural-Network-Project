@@ -35,6 +35,8 @@ namespace NeuralNetworkProject.GUI
         private void addnodes()
         {
             Items.Add(new Feature_shape());
+
+            System.Windows.Forms.Application.DoEvents();
         }
     }
 }

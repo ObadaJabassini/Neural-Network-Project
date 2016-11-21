@@ -13,15 +13,20 @@ namespace NeuralNetworkProject
     {
          public void OnNext(ResultMesssage value)
          {
-             //this.LC_GC.Series[0].Points.Add( value.Epochs,value.LCError);
-             //this.LC_GC.Series[1].Points.Add(value.Epochs, value.GCError);
             this.LC_GC.Series[0].Points.Add(value.LCError,value.Epochs);
             this.LC_GC.Series[1].Points.Add(value.GCError, value.Epochs);
             this.LC_GC.Refresh();
+
             Epochs_prgbr.Text = Convert.ToString(value.Epochs);
             Epochs_prgbr.Value1 = value.Epochs;
             System.Windows.Forms.Application.DoEvents();
-             Epochs_prgbr.Refresh();
+            Epochs_prgbr.Refresh();
+
+            Performance_prgbr.Text = Convert.ToString(value.LCError);
+            if (Performance_prgbr.Value1>10000 - (int)value.LCError * 100)
+                Performance_prgbr.Value1 = 10000-(int)value.LCError*100;
+            System.Windows.Forms.Application.DoEvents();
+            Epochs_prgbr.Refresh();
              //EpochsBar.Text = Convert.ToString(value.Epochs);
              //EpochsBar.Value = value.Epochs;
              //EpochsBar.Refresh();
