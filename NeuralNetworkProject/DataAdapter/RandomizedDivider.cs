@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +12,13 @@ namespace NeuralNetworkProject.DataAdapter
         internal RandomizedDivider() {}
         public Tuple<Matrix<double>, Matrix<double>, Matrix<double>, Matrix<double>> Divide(Matrix<double> inputs, Matrix<double> outputs, params object[] parameters)
         {
+            if (parameters.Length > 0)
+                throw new ArgumentException("U must provide a ratio for training samples");
+            double ratio = (parameters[0] as Double?).Value;
             var temp = inputs.EnumerateRows().Zip(outputs.EnumerateRows(), (f, s) => new Tuple<Vector<double>, Vector<double>>(f, s)).Shuffle();
-            var t1 = temp.Take(inputs.RowCount * 7 / 10);
-            var t2 = temp.Skip(inputs.RowCount * 7 / 10);
+            var numberOfTrainingSamples = Convert.ToInt32(inputs.RowCount * ratio);
+            var t1 = temp.Take(numberOfTrainingSamples);
+            var t2 = temp.Skip(numberOfTrainingSamples);
             return new Tuple<Matrix<double>, Matrix<double>, Matrix<double>, Matrix<double>>(Matrix<double>.Build.DenseOfRowVectors(t1.Select(r => r.Item1)), Matrix<double>.Build.DenseOfRowVectors(t1.Select(r => r.Item2)).Transpose(), Matrix<double>.Build.DenseOfRowVectors(t2.Select(r => r.Item1)), Matrix<double>.Build.DenseOfRowVectors(t2.Select(r => r.Item2)).Transpose());
         }
     }
