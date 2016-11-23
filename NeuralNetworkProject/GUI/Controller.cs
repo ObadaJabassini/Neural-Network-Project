@@ -63,35 +63,52 @@ namespace NeuralNetworkProject.GUI
 
         public static void NetGraph(NeuralNetwork.NeuralNetwork nn, Telerik.WinControls.UI.RadDiagram radDiagram1)
         {
+            List<Feature_shape> featureShapes=new List<Feature_shape>();
+            List<AF_shape> afShapes=new List<AF_shape>();
             radDiagram1.AddShape(new Input_shape(),null,new Point(0,90));
             for (int i = 0; i < nn.Layers.Count; i++)
-            { 
-                radDiagram1.AddShape(new Layer_shape("Layer" + i + Layerinfo(nn.Layers[i])), null, new Point(i*250+100, 0));
-                radDiagram1.AddShape(new Feature_shape());
+            {
+                Point location = new Point(i*250+100, 0);
+                radDiagram1.AddShape(new Layer_shape("Layer" + i + Layerinfo(nn.Layers[i])), null, location);
+                //radDiagram1.AddShape(new Feature_shape(), null, new Point(i * 250 + 150, 45));
+                featureShapes.Add(new Feature_shape(new Point(i*250 + 125, 75),
+                    Convert.ToString(nn.Layers[i].NeuronsNumber)));
+                afShapes.Add(new AF_shape(new Point(i*250 + 200, 75), Convert.ToString(nn.Layers[i].Applier)));
+
                 //(radDiagram1.Shapes[radDiagram1.Shapes.Count-1] as Layer_shape).addnodes();
             }
-            radDiagram1.AddShape(new Output_shape(), null,new Point( nn.Layers.Count*250+100,90));
+            radDiagram1.AddShape(new Output_shape(), null, new Point(nn.Layers.Count*250 + 100, 90));
             Weight_edge edge;
             for (int i = 1; i < radDiagram1.Shapes.Count; i++)
             {
-                radDiagram1.AddConnection((IShape) radDiagram1.Shapes[i - 1], (IShape) radDiagram1.Shapes[i]);
-                radDiagram1.Connections[i - 1].TargetCapType = CapType.Arrow2Filled;
-                radDiagram1.Connections[i - 1].AllowDelete = false;
-                radDiagram1.Connections[i - 1].IsDraggingEnabled = false;
-                radDiagram1.Connections[i - 1].IsEditable = false;
-                radDiagram1.Connections[i - 1].TargetCapSize = new SizeF(20, 25);
-                //I don't know how!!
-                RadDiagramConnection connection1 = (RadDiagramConnection) radDiagram1.Connections[i - 1];
-                connection1.BackColor = Color.LightSalmon;
-                //    radDiagram1.AddConnection(
-                //        radDiagram1,i
-                //        //new Weight_edge(
-                //        ////    (IShape)radDiagram1.Shapes[i],
-                //        ////(IShape)radDiagram1.Shapes[i - 1]
-                //)
-                //       // )
+                    radDiagram1.AddConnection((IShape) radDiagram1.Shapes[i - 1], (IShape) radDiagram1.Shapes[i]);
+                    radDiagram1.Connections[i - 1].TargetCapType = CapType.Arrow2Filled;
+                    radDiagram1.Connections[i - 1].AllowDelete = false;
+                    radDiagram1.Connections[i - 1].IsDraggingEnabled = false;
+                    radDiagram1.Connections[i - 1].IsEditable = false;
+                    radDiagram1.Connections[i - 1].TargetCapSize = new SizeF(20, 25);
+                    //I don't know how!!
+                    RadDiagramConnection connection1 = (RadDiagramConnection) radDiagram1.Connections[i - 1];
+                    connection1.BackColor = Color.LightSalmon;
+                    //    radDiagram1.AddConnection(
+                    //        radDiagram1,i
+                    //        //new Weight_edge(
+                    //        ////    (IShape)radDiagram1.Shapes[i],
+                    //        ////(IShape)radDiagram1.Shapes[i - 1]
+                    //)
+                    //       // )
 
-                //        ;
+                   //        ;
+                
+            }
+            for(int i=0;i<featureShapes.Count;i++)
+            {
+                radDiagram1.AddShape(featureShapes[i]);
+                radDiagram1.AddShape(afShapes[i]);
+                radDiagram1.AddConnection((IShape) radDiagram1.Shapes[radDiagram1.Shapes.Count - 1],
+                    (IShape) radDiagram1.Shapes[radDiagram1.Shapes.Count - 2]);
+
+
             }
             
         }
@@ -102,7 +119,7 @@ namespace NeuralNetworkProject.GUI
                    layer.NeuronsNumber +
                    "\nLearningRate :\n" +
                    layer.LearningRate
-                  // + "AF :\n" + layer.Applier.ActivatorFunction.ToString();
+                // + "AF :\n" + layer.Applier.ActivatorFunction.ToString();
                 ;
         }
     }

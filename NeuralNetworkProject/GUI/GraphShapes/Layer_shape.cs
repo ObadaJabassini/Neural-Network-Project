@@ -29,12 +29,12 @@ namespace NeuralNetworkProject.GUI
             this.IsResizingEnabled = false;
             //this.Shape = new RoundRectShape();
 
-            this.addnodes();
+            //this.addnodes();
         }
 
         public void addnodes()
         {
-            Items.Add(new Feature_shape());
+            Items.Add(new Feature_shape(this.Location));
             System.Windows.Forms.Application.DoEvents();
         }
     }

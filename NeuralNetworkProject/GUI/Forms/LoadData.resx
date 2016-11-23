@@ -123,6 +123,9 @@
   <metadata name="office2010BlackTheme1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>143, 17</value>
   </metadata>
+  <data name="radDiagram1.SerializedXml" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;RadDiagram Version="2015.3"&gt;&lt;Metadata Type="Telerik.WinControls.UI.RadDiagramElement" Id="caa98605-9133-4356-a2df-5de9e84a354e" Zoom="0.9" Position="0;0" Bridges="None" IsBackgroundSurfaceVisible="true"&gt;&lt;Title&gt;Diagram [11/23/2016 9:13:18 PM]&lt;/Title&gt;&lt;Description&gt;&lt;/Description&gt;&lt;/Metadata&gt;&lt;Groups /&gt;&lt;Shapes /&gt;&lt;Connections /&gt;&lt;/RadDiagram&gt;</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>46</value>
   </metadata>
