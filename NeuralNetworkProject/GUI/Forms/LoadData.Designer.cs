@@ -41,6 +41,8 @@ namespace NeuralNetworkProject
             this.EpochsNum = new System.Windows.Forms.NumericUpDown();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
+            this.momentum = new System.Windows.Forms.NumericUpDown();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.AddNewLayer = new Telerik.WinControls.UI.RadButton();
             this.Train = new Telerik.WinControls.UI.RadButton();
@@ -60,6 +62,8 @@ namespace NeuralNetworkProject
             ((System.ComponentModel.ISupportInitialize)(this.EpochsNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.momentum)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddNewLayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Train)).BeginInit();
@@ -72,9 +76,9 @@ namespace NeuralNetworkProject
             // Network_creat
             // 
             this.Network_creat.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Network_creat.Location = new System.Drawing.Point(0, 249);
+            this.Network_creat.Location = new System.Drawing.Point(0, 235);
             this.Network_creat.Name = "Network_creat";
-            this.Network_creat.Size = new System.Drawing.Size(249, 24);
+            this.Network_creat.Size = new System.Drawing.Size(250, 24);
             this.Network_creat.TabIndex = 7;
             this.Network_creat.Text = "Create Network";
             this.Network_creat.ThemeName = "Office2010Black";
@@ -93,7 +97,6 @@ namespace NeuralNetworkProject
             this.BP.TabIndex = 4;
             this.BP.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
             this.BP.ThemeName = "Office2010Black";
-            this.BP.Paint += new System.Windows.Forms.PaintEventHandler(this.BP_Paint);
             // 
             // panel2
             // 
@@ -104,7 +107,7 @@ namespace NeuralNetworkProject
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(277, 123);
+            this.panel2.Size = new System.Drawing.Size(277, 137);
             this.panel2.TabIndex = 11;
             // 
             // LoadData_btn
@@ -126,7 +129,7 @@ namespace NeuralNetworkProject
             this.Algorithem.Items.Add(radListDataItem1);
             this.Algorithem.Items.Add(radListDataItem2);
             this.Algorithem.Items.Add(radListDataItem3);
-            this.Algorithem.Location = new System.Drawing.Point(37, 92);
+            this.Algorithem.Location = new System.Drawing.Point(37, 99);
             this.Algorithem.Name = "Algorithem";
             this.Algorithem.Size = new System.Drawing.Size(197, 20);
             this.Algorithem.TabIndex = 3;
@@ -141,14 +144,14 @@ namespace NeuralNetworkProject
             0,
             0,
             0});
-            this.EpochsNum.Location = new System.Drawing.Point(118, 55);
+            this.EpochsNum.Location = new System.Drawing.Point(113, 58);
             this.EpochsNum.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
             this.EpochsNum.Name = "EpochsNum";
-            this.EpochsNum.Size = new System.Drawing.Size(61, 22);
+            this.EpochsNum.Size = new System.Drawing.Size(68, 22);
             this.EpochsNum.TabIndex = 1;
             this.EpochsNum.Value = new decimal(new int[] {
             1000,
@@ -160,7 +163,7 @@ namespace NeuralNetworkProject
             // radLabel1
             // 
             this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.radLabel1.Location = new System.Drawing.Point(71, 55);
+            this.radLabel1.Location = new System.Drawing.Point(66, 58);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(43, 18);
             this.radLabel1.TabIndex = 10;
@@ -168,32 +171,68 @@ namespace NeuralNetworkProject
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel1.Controls.Add(this.radLabel2);
+            this.panel1.Controls.Add(this.momentum);
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.AddNewLayer);
             this.panel1.Controls.Add(this.Network_creat);
-            this.panel1.Location = new System.Drawing.Point(13, 129);
+            this.panel1.Location = new System.Drawing.Point(12, 143);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(249, 273);
+            this.panel1.Size = new System.Drawing.Size(250, 259);
             this.panel1.TabIndex = 0;
+            // 
+            // radLabel2
+            // 
+            this.radLabel2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.radLabel2.Location = new System.Drawing.Point(25, 3);
+            this.radLabel2.Name = "radLabel2";
+            this.radLabel2.Size = new System.Drawing.Size(69, 18);
+            this.radLabel2.TabIndex = 11;
+            this.radLabel2.Text = "Momentum";
+            // 
+            // momentum
+            // 
+            this.momentum.DecimalPlaces = 4;
+            this.momentum.Enabled = false;
+            this.momentum.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.momentum.Location = new System.Drawing.Point(100, 1);
+            this.momentum.Name = "momentum";
+            this.momentum.Size = new System.Drawing.Size(69, 22);
+            this.momentum.TabIndex = 11;
+            this.momentum.Value = new decimal(new int[] {
+            9,
+            0,
+            0,
+            65536});
+            this.momentum.ValueChanged += new System.EventHandler(this.momentum_ValueChanged);
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.LightSalmon;
             this.flowLayoutPanel1.Controls.Add(this.layers2);
             this.flowLayoutPanel1.Controls.Add(this.layers1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 1);
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 40);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(249, 218);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(250, 165);
             this.flowLayoutPanel1.TabIndex = 8;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // AddNewLayer
             // 
             this.AddNewLayer.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.AddNewLayer.Location = new System.Drawing.Point(0, 225);
+            this.AddNewLayer.Location = new System.Drawing.Point(0, 211);
             this.AddNewLayer.Name = "AddNewLayer";
-            this.AddNewLayer.Size = new System.Drawing.Size(249, 24);
+            this.AddNewLayer.Size = new System.Drawing.Size(250, 24);
             this.AddNewLayer.TabIndex = 9;
             this.AddNewLayer.Text = "Add New Layer";
             this.AddNewLayer.ThemeName = "Office2010Black";
@@ -272,14 +311,14 @@ namespace NeuralNetworkProject
             // 
             this.layers2.Location = new System.Drawing.Point(3, 3);
             this.layers2.Name = "layers2";
-            this.layers2.Size = new System.Drawing.Size(222, 24);
+            this.layers2.Size = new System.Drawing.Size(244, 24);
             this.layers2.TabIndex = 1;
             // 
             // layers1
             // 
             this.layers1.Location = new System.Drawing.Point(3, 33);
             this.layers1.Name = "layers1";
-            this.layers1.Size = new System.Drawing.Size(222, 24);
+            this.layers1.Size = new System.Drawing.Size(244, 24);
             this.layers1.TabIndex = 0;
             // 
             // LoadData
@@ -309,6 +348,9 @@ namespace NeuralNetworkProject
             ((System.ComponentModel.ISupportInitialize)(this.EpochsNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.momentum)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.AddNewLayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Train)).EndInit();
@@ -341,5 +383,7 @@ namespace NeuralNetworkProject
         private Telerik.WinControls.UI.RadButton Train;
         private System.Windows.Forms.Panel panel2;
         private Telerik.WinControls.UI.RadDiagram radDiagram1;
+        private Telerik.WinControls.UI.RadLabel radLabel2;
+        private System.Windows.Forms.NumericUpDown momentum;
     }
 }

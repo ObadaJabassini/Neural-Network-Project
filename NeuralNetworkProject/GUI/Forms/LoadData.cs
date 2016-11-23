@@ -21,12 +21,9 @@ namespace NeuralNetworkProject
         private  Trainer Trainer=new Trainer();
         private Controller.trainerParams Params;
         private HyperParameters _hyperParameters = null;
-        private BackpropagationAlgorithm _backpropagationAlgorithm = new BackpropagationAlgorithm();
+        private BackpropagationAlgorithm _bp = new BackpropagationAlgorithm();
+        private BackPropagationWithMomentum _bpm = new BackPropagationWithMomentum();
 
-        public void su()
-        {
-          
-        }
         public LoadData()
         {
             InitializeComponent();
@@ -34,7 +31,9 @@ namespace NeuralNetworkProject
 
         private void LoadData_Load(object sender, EventArgs e)
         {
-
+            Trainer.TrainingAlgorithm = _bp;
+            _hyperParameters.MaxEpochs = 1000;
+            _hyperParameters.MaxError = 0.01;
         }
 
         private void LoadData_btn_Click(object sender, EventArgs e)
@@ -50,12 +49,6 @@ namespace NeuralNetworkProject
                 //message
                 LoadData_dlg.ShowDialog();
             }
-        }
-
-        
-        private void BP_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -74,7 +67,6 @@ namespace NeuralNetworkProject
 
         private void Network_creat_Click(object sender, EventArgs e)
         {
-            HyperParameters Hparameters=new HyperParameters();
             Params=Controller.BuildNet(this.flowLayoutPanel1, LoadData_dlg, r, radDiagram1);
 
         }
@@ -86,28 +78,46 @@ namespace NeuralNetworkProject
 
         private void Algorithem_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
-           // Trainer.TrainingAlgorithm=new BackpropagationAlgorithm();
+            switch (Algorithem.SelectedIndex)
+            {
+                //case 2:
+                //    Trainer.TrainingAlgorithm = _sp;
+                //    momentum.Enabled = false;
+                //    break;
+                case 1:
+                    Trainer.TrainingAlgorithm = _bpm;
+                        momentum.Enabled = true;
+                        _hyperParameters.Momentum = (double)momentum.Value;
+                    break;
+                case 0:
+                    Trainer.TrainingAlgorithm = _bp;
+                        momentum.Enabled = false;
+                    break;
+            }
+           
             
 
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            _hyperParameters = new HyperParameters();
             _hyperParameters.MaxEpochs = (int)EpochsNum.Value;
-
             r.MaxEpochs.Text = ((int)EpochsNum.Value).ToString();
             r.Epochs_prgbr.Maximum = (int)EpochsNum.Value;
         }
 
         private void Train_Click(object sender, EventArgs e)
         {
-            Trainer.TrainingAlgorithm = _backpropagationAlgorithm;
             r.Show();
             r.EllapsedTimer.Start();
             Trainer.Subscribe(r);
             Trainer.Train(Params.nn, Params.Tuple.Item1, Params.Tuple.Item2, _hyperParameters);
             r.EllapsedTimer.Stop();
+        }
+
+        private void momentum_ValueChanged(object sender, EventArgs e)
+        {
+            _hyperParameters.Momentum = (double) momentum.Value;
         }
         
     }

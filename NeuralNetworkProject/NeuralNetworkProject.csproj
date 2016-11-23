@@ -103,12 +103,6 @@
     <Compile Include="GUI\CostumControls\ProgressCounter.Designer.cs">
       <DependentUpon>ProgressCounter.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Forms\Graph-Training.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Forms\Graph-Training.Designer.cs">
-      <DependentUpon>Graph-Training.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Controller.cs" />
     <Compile Include="GUI\GraphShapes\Feature_shape.cs" />
     <Compile Include="GUI\GraphShapes\IO_shape.cs" />
@@ -180,9 +174,6 @@
   <ItemGroup>
     <EmbeddedResource Include="GUI\CostumControls\ProgressCounter.resx">
       <DependentUpon>ProgressCounter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Forms\Graph-Training.resx">
-      <DependentUpon>Graph-Training.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Forms\LoadData.resx">
       <DependentUpon>LoadData.cs</DependentUpon>
