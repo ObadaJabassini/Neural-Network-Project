@@ -82,5 +82,7 @@ namespace NeuralNetworkProject.NeuralNetwork
         public int NeuronsNumber { get; internal set; }
         public double LearningRate { get; internal set; }
         public FunctionApplier Applier { get; internal set; }
+
+
     }
 }

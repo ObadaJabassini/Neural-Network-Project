@@ -35,7 +35,9 @@ namespace NeuralNetworkProject.Training
             for (int i = 0; i < weights.Count; ++i)
                 prevDeltaW.Add(Matrix<double>.Build.Dense(layers[i + 1].NeuronsNumber, layers[i].NeuronsNumber + 1));
             //end
-            while(error > maxError && epochs++ <= maxEpochs)
+            //epochs++ => ++epochs 
+            while(error > maxError && ++epochs <= maxEpochs)
+
             {
                 prevDeltaW.ForEach(e => e.Clear());
                 for (int i = 0; i < trainingSet.RowCount; i++)
@@ -64,6 +66,7 @@ namespace NeuralNetworkProject.Training
                         neuralNetwork.UpdateWeightsAt(deltaW, j - 1);
                     }
                 }
+                message.EPochs = epochs;
                 base.Notify(message);
                 error = message.Error; 
                 Console.WriteLine(error);
