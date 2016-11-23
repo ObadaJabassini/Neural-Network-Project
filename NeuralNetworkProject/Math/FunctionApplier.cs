@@ -12,5 +12,10 @@ namespace NeuralNetworkProject.Math
         public IActivatorFunction ActivatorFunction { get; set; } = ActivatorFunctions.CreateFunction(ActivatorFunctions.FunctionName.SIGMOID);
         public Vector<double> Apply(Vector<double> value) => ActivatorFunction.Apply(value);
         public Vector<double> Gradient(Vector<double> value) => ActivatorFunction.Gradient(value);
+
+        public override string ToString()
+        {
+            return ActivatorFunction.ToString();
+        }
     }
 }

@@ -43,7 +43,7 @@ namespace NeuralNetworkProject
             // 
             // NN_drpdn
             // 
-            this.NN_drpdn.Location = new System.Drawing.Point(97, 2);
+            this.NN_drpdn.Location = new System.Drawing.Point(90, 2);
             this.NN_drpdn.Name = "NN_drpdn";
             this.NN_drpdn.Size = new System.Drawing.Size(46, 20);
             this.NN_drpdn.TabIndex = 3;
@@ -56,9 +56,8 @@ namespace NeuralNetworkProject
             // AF_drpdn
             // 
             this.AF_drpdn.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            radListDataItem1.Text = "SIGMOID";
             this.AF_drpdn.Items.Add(radListDataItem1);
-            this.AF_drpdn.Location = new System.Drawing.Point(13, 1);
+            this.AF_drpdn.Location = new System.Drawing.Point(6, 2);
             this.AF_drpdn.Name = "AF_drpdn";
             this.AF_drpdn.Size = new System.Drawing.Size(78, 20);
             this.AF_drpdn.TabIndex = 0;
@@ -73,7 +72,7 @@ namespace NeuralNetworkProject
             0,
             0,
             131072});
-            this.Lr_drpdn.Location = new System.Drawing.Point(149, 2);
+            this.Lr_drpdn.Location = new System.Drawing.Point(142, 2);
             this.Lr_drpdn.Maximum = new decimal(new int[] {
             1,
             0,
@@ -91,7 +90,7 @@ namespace NeuralNetworkProject
             // pictureBox1
             // 
             this.pictureBox1.Image = global::NeuralNetworkProject.Properties.Resources.mouse_x;
-            this.pictureBox1.Location = new System.Drawing.Point(221, 1);
+            this.pictureBox1.Location = new System.Drawing.Point(214, 1);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(20, 20);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -108,7 +107,7 @@ namespace NeuralNetworkProject
             this.Controls.Add(this.AF_drpdn);
             this.Controls.Add(this.NN_drpdn);
             this.Name = "Layer_ctrl";
-            this.Size = new System.Drawing.Size(249, 24);
+            this.Size = new System.Drawing.Size(238, 30);
             ((System.ComponentModel.ISupportInitialize)(this.NN_drpdn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AF_drpdn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Lr_drpdn)).EndInit();

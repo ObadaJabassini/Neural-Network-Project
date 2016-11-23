@@ -79,7 +79,7 @@ namespace NeuralNetworkProject
 
         private void Algorithem_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
-            switch (Algorithem.SelectedIndex)
+            switch (Algorithm.SelectedIndex)
             {
                 //case 2:
                 //    Trainer.TrainingAlgorithm = _sp;
@@ -119,6 +119,11 @@ namespace NeuralNetworkProject
         private void momentum_ValueChanged(object sender, EventArgs e)
         {
             _hyperParameters.Momentum = (double) momentum.Value;
+        }
+
+        private void layers2_Load(object sender, EventArgs e)
+        {
+
         }
         
     }

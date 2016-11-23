@@ -119,7 +119,7 @@ namespace NeuralNetworkProject.GUI
                    layer.NeuronsNumber +
                    "\nLearningRate :\n" +
                    layer.LearningRate
-                // + "AF :\n" + layer.Applier.ActivatorFunction.ToString();
+               // + "AF :\n" +layer.Applier.ActivatorFunction;
                 ;
         }
     }

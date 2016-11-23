@@ -17,5 +17,10 @@ namespace NeuralNetworkProject.Math
             var applyResult = Apply(value);
             return applyResult.PointwiseMultiply(1 - applyResult);
         }
+
+        public override string ToString()
+        {
+            return "Sigmoid";
+        }
     }
 }
