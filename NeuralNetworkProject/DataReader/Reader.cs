@@ -9,17 +9,17 @@ using System.Threading.Tasks;
 
 namespace NeuralNetworkProject.DataReader
 {
-    public class DataReader
+    public class Reader
     {
-        private static DataReader _reader = null;
-        public static DataReader Instance
+        private static Reader _reader = null;
+        public static Reader Instance
         {
             get
             {
-                return _reader != null ? _reader : (_reader = new DataReader());
+                return _reader != null ? _reader : (_reader = new Reader());
             }
         }
-        private DataReader() { }
+        private Reader() { }
         public Tuple<Matrix<double>, Matrix<double>> ReadFromFile(string filePath)
         {
             switch (Path.GetExtension(filePath).Substring(1))
@@ -53,6 +53,7 @@ namespace NeuralNetworkProject.DataReader
                             output.SetRow(i, Vector<double>.Build.Dense(arr));
                         }
                         return new Tuple<Matrix<double>, Matrix<double>>(mat, output);
+
                     }
                     else
                     {
