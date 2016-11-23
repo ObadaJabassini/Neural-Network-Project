@@ -96,7 +96,6 @@
     <Compile Include="DataAdapter\IndexedDivider.cs" />
     <Compile Include="DataAdapter\RandomizedDivider.cs" />
     <Compile Include="DataAdapter\StaticDivider.cs" />
-    <Compile Include="DataReader\DataReader.cs" />
     <Compile Include="DataReader\Reader.cs" />
     <Compile Include="GUI\CostumControls\ProgressCounter.cs">
       <SubType>UserControl</SubType>

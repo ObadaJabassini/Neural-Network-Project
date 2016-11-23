@@ -9,17 +9,17 @@ using System.Threading.Tasks;
 
 namespace NeuralNetworkProject.DataReader
 {
-    public class Reader
+    public class DataReader
     {
-        private static Reader _reader = null;
-        public static Reader Instance
+        private static DataReader _reader = null;
+        public static DataReader Instance
         {
             get
             {
-                return _reader != null ? _reader : (_reader = new Reader());
+                return _reader != null ? _reader : (_reader = new DataReader());
             }
         }
-        private Reader() { }
+        private DataReader() { }
         public Tuple<Matrix<double>, Matrix<double>> ReadFromFile(string filePath)
         {
             switch (Path.GetExtension(filePath).Substring(1))
