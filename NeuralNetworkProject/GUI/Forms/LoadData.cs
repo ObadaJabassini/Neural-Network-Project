@@ -34,7 +34,10 @@ namespace NeuralNetworkProject
             Trainer.TrainingAlgorithm = _bp;
             _hyperParameters.MaxEpochs = 1000;
             _hyperParameters.MaxError = 0.01;
-            //radDiagram1.BackgroundGrid.Visibility=ElementVisibility.Hidden;
+            radDiagram1.BackgroundGrid.Visibility=ElementVisibility.Hidden;
+             this.radDiagram1.BackgroundPageGrid.Visibility = Telerik.WinControls.ElementVisibility.Hidden;
+             this.radDiagram1.IsSnapToGridEnabled = false; this.radDiagram1.IsSnapToItemsEnabled = false;
+            this.radDiagram1.SetLayout(Telerik.Windows.Diagrams.Core.LayoutType.Tree);
         }
 
         private void LoadData_btn_Click(object sender, EventArgs e)

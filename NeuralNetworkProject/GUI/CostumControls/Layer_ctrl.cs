@@ -15,8 +15,8 @@ namespace NeuralNetworkProject
     {
         public Layer_ctrl()
         {
-            InitializeComponent(); 
-            
+            InitializeComponent();
+            AF_drpdn.Items[0].Text = "Sigmoid";
         }
 
         public Layer_ctrl(string num)

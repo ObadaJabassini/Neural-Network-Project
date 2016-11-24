@@ -16,13 +16,19 @@ namespace NeuralNetworkProject.GUI.GraphShapes
 {
     class AF_shape:RadDiagramShape
     {
-        public AF_shape(Point location,string text)
+        public AF_shape(Point location, string text)
         {
             this.Shape = new DonutShape();
             this.BackColor = Color.CornflowerBlue;
             this.Size = new Size(40, 40);
             this.Text = text;
             this.Location = location;
+        }
+        public AF_shape()
+        {
+            this.Shape = new DonutShape();
+            this.BackColor = Color.CornflowerBlue;
+            this.Size = new Size(40, 40);
         }
     }
 }

@@ -22,5 +22,13 @@ namespace NeuralNetworkProject.GUI
             this.Location = location;
 
         }
+
+        public Feature_shape()
+        {
+            this.Shape = new EllipseShape();
+            this.BackColor = Color.CornflowerBlue;
+            this.Size = new Size(40, 40);
+
+        }
     }
 }

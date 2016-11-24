@@ -68,12 +68,21 @@ namespace NeuralNetworkProject.GUI
             radDiagram1.AddShape(new Input_shape(),null,new Point(0,90));
             for (int i = 0; i < nn.Layers.Count; i++)
             {
-                Point location = new Point(i*250+100, 0);
-                radDiagram1.AddShape(new Layer_shape("Layer" + i + Layerinfo(nn.Layers[i])), null, location);
-                //radDiagram1.AddShape(new Feature_shape(), null, new Point(i * 250 + 150, 45));
-                featureShapes.Add(new Feature_shape(new Point(i*250 + 125, 75),
-                    Convert.ToString(nn.Layers[i].NeuronsNumber)));
-                afShapes.Add(new AF_shape(new Point(i*250 + 200, 75), Convert.ToString(nn.Layers[i].Applier)));
+                Point location = new Point(i*250 + 100, 0);
+                radDiagram1.AddShape(new Layer_shape(),null, location);
+                featureShapes.Add(new Feature_shape()
+                {
+                    Location = new Point(i * 250 + 125, 75),
+                    Text = Convert.ToString(nn.Layers[i].NeuronsNumber)
+                }
+                  );
+                afShapes.Add(new AF_shape()
+                {
+                    Location = new Point(i * 250 + 200, 75),
+                    Text = Convert.ToString(nn.Layers[i].Applier)
+
+                }
+                );
 
                 //(radDiagram1.Shapes[radDiagram1.Shapes.Count-1] as Layer_shape).addnodes();
             }

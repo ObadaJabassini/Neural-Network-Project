@@ -45,8 +45,6 @@ namespace NeuralNetworkProject
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.momentum = new System.Windows.Forms.NumericUpDown();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.layers2 = new NeuralNetworkProject.Layer_ctrl();
-            this.layers1 = new NeuralNetworkProject.Layer_ctrl();
             this.AddNewLayer = new Telerik.WinControls.UI.RadButton();
             this.Train = new Telerik.WinControls.UI.RadButton();
             this.Epochs = new Telerik.WinControls.UI.RadLabel();
@@ -54,6 +52,8 @@ namespace NeuralNetworkProject
             this.LoadData_dlg = new System.Windows.Forms.OpenFileDialog();
             this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             this.radDiagram1 = new Telerik.WinControls.UI.RadDiagram();
+            this.layers2 = new NeuralNetworkProject.Layer_ctrl();
+            this.layers1 = new NeuralNetworkProject.Layer_ctrl();
             ((System.ComponentModel.ISupportInitialize)(this.Network_creat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BP)).BeginInit();
             this.BP.SuspendLayout();
@@ -152,7 +152,7 @@ namespace NeuralNetworkProject
             0,
             0});
             this.EpochsNum.Name = "EpochsNum";
-            this.EpochsNum.Size = new System.Drawing.Size(68, 20);
+            this.EpochsNum.Size = new System.Drawing.Size(68, 22);
             this.EpochsNum.TabIndex = 1;
             this.EpochsNum.Value = new decimal(new int[] {
             1000,
@@ -204,7 +204,7 @@ namespace NeuralNetworkProject
             131072});
             this.momentum.Location = new System.Drawing.Point(100, 1);
             this.momentum.Name = "momentum";
-            this.momentum.Size = new System.Drawing.Size(69, 20);
+            this.momentum.Size = new System.Drawing.Size(69, 22);
             this.momentum.TabIndex = 11;
             this.momentum.Value = new decimal(new int[] {
             9,
@@ -215,33 +215,16 @@ namespace NeuralNetworkProject
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.LightSalmon;
             this.flowLayoutPanel1.Controls.Add(this.layers2);
             this.flowLayoutPanel1.Controls.Add(this.layers1);
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 40);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(250, 165);
             this.flowLayoutPanel1.TabIndex = 8;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
-            // 
-            // layers2
-            // 
-            this.layers2.Location = new System.Drawing.Point(3, 3);
-            this.layers2.Name = "layers2";
-            this.layers2.Size = new System.Drawing.Size(244, 33);
-            this.layers2.TabIndex = 1;
-            this.layers2.Load += new System.EventHandler(this.layers2_Load);
-            // 
-            // layers1
-            // 
-            this.layers1.Location = new System.Drawing.Point(3, 42);
-            this.layers1.Name = "layers1";
-            this.layers1.Size = new System.Drawing.Size(244, 33);
-            this.layers1.TabIndex = 0;
             // 
             // AddNewLayer
             // 
@@ -325,6 +308,21 @@ namespace NeuralNetworkProject
             ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderRightColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(11)))), ((int)(((byte)(11)))));
+            // 
+            // layers2
+            // 
+            this.layers2.Location = new System.Drawing.Point(3, 3);
+            this.layers2.Name = "layers2";
+            this.layers2.Size = new System.Drawing.Size(244, 33);
+            this.layers2.TabIndex = 1;
+            this.layers2.Load += new System.EventHandler(this.layers2_Load);
+            // 
+            // layers1
+            // 
+            this.layers1.Location = new System.Drawing.Point(3, 42);
+            this.layers1.Name = "layers1";
+            this.layers1.Size = new System.Drawing.Size(244, 33);
+            this.layers1.TabIndex = 0;
             // 
             // LoadData
             // 
