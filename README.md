@@ -6,9 +6,9 @@ A university project to implement some basic neural network algorithms like :
 * etc...
 
 ## TODO:
-* Add Gui(in progress)
+* Add More Algorithms
 * Parallelize the code
-* Add Visualization
+* Add Visualization(partially done)
 
 ## This project is still in very early stage(most of the planned features don't even exist)
 
