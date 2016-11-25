@@ -18,7 +18,7 @@ namespace NeuralNetworkProject.NeuralNetwork
             this.Layers = layers;
             HiddenWeights = new List<Matrix<double>>(layers.Count - 1);
 
-            for (int i = 0; i < layers.Count-1; ++i)
+            for (int i = 0; i < layers.Count - 1; ++i)
                 HiddenWeights.Add(Matrix<double>.Build.Random(layers[i + 1].NeuronsNumber, layers[i].NeuronsNumber + 1));
         }
 
@@ -27,15 +27,15 @@ namespace NeuralNetworkProject.NeuralNetwork
             IList<Vector<double>> acs = new List<Vector<double>>(),
                                   gs = new List<Vector<double>>();
 
-            input = input.ToColumnMatrix().InsertRow(0, Vector<double>.Build.Dense(new double[] {1})).Column(0);
+            input = input.ToColumnMatrix().InsertRow(0, Vector<double>.Build.Dense(new double[] { 1 })).Column(0);
 
             acs.Add(input);
-            
+
             Vector<double> temp = input, temp2;
-            
+
             for (int i = 1; i < Layers.Count; i++)
             {
-                temp = HiddenWeights[i - 1]*temp; // (n(i)*(n(i-1)+1)) * ((n(i-1)+1)*1) = n(i)*1
+                temp = HiddenWeights[i - 1] * temp; // (n(i)*(n(i-1)+1)) * ((n(i-1)+1)*1) = n(i)*1
 
                 gs.Add(Layers[i].Applier.Gradient(temp));
 
@@ -43,7 +43,7 @@ namespace NeuralNetworkProject.NeuralNetwork
 
                 if (i < Layers.Count - 1)
                     //add bias
-                    temp2 = temp2.ToColumnMatrix().InsertRow(0, Vector<double>.Build.Dense(new double[] {1})).Column(0);
+                    temp2 = temp2.ToColumnMatrix().InsertRow(0, Vector<double>.Build.Dense(new double[] { 1 })).Column(0);
 
                 acs.Add(temp2);
 
@@ -58,7 +58,7 @@ namespace NeuralNetworkProject.NeuralNetwork
             HiddenWeights[index] += deltaW;
         }
     }
-    
+
     public class NeuralNetworkBuilder
     {
         private IList<Layer> _layers;
@@ -79,6 +79,8 @@ namespace NeuralNetworkProject.NeuralNetwork
 
     public class Layer
     {
-        public int NeuronNumber { get; set; }
+        public int NeuronsNumber { get; internal set; }
+        public double LearningRate { get; internal set; }
+        public FunctionApplier Applier { get; internal set; }
     }
 }
