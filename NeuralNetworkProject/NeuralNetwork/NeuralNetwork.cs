@@ -14,5 +14,6 @@ namespace NeuralNetworkProject.NeuralNetwork
     public class Layer
     {
         public int NeuronNumber { get; set; }
+
     }
 }
