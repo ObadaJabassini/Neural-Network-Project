@@ -17,15 +17,9 @@ namespace NeuralNetworkProject.Training
             return null;
         }
 
-        protected void Notify(TrainingErrorMessage message)
-        {
-            _observers.ForEach(obs => obs.OnNext(message));
-        }
+        protected void Notify(TrainingErrorMessage message) => _observers.ForEach(obs => obs.OnNext(message));
 
-        protected void OnComplete()
-        {
-            _observers.ForEach(obs => obs.OnCompleted());
-        }
-        public abstract void Train(NeuralNetwork.NeuralNetwork neuralNetwork, Matrix<double> trainingSet, Matrix<double> crossValidationSet, Matrix<double> trainingSetOutput, Matrix<double> crossValidationSetOutput, HyperParameters hyperParamters = null);
+        protected void OnComplete() => _observers.ForEach(obs => obs.OnCompleted());
+        public abstract void Train(NeuralNetwork.NeuralNetwork neuralNetwork, Matrix<double> trainingSet, Matrix<double> crossValidationSet, Matrix<double> trainingSetOutput, Matrix<double> crossValidationSetOutput, HyperParameters hyperParameters = null);
     }
 }
