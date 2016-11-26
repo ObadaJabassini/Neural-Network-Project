@@ -10,24 +10,19 @@ namespace NeuralNetworkProject.DataAdapter
     public class StaticDivider : IDataDivider
     {
         internal StaticDivider() { }
-        public Tuple<Matrix<double>, Matrix<double>, Matrix<double>, Matrix<double>> Divide(Matrix<double> inputs, Matrix<double> outputs, params object[] paramters)
+        public Tuple<Matrix<double>, Matrix<double>, Matrix<double>, Matrix<double>> Divide(Matrix<double> inputs, Matrix<double> outputs, params object[] parameters)
         {
-            int firstSize = inputs.RowCount * 6 / 10, secondSize = inputs.RowCount * 3 / 10;
-            Matrix<double> trainSet = Matrix<double>.Build.Random(firstSize, inputs.ColumnCount),
-                           crossSet = Matrix<double>.Build.Random(secondSize, inputs.ColumnCount),
-                           trainOut = Matrix<double>.Build.Random(firstSize, outputs.ColumnCount),
-                           crossOut = Matrix<double>.Build.Random(secondSize, outputs.ColumnCount);
-            for (int i = 0; i < firstSize; i++)
-            {
-                trainSet.SetRow(i, inputs.Row(i));
-                trainOut.SetRow(i, outputs.Row(i));
-            }
-            for (int j = 0; j < secondSize; ++j)
-            {
-                crossSet.SetRow(j, inputs.Row(j + firstSize));
-                crossOut.SetRow(j, outputs.Row(j + firstSize));
-            }
-            return new Tuple<Matrix<double>, Matrix<double>, Matrix<double>, Matrix<double>>(trainSet, trainOut.Transpose(), crossSet, crossOut.Transpose());
+            if (parameters.Length > 0)
+                throw new ArgumentException("U must provide a ratio for training samples");
+            double ratio = (parameters[0] as Double?).Value;
+            var temp = inputs.EnumerateRows();
+            var t = outputs.EnumerateRows();
+            var t1 = inputs.RowCount * ratio;
+            var temp1 = temp.Take(Convert.ToInt32(t1));
+            var temp2 = temp.Skip(Convert.ToInt32(t1));
+            var temp3 = t.Take(Convert.ToInt32(t1));
+            var temp4 = t.Skip(Convert.ToInt32(t1));
+            return new Tuple<Matrix<double>, Matrix<double>, Matrix<double>, Matrix<double>>(Matrix<double>.Build.DenseOfRows(temp1), Matrix<double>.Build.DenseOfRows(temp3).Transpose(), Matrix<double>.Build.DenseOfRows(temp2), Matrix<double>.Build.DenseOfRows(temp4).Transpose());
         }
     }
 }
