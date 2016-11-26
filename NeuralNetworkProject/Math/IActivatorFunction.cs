@@ -11,5 +11,6 @@ namespace NeuralNetworkProject.Math
     {
         Vector<double> Apply(Vector<double> value);
         Vector<double> Gradient(Vector<double> value);
+        Vector<double> Hessian(Vector<double> value);
     }
 }
