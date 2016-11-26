@@ -19,6 +19,14 @@ namespace NeuralNetworkProject.Math
             return applyResult.PointwiseMultiply(1 - applyResult);
         }
 
+        public Vector<double> Hessian(Vector<double> value)
+        {
+
+            var applyResult = Apply(value);
+            var temp = applyResult.PointwiseMultiply(applyResult);
+            return 1 - 2 * temp - 2 * temp.PointwiseMultiply(applyResult);
+        }
+
         public override string ToString()
         {
             return "Sigmoid";
