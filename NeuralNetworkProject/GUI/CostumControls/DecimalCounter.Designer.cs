@@ -63,15 +63,16 @@
             // value
             // 
             this.value.Depth = 0;
+            this.value.Dock = System.Windows.Forms.DockStyle.Fill;
             this.value.Hint = "";
-            this.value.Location = new System.Drawing.Point(3, 3);
+            this.value.Location = new System.Drawing.Point(0, 0);
             this.value.MouseState = MaterialSkin.MouseState.HOVER;
             this.value.Name = "value";
             this.value.PasswordChar = '\0';
             this.value.SelectedText = "";
             this.value.SelectionLength = 0;
             this.value.SelectionStart = 0;
-            this.value.Size = new System.Drawing.Size(70, 23);
+            this.value.Size = new System.Drawing.Size(95, 23);
             this.value.TabIndex = 29;
             this.value.Text = "0";
             this.value.UseSystemPasswordChar = false;
