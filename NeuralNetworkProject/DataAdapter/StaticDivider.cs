@@ -9,13 +9,18 @@ namespace NeuralNetworkProject.DataAdapter
 {
     public class StaticDivider : IDataDivider
     {
-        internal StaticDivider() { }
+        private object[] parameters;
+
+        internal StaticDivider(params object[] param)
+        {
+            this.parameters = param;
+        }
         public Tuple<Matrix<double>, Matrix<double>, Matrix<double>, Matrix<double>> Divide(Matrix<double> inputs, Matrix<double> outputs, params object[] parameters)
         {
             // if (parameters.Length > 0)
-            if (parameters.Length == 0)
+            if (this.parameters.Length == 0)
                 throw new ArgumentException("U must provide a ratio for training samples");
-            double ratio = (parameters[0] as Double?).Value;
+            double ratio = (this.parameters[0] as Double?).Value;
             var temp = inputs.EnumerateRows();
             var t = outputs.EnumerateRows();
             var t1 = inputs.RowCount * ratio;

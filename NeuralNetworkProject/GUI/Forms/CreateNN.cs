@@ -12,6 +12,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 using GeometryClassLibrary;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using NeuralNetworkProject.DataAdapter;
 using NeuralNetworkProject.GUI.CostumControls;
 using NeuralNetworkProject.NeuralNetwork;
 using NeuralNetworkProject.Properties;
@@ -273,7 +274,8 @@ namespace NeuralNetworkProject.GUI.Forms
             r.LC_GC.Series[1].Points.Clear();
             r.EllapsedTimer.Start();
             Trainer.Subscribe(r);
-            Trainer.Train(Params.nn, Params.Tuple.Item1, Params.Tuple.Item2, _hyperParameters,.6,.3);
+            Trainer.Divider.Divider=new StaticDivider(.7);
+            Trainer.Train(Params.nn, Params.Tuple.Item1, Params.Tuple.Item2, _hyperParameters);
             r.EllapsedTimer.Stop();
 
         }

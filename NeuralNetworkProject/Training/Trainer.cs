@@ -23,10 +23,10 @@ namespace NeuralNetworkProject.Training
         public IList<double> TrainingErrors { get; private set; } = new List<double>();
         public IList<double> CrossValidationErrors { get; private set; } = new List<double>();
 
-        public void Train(NeuralNetwork.NeuralNetwork neuralNetwork, Matrix<double> inputs, Matrix<double> outputs, HyperParameters hyperParamters = null,params object[] parameters)
+        public void Train(NeuralNetwork.NeuralNetwork neuralNetwork, Matrix<double> inputs, Matrix<double> outputs, HyperParameters hyperParamters = null)
         {
             TrainingAlgorithm.Subscribe(this);
-            var temp = Divider.Divide(inputs, outputs,parameters);
+            var temp = Divider.Divide(inputs, outputs);
             Console.WriteLine(temp.Item1);
             Console.WriteLine(temp.Item2);
             _train(neuralNetwork, temp.Item1, temp.Item3, temp.Item2, temp.Item4,hyperParamters);

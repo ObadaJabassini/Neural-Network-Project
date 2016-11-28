@@ -18,7 +18,7 @@ namespace NeuralNetworkProject
         public static void Main(string[] args)
         {
             //var t = DataReader.DataReader.Instance.ReadFromFile("D:/test.txt");
-            //Training.Trainer trainer = new Training.Trainer() { TrainingAlgorithm = TrainingAlgorithms.Use(TrainingAlgorithms.TrainingMethod.LM)};
+            //Training.Trainer trainer = new Training.Trainer() { TrainingAlgorithm = TrainingAlgorithms.Use(TrainingAlgorithms.TrainingMethod.LM) };
             //IDataDivider divider = Dividers.CreateDivider(Dividers.DividerType.STATIC);
             //var temp = divider.Divide(t.Item1, t.Item2, 0.7);
             //NeuralNetwork.NeuralNetwork nn = new NeuralNetwork.NeuralNetworkBuilder().
@@ -27,7 +27,7 @@ namespace NeuralNetworkProject
             //                                                  Layer(3, new Math.FunctionApplier()).
             //                                                  Build();
             //trainer.Train(nn, t.Item1, t.Item2);
-            ////test case (should belong to the second class = [0 1 0])
+            //test case (should belong to the second class = [0 1 0])
             //var tt = nn.ForwardInput(Vector<double>.Build.DenseOfArray(new double[] { 5.5, 2.5, 4.0, 1.3 }));
 
 
