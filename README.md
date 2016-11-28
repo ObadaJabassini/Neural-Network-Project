@@ -10,10 +10,7 @@ A university project to implement some basic neural network algorithms like :
 
 ## TODO:
 * Parallelize the code
-* Add Visualization(almost done)
-* Imporve UI/UX
-
-## This project is still in early stage(most of the planned features aren't tested or ready yet)
+* Add more algorithms
 
 ## Members:
 
