@@ -42,7 +42,7 @@ namespace NeuralNetworkProject.Training
                     IList<double> ers = new List<double>();
                     for (int i = deltaW.RowCount - 1; i >=0 ; --i)
                     {
-                        for (int k = deltaW.ColumnCount; k >= 0; --k)
+                        for (int k = deltaW.ColumnCount-1; k >= 0; --k)
                         {
                             ers.Add(deltaW[i, k]);       
                         }
@@ -53,7 +53,7 @@ namespace NeuralNetworkProject.Training
                         deltaW = D * acs[k - 1].ToRowMatrix();
                         for (int i = deltaW.RowCount - 1; i >= 0; --i)
                         {
-                            for (int v = deltaW.ColumnCount; v >= 0; --v)
+                            for (int v = deltaW.ColumnCount-1; v >= 0; --v)
                             {
                                 ers.Add(deltaW[i, v]);
                             }

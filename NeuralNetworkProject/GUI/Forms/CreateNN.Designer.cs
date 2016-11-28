@@ -44,13 +44,10 @@ namespace NeuralNetworkProject.GUI.Forms
             this.object_5a16bf9a_c637_4275_84f9_0ee191482182 = new Telerik.WinControls.RootRadElement();
             this.ellipseShape1 = new Telerik.WinControls.EllipseShape();
             this.radPanel2 = new Telerik.WinControls.UI.RadPanel();
-            this.lollipopFile = new LollipopFileInput();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.radPanel4 = new Telerik.WinControls.UI.RadPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.l_ctrl_mat3 = new NeuralNetworkProject.GUI.CostumControls.L_ctrl_mat();
-            this.l_ctrl_mat4 = new NeuralNetworkProject.GUI.CostumControls.L_ctrl_mat();
             this.radButton2 = new Telerik.WinControls.UI.RadButton();
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -79,6 +76,9 @@ namespace NeuralNetworkProject.GUI.Forms
             this.object_e5fbf6de_ccb1_407a_9d90_85935a836bef = new Telerik.WinControls.RootRadElement();
             this.object_9b3235f7_0d58_481b_be62_5018fea833f2 = new Telerik.WinControls.RootRadElement();
             this.intCounter3 = new NeuralNetworkProject.GUI.CostumControls.IntCounter();
+            this.lollipopFile = new LollipopFileInput();
+            this.l_ctrl_mat3 = new NeuralNetworkProject.GUI.CostumControls.L_ctrl_mat();
+            this.l_ctrl_mat4 = new NeuralNetworkProject.GUI.CostumControls.L_ctrl_mat();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDiagram1)).BeginInit();
             this.radDiagram1.SuspendLayout();
@@ -233,21 +233,6 @@ namespace NeuralNetworkProject.GUI.Forms
             this.radPanel2.Size = new System.Drawing.Size(468, 592);
             this.radPanel2.TabIndex = 11;
             // 
-            // lollipopFile
-            // 
-            this.lollipopFile.Filter = "All Files (*.*)|*.*";
-            this.lollipopFile.FocusedColor = System.Drawing.Color.LightSeaGreen;
-            this.lollipopFile.FontColor = System.Drawing.Color.White;
-            this.lollipopFile.IsEnabled = true;
-            this.lollipopFile.Location = new System.Drawing.Point(95, 45);
-            this.lollipopFile.MaxLength = 32767;
-            this.lollipopFile.Name = "lollipopFile";
-            this.lollipopFile.ReadOnly = false;
-            this.lollipopFile.Size = new System.Drawing.Size(256, 24);
-            this.lollipopFile.TabIndex = 29;
-            this.lollipopFile.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.lollipopFile.UseSystemPasswordChar = false;
-            // 
             // radPanel1
             // 
             this.radPanel1.Controls.Add(this.radPanel4);
@@ -296,22 +281,6 @@ namespace NeuralNetworkProject.GUI.Forms
             this.flowLayoutPanel1.Size = new System.Drawing.Size(289, 268);
             this.flowLayoutPanel1.TabIndex = 15;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
-            // 
-            // l_ctrl_mat3
-            // 
-            this.l_ctrl_mat3.BackColor = System.Drawing.Color.Transparent;
-            this.l_ctrl_mat3.Location = new System.Drawing.Point(3, 3);
-            this.l_ctrl_mat3.Name = "l_ctrl_mat3";
-            this.l_ctrl_mat3.Size = new System.Drawing.Size(242, 28);
-            this.l_ctrl_mat3.TabIndex = 23;
-            // 
-            // l_ctrl_mat4
-            // 
-            this.l_ctrl_mat4.BackColor = System.Drawing.Color.Transparent;
-            this.l_ctrl_mat4.Location = new System.Drawing.Point(3, 37);
-            this.l_ctrl_mat4.Name = "l_ctrl_mat4";
-            this.l_ctrl_mat4.Size = new System.Drawing.Size(242, 28);
-            this.l_ctrl_mat4.TabIndex = 24;
             // 
             // radButton2
             // 
@@ -416,7 +385,7 @@ namespace NeuralNetworkProject.GUI.Forms
             // 
             this.materialRadioButton1.AutoSize = true;
             this.materialRadioButton1.Depth = 0;
-            this.materialRadioButton1.Font = new System.Drawing.Font("Roboto", 10F);
+            this.materialRadioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.materialRadioButton1.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.materialRadioButton1.Location = new System.Drawing.Point(39, 76);
             this.materialRadioButton1.Margin = new System.Windows.Forms.Padding(0);
@@ -434,7 +403,7 @@ namespace NeuralNetworkProject.GUI.Forms
             // 
             this.materialRadioButton2.AutoSize = true;
             this.materialRadioButton2.Depth = 0;
-            this.materialRadioButton2.Font = new System.Drawing.Font("Roboto", 10F);
+            this.materialRadioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.materialRadioButton2.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.materialRadioButton2.Location = new System.Drawing.Point(18, 221);
             this.materialRadioButton2.Margin = new System.Windows.Forms.Padding(0);
@@ -453,7 +422,7 @@ namespace NeuralNetworkProject.GUI.Forms
             // 
             this.materialRadioButton3.AutoSize = true;
             this.materialRadioButton3.Depth = 0;
-            this.materialRadioButton3.Font = new System.Drawing.Font("Roboto", 10F);
+            this.materialRadioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.materialRadioButton3.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.materialRadioButton3.Location = new System.Drawing.Point(18, 177);
             this.materialRadioButton3.Margin = new System.Windows.Forms.Padding(0);
@@ -511,7 +480,7 @@ namespace NeuralNetworkProject.GUI.Forms
             0,
             0});
             this.EpochsNum.Name = "EpochsNum";
-            this.EpochsNum.Size = new System.Drawing.Size(68, 20);
+            this.EpochsNum.Size = new System.Drawing.Size(68, 22);
             this.EpochsNum.TabIndex = 25;
             this.EpochsNum.Value = new decimal(new int[] {
             1000,
@@ -531,7 +500,7 @@ namespace NeuralNetworkProject.GUI.Forms
             131072});
             this.momentum.Location = new System.Drawing.Point(481, 145);
             this.momentum.Name = "momentum";
-            this.momentum.Size = new System.Drawing.Size(69, 20);
+            this.momentum.Size = new System.Drawing.Size(69, 22);
             this.momentum.TabIndex = 26;
             this.momentum.Value = new decimal(new int[] {
             9,
@@ -591,7 +560,7 @@ namespace NeuralNetworkProject.GUI.Forms
             // 
             this.materialRadioButton4.AutoSize = true;
             this.materialRadioButton4.Depth = 0;
-            this.materialRadioButton4.Font = new System.Drawing.Font("Roboto", 10F);
+            this.materialRadioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.materialRadioButton4.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.materialRadioButton4.Location = new System.Drawing.Point(39, 130);
             this.materialRadioButton4.Margin = new System.Windows.Forms.Padding(0);
@@ -759,10 +728,41 @@ namespace NeuralNetworkProject.GUI.Forms
             // 
             this.intCounter3.BackColor = System.Drawing.Color.White;
             this.intCounter3.Increment = 0D;
-            this.intCounter3.Location = new System.Drawing.Point(232, 130);
+            this.intCounter3.Location = new System.Drawing.Point(481, 189);
             this.intCounter3.Name = "intCounter3";
-            this.intCounter3.Size = new System.Drawing.Size(95, 28);
+            this.intCounter3.Size = new System.Drawing.Size(69, 28);
             this.intCounter3.TabIndex = 0;
+            // 
+            // lollipopFile
+            // 
+            this.lollipopFile.Filter = "All Files (*.*)|*.*";
+            this.lollipopFile.FocusedColor = System.Drawing.Color.LightSeaGreen;
+            this.lollipopFile.FontColor = System.Drawing.Color.White;
+            this.lollipopFile.IsEnabled = true;
+            this.lollipopFile.Location = new System.Drawing.Point(95, 45);
+            this.lollipopFile.MaxLength = 32767;
+            this.lollipopFile.Name = "lollipopFile";
+            this.lollipopFile.ReadOnly = false;
+            this.lollipopFile.Size = new System.Drawing.Size(256, 24);
+            this.lollipopFile.TabIndex = 29;
+            this.lollipopFile.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.lollipopFile.UseSystemPasswordChar = false;
+            // 
+            // l_ctrl_mat3
+            // 
+            this.l_ctrl_mat3.BackColor = System.Drawing.Color.Transparent;
+            this.l_ctrl_mat3.Location = new System.Drawing.Point(3, 3);
+            this.l_ctrl_mat3.Name = "l_ctrl_mat3";
+            this.l_ctrl_mat3.Size = new System.Drawing.Size(242, 28);
+            this.l_ctrl_mat3.TabIndex = 23;
+            // 
+            // l_ctrl_mat4
+            // 
+            this.l_ctrl_mat4.BackColor = System.Drawing.Color.Transparent;
+            this.l_ctrl_mat4.Location = new System.Drawing.Point(3, 37);
+            this.l_ctrl_mat4.Name = "l_ctrl_mat4";
+            this.l_ctrl_mat4.Size = new System.Drawing.Size(242, 28);
+            this.l_ctrl_mat4.TabIndex = 24;
             // 
             // CreateNN
             // 
