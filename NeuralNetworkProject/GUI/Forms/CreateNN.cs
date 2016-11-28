@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using GeometryClassLibrary;
 using MaterialSkin;
 using MaterialSkin.Controls;
@@ -29,9 +30,10 @@ namespace NeuralNetworkProject.GUI.Forms
         private readonly Result r = new Result();
         private Trainer Trainer = new Trainer();
         private Controller.trainerParams Params;
-        private HyperParameters _hyperParameters = null;
+        private HyperParameters _hyperParameters = new HyperParameters();
         private BackpropagationAlgorithm _bp = new BackpropagationAlgorithm();
         private BackPropagationWithMomentumAlgorithm _bpm = new BackPropagationWithMomentumAlgorithm();
+        private LevenbergAlgorithm _l=new LevenbergAlgorithm();
         Regex reg = new Regex(@"[0-9]+((.)?[0-9])");
 
         public CreateNN()
@@ -48,11 +50,12 @@ namespace NeuralNetworkProject.GUI.Forms
              Controller.InitiateGraph(this.radDiagram1);
         }
 
-        private void @new_Load(object sender, EventArgs e)
+        private void CreateNN_Load(object sender, EventArgs e)
         {
             Trainer.TrainingAlgorithm = _bp;
             _hyperParameters.MaxEpochs = 1000;
             _hyperParameters.MaxError = 0.01;
+            _hyperParameters.BlendingFactor = 0.01;
         }
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
@@ -258,7 +261,6 @@ namespace NeuralNetworkProject.GUI.Forms
 
         private void EpochsNum_ValueChanged(object sender, EventArgs e)
         {
-            _hyperParameters=new HyperParameters();
             _hyperParameters.MaxEpochs = (int)EpochsNum.Value;
             r.MaxEpochs.Text = ((int)EpochsNum.Value).ToString();
             r.Epochs_prgbr.Maximum = (int)EpochsNum.Value;
@@ -266,11 +268,12 @@ namespace NeuralNetworkProject.GUI.Forms
 
         private void materialFlatButton2_Click(object sender, EventArgs e)
         {
-            if (!r.IsLoaded)
-                r.Show();
+            r.Show();
+            r.LC_GC.Series[0].Points.Clear();
+            r.LC_GC.Series[1].Points.Clear();
             r.EllapsedTimer.Start();
             Trainer.Subscribe(r);
-            Trainer.Train(Params.nn, Params.Tuple.Item1, Params.Tuple.Item2, _hyperParameters);
+            Trainer.Train(Params.nn, Params.Tuple.Item1, Params.Tuple.Item2, _hyperParameters,.6,.3);
             r.EllapsedTimer.Stop();
 
         }
@@ -283,6 +286,21 @@ namespace NeuralNetworkProject.GUI.Forms
         private void decimalCounter1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void intCounter2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void intCounter2_Validated(object sender, EventArgs e)
+        {
+            _hyperParameters.BlendingFactor = intCounter2.Value;
+        }
+
+        private void materialRadioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            Trainer.TrainingAlgorithm = _l;
         }
     }
 }

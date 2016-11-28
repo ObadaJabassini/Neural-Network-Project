@@ -90,8 +90,8 @@ namespace NeuralNetworkProject.GUI
 
             var inputs = tuples.Item1;
             var outputs = tuples.Item2;
-            DataDivider Divider = new DataDivider();
-            var temp2 = Divider.Divide(inputs, outputs);
+            StaticDivider Divider = new StaticDivider();    
+            var temp2 = Divider.Divide(inputs, outputs,.6,.3);
             //ActivatorFunctions.FunctionName applier ;
             
             //// test case (should belong to the second class = [0 1 0])

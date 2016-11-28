@@ -308,7 +308,6 @@
 
         #endregion
 
-        private System.Windows.Forms.DataVisualization.Charting.Chart LC_GC;
         private Telerik.WinControls.UI.RadPanel radPanel1;
         private Telerik.WinControls.OldShapeEditor.CustomShape customShape1;
         private Telerik.WinControls.UI.RadLabel radLabel1;
@@ -321,5 +320,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private Telerik.WinControls.RootRadElement object_0cdc26a6_a5cd_46de_bd58_84f5bf0724e9;
         public Telerik.WinControls.UI.RadProgressBar Performance_prgbr;
+        public System.Windows.Forms.DataVisualization.Charting.Chart LC_GC;
     }
 }

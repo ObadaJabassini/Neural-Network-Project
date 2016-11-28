@@ -62,6 +62,10 @@ namespace NeuralNetworkProject.GUI.Forms
             this.EpochsNum = new System.Windows.Forms.NumericUpDown();
             this.momentum = new System.Windows.Forms.NumericUpDown();
             this.radPanel5 = new Telerik.WinControls.UI.RadPanel();
+            this.radLabel8 = new Telerik.WinControls.UI.RadLabel();
+            this.intCounter2 = new NeuralNetworkProject.GUI.CostumControls.IntCounter();
+            this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
+            this.materialRadioButton4 = new MaterialSkin.Controls.MaterialRadioButton();
             this.decimalCounter1 = new NeuralNetworkProject.GUI.CostumControls.DecimalCounter();
             this.intCounter1 = new NeuralNetworkProject.GUI.CostumControls.IntCounter();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
@@ -98,6 +102,8 @@ namespace NeuralNetworkProject.GUI.Forms
             ((System.ComponentModel.ISupportInitialize)(this.momentum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel5)).BeginInit();
             this.radPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
@@ -420,7 +426,7 @@ namespace NeuralNetworkProject.GUI.Forms
             this.materialRadioButton1.Depth = 0;
             this.materialRadioButton1.Font = new System.Drawing.Font("Roboto", 10F);
             this.materialRadioButton1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.materialRadioButton1.Location = new System.Drawing.Point(32, 62);
+            this.materialRadioButton1.Location = new System.Drawing.Point(39, 76);
             this.materialRadioButton1.Margin = new System.Windows.Forms.Padding(0);
             this.materialRadioButton1.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialRadioButton1.MouseState = MaterialSkin.MouseState.HOVER;
@@ -438,7 +444,7 @@ namespace NeuralNetworkProject.GUI.Forms
             this.materialRadioButton2.Depth = 0;
             this.materialRadioButton2.Font = new System.Drawing.Font("Roboto", 10F);
             this.materialRadioButton2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.materialRadioButton2.Location = new System.Drawing.Point(33, 148);
+            this.materialRadioButton2.Location = new System.Drawing.Point(18, 221);
             this.materialRadioButton2.Margin = new System.Windows.Forms.Padding(0);
             this.materialRadioButton2.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialRadioButton2.MouseState = MaterialSkin.MouseState.HOVER;
@@ -448,6 +454,7 @@ namespace NeuralNetworkProject.GUI.Forms
             this.materialRadioButton2.TabIndex = 13;
             this.materialRadioButton2.Text = "                   .";
             this.materialRadioButton2.UseVisualStyleBackColor = true;
+            this.materialRadioButton2.Visible = false;
             this.materialRadioButton2.CheckedChanged += new System.EventHandler(this.materialRadioButton2_CheckedChanged);
             // 
             // materialRadioButton3
@@ -456,7 +463,7 @@ namespace NeuralNetworkProject.GUI.Forms
             this.materialRadioButton3.Depth = 0;
             this.materialRadioButton3.Font = new System.Drawing.Font("Roboto", 10F);
             this.materialRadioButton3.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.materialRadioButton3.Location = new System.Drawing.Point(33, 104);
+            this.materialRadioButton3.Location = new System.Drawing.Point(18, 177);
             this.materialRadioButton3.Margin = new System.Windows.Forms.Padding(0);
             this.materialRadioButton3.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialRadioButton3.MouseState = MaterialSkin.MouseState.HOVER;
@@ -466,6 +473,7 @@ namespace NeuralNetworkProject.GUI.Forms
             this.materialRadioButton3.TabIndex = 14;
             this.materialRadioButton3.Text = "                                         .";
             this.materialRadioButton3.UseVisualStyleBackColor = true;
+            this.materialRadioButton3.Visible = false;
             this.materialRadioButton3.CheckedChanged += new System.EventHandler(this.materialRadioButton3_CheckedChanged);
             // 
             // Momentum_tgl
@@ -542,6 +550,10 @@ namespace NeuralNetworkProject.GUI.Forms
             // 
             // radPanel5
             // 
+            this.radPanel5.Controls.Add(this.radLabel8);
+            this.radPanel5.Controls.Add(this.intCounter2);
+            this.radPanel5.Controls.Add(this.radLabel7);
+            this.radPanel5.Controls.Add(this.materialRadioButton4);
             this.radPanel5.Controls.Add(this.decimalCounter1);
             this.radPanel5.Controls.Add(this.intCounter1);
             this.radPanel5.Controls.Add(this.radLabel6);
@@ -565,10 +577,58 @@ namespace NeuralNetworkProject.GUI.Forms
             this.radPanel5.TabIndex = 28;
             this.radPanel5.Paint += new System.Windows.Forms.PaintEventHandler(this.radPanel5_Paint);
             // 
+            // radLabel8
+            // 
+            this.radLabel8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel8.ForeColor = System.Drawing.Color.LightGray;
+            this.radLabel8.Location = new System.Drawing.Point(381, 180);
+            this.radLabel8.Name = "radLabel8";
+            this.radLabel8.Size = new System.Drawing.Size(48, 23);
+            this.radLabel8.TabIndex = 32;
+            this.radLabel8.Text = "Value";
+            // 
+            // intCounter2
+            // 
+            this.intCounter2.Increment = 0D;
+            this.intCounter2.Location = new System.Drawing.Point(466, 189);
+            this.intCounter2.Name = "intCounter2";
+            this.intCounter2.Size = new System.Drawing.Size(95, 28);
+            this.intCounter2.TabIndex = 36;
+            this.intCounter2.Load += new System.EventHandler(this.intCounter2_Load);
+            this.intCounter2.Validated += new System.EventHandler(this.intCounter2_Validated);
+            // 
+            // radLabel7
+            // 
+            this.radLabel7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel7.ForeColor = System.Drawing.Color.LightGray;
+            this.radLabel7.Location = new System.Drawing.Point(77, 133);
+            this.radLabel7.Name = "radLabel7";
+            this.radLabel7.Size = new System.Drawing.Size(84, 23);
+            this.radLabel7.TabIndex = 35;
+            this.radLabel7.Text = "Levenburg";
+            // 
+            // materialRadioButton4
+            // 
+            this.materialRadioButton4.AutoSize = true;
+            this.materialRadioButton4.Depth = 0;
+            this.materialRadioButton4.Font = new System.Drawing.Font("Roboto", 10F);
+            this.materialRadioButton4.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.materialRadioButton4.Location = new System.Drawing.Point(39, 130);
+            this.materialRadioButton4.Margin = new System.Windows.Forms.Padding(0);
+            this.materialRadioButton4.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialRadioButton4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRadioButton4.Name = "materialRadioButton4";
+            this.materialRadioButton4.Ripple = true;
+            this.materialRadioButton4.Size = new System.Drawing.Size(108, 30);
+            this.materialRadioButton4.TabIndex = 34;
+            this.materialRadioButton4.Text = "                      .";
+            this.materialRadioButton4.UseVisualStyleBackColor = true;
+            this.materialRadioButton4.CheckedChanged += new System.EventHandler(this.materialRadioButton4_CheckedChanged);
+            // 
             // decimalCounter1
             // 
             this.decimalCounter1.Increment = 0D;
-            this.decimalCounter1.Location = new System.Drawing.Point(104, 184);
+            this.decimalCounter1.Location = new System.Drawing.Point(212, 237);
             this.decimalCounter1.Name = "decimalCounter1";
             this.decimalCounter1.Size = new System.Drawing.Size(95, 28);
             this.decimalCounter1.TabIndex = 0;
@@ -586,27 +646,29 @@ namespace NeuralNetworkProject.GUI.Forms
             // 
             this.radLabel6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel6.ForeColor = System.Drawing.Color.LightGray;
-            this.radLabel6.Location = new System.Drawing.Point(70, 151);
+            this.radLabel6.Location = new System.Drawing.Point(55, 224);
             this.radLabel6.Name = "radLabel6";
             this.radLabel6.Size = new System.Drawing.Size(63, 23);
             this.radLabel6.TabIndex = 33;
             this.radLabel6.Text = "Newton";
+            this.radLabel6.Visible = false;
             // 
             // radLabel5
             // 
             this.radLabel5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel5.ForeColor = System.Drawing.Color.LightGray;
-            this.radLabel5.Location = new System.Drawing.Point(70, 107);
+            this.radLabel5.Location = new System.Drawing.Point(55, 180);
             this.radLabel5.Name = "radLabel5";
             this.radLabel5.Size = new System.Drawing.Size(140, 23);
             this.radLabel5.TabIndex = 32;
             this.radLabel5.Text = "Simple Perceptron";
+            this.radLabel5.Visible = false;
             // 
             // radLabel4
             // 
             this.radLabel4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel4.ForeColor = System.Drawing.Color.LightGray;
-            this.radLabel4.Location = new System.Drawing.Point(70, 65);
+            this.radLabel4.Location = new System.Drawing.Point(77, 79);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(129, 23);
             this.radLabel4.TabIndex = 31;
@@ -750,7 +812,7 @@ namespace NeuralNetworkProject.GUI.Forms
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "ANN";
             this.ThemeName = "VisualStudio2012Dark";
-            this.Load += new System.EventHandler(this.new_Load);
+            this.Load += new System.EventHandler(this.CreateNN_Load);
             this.MouseHover += new System.EventHandler(this.pictureBox2_MouseHover);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDiagram1)).EndInit();
@@ -775,6 +837,8 @@ namespace NeuralNetworkProject.GUI.Forms
             ((System.ComponentModel.ISupportInitialize)(this.radPanel5)).EndInit();
             this.radPanel5.ResumeLayout(false);
             this.radPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
@@ -841,5 +905,9 @@ namespace NeuralNetworkProject.GUI.Forms
         public Telerik.WinControls.UI.RadDiagram radDiagram1;
         private CostumControls.IntCounter intCounter1;
         private CostumControls.DecimalCounter decimalCounter1;
+        private Telerik.WinControls.UI.RadLabel radLabel7;
+        private MaterialSkin.Controls.MaterialRadioButton materialRadioButton4;
+        private CostumControls.IntCounter intCounter2;
+        private Telerik.WinControls.UI.RadLabel radLabel8;
     }
 }

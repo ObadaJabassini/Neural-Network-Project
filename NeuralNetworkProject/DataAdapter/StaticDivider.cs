@@ -12,7 +12,8 @@ namespace NeuralNetworkProject.DataAdapter
         internal StaticDivider() { }
         public Tuple<Matrix<double>, Matrix<double>, Matrix<double>, Matrix<double>> Divide(Matrix<double> inputs, Matrix<double> outputs, params object[] parameters)
         {
-            if (parameters.Length > 0)
+            // if (parameters.Length > 0)
+            if (parameters.Length == 0)
                 throw new ArgumentException("U must provide a ratio for training samples");
             double ratio = (parameters[0] as Double?).Value;
             var temp = inputs.EnumerateRows();

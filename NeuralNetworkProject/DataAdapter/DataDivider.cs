@@ -11,6 +11,6 @@ namespace NeuralNetworkProject.DataAdapter
     {
         public IDataDivider Divider { private get; set; } = new StaticDivider();
 
-        public Tuple<Matrix<double>, Matrix<double>, Matrix<double>, Matrix<double>> Divide(Matrix<double> inputs, Matrix<double> outputs) => Divider.Divide(inputs, outputs);
+        public Tuple<Matrix<double>, Matrix<double>, Matrix<double>, Matrix<double>> Divide(Matrix<double> inputs, Matrix<double> outputs,params object[] parameters) => Divider.Divide(inputs, outputs, parameters);
     }
 }
