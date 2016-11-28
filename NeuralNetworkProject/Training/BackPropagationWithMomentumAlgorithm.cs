@@ -7,7 +7,7 @@ using MathNet.Numerics.LinearAlgebra;
 
 namespace NeuralNetworkProject.Training
 {
-    class BackPropagationWithMomentum : BackpropagationAlgorithm
+    class BackPropagationWithMomentumAlgorithm : BackpropagationAlgorithm
     {
         protected override Matrix<double> computeAdditionalTerms(Matrix<double> prevDeltaW, double momentum)
         {

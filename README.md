@@ -1,16 +1,19 @@
 # Neural-Network-Project
 A university project to implement some basic neural network algorithms like : 
 * Simple perceptron
-* Backpropagation
-* Backpropagation with momentum
+* Backpropagation(Done)
+* Backpropagation with momentum(Done)
+* Newtom Algorithm(In-progress)
+* Levenberge Algorithm(Testing phase)
+* Associative memory(soon)
 * etc...
 
 ## TODO:
-* Add Gui(in progress)
 * Parallelize the code
-* Add Visualization
+* Add Visualization(almost done)
+* Imporve UI/UX
 
-## This project is still in very early stage(most of the planned features don't even exist)
+## This project is still in early stage(most of the planned features aren't tested or ready yet)
 
 ## Members:
 

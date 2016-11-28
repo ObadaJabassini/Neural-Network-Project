@@ -10,6 +10,7 @@ namespace NeuralNetworkProject.Training
 {
     public class BackpropagationAlgorithm : TrainingAlgorithm
     {
+        internal BackpropagationAlgorithm() { }
         public override void Train(NeuralNetwork.NeuralNetwork neuralNetwork, Matrix<double> trainingSet, Matrix<double> crossValidationSet, Matrix<double> trainingSetOutput, Matrix<double> crossValidationSetOutput, HyperParameters hyperParameters = null)
         {
             double maxError = 0.01, error = 5, momentum = 0.9;
@@ -36,8 +37,7 @@ namespace NeuralNetworkProject.Training
                 prevDeltaW.Add(Matrix<double>.Build.Dense(layers[i + 1].NeuronsNumber, layers[i].NeuronsNumber + 1));
             //end
             //epochs++ => ++epochs 
-            while(error > maxError && ++epochs <= maxEpochs)
-
+            while(error >= maxError && ++epochs <= maxEpochs)
             {
                 prevDeltaW.ForEach(e => e.Clear());
                 for (int i = 0; i < trainingSet.RowCount; i++)
@@ -46,7 +46,6 @@ namespace NeuralNetworkProject.Training
                                    output = trainingSetOutput.Column(i);
                     var temp = neuralNetwork.ForwardInput(input);
                     IList<Vector<double>> acs = temp.Item1, gs = temp.Item2;
-
                     var D = (output - acs[acs.Count - 1]).PointwiseMultiply(gs[gs.Count - 1]).ToColumnMatrix(); // n(output) * 1
                     var deltaW = D * acs[acs.Count - 2].ToRowMatrix() * layers[layers.Count - 1].LearningRate; // (n(output) * 1) * ((n(output-1)+1) * 1)' = n(output) * (n(output-1)+1)
                     //for momentum
@@ -54,7 +53,6 @@ namespace NeuralNetworkProject.Training
                     prevDeltaW[weights.Count - 1] = deltaW;
                     //end
                     neuralNetwork.UpdateWeightsAt(deltaW, weights.Count - 1);
-
                     for (int j = layers.Count - 2; j > 0; j--)
                     {
                         D = (weights[j].Transpose() * D).RemoveRow(0).PointwiseMultiply(gs[j - 1].ToColumnMatrix()); // (n(j+1) * (n(j)+1))' * (n(j+1) * 1) = (n(j)+1) * 1, then => (n(j) * 1) .* (n(j) * 1)
@@ -66,7 +64,7 @@ namespace NeuralNetworkProject.Training
                         neuralNetwork.UpdateWeightsAt(deltaW, j - 1);
                     }
                 }
-                message.EPochs = epochs;
+                message.Epochs = epochs;
                 base.Notify(message);
                 error = message.Error; 
                 Console.WriteLine(error);

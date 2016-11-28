@@ -14,8 +14,18 @@ namespace NeuralNetworkProject.Math
         public Vector<double> Apply(Vector<double> value) => value.Map(element => SpecialFunctions.Logistic(element));
         public Vector<double> Gradient(Vector<double> value)
         {
+
             var applyResult = Apply(value);
             return applyResult.PointwiseMultiply(1 - applyResult);
         }
+
+        public Vector<double> Hessian(Vector<double> value)
+        {
+
+            var applyResult = Apply(value);
+            var temp = applyResult.PointwiseMultiply(applyResult);
+            return 1 - 2 * temp - 2 * temp.PointwiseMultiply(applyResult);
+        }
+
     }
 }

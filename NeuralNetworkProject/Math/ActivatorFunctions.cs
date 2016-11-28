@@ -9,7 +9,7 @@ namespace NeuralNetworkProject.Math
     public class ActivatorFunctions
     {
         private ActivatorFunctions() { }
-        public enum FunctionName {SIGMOID}
+        public enum FunctionName {SIGMOID, TANH}
         public static IActivatorFunction CreateFunction(string functionName)
         {
             var modifiedName = functionName.ToLower();
@@ -24,6 +24,8 @@ namespace NeuralNetworkProject.Math
                 case FunctionName.SIGMOID:
                 default:
                     return new SigmoidFunction();
+                case FunctionName.TANH:
+                    return new TanhFunction();
             }
         }
     }

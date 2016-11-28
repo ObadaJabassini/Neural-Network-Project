@@ -22,7 +22,7 @@ namespace NeuralNetworkProject
         private Controller.trainerParams Params;
         private HyperParameters _hyperParameters = null;
         private BackpropagationAlgorithm _bp = new BackpropagationAlgorithm();
-        private BackPropagationWithMomentum _bpm = new BackPropagationWithMomentum();
+        private BackPropagationWithMomentumAlgorithm _bpm = new BackPropagationWithMomentumAlgorithm();
 
         public LoadData()
         {

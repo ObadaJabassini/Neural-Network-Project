@@ -2,7 +2,7 @@
 
 namespace NeuralNetworkProject.GUI.Forms
 {
-    partial class @new
+    partial class CreateNN
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace NeuralNetworkProject.GUI.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(@new));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateNN));
             this.LoadData_dlg = new System.Windows.Forms.OpenFileDialog();
             this.telerikMetroBlueTheme1 = new Telerik.WinControls.Themes.TelerikMetroBlueTheme();
             this.radPanel3 = new Telerik.WinControls.UI.RadPanel();

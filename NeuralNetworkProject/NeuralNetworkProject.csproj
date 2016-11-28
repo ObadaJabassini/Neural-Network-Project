@@ -167,7 +167,9 @@
     <Compile Include="Math\ActivatorFunctions.cs" />
     <Compile Include="Math\FunctionApplier.cs" />
     <Compile Include="Math\IActivatorFunction.cs" />
+    <Compile Include="Math\IdentityFunction.cs" />
     <Compile Include="Math\SigmoidFunction.cs" />
+    <Compile Include="Math\TanhFunction.cs" />
     <Compile Include="NeuralNetwork\HyperParameters.cs" />
     <Compile Include="NeuralNetwork\NeuralNetwork.cs" />
     <Compile Include="Program.cs" />
@@ -184,13 +186,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Training\BackpropagationAlgorithm.cs" />
-    <Compile Include="Training\BackPropagationWithMomentum.cs" />
     <Compile Include="GUI\ResultMesssage.cs" />
     <Compile Include="GUI\Forms\ShowResult.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Training\BackPropagationWithMomentumAlgorithm.cs" />
+    <Compile Include="Training\LevenbergAlgorithm.cs" />
     <Compile Include="Training\TrainingAlgorithm.cs" />
     <Compile Include="Training\Trainer.cs" />
+    <Compile Include="Training\TrainingAlgorithms.cs" />
     <Compile Include="Training\TrainingErrorMessage.cs" />
   </ItemGroup>
   <ItemGroup>

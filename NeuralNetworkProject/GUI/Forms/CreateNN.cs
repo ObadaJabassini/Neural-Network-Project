@@ -23,7 +23,7 @@ using RadDiagram = Telerik.WinControls.UI.RadDiagram;
 
 namespace NeuralNetworkProject.GUI.Forms
 {
-    public partial class @new : RadForm
+    public partial class CreateNN : RadForm
     {
 
         private readonly Result r = new Result();
@@ -31,10 +31,10 @@ namespace NeuralNetworkProject.GUI.Forms
         private Controller.trainerParams Params;
         private HyperParameters _hyperParameters = null;
         private BackpropagationAlgorithm _bp = new BackpropagationAlgorithm();
-        private BackPropagationWithMomentum _bpm = new BackPropagationWithMomentum();
+        private BackPropagationWithMomentumAlgorithm _bpm = new BackPropagationWithMomentumAlgorithm();
         Regex reg = new Regex(@"[0-9]+((.)?[0-9])");
 
-        public @new()
+        public CreateNN()
         {
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;

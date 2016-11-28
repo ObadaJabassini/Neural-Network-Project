@@ -12,7 +12,7 @@ namespace NeuralNetworkProject.Training
 {
     public partial class Trainer : IObserver<TrainingErrorMessage>
     {
-        public TrainingAlgorithm TrainingAlgorithm { private get; set; } = new BackpropagationAlgorithm();
+        public TrainingAlgorithm TrainingAlgorithm { private get; set; } = TrainingAlgorithms.Use(TrainingAlgorithms.TrainingMethod.GD);
 
         //GUI :public get 
         public DataDivider Divider {  get; set; } = new DataDivider()
@@ -43,8 +43,6 @@ namespace NeuralNetworkProject.Training
         {
             var temp = (outputs - realOutputs);
             return (temp.PointwiseMultiply(temp)).Sum()/2;
-            // or
-            //return (temp * temp.ToColumnMatrix())[0] / 2;
         }
 
         public void OnNext(TrainingErrorMessage value)
@@ -68,9 +66,9 @@ namespace NeuralNetworkProject.Training
             //value.Error = error;
            
             /*Trainer as observer*/
-                double validationERR=0,trainingERR=0;
+            double validationERR=0,trainingERR=0;
             //int epochsNUM=0;
-             var Terror = trainingSet.EnumerateRows().Select(row =>
+            var Terror = trainingSet.EnumerateRows().Select(row =>
             {
                 var temp = neuralNetwork.ForwardInput(row);
                 return temp.Item1[temp.Item1.Count - 1];
@@ -86,9 +84,9 @@ namespace NeuralNetworkProject.Training
             value.Error = Terror;
             CrossValidationErrors.Add(Terror);
              validationERR=Verror;
-           Console.WriteLine("{0}\t{1}\t*****{2}",value.EPochs,validationERR,trainingERR);
+           Console.WriteLine("{0}\t{1}\t*****{2}",value.Epochs,validationERR,trainingERR);
             //Trainer as observer
-            ResultMesssage messsage=new ResultMesssage(trainingERR,validationERR,value.EPochs);
+            ResultMesssage messsage=new ResultMesssage(trainingERR,validationERR,value.Epochs);
             NotifyResults(messsage);
             /*Trainer as observer*/
         }
@@ -98,10 +96,7 @@ namespace NeuralNetworkProject.Training
             throw new NotImplementedException();
         }
 
-        public void OnCompleted()
-        {//
-            _observers.ForEach(obs => obs.OnCompleted());
-        }
+        public void OnCompleted() => _observers.ForEach(obs => obs.OnCompleted());
     }
 
     public partial class Trainer : IObservable<ResultMesssage>
@@ -117,10 +112,7 @@ namespace NeuralNetworkProject.Training
             }
             return null;
         }
-        public void NotifyResults(ResultMesssage message)
-        {
-            _observers.ForEach(obs => obs.OnNext(message));
-        }
+        public void NotifyResults(ResultMesssage message) => _observers.ForEach(obs => obs.OnNext(message));
     }
 
 }
