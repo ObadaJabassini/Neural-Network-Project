@@ -9,30 +9,29 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NeuralNetworkProject.Math;
 
-namespace NeuralNetworkProject
+namespace NeuralNetworkProject.GUI.CostumControls
 {
-    public partial class Layer_ctrl : UserControl
+    public partial class L_ctrl_mat : UserControl
     {
-        public Layer_ctrl()
+        public L_ctrl_mat()
         {
             InitializeComponent();
-            AF_drpdn.Items.Add("Sigmoid");
+            AF_drpdn.Items.Add(ActivatorFunctions.FunctionName.SIGMOID.ToString());
         }
 
-        public Layer_ctrl(string num)
-        {
-        //    this.radLabel1.Text += " "+num+" :";
-        }
-
-        private void radButton1_Click(object sender, EventArgs e)
+        private void materialFlatButton1_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void AF_drpdn_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
+        {
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
-
     }
 }

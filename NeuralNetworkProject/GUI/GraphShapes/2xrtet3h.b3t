@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NeuralNetworkProject.Math;
 using NeuralNetworkProject.Properties;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
@@ -19,9 +18,8 @@ namespace NeuralNetworkProject.GUI
         private readonly LightVisualElement collapseElement = new LightVisualElement();
         public override ContentAlignment Alignment { get; set; }=ContentAlignment.TopLeft;
         RadDiagramTextShape TextShape = new RadDiagramTextShape();
-
        // public string textshape = "";
-        public Layer_shape(string textshape,Bitmap LayerBitmap):base()
+        public Layer_shape(string textshape):base()
         {
             //this.BackColor = Color.Khaki;
             //this.BackColor = Color.Cornsilk;
@@ -31,6 +29,7 @@ namespace NeuralNetworkProject.GUI
             this.ContentShapeElement.BorderColor = System.Drawing.Color.Black;
             this.Shape=new RoundRectShape();
             //this.Text = "\n\n\t";
+
             this.HeaderPresenter.DrawFill = false;
             //this.BackColor = Color.Bisque;
             this.Size = new Size(150, 150);
@@ -41,7 +40,7 @@ namespace NeuralNetworkProject.GUI
             //this.Shape = new RoundRectShape();
             this.DrawBorder = true;
             
-            this.collapseElement.BackgroundImage=new Bitmap(LayerBitmap);
+            this.collapseElement.BackgroundImage=new Bitmap(Resources.Layer__Sigmoid);
             this.ContentShapeElement.BorderWidth = 4;
             this.collapseElement.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             //this.collapseElement.MinSize = new Size(15, 15); this.collapseElement.Text = "-";
@@ -49,16 +48,13 @@ namespace NeuralNetworkProject.GUI
             //this.collapseElement.DrawBorder = true; this.collapseElement.Click += this.collapseElement_Click;
             this.Children.Add(this.collapseElement);
             TextShape.Text = textshape;
-            TextShape.Location=new Telerik.Windows.Diagrams.Core.Point(-5.5,-30);
+            TextShape.Location=new Telerik.Windows.Diagrams.Core.Point(-8,-25);
             TextShape.Alignment=ContentAlignment.TopLeft;
             this.Children.Add(TextShape);
             this.IsEditable = false;
-            //this.Label.Alignment=ContentAlignment.TopCenter;
-            //this.Label.Location=new Point(80,-40);
             //this.ToggleCollapseButton.ToggleStateChanged += toggleCollapseButton_ToggleStateChanged;
             //this.ToggleCollapseButton.Image = null; //this.ToggleCollapseButton.Font = new Font("segoeUI");
             this.ToggleCollapseButton.Text = "▼"; 
-            this.ToggleCollapseButton.ForeColor=Color.DimGray; 
             //this.addnodes();
            // this.UpdateContentBounds(); this.UpdateContainerLayout(); 
         }

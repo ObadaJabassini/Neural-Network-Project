@@ -11,9 +11,13 @@ namespace NeuralNetworkProject.GUI.GraphShapes
 {
     class IO_shape:RadDiagramShape
     {
+
         public IO_shape()
         {
             this.BackColor = Color.MediumSpringGreen;
+            this.DiagramShapeElement.BorderColor = System.Drawing.Color.Black;
+           
+            this.DrawBorder = true;
 
             //this.BackColor = Color.Bisque;
             this.Size = new Size(50, 50);

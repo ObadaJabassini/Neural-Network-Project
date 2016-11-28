@@ -27,17 +27,15 @@ namespace NeuralNetworkProject
         public LoadData()
         {
             InitializeComponent();
+            Controller.InitiateGraph(radDiagram1);
         }
+
 
         private void LoadData_Load(object sender, EventArgs e)
         {
             Trainer.TrainingAlgorithm = _bp;
             _hyperParameters.MaxEpochs = 1000;
             _hyperParameters.MaxError = 0.01;
-            radDiagram1.BackgroundGrid.Visibility=ElementVisibility.Hidden;
-             this.radDiagram1.BackgroundPageGrid.Visibility = Telerik.WinControls.ElementVisibility.Hidden;
-             this.radDiagram1.IsSnapToGridEnabled = false; this.radDiagram1.IsSnapToItemsEnabled = false;
-            this.radDiagram1.SetLayout(Telerik.Windows.Diagrams.Core.LayoutType.Tree);
         }
 
         private void LoadData_btn_Click(object sender, EventArgs e)
@@ -125,6 +123,16 @@ namespace NeuralNetworkProject
         }
 
         private void layers2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radTrackBar1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

@@ -54,6 +54,7 @@ namespace NeuralNetworkProject
             this.radDiagram1 = new Telerik.WinControls.UI.RadDiagram();
             this.layers2 = new NeuralNetworkProject.Layer_ctrl();
             this.layers1 = new NeuralNetworkProject.Layer_ctrl();
+            this.radTrackBar1 = new Telerik.WinControls.UI.RadTrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.Network_creat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BP)).BeginInit();
             this.BP.SuspendLayout();
@@ -71,13 +72,15 @@ namespace NeuralNetworkProject
             ((System.ComponentModel.ISupportInitialize)(this.Epochs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epochs_num)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDiagram1)).BeginInit();
+            this.radDiagram1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radTrackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // Network_creat
             // 
             this.Network_creat.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Network_creat.Location = new System.Drawing.Point(0, 235);
+            this.Network_creat.Location = new System.Drawing.Point(0, 233);
             this.Network_creat.Name = "Network_creat";
             this.Network_creat.Size = new System.Drawing.Size(250, 24);
             this.Network_creat.TabIndex = 7;
@@ -94,7 +97,7 @@ namespace NeuralNetworkProject
             this.BP.Dock = System.Windows.Forms.DockStyle.Left;
             this.BP.Location = new System.Drawing.Point(0, 0);
             this.BP.Name = "BP";
-            this.BP.Size = new System.Drawing.Size(277, 442);
+            this.BP.Size = new System.Drawing.Size(277, 438);
             this.BP.TabIndex = 4;
             this.BP.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
             this.BP.ThemeName = "Office2010Black";
@@ -181,7 +184,7 @@ namespace NeuralNetworkProject
             this.panel1.Controls.Add(this.Network_creat);
             this.panel1.Location = new System.Drawing.Point(12, 143);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 259);
+            this.panel1.Size = new System.Drawing.Size(250, 257);
             this.panel1.TabIndex = 0;
             // 
             // radLabel2
@@ -229,7 +232,7 @@ namespace NeuralNetworkProject
             // AddNewLayer
             // 
             this.AddNewLayer.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.AddNewLayer.Location = new System.Drawing.Point(0, 211);
+            this.AddNewLayer.Location = new System.Drawing.Point(0, 209);
             this.AddNewLayer.Name = "AddNewLayer";
             this.AddNewLayer.Size = new System.Drawing.Size(250, 24);
             this.AddNewLayer.TabIndex = 9;
@@ -240,7 +243,7 @@ namespace NeuralNetworkProject
             // Train
             // 
             this.Train.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Train.Location = new System.Drawing.Point(0, 408);
+            this.Train.Location = new System.Drawing.Point(0, 404);
             this.Train.Name = "Train";
             this.Train.Size = new System.Drawing.Size(277, 34);
             this.Train.TabIndex = 2;
@@ -268,19 +271,21 @@ namespace NeuralNetworkProject
             // 
             this.LoadData_dlg.DefaultExt = "txt";
             this.LoadData_dlg.DereferenceLinks = false;
-            this.LoadData_dlg.Filter = "Excel files (*.csv)|*.csv|Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            this.LoadData_dlg.Filter = "Text files (*.txt)|*.txt|Excel files (*.csv)|*.csv|All files (*.*)|*.*";
             this.LoadData_dlg.Title = "Open Dataset File";
             this.LoadData_dlg.FileOk += new System.ComponentModel.CancelEventHandler(this.LoadData_dlg_FileOk);
             // 
             // radDiagram1
             // 
             this.radDiagram1.BackColor = System.Drawing.Color.Gray;
+            this.radDiagram1.Controls.Add(this.radTrackBar1);
             this.radDiagram1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radDiagram1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radDiagram1.IsBackgroundSurfaceVisible = false;
             this.radDiagram1.Location = new System.Drawing.Point(277, 0);
             this.radDiagram1.Name = "radDiagram1";
             this.radDiagram1.SerializedXml = resources.GetString("radDiagram1.SerializedXml");
-            this.radDiagram1.Size = new System.Drawing.Size(484, 442);
+            this.radDiagram1.Size = new System.Drawing.Size(484, 438);
             this.radDiagram1.TabIndex = 9;
             this.radDiagram1.Text = "radDiagram1";
             this.radDiagram1.ThemeName = "ControlDefault";
@@ -289,7 +294,7 @@ namespace NeuralNetworkProject
             ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).ActiveTool = Telerik.Windows.Diagrams.Core.MouseTool.PanTool;
             ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).ConnectionBridge = Telerik.Windows.Diagrams.Core.BridgeType.None;
             ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).Zoom = 0.9D;
-            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).IsBackgroundSurfaceVisible = true;
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).IsBackgroundSurfaceVisible = false;
             ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
@@ -324,11 +329,26 @@ namespace NeuralNetworkProject
             this.layers1.Size = new System.Drawing.Size(244, 33);
             this.layers1.TabIndex = 0;
             // 
+            // radTrackBar1
+            // 
+            this.radTrackBar1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radTrackBar1.Location = new System.Drawing.Point(130, 365);
+            this.radTrackBar1.Name = "radTrackBar1";
+            this.radTrackBar1.ShowButtons = true;
+            this.radTrackBar1.Size = new System.Drawing.Size(241, 25);
+            this.radTrackBar1.SnapMode = Telerik.WinControls.UI.TrackBarSnapModes.None;
+            this.radTrackBar1.TabIndex = 10;
+            this.radTrackBar1.Text = "radTrackBar1";
+            this.radTrackBar1.ThemeName = "VisualStudio2012Dark";
+            this.radTrackBar1.ThumbSize = new System.Drawing.Size(14, 14);
+            this.radTrackBar1.TickStyle = Telerik.WinControls.Enumerations.TickStyles.TopLeft;
+            this.radTrackBar1.ValueChanged += new System.EventHandler(this.radTrackBar1_ValueChanged);
+            // 
             // LoadData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(761, 442);
+            this.ClientSize = new System.Drawing.Size(761, 438);
             this.Controls.Add(this.radDiagram1);
             this.Controls.Add(this.Epochs);
             this.Controls.Add(this.BP);
@@ -360,6 +380,9 @@ namespace NeuralNetworkProject
             ((System.ComponentModel.ISupportInitialize)(this.Epochs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epochs_num)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDiagram1)).EndInit();
+            this.radDiagram1.ResumeLayout(false);
+            this.radDiagram1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radTrackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -388,5 +411,6 @@ namespace NeuralNetworkProject
         private Telerik.WinControls.UI.RadDiagram radDiagram1;
         private Telerik.WinControls.UI.RadLabel radLabel2;
         private System.Windows.Forms.NumericUpDown momentum;
+        private Telerik.WinControls.UI.RadTrackBar radTrackBar1;
     }
 }

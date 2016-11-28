@@ -16,7 +16,7 @@ namespace NeuralNetworkProject.GUI
         public Feature_shape(Point location,string text="")
         {
             this.Shape=new EllipseShape();
-            this.BackColor=Color.CornflowerBlue;
+            //this.BackColor=Color.CornflowerBlue;
             this.Size=new Size(40,40);
             this.Text = text;
             this.Location = location;
@@ -26,7 +26,7 @@ namespace NeuralNetworkProject.GUI
         public Feature_shape()
         {
             this.Shape = new EllipseShape();
-            this.BackColor = Color.CornflowerBlue;
+            //this.BackColor = Color.CornflowerBlue;
             this.Size = new Size(40, 40);
 
         }

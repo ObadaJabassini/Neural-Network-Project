@@ -1,0 +1,501 @@
+﻿using System.Drawing;
+
+namespace NeuralNetworkProject.GUI.Forms
+{
+    partial class @new
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.materialRadioButton1 = new MaterialSkin.Controls.MaterialRadioButton();
+            this.materialCheckBox1 = new MaterialSkin.Controls.MaterialCheckBox();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.EpochsNum = new System.Windows.Forms.NumericUpDown();
+            this.momentum = new System.Windows.Forms.NumericUpDown();
+            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.LoadData_dlg = new System.Windows.Forms.OpenFileDialog();
+            this.Tain = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialRadioButton2 = new MaterialSkin.Controls.MaterialRadioButton();
+            this.materialRadioButton3 = new MaterialSkin.Controls.MaterialRadioButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.materialDivider3 = new MaterialSkin.Controls.MaterialDivider();
+            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.radToggleSwitch1 = new Telerik.WinControls.UI.RadToggleSwitch();
+            this.telerikMetroBlueTheme1 = new Telerik.WinControls.Themes.TelerikMetroBlueTheme();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.l_ctrl_mat1 = new NeuralNetworkProject.GUI.CostumControls.L_ctrl_mat();
+            this.l_ctrl_mat2 = new NeuralNetworkProject.GUI.CostumControls.L_ctrl_mat();
+            this.lollipopFileInput1 = new LollipopFileInput();
+            this.materialTabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.EpochsNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.momentum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radToggleSwitch1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // materialRadioButton1
+            // 
+            this.materialRadioButton1.AutoSize = true;
+            this.materialRadioButton1.Checked = true;
+            this.materialRadioButton1.Depth = 0;
+            this.materialRadioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.materialRadioButton1.Location = new System.Drawing.Point(40, 280);
+            this.materialRadioButton1.Margin = new System.Windows.Forms.Padding(0);
+            this.materialRadioButton1.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialRadioButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRadioButton1.Name = "materialRadioButton1";
+            this.materialRadioButton1.Ripple = true;
+            this.materialRadioButton1.Size = new System.Drawing.Size(134, 30);
+            this.materialRadioButton1.TabIndex = 2;
+            this.materialRadioButton1.TabStop = true;
+            this.materialRadioButton1.Text = "Backprobagation";
+            this.materialRadioButton1.UseVisualStyleBackColor = true;
+            this.materialRadioButton1.CheckedChanged += new System.EventHandler(this.materialRadioButton1_CheckedChanged);
+            // 
+            // materialCheckBox1
+            // 
+            this.materialCheckBox1.AutoSize = true;
+            this.materialCheckBox1.Depth = 0;
+            this.materialCheckBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.materialCheckBox1.Location = new System.Drawing.Point(23, 454);
+            this.materialCheckBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.materialCheckBox1.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialCheckBox1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCheckBox1.Name = "materialCheckBox1";
+            this.materialCheckBox1.Ripple = true;
+            this.materialCheckBox1.Size = new System.Drawing.Size(150, 30);
+            this.materialCheckBox1.TabIndex = 3;
+            this.materialCheckBox1.Text = "materialCheckBox1";
+            this.materialCheckBox1.UseVisualStyleBackColor = true;
+            this.materialCheckBox1.Visible = false;
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(37, 111);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(84, 18);
+            this.materialLabel1.TabIndex = 7;
+            this.materialLabel1.Text = "Momentum";
+            // 
+            // materialSingleLineTextField1
+            // 
+            this.materialSingleLineTextField1.Depth = 0;
+            this.materialSingleLineTextField1.Hint = "";
+            this.materialSingleLineTextField1.Location = new System.Drawing.Point(23, 223);
+            this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialSingleLineTextField1.Name = "materialSingleLineTextField1";
+            this.materialSingleLineTextField1.PasswordChar = '\0';
+            this.materialSingleLineTextField1.SelectedText = "";
+            this.materialSingleLineTextField1.SelectionLength = 0;
+            this.materialSingleLineTextField1.SelectionStart = 0;
+            this.materialSingleLineTextField1.Size = new System.Drawing.Size(206, 23);
+            this.materialSingleLineTextField1.TabIndex = 8;
+            this.materialSingleLineTextField1.Text = "materialSingleLineTextField1";
+            this.materialSingleLineTextField1.UseSystemPasswordChar = false;
+            this.materialSingleLineTextField1.Click += new System.EventHandler(this.materialSingleLineTextField1_Click);
+            // 
+            // materialTabControl1
+            // 
+            this.materialTabControl1.Controls.Add(this.tabPage1);
+            this.materialTabControl1.Controls.Add(this.tabPage2);
+            this.materialTabControl1.Depth = 0;
+            this.materialTabControl1.Location = new System.Drawing.Point(376, 189);
+            this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabControl1.Name = "materialTabControl1";
+            this.materialTabControl1.SelectedIndex = 0;
+            this.materialTabControl1.Size = new System.Drawing.Size(286, 314);
+            this.materialTabControl1.TabIndex = 9;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.flowLayoutPanel1);
+            this.tabPage1.Controls.Add(this.materialFlatButton1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(278, 288);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Layers";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel1.Controls.Add(this.l_ctrl_mat1);
+            this.flowLayoutPanel1.Controls.Add(this.l_ctrl_mat2);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 26);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(269, 211);
+            this.flowLayoutPanel1.TabIndex = 15;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.materialLabel3);
+            this.tabPage2.Controls.Add(this.radToggleSwitch1);
+            this.tabPage2.Controls.Add(this.materialLabel2);
+            this.tabPage2.Controls.Add(this.materialSingleLineTextField1);
+            this.tabPage2.Controls.Add(this.EpochsNum);
+            this.tabPage2.Controls.Add(this.momentum);
+            this.tabPage2.Controls.Add(this.materialLabel1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(278, 288);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Additional ";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(62, 28);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(59, 18);
+            this.materialLabel2.TabIndex = 15;
+            this.materialLabel2.Text = "Epochs";
+            // 
+            // EpochsNum
+            // 
+            this.EpochsNum.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.EpochsNum.Location = new System.Drawing.Point(161, 28);
+            this.EpochsNum.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.EpochsNum.Name = "EpochsNum";
+            this.EpochsNum.Size = new System.Drawing.Size(68, 20);
+            this.EpochsNum.TabIndex = 15;
+            this.EpochsNum.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            // 
+            // momentum
+            // 
+            this.momentum.DecimalPlaces = 4;
+            this.momentum.Enabled = false;
+            this.momentum.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.momentum.Location = new System.Drawing.Point(160, 111);
+            this.momentum.Name = "momentum";
+            this.momentum.Size = new System.Drawing.Size(69, 20);
+            this.momentum.TabIndex = 18;
+            this.momentum.Value = new decimal(new int[] {
+            9,
+            0,
+            0,
+            65536});
+            // 
+            // materialTabSelector1
+            // 
+            this.materialTabSelector1.BaseTabControl = this.materialTabControl1;
+            this.materialTabSelector1.Depth = 0;
+            this.materialTabSelector1.Location = new System.Drawing.Point(376, 157);
+            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabSelector1.Name = "materialTabSelector1";
+            this.materialTabSelector1.Size = new System.Drawing.Size(286, 47);
+            this.materialTabSelector1.TabIndex = 0;
+            this.materialTabSelector1.Text = "materialTabSelector1";
+            this.materialTabSelector1.Click += new System.EventHandler(this.materialTabSelector1_Click);
+            // 
+            // LoadData_dlg
+            // 
+            this.LoadData_dlg.DefaultExt = "txt";
+            this.LoadData_dlg.DereferenceLinks = false;
+            this.LoadData_dlg.Filter = "Excel files (*.csv)|*.csv|Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            this.LoadData_dlg.Title = "Open Dataset File";
+            // 
+            // Tain
+            // 
+            this.Tain.Depth = 0;
+            this.Tain.Location = new System.Drawing.Point(23, 518);
+            this.Tain.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Tain.Name = "Tain";
+            this.Tain.Primary = true;
+            this.Tain.Size = new System.Drawing.Size(213, 49);
+            this.Tain.TabIndex = 10;
+            this.Tain.Text = "Train";
+            this.Tain.UseVisualStyleBackColor = true;
+            this.Tain.Click += new System.EventHandler(this.materialRaisedButton1_Click_1);
+            // 
+            // materialRadioButton2
+            // 
+            this.materialRadioButton2.AutoSize = true;
+            this.materialRadioButton2.Depth = 0;
+            this.materialRadioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.materialRadioButton2.Location = new System.Drawing.Point(40, 353);
+            this.materialRadioButton2.Margin = new System.Windows.Forms.Padding(0);
+            this.materialRadioButton2.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialRadioButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRadioButton2.Name = "materialRadioButton2";
+            this.materialRadioButton2.Ripple = true;
+            this.materialRadioButton2.Size = new System.Drawing.Size(76, 30);
+            this.materialRadioButton2.TabIndex = 13;
+            this.materialRadioButton2.Text = "Newton";
+            this.materialRadioButton2.UseVisualStyleBackColor = true;
+            this.materialRadioButton2.CheckedChanged += new System.EventHandler(this.materialRadioButton2_CheckedChanged);
+            // 
+            // materialRadioButton3
+            // 
+            this.materialRadioButton3.AutoSize = true;
+            this.materialRadioButton3.Depth = 0;
+            this.materialRadioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.materialRadioButton3.Location = new System.Drawing.Point(40, 211);
+            this.materialRadioButton3.Margin = new System.Windows.Forms.Padding(0);
+            this.materialRadioButton3.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialRadioButton3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRadioButton3.Name = "materialRadioButton3";
+            this.materialRadioButton3.Ripple = true;
+            this.materialRadioButton3.Size = new System.Drawing.Size(150, 30);
+            this.materialRadioButton3.TabIndex = 14;
+            this.materialRadioButton3.Text = "Simple Perceptrone";
+            this.materialRadioButton3.UseVisualStyleBackColor = true;
+            this.materialRadioButton3.CheckedChanged += new System.EventHandler(this.materialRadioButton3_CheckedChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::NeuralNetworkProject.Properties.Resources._39567a_add_database_128;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(112, 448);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(83, 36);
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // materialDivider3
+            // 
+            this.materialDivider3.BackColor = System.Drawing.SystemColors.Control;
+            this.materialDivider3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.materialDivider3.Depth = 0;
+            this.materialDivider3.Location = new System.Drawing.Point(257, 427);
+            this.materialDivider3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider3.Name = "materialDivider3";
+            this.materialDivider3.Size = new System.Drawing.Size(117, 127);
+            this.materialDivider3.TabIndex = 0;
+            this.materialDivider3.Text = "+";
+            this.materialDivider3.Visible = false;
+            this.materialDivider3.Click += new System.EventHandler(this.materialDivider3_Click);
+            // 
+            // materialFlatButton1
+            // 
+            this.materialFlatButton1.AutoSize = true;
+            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialFlatButton1.BackgroundImage = global::NeuralNetworkProject.Properties.Resources._39567a_add_database_128;
+            this.materialFlatButton1.Depth = 0;
+            this.materialFlatButton1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.materialFlatButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.materialFlatButton1.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
+            this.materialFlatButton1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.materialFlatButton1.Image = global::NeuralNetworkProject.Properties.Resources._39567a_add_database_128;
+            this.materialFlatButton1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.materialFlatButton1.Location = new System.Drawing.Point(3, 249);
+            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFlatButton1.Name = "materialFlatButton1";
+            this.materialFlatButton1.Primary = false;
+            this.materialFlatButton1.Size = new System.Drawing.Size(272, 36);
+            this.materialFlatButton1.TabIndex = 0;
+            this.materialFlatButton1.Text = "Add Layer ";
+            this.materialFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.materialFlatButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.materialFlatButton1.UseVisualStyleBackColor = true;
+            this.materialFlatButton1.Click += new System.EventHandler(this.materialFlatButton1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::NeuralNetworkProject.Properties.Resources.Gear;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(275, 392);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(66, 66);
+            this.pictureBox2.TabIndex = 16;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Visible = false;
+            this.pictureBox2.MouseHover += new System.EventHandler(this.pictureBox2_MouseHover);
+            // 
+            // radToggleSwitch1
+            // 
+            this.radToggleSwitch1.Location = new System.Drawing.Point(179, 66);
+            this.radToggleSwitch1.Name = "radToggleSwitch1";
+            this.radToggleSwitch1.Size = new System.Drawing.Size(50, 20);
+            this.radToggleSwitch1.TabIndex = 0;
+            this.radToggleSwitch1.Text = "radToggleSwitch1";
+            this.radToggleSwitch1.ThemeName = "TelerikMetroBlue";
+            // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel3.Location = new System.Drawing.Point(6, 67);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(118, 18);
+            this.materialLabel3.TabIndex = 19;
+            this.materialLabel3.Text = "With momentum";
+            this.materialLabel3.Click += new System.EventHandler(this.materialLabel3_Click);
+            // 
+            // l_ctrl_mat1
+            // 
+            this.l_ctrl_mat1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.l_ctrl_mat1.BackColor = System.Drawing.Color.Transparent;
+            this.l_ctrl_mat1.Location = new System.Drawing.Point(3, 3);
+            this.l_ctrl_mat1.Name = "l_ctrl_mat1";
+            this.l_ctrl_mat1.Size = new System.Drawing.Size(247, 32);
+            this.l_ctrl_mat1.TabIndex = 12;
+            this.l_ctrl_mat1.Load += new System.EventHandler(this.l_ctrl_mat1_Load);
+            // 
+            // l_ctrl_mat2
+            // 
+            this.l_ctrl_mat2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.l_ctrl_mat2.BackColor = System.Drawing.Color.Transparent;
+            this.l_ctrl_mat2.Location = new System.Drawing.Point(3, 41);
+            this.l_ctrl_mat2.Name = "l_ctrl_mat2";
+            this.l_ctrl_mat2.Size = new System.Drawing.Size(247, 32);
+            this.l_ctrl_mat2.TabIndex = 13;
+            // 
+            // lollipopFileInput1
+            // 
+            this.lollipopFileInput1.Filter = "All Files (*.*)|*.*";
+            this.lollipopFileInput1.FocusedColor = System.Drawing.SystemColors.Highlight;
+            this.lollipopFileInput1.FontColor = System.Drawing.Color.Black;
+            this.lollipopFileInput1.IsEnabled = true;
+            this.lollipopFileInput1.Location = new System.Drawing.Point(40, 105);
+            this.lollipopFileInput1.MaxLength = 32767;
+            this.lollipopFileInput1.Name = "lollipopFileInput1";
+            this.lollipopFileInput1.ReadOnly = false;
+            this.lollipopFileInput1.Size = new System.Drawing.Size(286, 24);
+            this.lollipopFileInput1.TabIndex = 0;
+            this.lollipopFileInput1.Text = "Load Data";
+            this.lollipopFileInput1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.lollipopFileInput1.UseSystemPasswordChar = false;
+            this.lollipopFileInput1.TextChanged += new System.EventHandler(this.lollipopFileInput1_TextChanged_1);
+            // 
+            // @new
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(706, 577);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.materialRadioButton3);
+            this.Controls.Add(this.materialDivider3);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.materialTabSelector1);
+            this.Controls.Add(this.materialRadioButton2);
+            this.Controls.Add(this.materialRadioButton1);
+            this.Controls.Add(this.lollipopFileInput1);
+            this.Controls.Add(this.Tain);
+            this.Controls.Add(this.materialTabControl1);
+            this.Controls.Add(this.materialCheckBox1);
+            this.Name = "@new";
+            this.Text = "ANN";
+            this.Load += new System.EventHandler(this.new_Load);
+            this.MouseHover += new System.EventHandler(this.pictureBox2_MouseHover);
+            this.materialTabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.EpochsNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.momentum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radToggleSwitch1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
+        private MaterialSkin.Controls.MaterialRadioButton materialRadioButton1;
+        private MaterialSkin.Controls.MaterialCheckBox materialCheckBox1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
+        private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
+        private MaterialSkin.Controls.MaterialDivider materialDivider3;
+        public System.Windows.Forms.OpenFileDialog LoadData_dlg;
+        private MaterialSkin.Controls.MaterialRaisedButton Tain;
+        private LollipopFileInput lollipopFileInput1;
+        private CostumControls.L_ctrl_mat l_ctrl_mat1;
+        private MaterialSkin.Controls.MaterialRadioButton materialRadioButton2;
+        private MaterialSkin.Controls.MaterialRadioButton materialRadioButton3;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private System.Windows.Forms.NumericUpDown EpochsNum;
+        private System.Windows.Forms.NumericUpDown momentum;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private CostumControls.L_ctrl_mat l_ctrl_mat2;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private Telerik.WinControls.UI.RadToggleSwitch radToggleSwitch1;
+        private Telerik.WinControls.Themes.TelerikMetroBlueTheme telerikMetroBlueTheme1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+    }
+}

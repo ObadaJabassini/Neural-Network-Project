@@ -25,6 +25,16 @@ namespace NeuralNetworkProject
             _seconds++;
             ElapsedTime.Text = (_DateTime.AddMilliseconds(_seconds*1000)).ToString("HH:mm:ss");
         }
+
+        private void Epochs_prgbr_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LC_GC_Click(object sender, EventArgs e)
+        {
+
+        }
         
 
     }

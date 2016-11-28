@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MathNet.Numerics.LinearAlgebra;
+using NeuralNetworkProject.GUI.Forms;
 
 namespace NeuralNetworkProject
 {
@@ -38,7 +39,9 @@ namespace NeuralNetworkProject
             //Startup Form
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoadData());
+            Application.Run(new @new());
+            
+             //Application.Run(new LoadData());
 
             //var t = DataReader.DataReader.Instance.ReadFromFile(@"C:\Users\DELL\Desktop\Datasets\test.txt");
             //Training.Trainer trainer = new Training.Trainer() { };
