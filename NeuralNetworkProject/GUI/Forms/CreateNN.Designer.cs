@@ -44,16 +44,16 @@ namespace NeuralNetworkProject.GUI.Forms
             this.object_5a16bf9a_c637_4275_84f9_0ee191482182 = new Telerik.WinControls.RootRadElement();
             this.ellipseShape1 = new Telerik.WinControls.EllipseShape();
             this.radPanel2 = new Telerik.WinControls.UI.RadPanel();
+            this.lollipopFile = new LollipopFileInput();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.radPanel4 = new Telerik.WinControls.UI.RadPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.l_ctrl_mat1 = new NeuralNetworkProject.GUI.CostumControls.L_ctrl_mat();
-            this.l_ctrl_mat2 = new NeuralNetworkProject.GUI.CostumControls.L_ctrl_mat();
+            this.l_ctrl_mat3 = new NeuralNetworkProject.GUI.CostumControls.L_ctrl_mat();
+            this.l_ctrl_mat4 = new NeuralNetworkProject.GUI.CostumControls.L_ctrl_mat();
             this.radButton2 = new Telerik.WinControls.UI.RadButton();
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.lollipopFileInput1 = new LollipopFileInput();
             this.materialRadioButton1 = new MaterialSkin.Controls.MaterialRadioButton();
             this.materialRadioButton2 = new MaterialSkin.Controls.MaterialRadioButton();
             this.materialRadioButton3 = new MaterialSkin.Controls.MaterialRadioButton();
@@ -63,11 +63,8 @@ namespace NeuralNetworkProject.GUI.Forms
             this.momentum = new System.Windows.Forms.NumericUpDown();
             this.radPanel5 = new Telerik.WinControls.UI.RadPanel();
             this.radLabel8 = new Telerik.WinControls.UI.RadLabel();
-            this.intCounter2 = new NeuralNetworkProject.GUI.CostumControls.IntCounter();
             this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
             this.materialRadioButton4 = new MaterialSkin.Controls.MaterialRadioButton();
-            this.decimalCounter1 = new NeuralNetworkProject.GUI.CostumControls.DecimalCounter();
-            this.intCounter1 = new NeuralNetworkProject.GUI.CostumControls.IntCounter();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
@@ -81,6 +78,7 @@ namespace NeuralNetworkProject.GUI.Forms
             this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
             this.object_e5fbf6de_ccb1_407a_9d90_85935a836bef = new Telerik.WinControls.RootRadElement();
             this.object_9b3235f7_0d58_481b_be62_5018fea833f2 = new Telerik.WinControls.RootRadElement();
+            this.intCounter3 = new NeuralNetworkProject.GUI.CostumControls.IntCounter();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDiagram1)).BeginInit();
             this.radDiagram1.SuspendLayout();
@@ -123,7 +121,7 @@ namespace NeuralNetworkProject.GUI.Forms
             // 
             this.LoadData_dlg.DefaultExt = "txt";
             this.LoadData_dlg.DereferenceLinks = false;
-            this.LoadData_dlg.Filter = "Excel files (*.csv)|*.csv|Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            this.LoadData_dlg.Filter = "Text files (*.txt)|*.txt|Excel files (*.csv)|*.csv|All files (*.*)|*.*";
             this.LoadData_dlg.Title = "Open Dataset File";
             // 
             // radPanel3
@@ -225,15 +223,30 @@ namespace NeuralNetworkProject.GUI.Forms
             // 
             // radPanel2
             // 
+            this.radPanel2.Controls.Add(this.lollipopFile);
             this.radPanel2.Controls.Add(this.radPanel1);
             this.radPanel2.Controls.Add(this.radButton1);
             this.radPanel2.Controls.Add(this.pictureBox3);
-            this.radPanel2.Controls.Add(this.lollipopFileInput1);
             this.radPanel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.radPanel2.Location = new System.Drawing.Point(0, 55);
             this.radPanel2.Name = "radPanel2";
             this.radPanel2.Size = new System.Drawing.Size(468, 592);
             this.radPanel2.TabIndex = 11;
+            // 
+            // lollipopFile
+            // 
+            this.lollipopFile.Filter = "All Files (*.*)|*.*";
+            this.lollipopFile.FocusedColor = System.Drawing.Color.LightSeaGreen;
+            this.lollipopFile.FontColor = System.Drawing.Color.White;
+            this.lollipopFile.IsEnabled = true;
+            this.lollipopFile.Location = new System.Drawing.Point(95, 45);
+            this.lollipopFile.MaxLength = 32767;
+            this.lollipopFile.Name = "lollipopFile";
+            this.lollipopFile.ReadOnly = false;
+            this.lollipopFile.Size = new System.Drawing.Size(256, 24);
+            this.lollipopFile.TabIndex = 29;
+            this.lollipopFile.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.lollipopFile.UseSystemPasswordChar = false;
             // 
             // radPanel1
             // 
@@ -276,34 +289,29 @@ namespace NeuralNetworkProject.GUI.Forms
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.Controls.Add(this.l_ctrl_mat1);
-            this.flowLayoutPanel1.Controls.Add(this.l_ctrl_mat2);
+            this.flowLayoutPanel1.Controls.Add(this.l_ctrl_mat3);
+            this.flowLayoutPanel1.Controls.Add(this.l_ctrl_mat4);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 42);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(289, 268);
             this.flowLayoutPanel1.TabIndex = 15;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
-            // l_ctrl_mat1
+            // l_ctrl_mat3
             // 
-            this.l_ctrl_mat1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.l_ctrl_mat1.BackColor = System.Drawing.Color.Transparent;
-            this.l_ctrl_mat1.Location = new System.Drawing.Point(3, 3);
-            this.l_ctrl_mat1.Name = "l_ctrl_mat1";
-            this.l_ctrl_mat1.Size = new System.Drawing.Size(247, 32);
-            this.l_ctrl_mat1.TabIndex = 12;
-            this.l_ctrl_mat1.Load += new System.EventHandler(this.l_ctrl_mat1_Load);
+            this.l_ctrl_mat3.BackColor = System.Drawing.Color.Transparent;
+            this.l_ctrl_mat3.Location = new System.Drawing.Point(3, 3);
+            this.l_ctrl_mat3.Name = "l_ctrl_mat3";
+            this.l_ctrl_mat3.Size = new System.Drawing.Size(242, 28);
+            this.l_ctrl_mat3.TabIndex = 23;
             // 
-            // l_ctrl_mat2
+            // l_ctrl_mat4
             // 
-            this.l_ctrl_mat2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.l_ctrl_mat2.BackColor = System.Drawing.Color.Transparent;
-            this.l_ctrl_mat2.Location = new System.Drawing.Point(3, 41);
-            this.l_ctrl_mat2.Name = "l_ctrl_mat2";
-            this.l_ctrl_mat2.Size = new System.Drawing.Size(247, 32);
-            this.l_ctrl_mat2.TabIndex = 13;
+            this.l_ctrl_mat4.BackColor = System.Drawing.Color.Transparent;
+            this.l_ctrl_mat4.Location = new System.Drawing.Point(3, 37);
+            this.l_ctrl_mat4.Name = "l_ctrl_mat4";
+            this.l_ctrl_mat4.Size = new System.Drawing.Size(242, 28);
+            this.l_ctrl_mat4.TabIndex = 24;
             // 
             // radButton2
             // 
@@ -403,22 +411,6 @@ namespace NeuralNetworkProject.GUI.Forms
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 17;
             this.pictureBox3.TabStop = false;
-            // 
-            // lollipopFileInput1
-            // 
-            this.lollipopFileInput1.Filter = "All Files (*.*)|*.*";
-            this.lollipopFileInput1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(159)))), ((int)(((byte)(221)))));
-            this.lollipopFileInput1.FontColor = System.Drawing.Color.White;
-            this.lollipopFileInput1.IsEnabled = true;
-            this.lollipopFileInput1.Location = new System.Drawing.Point(95, 41);
-            this.lollipopFileInput1.MaxLength = 32767;
-            this.lollipopFileInput1.Name = "lollipopFileInput1";
-            this.lollipopFileInput1.ReadOnly = false;
-            this.lollipopFileInput1.Size = new System.Drawing.Size(253, 24);
-            this.lollipopFileInput1.TabIndex = 0;
-            this.lollipopFileInput1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.lollipopFileInput1.UseSystemPasswordChar = false;
-            this.lollipopFileInput1.TextChanged += new System.EventHandler(this.lollipopFileInput1_TextChanged_1);
             // 
             // materialRadioButton1
             // 
@@ -550,12 +542,10 @@ namespace NeuralNetworkProject.GUI.Forms
             // 
             // radPanel5
             // 
+            this.radPanel5.Controls.Add(this.intCounter3);
             this.radPanel5.Controls.Add(this.radLabel8);
-            this.radPanel5.Controls.Add(this.intCounter2);
             this.radPanel5.Controls.Add(this.radLabel7);
             this.radPanel5.Controls.Add(this.materialRadioButton4);
-            this.radPanel5.Controls.Add(this.decimalCounter1);
-            this.radPanel5.Controls.Add(this.intCounter1);
             this.radPanel5.Controls.Add(this.radLabel6);
             this.radPanel5.Controls.Add(this.radLabel5);
             this.radPanel5.Controls.Add(this.materialSingleLineTextField1);
@@ -587,16 +577,6 @@ namespace NeuralNetworkProject.GUI.Forms
             this.radLabel8.TabIndex = 32;
             this.radLabel8.Text = "Value";
             // 
-            // intCounter2
-            // 
-            this.intCounter2.Increment = 0D;
-            this.intCounter2.Location = new System.Drawing.Point(466, 189);
-            this.intCounter2.Name = "intCounter2";
-            this.intCounter2.Size = new System.Drawing.Size(95, 28);
-            this.intCounter2.TabIndex = 36;
-            this.intCounter2.Load += new System.EventHandler(this.intCounter2_Load);
-            this.intCounter2.Validated += new System.EventHandler(this.intCounter2_Validated);
-            // 
             // radLabel7
             // 
             this.radLabel7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -624,23 +604,6 @@ namespace NeuralNetworkProject.GUI.Forms
             this.materialRadioButton4.Text = "                      .";
             this.materialRadioButton4.UseVisualStyleBackColor = true;
             this.materialRadioButton4.CheckedChanged += new System.EventHandler(this.materialRadioButton4_CheckedChanged);
-            // 
-            // decimalCounter1
-            // 
-            this.decimalCounter1.Increment = 0D;
-            this.decimalCounter1.Location = new System.Drawing.Point(212, 237);
-            this.decimalCounter1.Name = "decimalCounter1";
-            this.decimalCounter1.Size = new System.Drawing.Size(95, 28);
-            this.decimalCounter1.TabIndex = 0;
-            this.decimalCounter1.Load += new System.EventHandler(this.decimalCounter1_Load);
-            // 
-            // intCounter1
-            // 
-            this.intCounter1.Increment = 0D;
-            this.intCounter1.Location = new System.Drawing.Point(212, 184);
-            this.intCounter1.Name = "intCounter1";
-            this.intCounter1.Size = new System.Drawing.Size(95, 28);
-            this.intCounter1.TabIndex = 0;
             // 
             // radLabel6
             // 
@@ -792,6 +755,15 @@ namespace NeuralNetworkProject.GUI.Forms
             this.object_9b3235f7_0d58_481b_be62_5018fea833f2.StretchHorizontally = true;
             this.object_9b3235f7_0d58_481b_be62_5018fea833f2.StretchVertically = true;
             // 
+            // intCounter3
+            // 
+            this.intCounter3.BackColor = System.Drawing.Color.White;
+            this.intCounter3.Increment = 0D;
+            this.intCounter3.Location = new System.Drawing.Point(232, 130);
+            this.intCounter3.Name = "intCounter3";
+            this.intCounter3.Size = new System.Drawing.Size(95, 28);
+            this.intCounter3.TabIndex = 0;
+            // 
             // CreateNN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -875,7 +847,6 @@ namespace NeuralNetworkProject.GUI.Forms
         private CostumControls.L_ctrl_mat l_ctrl_mat1;
         private CostumControls.L_ctrl_mat l_ctrl_mat2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private LollipopFileInput lollipopFileInput1;
         private MaterialSkin.Controls.MaterialRadioButton materialRadioButton1;
         private MaterialSkin.Controls.MaterialRadioButton materialRadioButton2;
         private MaterialSkin.Controls.MaterialRadioButton materialRadioButton3;
@@ -909,5 +880,9 @@ namespace NeuralNetworkProject.GUI.Forms
         private MaterialSkin.Controls.MaterialRadioButton materialRadioButton4;
         private CostumControls.IntCounter intCounter2;
         private Telerik.WinControls.UI.RadLabel radLabel8;
+        private CostumControls.L_ctrl_mat l_ctrl_mat3;
+        private CostumControls.L_ctrl_mat l_ctrl_mat4;
+        private LollipopFileInput lollipopFile;
+        private CostumControls.IntCounter intCounter3;
     }
 }

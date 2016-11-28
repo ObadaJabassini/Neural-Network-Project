@@ -31,15 +31,19 @@
             this.increase = new Telerik.WinControls.UI.RadButton();
             this.decrease = new Telerik.WinControls.UI.RadButton();
             this.value = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             ((System.ComponentModel.ISupportInitialize)(this.increase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.decrease)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
+            this.radPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // increase
             // 
-            this.increase.Location = new System.Drawing.Point(76, 0);
+            this.increase.Dock = System.Windows.Forms.DockStyle.Top;
+            this.increase.Location = new System.Drawing.Point(0, 0);
             this.increase.Name = "increase";
-            this.increase.Size = new System.Drawing.Size(16, 10);
+            this.increase.Size = new System.Drawing.Size(23, 12);
             this.increase.TabIndex = 24;
             this.increase.Text = "▲";
             this.increase.ThemeName = "VisualStudio2012Dark";
@@ -47,9 +51,10 @@
             // 
             // decrease
             // 
-            this.decrease.Location = new System.Drawing.Point(76, 16);
+            this.decrease.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.decrease.Location = new System.Drawing.Point(0, 18);
             this.decrease.Name = "decrease";
-            this.decrease.Size = new System.Drawing.Size(16, 10);
+            this.decrease.Size = new System.Drawing.Size(23, 10);
             this.decrease.TabIndex = 25;
             this.decrease.Text = "▼";
             this.decrease.ThemeName = "VisualStudio2012Dark";
@@ -74,17 +79,37 @@
             this.value.Validated += new System.EventHandler(this.materialSingleLineTextField1_Validated);
             this.value.Validating += new System.ComponentModel.CancelEventHandler(this.value_Validating);
             // 
+            // radPanel1
+            // 
+            this.radPanel1.Controls.Add(this.increase);
+            this.radPanel1.Controls.Add(this.decrease);
+            this.radPanel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.radPanel1.Location = new System.Drawing.Point(72, 0);
+            this.radPanel1.MaximumSize = new System.Drawing.Size(23, 28);
+            this.radPanel1.MinimumSize = new System.Drawing.Size(23, 28);
+            this.radPanel1.Name = "radPanel1";
+            // 
+            // 
+            // 
+            this.radPanel1.RootElement.MaxSize = new System.Drawing.Size(23, 28);
+            this.radPanel1.RootElement.MinSize = new System.Drawing.Size(23, 28);
+            this.radPanel1.Size = new System.Drawing.Size(23, 28);
+            this.radPanel1.TabIndex = 27;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radPanel1.GetChildAt(0).GetChildAt(1))).Opacity = 0D;
+            // 
             // IntCounter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.increase);
-            this.Controls.Add(this.decrease);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.value);
             this.Name = "IntCounter";
             this.Size = new System.Drawing.Size(95, 28);
             ((System.ComponentModel.ISupportInitialize)(this.increase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.decrease)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
+            this.radPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -94,6 +119,7 @@
         protected Telerik.WinControls.UI.RadButton increase;
         protected Telerik.WinControls.UI.RadButton decrease;
         protected MaterialSkin.Controls.MaterialSingleLineTextField value;
+        private Telerik.WinControls.UI.RadPanel radPanel1;
 
     }
 }

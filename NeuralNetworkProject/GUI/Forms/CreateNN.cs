@@ -44,11 +44,11 @@ namespace NeuralNetworkProject.GUI.Forms
            // materialSkinManager.AddFormToManage(this);
            // materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.LightBlue800, Primary.BlueGrey900, Primary.LightBlue200, Accent.LightBlue200, TextShade.WHITE);
-            
-            lollipopFileInput1.Dialog = LoadData_dlg;
-            lollipopFileInput1.Font = new System.Drawing.Font("Tahoma",8f);
+
+            lollipopFile.Dialog = LoadData_dlg;
+            lollipopFile.Font = new System.Drawing.Font("Tahoma", 8f);
            
-             Controller.InitiateGraph(this.radDiagram1);
+            Controller.InitiateGraph(this.radDiagram1);
         }
 
         private void CreateNN_Load(object sender, EventArgs e)
