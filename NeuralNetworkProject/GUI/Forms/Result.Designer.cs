@@ -37,6 +37,7 @@
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
+            this.Performance_prgbr = new Telerik.WinControls.UI.RadProgressBar();
             this.MaxEpochs = new System.Windows.Forms.Label();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.Epochs_prgbr = new Telerik.WinControls.UI.RadProgressBar();
@@ -44,22 +45,23 @@
             this.EllapsedTimer = new System.Windows.Forms.Timer(this.components);
             this.ElapsedTime = new Telerik.WinControls.UI.RadLabel();
             this.object_0cdc26a6_a5cd_46de_bd58_84f5bf0724e9 = new Telerik.WinControls.RootRadElement();
-            this.Performance_prgbr = new Telerik.WinControls.UI.RadProgressBar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.LC_GC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Performance_prgbr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Epochs_prgbr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ElapsedTime)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Performance_prgbr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // LC_GC
             // 
+            this.LC_GC.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.LC_GC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(71)))));
             chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.Silver;
             chartArea1.AxisX.LineColor = System.Drawing.Color.Silver;
@@ -76,7 +78,6 @@
             chartArea1.Name = "Input";
             this.LC_GC.ChartAreas.Add(chartArea1);
             this.LC_GC.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.LC_GC.Dock = System.Windows.Forms.DockStyle.Top;
             legend1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(71)))));
             legend1.ForeColor = System.Drawing.Color.Silver;
             legend1.Name = "Legend1";
@@ -115,7 +116,7 @@
             this.radPanel1.Controls.Add(this.MaxEpochs);
             this.radPanel1.Controls.Add(this.radLabel1);
             this.radPanel1.Controls.Add(this.Epochs_prgbr);
-            this.radPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.radPanel1.Location = new System.Drawing.Point(0, 391);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(600, 106);
@@ -142,6 +143,42 @@
             this.radLabel2.Size = new System.Drawing.Size(81, 18);
             this.radLabel2.TabIndex = 8;
             this.radLabel2.Text = "Performance :";
+            // 
+            // Performance_prgbr
+            // 
+            this.Performance_prgbr.AutoScroll = true;
+            this.Performance_prgbr.BackColor = System.Drawing.Color.White;
+            this.Performance_prgbr.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.Performance_prgbr.EnableCodedUITests = true;
+            this.Performance_prgbr.EnableKeyMap = true;
+            this.Performance_prgbr.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Performance_prgbr.Location = new System.Drawing.Point(143, 53);
+            this.Performance_prgbr.Maximum = 1000;
+            this.Performance_prgbr.Name = "Performance_prgbr";
+            this.Performance_prgbr.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Performance_prgbr.Size = new System.Drawing.Size(306, 24);
+            this.Performance_prgbr.Step = 1;
+            this.Performance_prgbr.StepWidth = 1;
+            this.Performance_prgbr.TabIndex = 7;
+            this.Performance_prgbr.Text = "0 ";
+            this.Performance_prgbr.ThemeName = "ControlDefault";
+            ((Telerik.WinControls.UI.RadProgressBarElement)(this.Performance_prgbr.GetChildAt(0))).Value1 = 0;
+            ((Telerik.WinControls.UI.RadProgressBarElement)(this.Performance_prgbr.GetChildAt(0))).Maximum = 1000;
+            ((Telerik.WinControls.UI.RadProgressBarElement)(this.Performance_prgbr.GetChildAt(0))).Step = 1;
+            ((Telerik.WinControls.UI.RadProgressBarElement)(this.Performance_prgbr.GetChildAt(0))).Text = "0 ";
+            ((Telerik.WinControls.UI.RadProgressBarElement)(this.Performance_prgbr.GetChildAt(0))).GradientStyle = Telerik.WinControls.GradientStyles.Linear;
+            ((Telerik.WinControls.UI.RadProgressBarElement)(this.Performance_prgbr.GetChildAt(0))).HorizontalLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            ((Telerik.WinControls.UI.RadProgressBarElement)(this.Performance_prgbr.GetChildAt(0))).BorderBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            ((Telerik.WinControls.UI.ProgressIndicatorElement)(this.Performance_prgbr.GetChildAt(0).GetChildAt(0))).BackColor2 = System.Drawing.Color.LightGreen;
+            ((Telerik.WinControls.UI.ProgressIndicatorElement)(this.Performance_prgbr.GetChildAt(0).GetChildAt(0))).BackColor3 = System.Drawing.Color.LightSeaGreen;
+            ((Telerik.WinControls.UI.ProgressIndicatorElement)(this.Performance_prgbr.GetChildAt(0).GetChildAt(0))).BackColor4 = System.Drawing.Color.LightSeaGreen;
+            ((Telerik.WinControls.UI.ProgressIndicatorElement)(this.Performance_prgbr.GetChildAt(0).GetChildAt(0))).BackColor = System.Drawing.Color.LightGreen;
+            ((Telerik.WinControls.UI.ProgressIndicatorElement)(this.Performance_prgbr.GetChildAt(0).GetChildAt(0))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
+            ((Telerik.WinControls.UI.UpperProgressIndicatorElement)(this.Performance_prgbr.GetChildAt(0).GetChildAt(1))).BackColor2 = System.Drawing.Color.LightSalmon;
+            ((Telerik.WinControls.UI.UpperProgressIndicatorElement)(this.Performance_prgbr.GetChildAt(0).GetChildAt(1))).BackColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(199)))), ((int)(((byte)(96)))));
+            ((Telerik.WinControls.UI.UpperProgressIndicatorElement)(this.Performance_prgbr.GetChildAt(0).GetChildAt(1))).BackColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(199)))), ((int)(((byte)(96)))));
+            ((Telerik.WinControls.UI.UpperProgressIndicatorElement)(this.Performance_prgbr.GetChildAt(0).GetChildAt(1))).BackColor = System.Drawing.Color.LightSalmon;
+            ((Telerik.WinControls.UI.UpperProgressIndicatorElement)(this.Performance_prgbr.GetChildAt(0).GetChildAt(1))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
             // 
             // MaxEpochs
             // 
@@ -226,42 +263,6 @@
             this.object_0cdc26a6_a5cd_46de_bd58_84f5bf0724e9.StretchHorizontally = true;
             this.object_0cdc26a6_a5cd_46de_bd58_84f5bf0724e9.StretchVertically = true;
             // 
-            // Performance_prgbr
-            // 
-            this.Performance_prgbr.AutoScroll = true;
-            this.Performance_prgbr.BackColor = System.Drawing.Color.White;
-            this.Performance_prgbr.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.Performance_prgbr.EnableCodedUITests = true;
-            this.Performance_prgbr.EnableKeyMap = true;
-            this.Performance_prgbr.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Performance_prgbr.Location = new System.Drawing.Point(143, 53);
-            this.Performance_prgbr.Maximum = 1000;
-            this.Performance_prgbr.Name = "Performance_prgbr";
-            this.Performance_prgbr.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Performance_prgbr.Size = new System.Drawing.Size(306, 24);
-            this.Performance_prgbr.Step = 1;
-            this.Performance_prgbr.StepWidth = 1;
-            this.Performance_prgbr.TabIndex = 7;
-            this.Performance_prgbr.Text = "0 ";
-            this.Performance_prgbr.ThemeName = "ControlDefault";
-            ((Telerik.WinControls.UI.RadProgressBarElement)(this.Performance_prgbr.GetChildAt(0))).Value1 = 0;
-            ((Telerik.WinControls.UI.RadProgressBarElement)(this.Performance_prgbr.GetChildAt(0))).Maximum = 1000;
-            ((Telerik.WinControls.UI.RadProgressBarElement)(this.Performance_prgbr.GetChildAt(0))).Step = 1;
-            ((Telerik.WinControls.UI.RadProgressBarElement)(this.Performance_prgbr.GetChildAt(0))).Text = "0 ";
-            ((Telerik.WinControls.UI.RadProgressBarElement)(this.Performance_prgbr.GetChildAt(0))).GradientStyle = Telerik.WinControls.GradientStyles.Linear;
-            ((Telerik.WinControls.UI.RadProgressBarElement)(this.Performance_prgbr.GetChildAt(0))).HorizontalLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            ((Telerik.WinControls.UI.RadProgressBarElement)(this.Performance_prgbr.GetChildAt(0))).BorderBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            ((Telerik.WinControls.UI.ProgressIndicatorElement)(this.Performance_prgbr.GetChildAt(0).GetChildAt(0))).BackColor2 = System.Drawing.Color.LightGreen;
-            ((Telerik.WinControls.UI.ProgressIndicatorElement)(this.Performance_prgbr.GetChildAt(0).GetChildAt(0))).BackColor3 = System.Drawing.Color.LightSeaGreen;
-            ((Telerik.WinControls.UI.ProgressIndicatorElement)(this.Performance_prgbr.GetChildAt(0).GetChildAt(0))).BackColor4 = System.Drawing.Color.LightSeaGreen;
-            ((Telerik.WinControls.UI.ProgressIndicatorElement)(this.Performance_prgbr.GetChildAt(0).GetChildAt(0))).BackColor = System.Drawing.Color.LightGreen;
-            ((Telerik.WinControls.UI.ProgressIndicatorElement)(this.Performance_prgbr.GetChildAt(0).GetChildAt(0))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
-            ((Telerik.WinControls.UI.UpperProgressIndicatorElement)(this.Performance_prgbr.GetChildAt(0).GetChildAt(1))).BackColor2 = System.Drawing.Color.LightSalmon;
-            ((Telerik.WinControls.UI.UpperProgressIndicatorElement)(this.Performance_prgbr.GetChildAt(0).GetChildAt(1))).BackColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(199)))), ((int)(((byte)(96)))));
-            ((Telerik.WinControls.UI.UpperProgressIndicatorElement)(this.Performance_prgbr.GetChildAt(0).GetChildAt(1))).BackColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(199)))), ((int)(((byte)(96)))));
-            ((Telerik.WinControls.UI.UpperProgressIndicatorElement)(this.Performance_prgbr.GetChildAt(0).GetChildAt(1))).BackColor = System.Drawing.Color.LightSalmon;
-            ((Telerik.WinControls.UI.UpperProgressIndicatorElement)(this.Performance_prgbr.GetChildAt(0).GetChildAt(1))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(71)))));
@@ -295,10 +296,10 @@
             this.radPanel1.ResumeLayout(false);
             this.radPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Performance_prgbr)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Epochs_prgbr)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ElapsedTime)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Performance_prgbr)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);

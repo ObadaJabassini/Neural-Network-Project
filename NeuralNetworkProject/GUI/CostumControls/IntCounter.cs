@@ -19,7 +19,7 @@ namespace NeuralNetworkProject.GUI.CostumControls
         public Double Increment { set; get; }
 
         [Category("Format")]
-        public Double Value { get; private set; }
+        public Double Value { get;  set; }
 
         Regex reg = new Regex(@"^\d+$");
         RadToolTip _tip = new RadToolTip();
@@ -65,6 +65,7 @@ namespace NeuralNetworkProject.GUI.CostumControls
         private void decrease_Click(object sender, EventArgs e)
         {
             this.Text = Convert.ToString(Value - Increment);
+            this.Refresh();
         }
 
         private void increase_Click(object sender, EventArgs e)

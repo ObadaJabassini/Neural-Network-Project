@@ -30,7 +30,7 @@
         {
             this.increase = new Telerik.WinControls.UI.RadButton();
             this.decrease = new Telerik.WinControls.UI.RadButton();
-            this.value = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this._value = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             ((System.ComponentModel.ISupportInitialize)(this.increase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.decrease)).BeginInit();
@@ -60,22 +60,22 @@
             this.decrease.ThemeName = "VisualStudio2012Dark";
             this.decrease.Click += new System.EventHandler(this.decrease_Click);
             // 
-            // value
+            // _value
             // 
-            this.value.Depth = 0;
-            this.value.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.value.Hint = "";
-            this.value.Location = new System.Drawing.Point(0, 0);
-            this.value.MouseState = MaterialSkin.MouseState.HOVER;
-            this.value.Name = "value";
-            this.value.PasswordChar = '\0';
-            this.value.SelectedText = "";
-            this.value.SelectionLength = 0;
-            this.value.SelectionStart = 0;
-            this.value.Size = new System.Drawing.Size(95, 23);
-            this.value.TabIndex = 29;
-            this.value.Text = "0";
-            this.value.UseSystemPasswordChar = false;
+            this._value.Depth = 0;
+            this._value.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._value.Hint = "";
+            this._value.Location = new System.Drawing.Point(0, 0);
+            this._value.MouseState = MaterialSkin.MouseState.HOVER;
+            this._value.Name = "_value";
+            this._value.PasswordChar = '\0';
+            this._value.SelectedText = "";
+            this._value.SelectionLength = 0;
+            this._value.SelectionStart = 0;
+            this._value.Size = new System.Drawing.Size(95, 23);
+            this._value.TabIndex = 29;
+            this._value.Text = "0.0";
+            this._value.UseSystemPasswordChar = false;
             // 
             // radPanel1
             // 
@@ -93,7 +93,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.radPanel1);
-            this.Controls.Add(this.value);
+            this.Controls.Add(this._value);
             this.Name = "DecimalCounter";
             this.Size = new System.Drawing.Size(95, 28);
             this.Validated += new System.EventHandler(this.DecimalCounter_Validated);
@@ -109,7 +109,7 @@
 
         private Telerik.WinControls.UI.RadButton increase;
         private Telerik.WinControls.UI.RadButton decrease;
-        private MaterialSkin.Controls.MaterialSingleLineTextField value;
         private Telerik.WinControls.UI.RadPanel radPanel1;
+        public MaterialSkin.Controls.MaterialSingleLineTextField _value;
     }
 }

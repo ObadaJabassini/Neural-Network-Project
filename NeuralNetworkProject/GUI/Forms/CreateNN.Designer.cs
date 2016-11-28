@@ -75,10 +75,11 @@ namespace NeuralNetworkProject.GUI.Forms
             this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
             this.object_e5fbf6de_ccb1_407a_9d90_85935a836bef = new Telerik.WinControls.RootRadElement();
             this.object_9b3235f7_0d58_481b_be62_5018fea833f2 = new Telerik.WinControls.RootRadElement();
-            this.intCounter3 = new NeuralNetworkProject.GUI.CostumControls.IntCounter();
+            this.decimalCounter2 = new NeuralNetworkProject.GUI.CostumControls.DecimalCounter();
             this.lollipopFile = new LollipopFileInput();
             this.l_ctrl_mat3 = new NeuralNetworkProject.GUI.CostumControls.L_ctrl_mat();
             this.l_ctrl_mat4 = new NeuralNetworkProject.GUI.CostumControls.L_ctrl_mat();
+            this.BlendingFactor_dtpdn = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDiagram1)).BeginInit();
             this.radDiagram1.SuspendLayout();
@@ -114,6 +115,7 @@ namespace NeuralNetworkProject.GUI.Forms
             ((System.ComponentModel.ISupportInitialize)(this.radPanel7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel10)).BeginInit();
             this.radPanel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BlendingFactor_dtpdn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -200,7 +202,7 @@ namespace NeuralNetworkProject.GUI.Forms
             // radTrackBar1
             // 
             this.radTrackBar1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radTrackBar1.Location = new System.Drawing.Point(202, 6);
+            this.radTrackBar1.Location = new System.Drawing.Point(188, 178);
             this.radTrackBar1.Maximum = 5F;
             this.radTrackBar1.Name = "radTrackBar1";
             this.radTrackBar1.ShowButtons = true;
@@ -511,7 +513,8 @@ namespace NeuralNetworkProject.GUI.Forms
             // 
             // radPanel5
             // 
-            this.radPanel5.Controls.Add(this.intCounter3);
+            this.radPanel5.Controls.Add(this.BlendingFactor_dtpdn);
+            this.radPanel5.Controls.Add(this.decimalCounter2);
             this.radPanel5.Controls.Add(this.radLabel8);
             this.radPanel5.Controls.Add(this.radLabel7);
             this.radPanel5.Controls.Add(this.materialRadioButton4);
@@ -724,14 +727,16 @@ namespace NeuralNetworkProject.GUI.Forms
             this.object_9b3235f7_0d58_481b_be62_5018fea833f2.StretchHorizontally = true;
             this.object_9b3235f7_0d58_481b_be62_5018fea833f2.StretchVertically = true;
             // 
-            // intCounter3
+            // decimalCounter2
             // 
-            this.intCounter3.BackColor = System.Drawing.Color.White;
-            this.intCounter3.Increment = 0D;
-            this.intCounter3.Location = new System.Drawing.Point(481, 189);
-            this.intCounter3.Name = "intCounter3";
-            this.intCounter3.Size = new System.Drawing.Size(69, 28);
-            this.intCounter3.TabIndex = 0;
+            this.decimalCounter2.ForeColor = System.Drawing.Color.Silver;
+            this.decimalCounter2.Increment = 100D;
+            this.decimalCounter2.Location = new System.Drawing.Point(455, 237);
+            this.decimalCounter2.Name = "decimalCounter2";
+            this.decimalCounter2.Size = new System.Drawing.Size(95, 28);
+            this.decimalCounter2.TabIndex = 0;
+            this.decimalCounter2.Value = 0.9D;
+            this.decimalCounter2.Load += new System.EventHandler(this.decimalCounter2_Load);
             // 
             // lollipopFile
             // 
@@ -763,6 +768,25 @@ namespace NeuralNetworkProject.GUI.Forms
             this.l_ctrl_mat4.Name = "l_ctrl_mat4";
             this.l_ctrl_mat4.Size = new System.Drawing.Size(242, 28);
             this.l_ctrl_mat4.TabIndex = 24;
+            // 
+            // BlendingFactor_dtpdn
+            // 
+            this.BlendingFactor_dtpdn.DecimalPlaces = 4;
+            this.BlendingFactor_dtpdn.Enabled = false;
+            this.BlendingFactor_dtpdn.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.BlendingFactor_dtpdn.Location = new System.Drawing.Point(481, 181);
+            this.BlendingFactor_dtpdn.Name = "BlendingFactor_dtpdn";
+            this.BlendingFactor_dtpdn.Size = new System.Drawing.Size(69, 22);
+            this.BlendingFactor_dtpdn.TabIndex = 36;
+            this.BlendingFactor_dtpdn.Value = new decimal(new int[] {
+            9,
+            0,
+            0,
+            65536});
             // 
             // CreateNN
             // 
@@ -824,6 +848,7 @@ namespace NeuralNetworkProject.GUI.Forms
             ((System.ComponentModel.ISupportInitialize)(this.radPanel10)).EndInit();
             this.radPanel10.ResumeLayout(false);
             this.radPanel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BlendingFactor_dtpdn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -883,6 +908,7 @@ namespace NeuralNetworkProject.GUI.Forms
         private CostumControls.L_ctrl_mat l_ctrl_mat3;
         private CostumControls.L_ctrl_mat l_ctrl_mat4;
         private LollipopFileInput lollipopFile;
-        private CostumControls.IntCounter intCounter3;
+        private CostumControls.DecimalCounter decimalCounter2;
+        private System.Windows.Forms.NumericUpDown BlendingFactor_dtpdn;
     }
 }

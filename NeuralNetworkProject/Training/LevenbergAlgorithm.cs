@@ -65,9 +65,9 @@ namespace NeuralNetworkProject.Training
                 var j = Matrix<double>.Build.DenseOfRows(baseMatrix.Select(element => element.Item1));
                 var jTranspose = j.Transpose();
                 var errors = Vector<double>.Build.DenseOfEnumerable(baseMatrix.Select(element => element.Item2));
-                var blendingMatrix = blendingFactor * Matrix<double>.Build.DiagonalIdentity(j.RowCount, j.ColumnCount);
-                var deltaWeights = (j * jTranspose + blendingMatrix).Inverse() * jTranspose * errors;
-                neuralNetwork.UpdateWeightsFromVector(-1 * deltaWeights);
+                var blendingMatrix = blendingFactor * Matrix<double>.Build.DiagonalIdentity(j.ColumnCount, j.ColumnCount);
+                var deltaWeights = ( jTranspose*j + blendingMatrix).Inverse() * jTranspose * errors.ToColumnMatrix();
+                neuralNetwork.UpdateWeightsFromVector(-1 * deltaWeights.Column(0));
                 message.Epochs = epochs;
                 base.Notify(message);
                 error = message.Error;

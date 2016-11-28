@@ -304,5 +304,16 @@ namespace NeuralNetworkProject.GUI.Forms
         {
             Trainer.TrainingAlgorithm = _l;
         }
+
+        private void decimalCounter2_Load(object sender, EventArgs e)
+        {
+            decimalCounter2.Value = 0.9;
+            decimalCounter2._value.Text = Convert.ToString(0.9);
+        }
+
+        private void intCounter3_Load(object sender, EventArgs e)
+        {
+        }
+
     }
 }

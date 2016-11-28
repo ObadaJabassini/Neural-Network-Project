@@ -55,13 +55,16 @@ namespace NeuralNetworkProject.NeuralNetwork
         public void UpdateWeightsAt(Matrix<double> deltaW, int index) => HiddenWeights[index] += deltaW;
         public void UpdateWeightsFromVector(Vector<double> vec)
         {
+            int v = 0;
             for(int i = 0; i < HiddenWeights.Count; ++i)
             {
                 for (int j = 0; j < HiddenWeights[i].RowCount; j++)
                 {
+                    
                     for (int k = 0; k < HiddenWeights[i].ColumnCount; k++)
                     {
-                        HiddenWeights[i][j, k] += vec[i + j * HiddenWeights.Count + k * HiddenWeights.Count * HiddenWeights[i].ColumnCount];
+                        HiddenWeights[i][j, k] += vec[v++];
+                        //HiddenWeights[i][j, k] += vec[i + j * HiddenWeights.Count + k * HiddenWeights.Count * HiddenWeights[i].ColumnCount];
                     }
                 }
             } 
