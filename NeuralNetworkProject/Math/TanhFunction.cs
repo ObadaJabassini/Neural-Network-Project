@@ -25,9 +25,5 @@ namespace NeuralNetworkProject.Math
             return -2 * applyResult.PointwiseMultiply(1 - applyResult.PointwiseMultiply(applyResult));
         }
 
-        public override string ToString()
-        {
-            return "Tanh";
-        }
     }
 }

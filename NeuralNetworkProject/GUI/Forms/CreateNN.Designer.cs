@@ -42,10 +42,18 @@ namespace NeuralNetworkProject.GUI.Forms
             this.radHScrollBar1 = new Telerik.WinControls.UI.RadHScrollBar();
             this.radTrackBar1 = new Telerik.WinControls.UI.RadTrackBar();
             this.object_5a16bf9a_c637_4275_84f9_0ee191482182 = new Telerik.WinControls.RootRadElement();
+            this.ellipseShape1 = new Telerik.WinControls.EllipseShape();
             this.radPanel2 = new Telerik.WinControls.UI.RadPanel();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.radPanel4 = new Telerik.WinControls.UI.RadPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.l_ctrl_mat1 = new NeuralNetworkProject.GUI.CostumControls.L_ctrl_mat();
+            this.l_ctrl_mat2 = new NeuralNetworkProject.GUI.CostumControls.L_ctrl_mat();
+            this.radButton2 = new Telerik.WinControls.UI.RadButton();
+            this.radButton1 = new Telerik.WinControls.UI.RadButton();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.lollipopFileInput1 = new LollipopFileInput();
             this.materialRadioButton1 = new MaterialSkin.Controls.MaterialRadioButton();
             this.materialRadioButton2 = new MaterialSkin.Controls.MaterialRadioButton();
             this.materialRadioButton3 = new MaterialSkin.Controls.MaterialRadioButton();
@@ -54,8 +62,8 @@ namespace NeuralNetworkProject.GUI.Forms
             this.EpochsNum = new System.Windows.Forms.NumericUpDown();
             this.momentum = new System.Windows.Forms.NumericUpDown();
             this.radPanel5 = new Telerik.WinControls.UI.RadPanel();
-            this.radButton4 = new Telerik.WinControls.UI.RadButton();
-            this.radButton3 = new Telerik.WinControls.UI.RadButton();
+            this.decimalCounter1 = new NeuralNetworkProject.GUI.CostumControls.DecimalCounter();
+            this.intCounter1 = new NeuralNetworkProject.GUI.CostumControls.IntCounter();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
@@ -66,19 +74,9 @@ namespace NeuralNetworkProject.GUI.Forms
             this.radPanel8 = new Telerik.WinControls.UI.RadPanel();
             this.radPanel7 = new Telerik.WinControls.UI.RadPanel();
             this.radPanel10 = new Telerik.WinControls.UI.RadPanel();
+            this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
             this.object_e5fbf6de_ccb1_407a_9d90_85935a836bef = new Telerik.WinControls.RootRadElement();
             this.object_9b3235f7_0d58_481b_be62_5018fea833f2 = new Telerik.WinControls.RootRadElement();
-            this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.radButton2 = new Telerik.WinControls.UI.RadButton();
-            this.ellipseShape1 = new Telerik.WinControls.EllipseShape();
-            this.radButton1 = new Telerik.WinControls.UI.RadButton();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.decimalCounter1 = new NeuralNetworkProject.GUI.CostumControls.DecimalCounter();
-            this.intCounter1 = new NeuralNetworkProject.GUI.CostumControls.IntCounter();
-            this.l_ctrl_mat1 = new NeuralNetworkProject.GUI.CostumControls.L_ctrl_mat();
-            this.l_ctrl_mat2 = new NeuralNetworkProject.GUI.CostumControls.L_ctrl_mat();
-            this.lollipopFileInput1 = new LollipopFileInput();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDiagram1)).BeginInit();
             this.radDiagram1.SuspendLayout();
@@ -90,14 +88,16 @@ namespace NeuralNetworkProject.GUI.Forms
             this.radPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel4)).BeginInit();
             this.radPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Momentum_tgl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EpochsNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.momentum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel5)).BeginInit();
             this.radPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
@@ -110,10 +110,6 @@ namespace NeuralNetworkProject.GUI.Forms
             ((System.ComponentModel.ISupportInitialize)(this.radPanel7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel10)).BeginInit();
             this.radPanel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -260,6 +256,16 @@ namespace NeuralNetworkProject.GUI.Forms
             ((Telerik.WinControls.UI.RadPanelElement)(this.radPanel4.GetChildAt(0))).Text = "Layers";
             ((Telerik.WinControls.Primitives.FillPrimitive)(this.radPanel4.GetChildAt(0).GetChildAt(0))).Alignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(36, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 37);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
@@ -272,11 +278,147 @@ namespace NeuralNetworkProject.GUI.Forms
             this.flowLayoutPanel1.TabIndex = 15;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
+            // l_ctrl_mat1
+            // 
+            this.l_ctrl_mat1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.l_ctrl_mat1.BackColor = System.Drawing.Color.Transparent;
+            this.l_ctrl_mat1.Location = new System.Drawing.Point(3, 3);
+            this.l_ctrl_mat1.Name = "l_ctrl_mat1";
+            this.l_ctrl_mat1.Size = new System.Drawing.Size(247, 32);
+            this.l_ctrl_mat1.TabIndex = 12;
+            this.l_ctrl_mat1.Load += new System.EventHandler(this.l_ctrl_mat1_Load);
+            // 
+            // l_ctrl_mat2
+            // 
+            this.l_ctrl_mat2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.l_ctrl_mat2.BackColor = System.Drawing.Color.Transparent;
+            this.l_ctrl_mat2.Location = new System.Drawing.Point(3, 41);
+            this.l_ctrl_mat2.Name = "l_ctrl_mat2";
+            this.l_ctrl_mat2.Size = new System.Drawing.Size(247, 32);
+            this.l_ctrl_mat2.TabIndex = 13;
+            // 
+            // radButton2
+            // 
+            this.radButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.radButton2.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            this.radButton2.Image = global::NeuralNetworkProject.Properties.Resources.plus;
+            this.radButton2.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radButton2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.radButton2.Location = new System.Drawing.Point(114, 335);
+            this.radButton2.Name = "radButton2";
+            // 
+            // 
+            // 
+            this.radButton2.RootElement.Shape = this.ellipseShape1;
+            this.radButton2.Size = new System.Drawing.Size(60, 58);
+            this.radButton2.TabIndex = 17;
+            this.radButton2.Text = "s";
+            this.radButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.radButton2.ThemeName = "VisualStudio2012Dark";
+            this.radButton2.Click += new System.EventHandler(this.radButton2_Click);
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton2.GetChildAt(0))).Image = global::NeuralNetworkProject.Properties.Resources.plus;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton2.GetChildAt(0))).TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton2.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton2.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton2.GetChildAt(0))).Text = "s";
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton2.GetChildAt(0))).Shape = this.ellipseShape1;
+            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radButton2.GetChildAt(0).GetChildAt(0))).Shape = this.ellipseShape1;
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton2.GetChildAt(0).GetChildAt(1))).Shape = this.ellipseShape1;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ScaleSize = new System.Drawing.Size(12, 12);
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0))).AutoSize = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0))).AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.Auto;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentContent;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0))).Shape = this.ellipseShape1;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0))).MaxSize = new System.Drawing.Size(50, 50);
+            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radButton2.GetChildAt(0).GetChildAt(1).GetChildAt(1))).Alignment = System.Drawing.ContentAlignment.MiddleCenter;
+            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radButton2.GetChildAt(0).GetChildAt(1).GetChildAt(1))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
+            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radButton2.GetChildAt(0).GetChildAt(1).GetChildAt(1))).Shape = this.ellipseShape1;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radButton2.GetChildAt(0).GetChildAt(2))).Shape = this.ellipseShape1;
+            ((Telerik.WinControls.Primitives.FocusPrimitive)(this.radButton2.GetChildAt(0).GetChildAt(3))).Shape = this.ellipseShape1;
+            // 
+            // radButton1
+            // 
+            this.radButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.radButton1.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            this.radButton1.Image = global::NeuralNetworkProject.Properties.Resources.settings;
+            this.radButton1.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radButton1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.radButton1.Location = new System.Drawing.Point(368, 203);
+            this.radButton1.Name = "radButton1";
+            // 
+            // 
+            // 
+            this.radButton1.RootElement.Shape = this.ellipseShape1;
+            this.radButton1.Size = new System.Drawing.Size(85, 84);
+            this.radButton1.TabIndex = 16;
+            this.radButton1.Text = "s";
+            this.radButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.radButton1.ThemeName = "VisualStudio2012Dark";
+            this.radButton1.Click += new System.EventHandler(this.radButton1_Click_1);
+            this.radButton1.MouseEnter += new System.EventHandler(this.radButton1_MouseEnter);
+            this.radButton1.MouseLeave += new System.EventHandler(this.radButton1_MouseLeave);
+            this.radButton1.MouseHover += new System.EventHandler(this.radButton1_MouseHover);
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton1.GetChildAt(0))).Image = global::NeuralNetworkProject.Properties.Resources.settings;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton1.GetChildAt(0))).TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton1.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton1.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton1.GetChildAt(0))).Text = "s";
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton1.GetChildAt(0))).Shape = this.ellipseShape1;
+            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radButton1.GetChildAt(0).GetChildAt(0))).Shape = this.ellipseShape1;
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton1.GetChildAt(0).GetChildAt(1))).Shape = this.ellipseShape1;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ScaleSize = new System.Drawing.Size(12, 12);
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0))).AutoSize = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0))).AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.Auto;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentContent;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0))).Shape = this.ellipseShape1;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0))).MaxSize = new System.Drawing.Size(50, 50);
+            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radButton1.GetChildAt(0).GetChildAt(1).GetChildAt(1))).Alignment = System.Drawing.ContentAlignment.MiddleCenter;
+            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radButton1.GetChildAt(0).GetChildAt(1).GetChildAt(1))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
+            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radButton1.GetChildAt(0).GetChildAt(1).GetChildAt(1))).Shape = this.ellipseShape1;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radButton1.GetChildAt(0).GetChildAt(2))).Shape = this.ellipseShape1;
+            ((Telerik.WinControls.Primitives.FocusPrimitive)(this.radButton1.GetChildAt(0).GetChildAt(3))).Shape = this.ellipseShape1;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::NeuralNetworkProject.Properties.Resources.file_1_;
+            this.pictureBox3.Location = new System.Drawing.Point(59, 32);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(30, 37);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 17;
+            this.pictureBox3.TabStop = false;
+            // 
+            // lollipopFileInput1
+            // 
+            this.lollipopFileInput1.Filter = "All Files (*.*)|*.*";
+            this.lollipopFileInput1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(159)))), ((int)(((byte)(221)))));
+            this.lollipopFileInput1.FontColor = System.Drawing.Color.White;
+            this.lollipopFileInput1.IsEnabled = true;
+            this.lollipopFileInput1.Location = new System.Drawing.Point(95, 41);
+            this.lollipopFileInput1.MaxLength = 32767;
+            this.lollipopFileInput1.Name = "lollipopFileInput1";
+            this.lollipopFileInput1.ReadOnly = false;
+            this.lollipopFileInput1.Size = new System.Drawing.Size(253, 24);
+            this.lollipopFileInput1.TabIndex = 0;
+            this.lollipopFileInput1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.lollipopFileInput1.UseSystemPasswordChar = false;
+            this.lollipopFileInput1.TextChanged += new System.EventHandler(this.lollipopFileInput1_TextChanged_1);
+            // 
             // materialRadioButton1
             // 
             this.materialRadioButton1.AutoSize = true;
             this.materialRadioButton1.Depth = 0;
-            this.materialRadioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.materialRadioButton1.Font = new System.Drawing.Font("Roboto", 10F);
             this.materialRadioButton1.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.materialRadioButton1.Location = new System.Drawing.Point(32, 62);
             this.materialRadioButton1.Margin = new System.Windows.Forms.Padding(0);
@@ -294,7 +436,7 @@ namespace NeuralNetworkProject.GUI.Forms
             // 
             this.materialRadioButton2.AutoSize = true;
             this.materialRadioButton2.Depth = 0;
-            this.materialRadioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.materialRadioButton2.Font = new System.Drawing.Font("Roboto", 10F);
             this.materialRadioButton2.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.materialRadioButton2.Location = new System.Drawing.Point(33, 148);
             this.materialRadioButton2.Margin = new System.Windows.Forms.Padding(0);
@@ -312,7 +454,7 @@ namespace NeuralNetworkProject.GUI.Forms
             // 
             this.materialRadioButton3.AutoSize = true;
             this.materialRadioButton3.Depth = 0;
-            this.materialRadioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.materialRadioButton3.Font = new System.Drawing.Font("Roboto", 10F);
             this.materialRadioButton3.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.materialRadioButton3.Location = new System.Drawing.Point(33, 104);
             this.materialRadioButton3.Margin = new System.Windows.Forms.Padding(0);
@@ -369,7 +511,7 @@ namespace NeuralNetworkProject.GUI.Forms
             0,
             0});
             this.EpochsNum.Name = "EpochsNum";
-            this.EpochsNum.Size = new System.Drawing.Size(68, 22);
+            this.EpochsNum.Size = new System.Drawing.Size(68, 20);
             this.EpochsNum.TabIndex = 25;
             this.EpochsNum.Value = new decimal(new int[] {
             1000,
@@ -389,7 +531,7 @@ namespace NeuralNetworkProject.GUI.Forms
             131072});
             this.momentum.Location = new System.Drawing.Point(481, 145);
             this.momentum.Name = "momentum";
-            this.momentum.Size = new System.Drawing.Size(69, 22);
+            this.momentum.Size = new System.Drawing.Size(69, 20);
             this.momentum.TabIndex = 26;
             this.momentum.Value = new decimal(new int[] {
             9,
@@ -402,8 +544,6 @@ namespace NeuralNetworkProject.GUI.Forms
             // 
             this.radPanel5.Controls.Add(this.decimalCounter1);
             this.radPanel5.Controls.Add(this.intCounter1);
-            this.radPanel5.Controls.Add(this.radButton4);
-            this.radPanel5.Controls.Add(this.radButton3);
             this.radPanel5.Controls.Add(this.radLabel6);
             this.radPanel5.Controls.Add(this.radLabel5);
             this.radPanel5.Controls.Add(this.materialSingleLineTextField1);
@@ -425,23 +565,22 @@ namespace NeuralNetworkProject.GUI.Forms
             this.radPanel5.TabIndex = 28;
             this.radPanel5.Paint += new System.Windows.Forms.PaintEventHandler(this.radPanel5_Paint);
             // 
-            // radButton4
+            // decimalCounter1
             // 
-            this.radButton4.Location = new System.Drawing.Point(426, 224);
-            this.radButton4.Name = "radButton4";
-            this.radButton4.Size = new System.Drawing.Size(16, 10);
-            this.radButton4.TabIndex = 12;
-            this.radButton4.Text = "▼";
-            this.radButton4.ThemeName = "VisualStudio2012Dark";
+            this.decimalCounter1.Increment = 0D;
+            this.decimalCounter1.Location = new System.Drawing.Point(104, 184);
+            this.decimalCounter1.Name = "decimalCounter1";
+            this.decimalCounter1.Size = new System.Drawing.Size(95, 28);
+            this.decimalCounter1.TabIndex = 0;
+            this.decimalCounter1.Load += new System.EventHandler(this.decimalCounter1_Load);
             // 
-            // radButton3
+            // intCounter1
             // 
-            this.radButton3.Location = new System.Drawing.Point(426, 184);
-            this.radButton3.Name = "radButton3";
-            this.radButton3.Size = new System.Drawing.Size(16, 10);
-            this.radButton3.TabIndex = 11;
-            this.radButton3.Text = "▲";
-            this.radButton3.ThemeName = "VisualStudio2012Dark";
+            this.intCounter1.Increment = 0D;
+            this.intCounter1.Location = new System.Drawing.Point(212, 184);
+            this.intCounter1.Name = "intCounter1";
+            this.intCounter1.Size = new System.Drawing.Size(95, 28);
+            this.intCounter1.TabIndex = 0;
             // 
             // radLabel6
             // 
@@ -551,19 +690,6 @@ namespace NeuralNetworkProject.GUI.Forms
             this.radPanel10.TabIndex = 29;
             this.radPanel10.Text = "radPanel10";
             // 
-            // object_e5fbf6de_ccb1_407a_9d90_85935a836bef
-            // 
-            this.object_e5fbf6de_ccb1_407a_9d90_85935a836bef.Name = "object_e5fbf6de_ccb1_407a_9d90_85935a836bef";
-            this.object_e5fbf6de_ccb1_407a_9d90_85935a836bef.Shape = this.ellipseShape1;
-            this.object_e5fbf6de_ccb1_407a_9d90_85935a836bef.StretchHorizontally = true;
-            this.object_e5fbf6de_ccb1_407a_9d90_85935a836bef.StretchVertically = true;
-            // 
-            // object_9b3235f7_0d58_481b_be62_5018fea833f2
-            // 
-            this.object_9b3235f7_0d58_481b_be62_5018fea833f2.Name = "object_9b3235f7_0d58_481b_be62_5018fea833f2";
-            this.object_9b3235f7_0d58_481b_be62_5018fea833f2.StretchHorizontally = true;
-            this.object_9b3235f7_0d58_481b_be62_5018fea833f2.StretchVertically = true;
-            // 
             // materialFlatButton2
             // 
             this.materialFlatButton2.AutoSize = true;
@@ -591,170 +717,20 @@ namespace NeuralNetworkProject.GUI.Forms
             this.materialFlatButton2.UseVisualStyleBackColor = false;
             this.materialFlatButton2.Click += new System.EventHandler(this.materialFlatButton2_Click);
             // 
-            // pictureBox1
+            // object_e5fbf6de_ccb1_407a_9d90_85935a836bef
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(36, -1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 37);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
+            this.object_e5fbf6de_ccb1_407a_9d90_85935a836bef.Name = "object_e5fbf6de_ccb1_407a_9d90_85935a836bef";
+            this.object_e5fbf6de_ccb1_407a_9d90_85935a836bef.Shape = this.ellipseShape1;
+            this.object_e5fbf6de_ccb1_407a_9d90_85935a836bef.StretchHorizontally = true;
+            this.object_e5fbf6de_ccb1_407a_9d90_85935a836bef.StretchVertically = true;
             // 
-            // radButton2
+            // object_9b3235f7_0d58_481b_be62_5018fea833f2
             // 
-            this.radButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.radButton2.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            this.radButton2.Image = global::NeuralNetworkProject.Properties.Resources.plus;
-            this.radButton2.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radButton2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radButton2.Location = new System.Drawing.Point(114, 335);
-            this.radButton2.Name = "radButton2";
+            this.object_9b3235f7_0d58_481b_be62_5018fea833f2.Name = "object_9b3235f7_0d58_481b_be62_5018fea833f2";
+            this.object_9b3235f7_0d58_481b_be62_5018fea833f2.StretchHorizontally = true;
+            this.object_9b3235f7_0d58_481b_be62_5018fea833f2.StretchVertically = true;
             // 
-            // 
-            // 
-            this.radButton2.RootElement.Shape = this.ellipseShape1;
-            this.radButton2.Size = new System.Drawing.Size(60, 58);
-            this.radButton2.TabIndex = 17;
-            this.radButton2.Text = "s";
-            this.radButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.radButton2.ThemeName = "VisualStudio2012Dark";
-            this.radButton2.Click += new System.EventHandler(this.radButton2_Click);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton2.GetChildAt(0))).Image = global::NeuralNetworkProject.Properties.Resources.plus;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton2.GetChildAt(0))).TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton2.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton2.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton2.GetChildAt(0))).Text = "s";
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton2.GetChildAt(0))).Shape = this.ellipseShape1;
-            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radButton2.GetChildAt(0).GetChildAt(0))).Shape = this.ellipseShape1;
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton2.GetChildAt(0).GetChildAt(1))).Shape = this.ellipseShape1;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ScaleSize = new System.Drawing.Size(12, 12);
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0))).AutoSize = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0))).AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.Auto;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentContent;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0))).Shape = this.ellipseShape1;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0))).MaxSize = new System.Drawing.Size(50, 50);
-            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radButton2.GetChildAt(0).GetChildAt(1).GetChildAt(1))).Alignment = System.Drawing.ContentAlignment.MiddleCenter;
-            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radButton2.GetChildAt(0).GetChildAt(1).GetChildAt(1))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
-            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radButton2.GetChildAt(0).GetChildAt(1).GetChildAt(1))).Shape = this.ellipseShape1;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radButton2.GetChildAt(0).GetChildAt(2))).Shape = this.ellipseShape1;
-            ((Telerik.WinControls.Primitives.FocusPrimitive)(this.radButton2.GetChildAt(0).GetChildAt(3))).Shape = this.ellipseShape1;
-            // 
-            // radButton1
-            // 
-            this.radButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.radButton1.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            this.radButton1.Image = global::NeuralNetworkProject.Properties.Resources.settings;
-            this.radButton1.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radButton1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radButton1.Location = new System.Drawing.Point(368, 203);
-            this.radButton1.Name = "radButton1";
-            // 
-            // 
-            // 
-            this.radButton1.RootElement.Shape = this.ellipseShape1;
-            this.radButton1.Size = new System.Drawing.Size(85, 84);
-            this.radButton1.TabIndex = 16;
-            this.radButton1.Text = "s";
-            this.radButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.radButton1.ThemeName = "VisualStudio2012Dark";
-            this.radButton1.Click += new System.EventHandler(this.radButton1_Click_1);
-            this.radButton1.MouseEnter += new System.EventHandler(this.radButton1_MouseEnter);
-            this.radButton1.MouseLeave += new System.EventHandler(this.radButton1_MouseLeave);
-            this.radButton1.MouseHover += new System.EventHandler(this.radButton1_MouseHover);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton1.GetChildAt(0))).Image = global::NeuralNetworkProject.Properties.Resources.settings;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton1.GetChildAt(0))).TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton1.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton1.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton1.GetChildAt(0))).Text = "s";
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton1.GetChildAt(0))).Shape = this.ellipseShape1;
-            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radButton1.GetChildAt(0).GetChildAt(0))).Shape = this.ellipseShape1;
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton1.GetChildAt(0).GetChildAt(1))).Shape = this.ellipseShape1;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ScaleSize = new System.Drawing.Size(12, 12);
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0))).AutoSize = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0))).AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.Auto;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentContent;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0))).Shape = this.ellipseShape1;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0))).MaxSize = new System.Drawing.Size(50, 50);
-            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radButton1.GetChildAt(0).GetChildAt(1).GetChildAt(1))).Alignment = System.Drawing.ContentAlignment.MiddleCenter;
-            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radButton1.GetChildAt(0).GetChildAt(1).GetChildAt(1))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
-            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radButton1.GetChildAt(0).GetChildAt(1).GetChildAt(1))).Shape = this.ellipseShape1;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radButton1.GetChildAt(0).GetChildAt(2))).Shape = this.ellipseShape1;
-            ((Telerik.WinControls.Primitives.FocusPrimitive)(this.radButton1.GetChildAt(0).GetChildAt(3))).Shape = this.ellipseShape1;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::NeuralNetworkProject.Properties.Resources.file_1_;
-            this.pictureBox3.Location = new System.Drawing.Point(59, 32);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(30, 37);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 17;
-            this.pictureBox3.TabStop = false;
-            // 
-            // decimalCounter1
-            // 
-            this.decimalCounter1.Increment = 0D;
-            this.decimalCounter1.Location = new System.Drawing.Point(104, 184);
-            this.decimalCounter1.Name = "decimalCounter1";
-            this.decimalCounter1.Size = new System.Drawing.Size(95, 28);
-            this.decimalCounter1.TabIndex = 0;
-            this.decimalCounter1.Load += new System.EventHandler(this.decimalCounter1_Load);
-            // 
-            // intCounter1
-            // 
-            this.intCounter1.Increment = 0D;
-            this.intCounter1.Location = new System.Drawing.Point(212, 184);
-            this.intCounter1.Name = "intCounter1";
-            this.intCounter1.Size = new System.Drawing.Size(95, 28);
-            this.intCounter1.TabIndex = 0;
-            // 
-            // l_ctrl_mat1
-            // 
-            this.l_ctrl_mat1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.l_ctrl_mat1.BackColor = System.Drawing.Color.Transparent;
-            this.l_ctrl_mat1.Location = new System.Drawing.Point(3, 3);
-            this.l_ctrl_mat1.Name = "l_ctrl_mat1";
-            this.l_ctrl_mat1.Size = new System.Drawing.Size(247, 32);
-            this.l_ctrl_mat1.TabIndex = 12;
-            this.l_ctrl_mat1.Load += new System.EventHandler(this.l_ctrl_mat1_Load);
-            // 
-            // l_ctrl_mat2
-            // 
-            this.l_ctrl_mat2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.l_ctrl_mat2.BackColor = System.Drawing.Color.Transparent;
-            this.l_ctrl_mat2.Location = new System.Drawing.Point(3, 41);
-            this.l_ctrl_mat2.Name = "l_ctrl_mat2";
-            this.l_ctrl_mat2.Size = new System.Drawing.Size(247, 32);
-            this.l_ctrl_mat2.TabIndex = 13;
-            // 
-            // lollipopFileInput1
-            // 
-            this.lollipopFileInput1.Filter = "All Files (*.*)|*.*";
-            this.lollipopFileInput1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(159)))), ((int)(((byte)(221)))));
-            this.lollipopFileInput1.FontColor = System.Drawing.Color.White;
-            this.lollipopFileInput1.IsEnabled = true;
-            this.lollipopFileInput1.Location = new System.Drawing.Point(95, 41);
-            this.lollipopFileInput1.MaxLength = 32767;
-            this.lollipopFileInput1.Name = "lollipopFileInput1";
-            this.lollipopFileInput1.ReadOnly = false;
-            this.lollipopFileInput1.Size = new System.Drawing.Size(253, 24);
-            this.lollipopFileInput1.TabIndex = 0;
-            this.lollipopFileInput1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.lollipopFileInput1.UseSystemPasswordChar = false;
-            this.lollipopFileInput1.TextChanged += new System.EventHandler(this.lollipopFileInput1_TextChanged_1);
-            // 
-            // @new
+            // CreateNN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -767,7 +743,7 @@ namespace NeuralNetworkProject.GUI.Forms
             this.Controls.Add(this.radPanel2);
             this.Controls.Add(this.radPanel3);
             this.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Name = "@new";
+            this.Name = "CreateNN";
             // 
             // 
             // 
@@ -788,15 +764,17 @@ namespace NeuralNetworkProject.GUI.Forms
             this.radPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel4)).EndInit();
             this.radPanel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radButton2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Momentum_tgl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EpochsNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.momentum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel5)).EndInit();
             this.radPanel5.ResumeLayout(false);
             this.radPanel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
@@ -810,10 +788,6 @@ namespace NeuralNetworkProject.GUI.Forms
             ((System.ComponentModel.ISupportInitialize)(this.radPanel10)).EndInit();
             this.radPanel10.ResumeLayout(false);
             this.radPanel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -865,8 +839,6 @@ namespace NeuralNetworkProject.GUI.Forms
         private Telerik.WinControls.UI.RadHScrollBar radHScrollBar1;
         private Telerik.WinControls.RootRadElement object_9b3235f7_0d58_481b_be62_5018fea833f2;
         public Telerik.WinControls.UI.RadDiagram radDiagram1;
-        private Telerik.WinControls.UI.RadButton radButton3;
-        private Telerik.WinControls.UI.RadButton radButton4;
         private CostumControls.IntCounter intCounter1;
         private CostumControls.DecimalCounter decimalCounter1;
     }

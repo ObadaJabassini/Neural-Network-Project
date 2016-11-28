@@ -17,6 +17,7 @@ namespace NeuralNetworkProject.GUI.CostumControls
         {
             InitializeComponent();
             AF_drpdn.Items.Add(ActivatorFunctions.FunctionName.SIGMOID.ToString());
+            AF_drpdn.Items.Add(ActivatorFunctions.FunctionName.TANH.ToString());
         }
 
         private void materialFlatButton1_Click(object sender, EventArgs e)

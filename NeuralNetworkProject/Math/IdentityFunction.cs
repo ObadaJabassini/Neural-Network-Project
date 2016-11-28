@@ -21,10 +21,5 @@ namespace NeuralNetworkProject.Math
         {
             return Vector<double>.Build.DenseOfEnumerable(Enumerable.Repeat(0, value.Count).Select(element => Convert.ToDouble(element)));
         }
-
-        public override string ToString()
-        {
-            return "Sigmoid";
-        }
     }
 }

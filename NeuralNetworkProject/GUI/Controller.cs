@@ -75,6 +75,12 @@ namespace NeuralNetworkProject.GUI
                     AF = new SigmoidFunction();
                     imgs.Add(Resources.Layer__Sigmoid);
                 }
+                if (ActivatorFunctions.FunctionName.TANH.ToString() == temp.AF_drpdn.SelectedItem.Text)
+                {
+                    AF = new TanhFunction();
+                    //
+                    imgs.Add(Resources.Layer__Sigmoid);
+                }
                 functionApplier.ActivatorFunction = AF;
                 b.Layer(neuronsnumber,functionApplier,(double)temp.Lr_drpdn.Value);
             }
