@@ -251,7 +251,7 @@
             // 
             this.ElapsedTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(71)))));
             this.ElapsedTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.ElapsedTime.Location = new System.Drawing.Point(529, 206);
+            this.ElapsedTime.Location = new System.Drawing.Point(540, 163);
             this.ElapsedTime.Name = "ElapsedTime";
             this.ElapsedTime.Size = new System.Drawing.Size(48, 18);
             this.ElapsedTime.TabIndex = 3;
@@ -267,7 +267,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(71)))));
             this.pictureBox1.Image = global::NeuralNetworkProject.Properties.Resources.alarm_clock;
-            this.pictureBox1.Location = new System.Drawing.Point(521, 184);
+            this.pictureBox1.Location = new System.Drawing.Point(532, 141);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(60, 60);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

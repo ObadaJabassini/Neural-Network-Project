@@ -78,8 +78,7 @@ namespace NeuralNetworkProject.GUI
                 if (ActivatorFunctions.FunctionName.TANH.ToString() == temp.AF_drpdn.SelectedItem.Text)
                 {
                     AF = new TanhFunction();
-                    //
-                    imgs.Add(Resources.Layer__Sigmoid);
+                    imgs.Add(Resources.Layer_Tan_H);
                 }
                 functionApplier.ActivatorFunction = AF;
                 b.Layer(neuronsnumber,functionApplier,(double)temp.Lr_drpdn.Value);

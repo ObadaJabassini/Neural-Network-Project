@@ -38,9 +38,6 @@ namespace NeuralNetworkProject.GUI.Forms
             this.mediaShape1 = new Telerik.WinControls.Tests.MediaShape();
             this.officeShape1 = new Telerik.WinControls.UI.OfficeShape();
             this.chamferedRectShape1 = new Telerik.WinControls.ChamferedRectShape();
-            this.radDiagram1 = new Telerik.WinControls.UI.RadDiagram();
-            this.radHScrollBar1 = new Telerik.WinControls.UI.RadHScrollBar();
-            this.radTrackBar1 = new Telerik.WinControls.UI.RadTrackBar();
             this.object_5a16bf9a_c637_4275_84f9_0ee191482182 = new Telerik.WinControls.RootRadElement();
             this.ellipseShape1 = new Telerik.WinControls.EllipseShape();
             this.radPanel2 = new Telerik.WinControls.UI.RadPanel();
@@ -75,16 +72,16 @@ namespace NeuralNetworkProject.GUI.Forms
             this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
             this.object_e5fbf6de_ccb1_407a_9d90_85935a836bef = new Telerik.WinControls.RootRadElement();
             this.object_9b3235f7_0d58_481b_be62_5018fea833f2 = new Telerik.WinControls.RootRadElement();
+            this.BlendingFactor_dtpdn = new System.Windows.Forms.NumericUpDown();
             this.decimalCounter2 = new NeuralNetworkProject.GUI.CostumControls.DecimalCounter();
             this.lollipopFile = new LollipopFileInput();
             this.l_ctrl_mat3 = new NeuralNetworkProject.GUI.CostumControls.L_ctrl_mat();
             this.l_ctrl_mat4 = new NeuralNetworkProject.GUI.CostumControls.L_ctrl_mat();
-            this.BlendingFactor_dtpdn = new System.Windows.Forms.NumericUpDown();
+            this.radHScrollBar1 = new Telerik.WinControls.UI.RadHScrollBar();
+            this.radTrackBar1 = new Telerik.WinControls.UI.RadTrackBar();
+            this.radDiagram1 = new Telerik.WinControls.UI.RadDiagram();
+            this.object_f1debc98_3f49_470e_ab30_b19da27feb5f = new Telerik.WinControls.RootRadElement();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDiagram1)).BeginInit();
-            this.radDiagram1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radHScrollBar1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTrackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).BeginInit();
             this.radPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
@@ -116,6 +113,10 @@ namespace NeuralNetworkProject.GUI.Forms
             ((System.ComponentModel.ISupportInitialize)(this.radPanel10)).BeginInit();
             this.radPanel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BlendingFactor_dtpdn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radHScrollBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radTrackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radDiagram1)).BeginInit();
+            this.radDiagram1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,83 +139,6 @@ namespace NeuralNetworkProject.GUI.Forms
             this.radPanel3.TabIndex = 19;
             this.radPanel3.Text = "Create The Network";
             this.radPanel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // radDiagram1
-            // 
-            this.radDiagram1.AutoScroll = true;
-            this.radDiagram1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(71)))));
-            this.radDiagram1.Controls.Add(this.radHScrollBar1);
-            this.radDiagram1.Controls.Add(this.radTrackBar1);
-            this.radDiagram1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radDiagram1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radDiagram1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radDiagram1.IsBackgroundSurfaceVisible = false;
-            this.radDiagram1.Location = new System.Drawing.Point(468, 55);
-            this.radDiagram1.Name = "radDiagram1";
-            this.radDiagram1.SerializedXml = resources.GetString("radDiagram1.SerializedXml");
-            this.radDiagram1.Size = new System.Drawing.Size(595, 230);
-            this.radDiagram1.TabIndex = 20;
-            this.radDiagram1.Text = "radDiagram1";
-            this.radDiagram1.ThemeName = "ControlDefault";
-            this.radDiagram1.Zoom = 0.9D;
-            this.radDiagram1.ZoomChanged += new System.EventHandler<Telerik.WinControls.UI.Diagrams.DiagramZoomEventArgs>(this.radDiagram1_ZoomChanged);
-            this.radDiagram1.Click += new System.EventHandler(this.radDiagram1_Click);
-            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).ActiveTool = Telerik.Windows.Diagrams.Core.MouseTool.PanTool;
-            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).ConnectionBridge = Telerik.Windows.Diagrams.Core.BridgeType.None;
-            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).Zoom = 0.9D;
-            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).AutoLayout = false;
-            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).IsBackgroundSurfaceVisible = false;
-            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(11)))), ((int)(((byte)(11)))));
-            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderInnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(14)))), ((int)(((byte)(14)))));
-            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderInnerColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderInnerColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
-            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderInnerColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(8)))));
-            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BackColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BackColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).NumberOfColors = 2;
-            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).HorizontalLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderLeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(11)))), ((int)(((byte)(11)))));
-            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderRightColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(11)))), ((int)(((byte)(11)))));
-            ((Telerik.WinControls.UI.RadScrollBarElement)(this.radDiagram1.GetChildAt(0).GetChildAt(1))).AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.WrapAroundChildren;
-            ((Telerik.WinControls.UI.RadScrollBarElement)(this.radDiagram1.GetChildAt(0).GetChildAt(1))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radDiagram1.GetChildAt(0).GetChildAt(1).GetChildAt(5))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.Default;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radDiagram1.GetChildAt(0).GetChildAt(1).GetChildAt(5))).ClickMode = Telerik.WinControls.ClickMode.Press;
-            ((Telerik.WinControls.UI.RadScrollBarElement)(this.radDiagram1.GetChildAt(0).GetChildAt(2))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
-            // 
-            // radHScrollBar1
-            // 
-            this.radHScrollBar1.Location = new System.Drawing.Point(30, 207);
-            this.radHScrollBar1.Name = "radHScrollBar1";
-            this.radHScrollBar1.Size = new System.Drawing.Size(144, 17);
-            this.radHScrollBar1.TabIndex = 0;
-            this.radHScrollBar1.Text = "radHScrollBar1";
-            this.radHScrollBar1.ThemeName = "VisualStudio2012Dark";
-            this.radHScrollBar1.ScrollParameterChanged += new System.EventHandler(this.radHScrollBar1_ScrollParameterChanged);
-            this.radHScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.radHScrollBar1_Scroll);
-            // 
-            // radTrackBar1
-            // 
-            this.radTrackBar1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radTrackBar1.Location = new System.Drawing.Point(188, 178);
-            this.radTrackBar1.Maximum = 5F;
-            this.radTrackBar1.Name = "radTrackBar1";
-            this.radTrackBar1.ShowButtons = true;
-            this.radTrackBar1.Size = new System.Drawing.Size(206, 25);
-            this.radTrackBar1.SnapMode = Telerik.WinControls.UI.TrackBarSnapModes.None;
-            this.radTrackBar1.TabIndex = 10;
-            this.radTrackBar1.Text = "radTrackBar1";
-            this.radTrackBar1.ThemeName = "VisualStudio2012Dark";
-            this.radTrackBar1.ThumbSize = new System.Drawing.Size(14, 14);
-            this.radTrackBar1.TickStyle = Telerik.WinControls.Enumerations.TickStyles.TopLeft;
-            this.radTrackBar1.Value = 1F;
-            this.radTrackBar1.ValueChanged += new System.EventHandler(this.radTrackBar1_ValueChanged);
             // 
             // object_5a16bf9a_c637_4275_84f9_0ee191482182
             // 
@@ -727,6 +651,25 @@ namespace NeuralNetworkProject.GUI.Forms
             this.object_9b3235f7_0d58_481b_be62_5018fea833f2.StretchHorizontally = true;
             this.object_9b3235f7_0d58_481b_be62_5018fea833f2.StretchVertically = true;
             // 
+            // BlendingFactor_dtpdn
+            // 
+            this.BlendingFactor_dtpdn.DecimalPlaces = 4;
+            this.BlendingFactor_dtpdn.Enabled = false;
+            this.BlendingFactor_dtpdn.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.BlendingFactor_dtpdn.Location = new System.Drawing.Point(481, 181);
+            this.BlendingFactor_dtpdn.Name = "BlendingFactor_dtpdn";
+            this.BlendingFactor_dtpdn.Size = new System.Drawing.Size(69, 22);
+            this.BlendingFactor_dtpdn.TabIndex = 36;
+            this.BlendingFactor_dtpdn.Value = new decimal(new int[] {
+            9,
+            0,
+            0,
+            65536});
+            // 
             // decimalCounter2
             // 
             this.decimalCounter2.ForeColor = System.Drawing.Color.Silver;
@@ -769,24 +712,88 @@ namespace NeuralNetworkProject.GUI.Forms
             this.l_ctrl_mat4.Size = new System.Drawing.Size(242, 28);
             this.l_ctrl_mat4.TabIndex = 24;
             // 
-            // BlendingFactor_dtpdn
+            // radHScrollBar1
             // 
-            this.BlendingFactor_dtpdn.DecimalPlaces = 4;
-            this.BlendingFactor_dtpdn.Enabled = false;
-            this.BlendingFactor_dtpdn.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            this.BlendingFactor_dtpdn.Location = new System.Drawing.Point(481, 181);
-            this.BlendingFactor_dtpdn.Name = "BlendingFactor_dtpdn";
-            this.BlendingFactor_dtpdn.Size = new System.Drawing.Size(69, 22);
-            this.BlendingFactor_dtpdn.TabIndex = 36;
-            this.BlendingFactor_dtpdn.Value = new decimal(new int[] {
-            9,
-            0,
-            0,
-            65536});
+            this.radHScrollBar1.Location = new System.Drawing.Point(30, 207);
+            this.radHScrollBar1.Name = "radHScrollBar1";
+            this.radHScrollBar1.Size = new System.Drawing.Size(542, 17);
+            this.radHScrollBar1.TabIndex = 0;
+            this.radHScrollBar1.Text = "radHScrollBar1";
+            this.radHScrollBar1.ThemeName = "VisualStudio2012Dark";
+            this.radHScrollBar1.ScrollParameterChanged += new System.EventHandler(this.radHScrollBar1_ScrollParameterChanged);
+            this.radHScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.radHScrollBar1_Scroll);
+            // 
+            // radTrackBar1
+            // 
+            this.radTrackBar1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radTrackBar1.Location = new System.Drawing.Point(202, 176);
+            this.radTrackBar1.Maximum = 5F;
+            this.radTrackBar1.Name = "radTrackBar1";
+            this.radTrackBar1.ShowButtons = true;
+            this.radTrackBar1.Size = new System.Drawing.Size(206, 25);
+            this.radTrackBar1.SnapMode = Telerik.WinControls.UI.TrackBarSnapModes.None;
+            this.radTrackBar1.TabIndex = 10;
+            this.radTrackBar1.Text = "radTrackBar1";
+            this.radTrackBar1.ThemeName = "VisualStudio2012Dark";
+            this.radTrackBar1.ThumbSize = new System.Drawing.Size(14, 14);
+            this.radTrackBar1.TickStyle = Telerik.WinControls.Enumerations.TickStyles.TopLeft;
+            this.radTrackBar1.Value = 1F;
+            this.radTrackBar1.ValueChanged += new System.EventHandler(this.radTrackBar1_ValueChanged);
+            // 
+            // radDiagram1
+            // 
+            this.radDiagram1.AutoScroll = true;
+            this.radDiagram1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(71)))));
+            this.radDiagram1.Controls.Add(this.radTrackBar1);
+            this.radDiagram1.Controls.Add(this.radHScrollBar1);
+            this.radDiagram1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radDiagram1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radDiagram1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.radDiagram1.IsBackgroundSurfaceVisible = false;
+            this.radDiagram1.Location = new System.Drawing.Point(468, 55);
+            this.radDiagram1.Name = "radDiagram1";
+            this.radDiagram1.SerializedXml = resources.GetString("radDiagram1.SerializedXml");
+            this.radDiagram1.Size = new System.Drawing.Size(595, 230);
+            this.radDiagram1.TabIndex = 20;
+            this.radDiagram1.Text = "radDiagram1";
+            this.radDiagram1.ThemeName = "ControlDefault";
+            this.radDiagram1.Zoom = 0.9D;
+            this.radDiagram1.ZoomChanged += new System.EventHandler<Telerik.WinControls.UI.Diagrams.DiagramZoomEventArgs>(this.radDiagram1_ZoomChanged);
+            this.radDiagram1.Click += new System.EventHandler(this.radDiagram1_Click);
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).ActiveTool = Telerik.Windows.Diagrams.Core.MouseTool.PanTool;
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).ConnectionBridge = Telerik.Windows.Diagrams.Core.BridgeType.None;
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).Zoom = 0.9D;
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).AutoLayout = false;
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).IsBackgroundSurfaceVisible = false;
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(11)))), ((int)(((byte)(11)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderInnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(14)))), ((int)(((byte)(14)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderInnerColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderInnerColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderInnerColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(8)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BackColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BackColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).NumberOfColors = 2;
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).HorizontalLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderLeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(11)))), ((int)(((byte)(11)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderRightColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BorderBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            ((Telerik.WinControls.UI.RadDiagramElement)(this.radDiagram1.GetChildAt(0))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(11)))), ((int)(((byte)(11)))));
+            ((Telerik.WinControls.UI.RadScrollBarElement)(this.radDiagram1.GetChildAt(0).GetChildAt(1))).AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.WrapAroundChildren;
+            ((Telerik.WinControls.UI.RadScrollBarElement)(this.radDiagram1.GetChildAt(0).GetChildAt(1))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radDiagram1.GetChildAt(0).GetChildAt(1).GetChildAt(5))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.Default;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radDiagram1.GetChildAt(0).GetChildAt(1).GetChildAt(5))).ClickMode = Telerik.WinControls.ClickMode.Press;
+            ((Telerik.WinControls.UI.RadScrollBarElement)(this.radDiagram1.GetChildAt(0).GetChildAt(2))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
+            // 
+            // object_f1debc98_3f49_470e_ab30_b19da27feb5f
+            // 
+            this.object_f1debc98_3f49_470e_ab30_b19da27feb5f.Name = "object_f1debc98_3f49_470e_ab30_b19da27feb5f";
+            this.object_f1debc98_3f49_470e_ab30_b19da27feb5f.StretchHorizontally = true;
+            this.object_f1debc98_3f49_470e_ab30_b19da27feb5f.StretchVertically = true;
             // 
             // CreateNN
             // 
@@ -811,11 +818,6 @@ namespace NeuralNetworkProject.GUI.Forms
             this.Load += new System.EventHandler(this.CreateNN_Load);
             this.MouseHover += new System.EventHandler(this.pictureBox2_MouseHover);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDiagram1)).EndInit();
-            this.radDiagram1.ResumeLayout(false);
-            this.radDiagram1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radHScrollBar1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTrackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).EndInit();
             this.radPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
@@ -849,6 +851,11 @@ namespace NeuralNetworkProject.GUI.Forms
             this.radPanel10.ResumeLayout(false);
             this.radPanel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BlendingFactor_dtpdn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radHScrollBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radTrackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radDiagram1)).EndInit();
+            this.radDiagram1.ResumeLayout(false);
+            this.radDiagram1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -863,7 +870,6 @@ namespace NeuralNetworkProject.GUI.Forms
         private Telerik.WinControls.Tests.MediaShape mediaShape1;
         private Telerik.WinControls.UI.OfficeShape officeShape1;
         private Telerik.WinControls.ChamferedRectShape chamferedRectShape1;
-        private Telerik.WinControls.UI.RadTrackBar radTrackBar1;
         private Telerik.WinControls.RootRadElement object_5a16bf9a_c637_4275_84f9_0ee191482182;
         private Telerik.WinControls.EllipseShape ellipseShape1;
         private Telerik.WinControls.UI.RadPanel radPanel2;
@@ -896,9 +902,7 @@ namespace NeuralNetworkProject.GUI.Forms
         private Telerik.WinControls.UI.RadButton radButton2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Telerik.WinControls.RootRadElement object_e5fbf6de_ccb1_407a_9d90_85935a836bef;
-        private Telerik.WinControls.UI.RadHScrollBar radHScrollBar1;
         private Telerik.WinControls.RootRadElement object_9b3235f7_0d58_481b_be62_5018fea833f2;
-        public Telerik.WinControls.UI.RadDiagram radDiagram1;
         private CostumControls.IntCounter intCounter1;
         private CostumControls.DecimalCounter decimalCounter1;
         private Telerik.WinControls.UI.RadLabel radLabel7;
@@ -910,5 +914,9 @@ namespace NeuralNetworkProject.GUI.Forms
         private LollipopFileInput lollipopFile;
         private CostumControls.DecimalCounter decimalCounter2;
         private System.Windows.Forms.NumericUpDown BlendingFactor_dtpdn;
+        private Telerik.WinControls.UI.RadHScrollBar radHScrollBar1;
+        private Telerik.WinControls.UI.RadTrackBar radTrackBar1;
+        public Telerik.WinControls.UI.RadDiagram radDiagram1;
+        private Telerik.WinControls.RootRadElement object_f1debc98_3f49_470e_ab30_b19da27feb5f;
     }
 }
