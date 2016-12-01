@@ -1,6 +1,6 @@
 ﻿namespace NeuralNetworkProject.GUI.CostumControls
 {
-    partial class DecimalCounter
+    partial class Counter
     {
         /// <summary> 
         /// Required designer variable.

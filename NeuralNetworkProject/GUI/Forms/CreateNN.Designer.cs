@@ -77,7 +77,7 @@ namespace NeuralNetworkProject.GUI.Forms
             this.radTrackBar1 = new Telerik.WinControls.UI.RadTrackBar();
             this.radDiagram1 = new Telerik.WinControls.UI.RadDiagram();
             this.object_f1debc98_3f49_470e_ab30_b19da27feb5f = new Telerik.WinControls.RootRadElement();
-            this.decimalCounter2 = new NeuralNetworkProject.GUI.CostumControls.DecimalCounter();
+            this.decimalCounter2 = new NeuralNetworkProject.GUI.CostumControls.Counter();
             this.lollipopFile = new LollipopFileInput();
             this.l_ctrl_mat3 = new NeuralNetworkProject.GUI.CostumControls.L_ctrl_mat();
             this.l_ctrl_mat4 = new NeuralNetworkProject.GUI.CostumControls.L_ctrl_mat();
@@ -904,7 +904,7 @@ namespace NeuralNetworkProject.GUI.Forms
         private Telerik.WinControls.RootRadElement object_e5fbf6de_ccb1_407a_9d90_85935a836bef;
         private Telerik.WinControls.RootRadElement object_9b3235f7_0d58_481b_be62_5018fea833f2;
         private CostumControls.IntCounter intCounter1;
-        private CostumControls.DecimalCounter decimalCounter1;
+        private CostumControls.Counter decimalCounter1;
         private Telerik.WinControls.UI.RadLabel radLabel7;
         private MaterialSkin.Controls.MaterialRadioButton materialRadioButton4;
         private CostumControls.IntCounter intCounter2;
@@ -912,7 +912,7 @@ namespace NeuralNetworkProject.GUI.Forms
         private CostumControls.L_ctrl_mat l_ctrl_mat3;
         private CostumControls.L_ctrl_mat l_ctrl_mat4;
         private LollipopFileInput lollipopFile;
-        private CostumControls.DecimalCounter decimalCounter2;
+        private CostumControls.Counter decimalCounter2;
         private System.Windows.Forms.NumericUpDown BlendingFactor_dtpdn;
         private Telerik.WinControls.UI.RadHScrollBar radHScrollBar1;
         private Telerik.WinControls.UI.RadTrackBar radTrackBar1;

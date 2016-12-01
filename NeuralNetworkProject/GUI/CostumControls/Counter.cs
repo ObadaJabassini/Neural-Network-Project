@@ -13,7 +13,7 @@ using Telerik.WinControls;
 
 namespace NeuralNetworkProject.GUI.CostumControls
 {
-    public partial class DecimalCounter : UserControl
+    public partial class Counter : UserControl
     {
         [Category("Format")]
         public Double Increment { set; get; }
@@ -27,9 +27,12 @@ namespace NeuralNetworkProject.GUI.CostumControls
             get { return Convert.ToDouble(_value.Text); }
         }
 
-        Regex reg = new Regex(@"^\d+(\.\d+)?$");
+        [Category("Format")] 
+        public bool IsDecimal { set; get; }
+
+        Regex regex ;
         RadToolTip _tip = new RadToolTip();
-        public DecimalCounter()
+        public Counter()
         {
             InitializeComponent();
 
@@ -40,20 +43,27 @@ namespace NeuralNetworkProject.GUI.CostumControls
 
             _tip.BackColor = Color.LightSeaGreen;
             _tip.ForeColor = Color.FromArgb(34, 44, 71);
+
+            regex = IsDecimal ? new Regex(@"^\d+(\.\d+)?$") : new Regex(@"^\d+$");
         }
 
         private void DecimalCounter_Validated(object sender, EventArgs e)
         {
-            if (!reg.IsMatch(_value.Text))
-            {
-                _value.Select();
-                _tip.Show("It must be a Decimal non negative number !!", _value);
-            }
-            else
+            if (regex.IsMatch(_value.Text))
             {
                 _tip.Hide();
                 Value = Convert.ToDouble(this.Text);
             }
+
+            else
+            {
+                _value.Select();
+                if (IsDecimal)
+                    _tip.Show("It must be a Decimal non negative number !!", _value);
+                else
+                    _tip.Show("It must be an Integer non negative number !!", _value);
+            }
+
         }
 
         private void increase_Click(object sender, EventArgs e)
