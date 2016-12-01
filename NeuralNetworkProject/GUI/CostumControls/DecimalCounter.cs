@@ -19,7 +19,13 @@ namespace NeuralNetworkProject.GUI.CostumControls
         public Double Increment { set; get; }
 
         [Category("Format")]
-        public Double Value { get;  set; }
+        public Double Value {
+            set
+            {
+                _value.Text = value.ToString();
+            }
+            get { return Convert.ToDouble(_value.Text); }
+        }
 
         Regex reg = new Regex(@"^\d+(\.\d+)?$");
         RadToolTip _tip = new RadToolTip();
@@ -41,7 +47,7 @@ namespace NeuralNetworkProject.GUI.CostumControls
             if (!reg.IsMatch(_value.Text))
             {
                 _value.Select();
-                _tip.Show("It must be a Decimal non negative", _value);
+                _tip.Show("It must be a Decimal non negative number !!", _value);
             }
             else
             {
@@ -52,13 +58,13 @@ namespace NeuralNetworkProject.GUI.CostumControls
 
         private void increase_Click(object sender, EventArgs e)
         {
-            this.Text = Convert.ToString(Value + Increment);
+            this._value.Text = Convert.ToString(Value + Increment);
             this.Refresh();
         }
 
         private void decrease_Click(object sender, EventArgs e)
         {
-            this.Text = Convert.ToString(Value - Increment);
+            this._value.Text = Convert.ToString(Value - Increment);
         }
     }
 }
