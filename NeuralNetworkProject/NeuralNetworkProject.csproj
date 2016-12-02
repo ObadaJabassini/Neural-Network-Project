@@ -104,11 +104,11 @@
     <Compile Include="DataAdapter\RandomizedDivider.cs" />
     <Compile Include="DataAdapter\StaticDivider.cs" />
     <Compile Include="DataReader\Reader.cs" />
-    <Compile Include="GUI\CostumControls\DecimalCounter.cs">
+    <Compile Include="GUI\CostumControls\Counter.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\CostumControls\DecimalCounter.Designer.cs">
-      <DependentUpon>DecimalCounter.cs</DependentUpon>
+    <Compile Include="GUI\CostumControls\Counter.Designer.cs">
+      <DependentUpon>Counter.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\CostumControls\LollipopFileInput.cs">
       <SubType>Component</SubType>
@@ -222,8 +222,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="GUI\CostumControls\DecimalCounter.resx">
-      <DependentUpon>DecimalCounter.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\CostumControls\Counter.resx">
+      <DependentUpon>Counter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\CostumControls\L_ctrl_mat.resx">
       <DependentUpon>L_ctrl_mat.cs</DependentUpon>

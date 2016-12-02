@@ -88,13 +88,13 @@
             this.radPanel1.TabIndex = 30;
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radPanel1.GetChildAt(0).GetChildAt(1))).Opacity = 0D;
             // 
-            // DecimalCounter
+            // Counter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.radPanel1);
             this.Controls.Add(this._value);
-            this.Name = "DecimalCounter";
+            this.Name = "Counter";
             this.Size = new System.Drawing.Size(95, 28);
             this.Validated += new System.EventHandler(this.DecimalCounter_Validated);
             ((System.ComponentModel.ISupportInitialize)(this.increase)).EndInit();
