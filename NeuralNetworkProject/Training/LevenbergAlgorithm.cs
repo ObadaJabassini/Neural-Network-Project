@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +13,7 @@ namespace NeuralNetworkProject.Training
         internal LevenbergAlgorithm() { }
         public override void Train(NeuralNetwork.NeuralNetwork neuralNetwork, Matrix<double> trainingSet, Matrix<double> crossValidationSet, Matrix<double> trainingSetOutput, Matrix<double> crossValidationSetOutput, HyperParameters hyperParameters = null)
         {
-            double maxError = 0.01, error = 5, blendingFactor = 0.01;
+            double maxError = 0.01, error = 5;
             int maxEpochs = 1000, epochs = 0;
             if (hyperParameters != null)
             {
@@ -23,7 +23,6 @@ namespace NeuralNetworkProject.Training
                     throw new ArgumentException("Max error cannot be negative or very large");
                 maxError = hyperParameters.MaxError;
                 maxEpochs = hyperParameters.MaxEpochs;
-                blendingFactor = hyperParameters.BlendingFactor;
             }
             var layers = neuralNetwork.Layers;
             var weights = neuralNetwork.HiddenWeights;
@@ -42,7 +41,7 @@ namespace NeuralNetworkProject.Training
                     IList<double> ers = new List<double>();
                     for (int i = deltaW.RowCount - 1; i >=0 ; --i)
                     {
-                        for (int k = deltaW.ColumnCount-1; k >= 0; --k)
+                        for (int k = deltaW.ColumnCount - 1; k >= 0; --k)
                         {
                             ers.Add(deltaW[i, k]);       
                         }
@@ -53,7 +52,7 @@ namespace NeuralNetworkProject.Training
                         deltaW = D * acs[k - 1].ToRowMatrix();
                         for (int i = deltaW.RowCount - 1; i >= 0; --i)
                         {
-                            for (int v = deltaW.ColumnCount-1; v >= 0; --v)
+                            for (int v = deltaW.ColumnCount - 1; v >= 0; --v)
                             {
                                 ers.Add(deltaW[i, v]);
                             }
@@ -62,15 +61,25 @@ namespace NeuralNetworkProject.Training
                     var t = output - acs[acs.Count - 1];
                     return new Tuple<Vector<double>, double>(Vector<double>.Build.DenseOfEnumerable(ers), t.PointwiseMultiply(t).Sum() / 2);
                 });
+                message.Epochs = epochs;
                 var j = Matrix<double>.Build.DenseOfRows(baseMatrix.Select(element => element.Item1));
                 var jTranspose = j.Transpose();
                 var errors = Vector<double>.Build.DenseOfEnumerable(baseMatrix.Select(element => element.Item2));
-                var blendingMatrix = blendingFactor * Matrix<double>.Build.DiagonalIdentity(j.ColumnCount, j.ColumnCount);
-                var deltaWeights = ( jTranspose*j + blendingMatrix).Inverse() * jTranspose * errors.ToColumnMatrix();
-                neuralNetwork.UpdateWeightsFromVector(-1 * deltaWeights.Column(0));
-                message.Epochs = epochs;
-                base.Notify(message);
-                error = message.Error;
+                var adjustmentFactor = 10;
+                var blendingMatrix = Matrix<double>.Build.DiagonalIdentity(j.ColumnCount, j.ColumnCount);
+                var blendingFactor = 0.01;
+                var prevWeights = neuralNetwork.HiddenWeights.Select(v => v.Clone()).ToList();
+                var currentError = 100.0;
+                while (currentError >= error)
+                {
+                    neuralNetwork.SetWeights(prevWeights);
+                    blendingFactor *= adjustmentFactor;
+                    var deltaWeights = (jTranspose * j + blendingFactor * blendingMatrix).Inverse() * jTranspose * errors.ToColumnMatrix();
+                    neuralNetwork.UpdateWeightsFromVector(deltaWeights.Column(0));
+                    base.Notify(message);
+                    currentError = message.Error;
+                }
+                error = currentError;
             }
         }
     }
