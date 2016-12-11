@@ -26,12 +26,14 @@ namespace NeuralNetworkProject.Training
             }
             var layers = neuralNetwork.Layers;
             var weights = neuralNetwork.HiddenWeights;
+            var blendingFactor = 0.01;
+            var adjustmentFactor = 10;
             TrainingErrorMessage message = new TrainingErrorMessage() { NeuralNetwork = neuralNetwork, TrainingSet = trainingSet, CrossValidationSet = crossValidationSet, TrainingSetOutput = trainingSetOutput, CrossValidationSetOutput = crossValidationSetOutput };
             while (error >= maxError && ++epochs <= maxEpochs)
             {
                 var baseMatrix = trainingSet.EnumerateRows().Zip(trainingSetOutput.EnumerateColumns(), (first, second) => new Tuple<Vector<double>, Vector<double>>(first, second)).Select(sample =>
                 {
-                    Vector<double> input  = sample.Item1,
+                    Vector<double> input = sample.Item1,
                                    output = sample.Item2;
                     var temp = neuralNetwork.ForwardInput(input);
                     IList<Vector<double>> acs = temp.Item1, gs = temp.Item2;
@@ -39,11 +41,11 @@ namespace NeuralNetworkProject.Training
                     var D = (output - acs[acs.Count - 1]).PointwiseMultiply(gs[gs.Count - 1]).ToColumnMatrix();
                     var deltaW = D * acs[acs.Count - 2].ToRowMatrix();
                     IList<double> ers = new List<double>();
-                    for (int i = deltaW.RowCount - 1; i >=0 ; --i)
+                    for (int i = deltaW.RowCount - 1; i >= 0; --i)
                     {
                         for (int k = deltaW.ColumnCount - 1; k >= 0; --k)
                         {
-                            ers.Add(deltaW[i, k]);       
+                            ers.Add(-deltaW[i, k]);
                         }
                     }
                     for (int k = layers.Count - 2; k > 0; k--)
@@ -54,7 +56,7 @@ namespace NeuralNetworkProject.Training
                         {
                             for (int v = deltaW.ColumnCount - 1; v >= 0; --v)
                             {
-                                ers.Add(deltaW[i, v]);
+                                ers.Add(-deltaW[i, v]);
                             }
                         }
                     }
@@ -65,20 +67,21 @@ namespace NeuralNetworkProject.Training
                 var j = Matrix<double>.Build.DenseOfRows(baseMatrix.Select(element => element.Item1));
                 var jTranspose = j.Transpose();
                 var errors = Vector<double>.Build.DenseOfEnumerable(baseMatrix.Select(element => element.Item2));
-                var adjustmentFactor = 10;
-                var blendingMatrix = Matrix<double>.Build.DiagonalIdentity(j.ColumnCount, j.ColumnCount);
-                var blendingFactor = 0.01;
                 var prevWeights = neuralNetwork.HiddenWeights.Select(v => v.Clone()).ToList();
-                var currentError = 100.0;
+                var currentError = 50000.0;
+                var temp = jTranspose * j;
+                var blendingMatrix = Matrix<double>.Build.DenseOfDiagonalVector(temp.Diagonal());
+                var es = errors.ToColumnMatrix();
                 while (currentError >= error)
                 {
                     neuralNetwork.SetWeights(prevWeights);
                     blendingFactor *= adjustmentFactor;
-                    var deltaWeights = (jTranspose * j + blendingFactor * blendingMatrix).Inverse() * jTranspose * errors.ToColumnMatrix();
+                    var deltaWeights = (temp + blendingFactor * blendingMatrix).Inverse() * jTranspose * es;
                     neuralNetwork.UpdateWeightsFromVector(deltaWeights.Column(0));
                     base.Notify(message);
                     currentError = message.Error;
                 }
+                blendingFactor /= adjustmentFactor;
                 error = currentError;
             }
         }
