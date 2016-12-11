@@ -51,7 +51,7 @@ namespace NeuralNetworkProject.NeuralNetwork
 
             return new Tuple<IList<Vector<double>>, IList<Vector<double>>>(acs, gs);
         }
-
+        public void SetWeights(IList<Matrix<double>> weights) => this.HiddenWeights = weights;
         public void UpdateWeightsAt(Matrix<double> deltaW, int index) => HiddenWeights[index] += deltaW;
         public void UpdateWeightsFromVector(Vector<double> vec)
         {
