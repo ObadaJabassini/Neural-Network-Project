@@ -69,15 +69,16 @@ namespace NeuralNetworkProject.Training
                 var errors = Vector<double>.Build.DenseOfEnumerable(baseMatrix.Select(element => element.Item2));
                 var prevWeights = neuralNetwork.HiddenWeights.Select(v => v.Clone()).ToList();
                 var currentError = 50000.0;
-                var temp = jTranspose * j;
-                var blendingMatrix = Matrix<double>.Build.DenseOfDiagonalVector(temp.Diagonal());
+                var temp2 = jTranspose * j;
+                var blendingMatrix = Matrix<double>.Build.DenseOfDiagonalVector(temp2.Diagonal());
                 var es = errors.ToColumnMatrix();
-                while (currentError >= error)
+                int m = 1;
+                while (currentError >= error && m++ <= 5)
                 {
                     neuralNetwork.SetWeights(prevWeights);
                     blendingFactor *= adjustmentFactor;
-                    var deltaWeights = (temp + blendingFactor * blendingMatrix).Inverse() * jTranspose * es;
-                    neuralNetwork.UpdateWeightsFromVector(deltaWeights.Column(0));
+                    var deltaWeights = (temp2 + blendingFactor * blendingMatrix).Inverse() * jTranspose * es;
+                    neuralNetwork.UpdateWeightsFromVector(-deltaWeights.Column(0));
                     base.Notify(message);
                     currentError = message.Error;
                 }
