@@ -56,7 +56,7 @@ namespace NeuralNetworkProject.GUI.Forms
             Trainer.TrainingAlgorithm = _bp;
             _hyperParameters.MaxEpochs = 1000;
             _hyperParameters.MaxError = 0.01;
-            _hyperParameters.BlendingFactor = 0.01;
+            //_hyperParameters.BlendingFactor = 0.01;
         }
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
@@ -297,7 +297,7 @@ namespace NeuralNetworkProject.GUI.Forms
 
         private void intCounter2_Validated(object sender, EventArgs e)
         {
-            _hyperParameters.BlendingFactor = intCounter2.Value;
+           // _hyperParameters.BlendingFactor = intCounter2.Value;
         }
 
         private void materialRadioButton4_CheckedChanged(object sender, EventArgs e)
