@@ -67,7 +67,7 @@ namespace NeuralNetworkProject.Training
                 var j = Matrix<double>.Build.DenseOfRows(baseMatrix.Select(element => element.Item1));
                 var jTranspose = j.Transpose();
                 var errors = Vector<double>.Build.DenseOfEnumerable(baseMatrix.Select(element => element.Item2));
-                var prevWeights = neuralNetwork.HiddenWeights.Select(v => v.Clone()).ToList();
+                var prevWeights = neuralNetwork.HiddenWeights.Select(v => Matrix<double>.Build.DenseOfMatrix(v)).ToList();
                 var currentError = 50000.0;
                 var temp2 = jTranspose * j;
                 var blendingMatrix = Matrix<double>.Build.DenseOfDiagonalVector(temp2.Diagonal());
