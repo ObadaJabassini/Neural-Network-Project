@@ -71,14 +71,13 @@ namespace NeuralNetworkProject.Training
                 var currentError = 50000.0;
                 var temp2 = jTranspose * j;
                 var blendingMatrix = Matrix<double>.Build.DenseOfDiagonalVector(temp2.Diagonal());
-                var es = errors.ToColumnMatrix();
                 int m = 1;
                 while (currentError >= error && m++ <= 5)
                 {
                     neuralNetwork.SetWeights(prevWeights);
                     blendingFactor *= adjustmentFactor;
-                    var deltaWeights = (temp2 + blendingFactor * blendingMatrix).Inverse() * jTranspose * es;
-                    neuralNetwork.UpdateWeightsFromVector(-deltaWeights.Column(0));
+                    var deltaWeights = (temp2 + blendingFactor * blendingMatrix).Inverse() * jTranspose * errors;
+                    neuralNetwork.UpdateWeightsFromVector(-deltaWeights);
                     base.Notify(message);
                     currentError = message.Error;
                 }
