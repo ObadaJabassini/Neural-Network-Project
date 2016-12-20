@@ -28,7 +28,16 @@ namespace NeuralNetworkProject.GUI.CostumControls
         }
 
         [Category("Format")] 
-        public bool IsDecimal { set; get; }
+        public bool IsDecimal {
+            set
+            {
+                regex = value ? new Regex(@"^\d+(\.\d+)?$") : new Regex(@"^\d+$");
+                _isDecimal = value;
+            }
+            private get { return _isDecimal; }
+        }
+
+        private bool _isDecimal { set; get; }
 
         Regex regex ;
         RadToolTip _tip = new RadToolTip();
@@ -43,26 +52,24 @@ namespace NeuralNetworkProject.GUI.CostumControls
 
             _tip.BackColor = Color.LightSeaGreen;
             _tip.ForeColor = Color.FromArgb(34, 44, 71);
-
-            regex = IsDecimal ? new Regex(@"^\d+(\.\d+)?$") : new Regex(@"^\d+$");
         }
 
         private void DecimalCounter_Validated(object sender, EventArgs e)
         {
-            if (regex.IsMatch(_value.Text))
-            {
-                _tip.Hide();
-                Value = Convert.ToDouble(this.Text);
-            }
+            //if (regex.IsMatch(_value.Text))
+            //{
+            //    _tip.Hide();
+            //    Value = Convert.ToDouble(this.Text);
+            //}
 
-            else
-            {
-                _value.Select();
-                if (IsDecimal)
-                    _tip.Show("It must be a Decimal non negative number !!", _value);
-                else
-                    _tip.Show("It must be an Integer non negative number !!", _value);
-            }
+            //else
+            //{
+            //    _value.Select();
+            //    if (IsDecimal)
+            //        _tip.Show("It must be a Decimal non negative number !!", _value);
+            //    else
+            //        _tip.Show("It must be an Integer non negative number !!", _value);
+            //}
 
         }
 
@@ -75,6 +82,11 @@ namespace NeuralNetworkProject.GUI.CostumControls
         private void decrease_Click(object sender, EventArgs e)
         {
             this._value.Text = Convert.ToString(Value - Increment);
+        }
+
+        private void Counter_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

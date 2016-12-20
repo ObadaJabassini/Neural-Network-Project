@@ -122,6 +122,9 @@
     <Compile Include="GUI\CostumControls\LollipopRadioButton.Designer.cs">
       <DependentUpon>LollipopRadioButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\CostumControls\LollipopTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="GUI\CostumControls\L_ctrl_mat.cs">
       <SubType>UserControl</SubType>
     </Compile>

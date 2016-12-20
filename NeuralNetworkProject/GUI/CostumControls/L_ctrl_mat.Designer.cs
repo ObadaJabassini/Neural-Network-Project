@@ -106,7 +106,7 @@
             this.Controls.Add(this.NN_drpdn);
             this.Controls.Add(this.pictureBox1);
             this.Name = "L_ctrl_mat";
-            this.Size = new System.Drawing.Size(242, 28);
+            this.Size = new System.Drawing.Size(242, 48);
             ((System.ComponentModel.ISupportInitialize)(this.Lr_drpdn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AF_drpdn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NN_drpdn)).EndInit();

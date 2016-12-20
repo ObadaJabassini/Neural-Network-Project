@@ -305,6 +305,11 @@ namespace NeuralNetworkProject.GUI.Forms
             Trainer.TrainingAlgorithm = _l;
         }
 
+        private void radPanel11_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         
 
     }
