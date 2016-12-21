@@ -516,7 +516,7 @@ namespace NeuralNetworkProject.GUI.Forms
             // 
             this.radLabel3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel3.ForeColor = System.Drawing.Color.LightGray;
-            this.radLabel3.Location = new System.Drawing.Point(59, 168);
+            this.radLabel3.Location = new System.Drawing.Point(59, 169);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(48, 23);
             this.radLabel3.TabIndex = 41;
@@ -526,7 +526,7 @@ namespace NeuralNetworkProject.GUI.Forms
             // 
             this.radLabel2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel2.ForeColor = System.Drawing.Color.LightGray;
-            this.radLabel2.Location = new System.Drawing.Point(24, 121);
+            this.radLabel2.Location = new System.Drawing.Point(24, 122);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(90, 23);
             this.radLabel2.TabIndex = 42;
@@ -536,7 +536,7 @@ namespace NeuralNetworkProject.GUI.Forms
             // 
             this.radLabel1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel1.ForeColor = System.Drawing.Color.LightGray;
-            this.radLabel1.Location = new System.Drawing.Point(55, 34);
+            this.radLabel1.Location = new System.Drawing.Point(55, 35);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(59, 23);
             this.radLabel1.TabIndex = 40;
@@ -602,7 +602,7 @@ namespace NeuralNetworkProject.GUI.Forms
             // 
             this.radLabel9.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel9.ForeColor = System.Drawing.Color.LightGray;
-            this.radLabel9.Location = new System.Drawing.Point(72, 76);
+            this.radLabel9.Location = new System.Drawing.Point(72, 72);
             this.radLabel9.Name = "radLabel9";
             this.radLabel9.Size = new System.Drawing.Size(104, 23);
             this.radLabel9.TabIndex = 33;
@@ -615,7 +615,7 @@ namespace NeuralNetworkProject.GUI.Forms
             this.StaticDivider.Depth = 0;
             this.StaticDivider.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.StaticDivider.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.StaticDivider.Location = new System.Drawing.Point(34, 73);
+            this.StaticDivider.Location = new System.Drawing.Point(34, 69);
             this.StaticDivider.Margin = new System.Windows.Forms.Padding(0);
             this.StaticDivider.MouseLocation = new System.Drawing.Point(-1, -1);
             this.StaticDivider.MouseState = MaterialSkin.MouseState.HOVER;
@@ -722,7 +722,7 @@ namespace NeuralNetworkProject.GUI.Forms
             // 
             this.radPanel10.BackColor = System.Drawing.Color.LightSeaGreen;
             this.radPanel10.Controls.Add(this.materialFlatButton2);
-            this.radPanel10.Location = new System.Drawing.Point(778, 684);
+            this.radPanel10.Location = new System.Drawing.Point(771, 654);
             this.radPanel10.Name = "radPanel10";
             this.radPanel10.Size = new System.Drawing.Size(186, 61);
             this.radPanel10.TabIndex = 29;
@@ -862,7 +862,7 @@ namespace NeuralNetworkProject.GUI.Forms
             this.lollipopToggle1.AutoSize = true;
             this.lollipopToggle1.EllipseBorderColor = "#3b73d1";
             this.lollipopToggle1.EllipseColor = "#508ef5";
-            this.lollipopToggle1.Location = new System.Drawing.Point(163, 121);
+            this.lollipopToggle1.Location = new System.Drawing.Point(163, 122);
             this.lollipopToggle1.Name = "lollipopToggle1";
             this.lollipopToggle1.Size = new System.Drawing.Size(80, 19);
             this.lollipopToggle1.TabIndex = 47;
@@ -873,7 +873,8 @@ namespace NeuralNetworkProject.GUI.Forms
             // momentum_cntr
             // 
             this.momentum_cntr.Increment = 0.01D;
-            this.momentum_cntr.Location = new System.Drawing.Point(166, 170);
+            this.momentum_cntr.IsDecimal = true;
+            this.momentum_cntr.Location = new System.Drawing.Point(166, 171);
             this.momentum_cntr.Name = "momentum_cntr";
             this.momentum_cntr.Size = new System.Drawing.Size(69, 21);
             this.momentum_cntr.TabIndex = 46;
@@ -883,7 +884,8 @@ namespace NeuralNetworkProject.GUI.Forms
             // EpochsNum_cntr
             // 
             this.EpochsNum_cntr.Increment = 1D;
-            this.EpochsNum_cntr.Location = new System.Drawing.Point(166, 36);
+            this.EpochsNum_cntr.IsDecimal = false;
+            this.EpochsNum_cntr.Location = new System.Drawing.Point(166, 37);
             this.EpochsNum_cntr.Name = "EpochsNum_cntr";
             this.EpochsNum_cntr.Size = new System.Drawing.Size(69, 21);
             this.EpochsNum_cntr.TabIndex = 45;
@@ -895,6 +897,7 @@ namespace NeuralNetworkProject.GUI.Forms
             // Ratio
             // 
             this.Ratio.Increment = 0.1D;
+            this.Ratio.IsDecimal = true;
             this.Ratio.Location = new System.Drawing.Point(205, 212);
             this.Ratio.Name = "Ratio";
             this.Ratio.Size = new System.Drawing.Size(60, 21);

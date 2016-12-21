@@ -33,15 +33,15 @@ namespace NeuralNetworkProject.GUI.CostumControls
 
         [Category("Format")]
         public bool IsDecimal {
-            set
+             set
             {
                 regex = value ? new Regex(@"^\d+(\.\d+)?$") : new Regex(@"^\d+$");
                 _isDecimal = value;
             }
-            private get { return _isDecimal; }
+            get { return _isDecimal; }
         }
 
-        private bool _isDecimal { set; get; }
+        private bool _isDecimal { set; get; } = false;
 
         private Regex regex = new Regex(@"^\d+(\.\d+)?$");
         RadToolTip _tip = new RadToolTip();
@@ -53,7 +53,6 @@ namespace NeuralNetworkProject.GUI.CostumControls
             _tip.ToolTipIcon = ToolTipIcon.Error;
             _tip.AutoPopDelay = 2000;
             _tip.UseAnimation = true;
-            
             _tip.BackColor = Color.LightSeaGreen;
             _tip.ForeColor = Color.FromArgb(34, 44, 71);
             this.Validated += _value_TextChanged;
