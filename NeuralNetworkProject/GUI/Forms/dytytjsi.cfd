@@ -503,7 +503,7 @@ namespace NeuralNetworkProject.GUI.Forms
             this.radPanel12.Controls.Add(this.radLabel2);
             this.radPanel12.Controls.Add(this.radLabel1);
             this.radPanel12.Dock = System.Windows.Forms.DockStyle.Right;
-            this.radPanel12.Location = new System.Drawing.Point(258, 35);
+            this.radPanel12.Location = new System.Drawing.Point(255, 35);
             this.radPanel12.Name = "radPanel12";
             this.radPanel12.Size = new System.Drawing.Size(270, 316);
             this.radPanel12.TabIndex = 37;
@@ -551,9 +551,9 @@ namespace NeuralNetworkProject.GUI.Forms
             this.radPanel11.Controls.Add(this.radLabel9);
             this.radPanel11.Controls.Add(this.StaticDivider);
             this.radPanel11.Dock = System.Windows.Forms.DockStyle.Right;
-            this.radPanel11.Location = new System.Drawing.Point(528, 35);
+            this.radPanel11.Location = new System.Drawing.Point(525, 35);
             this.radPanel11.Name = "radPanel11";
-            this.radPanel11.Size = new System.Drawing.Size(276, 316);
+            this.radPanel11.Size = new System.Drawing.Size(279, 316);
             this.radPanel11.TabIndex = 30;
             this.radPanel11.Paint += new System.Windows.Forms.PaintEventHandler(this.radPanel11_Paint);
             ((Telerik.WinControls.UI.RadPanelElement)(this.radPanel11.GetChildAt(0))).Text = "";
@@ -682,27 +682,27 @@ namespace NeuralNetworkProject.GUI.Forms
             // radPanel8
             // 
             this.radPanel8.BackColor = System.Drawing.Color.Silver;
-            this.radPanel8.Dock = System.Windows.Forms.DockStyle.Left;
+            this.radPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPanel8.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Bold);
             this.radPanel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(48)))));
-            this.radPanel8.Location = new System.Drawing.Point(528, 0);
+            this.radPanel8.Location = new System.Drawing.Point(255, 0);
             this.radPanel8.Name = "radPanel8";
-            this.radPanel8.Size = new System.Drawing.Size(276, 35);
+            this.radPanel8.Size = new System.Drawing.Size(270, 35);
             this.radPanel8.TabIndex = 29;
-            this.radPanel8.Text = "Data Dividers";
+            this.radPanel8.Text = "Additional Settings";
             this.radPanel8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // radPanel9
             // 
             this.radPanel9.BackColor = System.Drawing.Color.Silver;
-            this.radPanel9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.radPanel9.Dock = System.Windows.Forms.DockStyle.Right;
             this.radPanel9.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Bold);
             this.radPanel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(48)))));
-            this.radPanel9.Location = new System.Drawing.Point(258, 0);
+            this.radPanel9.Location = new System.Drawing.Point(525, 0);
             this.radPanel9.Name = "radPanel9";
-            this.radPanel9.Size = new System.Drawing.Size(270, 35);
+            this.radPanel9.Size = new System.Drawing.Size(279, 35);
             this.radPanel9.TabIndex = 30;
-            this.radPanel9.Text = "Additional Settings";
+            this.radPanel9.Text = "Data Dividers";
             this.radPanel9.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // radPanel7
@@ -713,7 +713,7 @@ namespace NeuralNetworkProject.GUI.Forms
             this.radPanel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(48)))));
             this.radPanel7.Location = new System.Drawing.Point(0, 0);
             this.radPanel7.Name = "radPanel7";
-            this.radPanel7.Size = new System.Drawing.Size(258, 35);
+            this.radPanel7.Size = new System.Drawing.Size(255, 35);
             this.radPanel7.TabIndex = 29;
             this.radPanel7.Text = "Choose Algoritm";
             this.radPanel7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;

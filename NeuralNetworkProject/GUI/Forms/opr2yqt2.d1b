@@ -41,10 +41,13 @@ namespace NeuralNetworkProject.GUI.Forms
             this.object_5a16bf9a_c637_4275_84f9_0ee191482182 = new Telerik.WinControls.RootRadElement();
             this.ellipseShape1 = new Telerik.WinControls.EllipseShape();
             this.radPanel2 = new Telerik.WinControls.UI.RadPanel();
+            this.lollipopFile = new LollipopFileInput();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.radPanel4 = new Telerik.WinControls.UI.RadPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.l_ctrl_mat3 = new NeuralNetworkProject.GUI.CostumControls.L_ctrl_mat();
+            this.l_ctrl_mat4 = new NeuralNetworkProject.GUI.CostumControls.L_ctrl_mat();
             this.radButton2 = new Telerik.WinControls.UI.RadButton();
             this.radLabel8 = new Telerik.WinControls.UI.RadLabel();
             this.BlendingFactor_dtpdn = new System.Windows.Forms.NumericUpDown();
@@ -59,11 +62,19 @@ namespace NeuralNetworkProject.GUI.Forms
             this.materialRadioButton1 = new MaterialSkin.Controls.MaterialRadioButton();
             this.radPanel5 = new Telerik.WinControls.UI.RadPanel();
             this.radPanel12 = new Telerik.WinControls.UI.RadPanel();
+            this.momentum_cntr = new NeuralNetworkProject.GUI.CostumControls.Counter();
+            this.EpochsNum_cntr = new NeuralNetworkProject.GUI.CostumControls.Counter();
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
+            this.Momentum_tgl = new Telerik.WinControls.UI.RadToggleSwitch();
             this.radPanel11 = new Telerik.WinControls.UI.RadPanel();
+            this.radLabel13 = new Telerik.WinControls.UI.RadLabel();
+            this.counter3 = new NeuralNetworkProject.GUI.CostumControls.Counter();
             this.radLabel12 = new Telerik.WinControls.UI.RadLabel();
+            this.counter2 = new NeuralNetworkProject.GUI.CostumControls.Counter();
+            this.radLabel11 = new Telerik.WinControls.UI.RadLabel();
+            this.counter1 = new NeuralNetworkProject.GUI.CostumControls.Counter();
             this.radLabel10 = new Telerik.WinControls.UI.RadLabel();
             this.materialRadioButton6 = new MaterialSkin.Controls.MaterialRadioButton();
             this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
@@ -84,13 +95,6 @@ namespace NeuralNetworkProject.GUI.Forms
             this.radDiagram1 = new Telerik.WinControls.UI.RadDiagram();
             this.object_f1debc98_3f49_470e_ab30_b19da27feb5f = new Telerik.WinControls.RootRadElement();
             this.object_cd76de67_4fc7_4a4a_95de_8f538aac7497 = new Telerik.WinControls.RootRadElement();
-            this.lollipopToggle1 = new LollipopToggle();
-            this.momentum_cntr = new NeuralNetworkProject.GUI.CostumControls.Counter();
-            this.EpochsNum_cntr = new NeuralNetworkProject.GUI.CostumControls.Counter();
-            this.Ratio = new NeuralNetworkProject.GUI.CostumControls.Counter();
-            this.lollipopFile = new LollipopFileInput();
-            this.l_ctrl_mat3 = new NeuralNetworkProject.GUI.CostumControls.L_ctrl_mat();
-            this.l_ctrl_mat4 = new NeuralNetworkProject.GUI.CostumControls.L_ctrl_mat();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).BeginInit();
             this.radPanel2.SuspendLayout();
@@ -115,9 +119,12 @@ namespace NeuralNetworkProject.GUI.Forms
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Momentum_tgl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel11)).BeginInit();
             this.radPanel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
@@ -183,6 +190,21 @@ namespace NeuralNetworkProject.GUI.Forms
             this.radPanel2.Size = new System.Drawing.Size(468, 672);
             this.radPanel2.TabIndex = 11;
             // 
+            // lollipopFile
+            // 
+            this.lollipopFile.Filter = "All Files (*.*)|*.*";
+            this.lollipopFile.FocusedColor = System.Drawing.Color.LightSeaGreen;
+            this.lollipopFile.FontColor = System.Drawing.Color.White;
+            this.lollipopFile.IsEnabled = true;
+            this.lollipopFile.Location = new System.Drawing.Point(95, 45);
+            this.lollipopFile.MaxLength = 32767;
+            this.lollipopFile.Name = "lollipopFile";
+            this.lollipopFile.ReadOnly = false;
+            this.lollipopFile.Size = new System.Drawing.Size(256, 24);
+            this.lollipopFile.TabIndex = 29;
+            this.lollipopFile.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.lollipopFile.UseSystemPasswordChar = false;
+            // 
             // radPanel1
             // 
             this.radPanel1.Controls.Add(this.radPanel4);
@@ -231,6 +253,22 @@ namespace NeuralNetworkProject.GUI.Forms
             this.flowLayoutPanel1.Size = new System.Drawing.Size(289, 339);
             this.flowLayoutPanel1.TabIndex = 15;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
+            // 
+            // l_ctrl_mat3
+            // 
+            this.l_ctrl_mat3.BackColor = System.Drawing.Color.Transparent;
+            this.l_ctrl_mat3.Location = new System.Drawing.Point(3, 3);
+            this.l_ctrl_mat3.Name = "l_ctrl_mat3";
+            this.l_ctrl_mat3.Size = new System.Drawing.Size(242, 44);
+            this.l_ctrl_mat3.TabIndex = 23;
+            // 
+            // l_ctrl_mat4
+            // 
+            this.l_ctrl_mat4.BackColor = System.Drawing.Color.Transparent;
+            this.l_ctrl_mat4.Location = new System.Drawing.Point(3, 53);
+            this.l_ctrl_mat4.Name = "l_ctrl_mat4";
+            this.l_ctrl_mat4.Size = new System.Drawing.Size(242, 50);
+            this.l_ctrl_mat4.TabIndex = 24;
             // 
             // radButton2
             // 
@@ -296,7 +334,7 @@ namespace NeuralNetworkProject.GUI.Forms
             131072});
             this.BlendingFactor_dtpdn.Location = new System.Drawing.Point(399, 545);
             this.BlendingFactor_dtpdn.Name = "BlendingFactor_dtpdn";
-            this.BlendingFactor_dtpdn.Size = new System.Drawing.Size(69, 22);
+            this.BlendingFactor_dtpdn.Size = new System.Drawing.Size(69, 20);
             this.BlendingFactor_dtpdn.TabIndex = 44;
             this.BlendingFactor_dtpdn.Value = new decimal(new int[] {
             9,
@@ -404,7 +442,7 @@ namespace NeuralNetworkProject.GUI.Forms
             // 
             this.materialRadioButton3.AutoSize = true;
             this.materialRadioButton3.Depth = 0;
-            this.materialRadioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.materialRadioButton3.Font = new System.Drawing.Font("Roboto", 10F);
             this.materialRadioButton3.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.materialRadioButton3.Location = new System.Drawing.Point(127, 612);
             this.materialRadioButton3.Margin = new System.Windows.Forms.Padding(0);
@@ -430,7 +468,7 @@ namespace NeuralNetworkProject.GUI.Forms
             131072});
             this.momentum.Location = new System.Drawing.Point(399, 519);
             this.momentum.Name = "momentum";
-            this.momentum.Size = new System.Drawing.Size(69, 22);
+            this.momentum.Size = new System.Drawing.Size(69, 20);
             this.momentum.TabIndex = 39;
             this.momentum.Value = new decimal(new int[] {
             9,
@@ -443,7 +481,7 @@ namespace NeuralNetworkProject.GUI.Forms
             // 
             this.materialRadioButton2.AutoSize = true;
             this.materialRadioButton2.Depth = 0;
-            this.materialRadioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.materialRadioButton2.Font = new System.Drawing.Font("Roboto", 10F);
             this.materialRadioButton2.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.materialRadioButton2.Location = new System.Drawing.Point(127, 641);
             this.materialRadioButton2.Margin = new System.Windows.Forms.Padding(0);
@@ -461,9 +499,8 @@ namespace NeuralNetworkProject.GUI.Forms
             // materialRadioButton1
             // 
             this.materialRadioButton1.AutoSize = true;
-            this.materialRadioButton1.Checked = true;
             this.materialRadioButton1.Depth = 0;
-            this.materialRadioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.materialRadioButton1.Font = new System.Drawing.Font("Roboto", 10F);
             this.materialRadioButton1.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.materialRadioButton1.Location = new System.Drawing.Point(28, 104);
             this.materialRadioButton1.Margin = new System.Windows.Forms.Padding(0);
@@ -473,7 +510,6 @@ namespace NeuralNetworkProject.GUI.Forms
             this.materialRadioButton1.Ripple = true;
             this.materialRadioButton1.Size = new System.Drawing.Size(156, 30);
             this.materialRadioButton1.TabIndex = 2;
-            this.materialRadioButton1.TabStop = true;
             this.materialRadioButton1.Text = "                                    .";
             this.materialRadioButton1.UseVisualStyleBackColor = true;
             this.materialRadioButton1.CheckedChanged += new System.EventHandler(this.materialRadioButton1_CheckedChanged);
@@ -496,21 +532,43 @@ namespace NeuralNetworkProject.GUI.Forms
             // 
             // radPanel12
             // 
-            this.radPanel12.Controls.Add(this.lollipopToggle1);
             this.radPanel12.Controls.Add(this.momentum_cntr);
             this.radPanel12.Controls.Add(this.EpochsNum_cntr);
             this.radPanel12.Controls.Add(this.radLabel3);
             this.radPanel12.Controls.Add(this.radLabel2);
             this.radPanel12.Controls.Add(this.radLabel1);
+            this.radPanel12.Controls.Add(this.Momentum_tgl);
             this.radPanel12.Dock = System.Windows.Forms.DockStyle.Right;
-            this.radPanel12.Location = new System.Drawing.Point(258, 35);
+            this.radPanel12.Location = new System.Drawing.Point(201, 35);
             this.radPanel12.Name = "radPanel12";
-            this.radPanel12.Size = new System.Drawing.Size(270, 316);
+            this.radPanel12.Size = new System.Drawing.Size(272, 316);
             this.radPanel12.TabIndex = 37;
             ((Telerik.WinControls.UI.RadPanelElement)(this.radPanel12.GetChildAt(0))).Text = "";
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radPanel12.GetChildAt(0).GetChildAt(1))).BoxStyle = Telerik.WinControls.BorderBoxStyle.SingleBorder;
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radPanel12.GetChildAt(0).GetChildAt(1))).BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radPanel12.GetChildAt(0).GetChildAt(1))).Opacity = 1D;
+            // 
+            // momentum_cntr
+            // 
+            this.momentum_cntr.Increment = 0.01D;
+            this.momentum_cntr.Location = new System.Drawing.Point(166, 170);
+            this.momentum_cntr.Name = "momentum_cntr";
+            this.momentum_cntr.Size = new System.Drawing.Size(69, 21);
+            this.momentum_cntr.TabIndex = 46;
+            this.momentum_cntr.Value = 0D;
+            this.momentum_cntr.Validated += new System.EventHandler(this.momentum_cntr_Validated);
+            // 
+            // EpochsNum_cntr
+            // 
+            this.EpochsNum_cntr.Increment = 1D;
+            this.EpochsNum_cntr.Location = new System.Drawing.Point(166, 36);
+            this.EpochsNum_cntr.Name = "EpochsNum_cntr";
+            this.EpochsNum_cntr.Size = new System.Drawing.Size(69, 21);
+            this.EpochsNum_cntr.TabIndex = 45;
+            this.EpochsNum_cntr.Value = 1000D;
+            this.EpochsNum_cntr.Load += new System.EventHandler(this.counter4_Load);
+            this.EpochsNum_cntr.Validating += new System.ComponentModel.CancelEventHandler(this.EpochsNum_cntr_Validating);
+            this.EpochsNum_cntr.Validated += new System.EventHandler(this.counter4_Validated);
             // 
             // radLabel3
             // 
@@ -542,18 +600,32 @@ namespace NeuralNetworkProject.GUI.Forms
             this.radLabel1.TabIndex = 40;
             this.radLabel1.Text = "Epochs";
             // 
+            // Momentum_tgl
+            // 
+            this.Momentum_tgl.Location = new System.Drawing.Point(160, 121);
+            this.Momentum_tgl.Name = "Momentum_tgl";
+            this.Momentum_tgl.Size = new System.Drawing.Size(68, 20);
+            this.Momentum_tgl.TabIndex = 37;
+            this.Momentum_tgl.Text = "radToggleSwitch1";
+            this.Momentum_tgl.ThemeName = "TelerikMetroBlue";
+            this.Momentum_tgl.Value = false;
+            // 
             // radPanel11
             // 
+            this.radPanel11.Controls.Add(this.radLabel13);
+            this.radPanel11.Controls.Add(this.counter3);
             this.radPanel11.Controls.Add(this.radLabel12);
-            this.radPanel11.Controls.Add(this.Ratio);
+            this.radPanel11.Controls.Add(this.counter2);
+            this.radPanel11.Controls.Add(this.radLabel11);
+            this.radPanel11.Controls.Add(this.counter1);
             this.radPanel11.Controls.Add(this.radLabel10);
             this.radPanel11.Controls.Add(this.materialRadioButton6);
             this.radPanel11.Controls.Add(this.radLabel9);
             this.radPanel11.Controls.Add(this.StaticDivider);
             this.radPanel11.Dock = System.Windows.Forms.DockStyle.Right;
-            this.radPanel11.Location = new System.Drawing.Point(528, 35);
+            this.radPanel11.Location = new System.Drawing.Point(473, 35);
             this.radPanel11.Name = "radPanel11";
-            this.radPanel11.Size = new System.Drawing.Size(276, 316);
+            this.radPanel11.Size = new System.Drawing.Size(331, 316);
             this.radPanel11.TabIndex = 30;
             this.radPanel11.Paint += new System.Windows.Forms.PaintEventHandler(this.radPanel11_Paint);
             ((Telerik.WinControls.UI.RadPanelElement)(this.radPanel11.GetChildAt(0))).Text = "";
@@ -561,21 +633,68 @@ namespace NeuralNetworkProject.GUI.Forms
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radPanel11.GetChildAt(0).GetChildAt(1))).BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radPanel11.GetChildAt(0).GetChildAt(1))).Opacity = 1D;
             // 
+            // radLabel13
+            // 
+            this.radLabel13.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel13.ForeColor = System.Drawing.Color.LightGray;
+            this.radLabel13.Location = new System.Drawing.Point(129, 254);
+            this.radLabel13.Name = "radLabel13";
+            this.radLabel13.Size = new System.Drawing.Size(109, 23);
+            this.radLabel13.TabIndex = 45;
+            this.radLabel13.Text = "Training Ratio";
+            // 
+            // counter3
+            // 
+            this.counter3.Increment = 0D;
+            this.counter3.Location = new System.Drawing.Point(244, 254);
+            this.counter3.Name = "counter3";
+            this.counter3.Size = new System.Drawing.Size(60, 21);
+            this.counter3.TabIndex = 44;
+            this.counter3.Value = 0D;
+            // 
             // radLabel12
             // 
             this.radLabel12.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel12.ForeColor = System.Drawing.Color.LightGray;
-            this.radLabel12.Location = new System.Drawing.Point(90, 212);
+            this.radLabel12.Location = new System.Drawing.Point(129, 210);
             this.radLabel12.Name = "radLabel12";
             this.radLabel12.Size = new System.Drawing.Size(109, 23);
             this.radLabel12.TabIndex = 43;
             this.radLabel12.Text = "Training Ratio";
             // 
+            // counter2
+            // 
+            this.counter2.Increment = 0D;
+            this.counter2.Location = new System.Drawing.Point(244, 210);
+            this.counter2.Name = "counter2";
+            this.counter2.Size = new System.Drawing.Size(60, 21);
+            this.counter2.TabIndex = 42;
+            this.counter2.Value = 0D;
+            // 
+            // radLabel11
+            // 
+            this.radLabel11.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel11.ForeColor = System.Drawing.Color.LightGray;
+            this.radLabel11.Location = new System.Drawing.Point(129, 99);
+            this.radLabel11.Name = "radLabel11";
+            this.radLabel11.Size = new System.Drawing.Size(109, 23);
+            this.radLabel11.TabIndex = 41;
+            this.radLabel11.Text = "Training Ratio";
+            // 
+            // counter1
+            // 
+            this.counter1.Increment = 0D;
+            this.counter1.Location = new System.Drawing.Point(244, 99);
+            this.counter1.Name = "counter1";
+            this.counter1.Size = new System.Drawing.Size(60, 21);
+            this.counter1.TabIndex = 34;
+            this.counter1.Value = 0D;
+            // 
             // radLabel10
             // 
             this.radLabel10.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel10.ForeColor = System.Drawing.Color.LightGray;
-            this.radLabel10.Location = new System.Drawing.Point(72, 146);
+            this.radLabel10.Location = new System.Drawing.Point(53, 157);
             this.radLabel10.Name = "radLabel10";
             this.radLabel10.Size = new System.Drawing.Size(143, 23);
             this.radLabel10.TabIndex = 33;
@@ -585,9 +704,9 @@ namespace NeuralNetworkProject.GUI.Forms
             // 
             this.materialRadioButton6.AutoSize = true;
             this.materialRadioButton6.Depth = 0;
-            this.materialRadioButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.materialRadioButton6.Font = new System.Drawing.Font("Roboto", 10F);
             this.materialRadioButton6.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.materialRadioButton6.Location = new System.Drawing.Point(34, 143);
+            this.materialRadioButton6.Location = new System.Drawing.Point(15, 154);
             this.materialRadioButton6.Margin = new System.Windows.Forms.Padding(0);
             this.materialRadioButton6.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialRadioButton6.MouseState = MaterialSkin.MouseState.HOVER;
@@ -602,7 +721,7 @@ namespace NeuralNetworkProject.GUI.Forms
             // 
             this.radLabel9.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel9.ForeColor = System.Drawing.Color.LightGray;
-            this.radLabel9.Location = new System.Drawing.Point(72, 76);
+            this.radLabel9.Location = new System.Drawing.Point(53, 58);
             this.radLabel9.Name = "radLabel9";
             this.radLabel9.Size = new System.Drawing.Size(104, 23);
             this.radLabel9.TabIndex = 33;
@@ -611,11 +730,10 @@ namespace NeuralNetworkProject.GUI.Forms
             // StaticDivider
             // 
             this.StaticDivider.AutoSize = true;
-            this.StaticDivider.Checked = true;
             this.StaticDivider.Depth = 0;
-            this.StaticDivider.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.StaticDivider.Font = new System.Drawing.Font("Roboto", 10F);
             this.StaticDivider.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.StaticDivider.Location = new System.Drawing.Point(34, 73);
+            this.StaticDivider.Location = new System.Drawing.Point(15, 55);
             this.StaticDivider.Margin = new System.Windows.Forms.Padding(0);
             this.StaticDivider.MouseLocation = new System.Drawing.Point(-1, -1);
             this.StaticDivider.MouseState = MaterialSkin.MouseState.HOVER;
@@ -623,7 +741,6 @@ namespace NeuralNetworkProject.GUI.Forms
             this.StaticDivider.Ripple = true;
             this.StaticDivider.Size = new System.Drawing.Size(156, 30);
             this.StaticDivider.TabIndex = 32;
-            this.StaticDivider.TabStop = true;
             this.StaticDivider.Text = "                                    .";
             this.StaticDivider.UseVisualStyleBackColor = true;
             this.StaticDivider.CheckedChanged += new System.EventHandler(this.materialRadioButton5_CheckedChanged);
@@ -642,7 +759,7 @@ namespace NeuralNetworkProject.GUI.Forms
             // 
             this.materialRadioButton4.AutoSize = true;
             this.materialRadioButton4.Depth = 0;
-            this.materialRadioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.materialRadioButton4.Font = new System.Drawing.Font("Roboto", 10F);
             this.materialRadioButton4.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.materialRadioButton4.Location = new System.Drawing.Point(28, 240);
             this.materialRadioButton4.Margin = new System.Windows.Forms.Padding(0);
@@ -682,27 +799,27 @@ namespace NeuralNetworkProject.GUI.Forms
             // radPanel8
             // 
             this.radPanel8.BackColor = System.Drawing.Color.Silver;
-            this.radPanel8.Dock = System.Windows.Forms.DockStyle.Left;
+            this.radPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPanel8.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Bold);
             this.radPanel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(48)))));
-            this.radPanel8.Location = new System.Drawing.Point(528, 0);
+            this.radPanel8.Location = new System.Drawing.Point(201, 0);
             this.radPanel8.Name = "radPanel8";
-            this.radPanel8.Size = new System.Drawing.Size(276, 35);
+            this.radPanel8.Size = new System.Drawing.Size(272, 35);
             this.radPanel8.TabIndex = 29;
-            this.radPanel8.Text = "Data Dividers";
+            this.radPanel8.Text = "Additional Settings";
             this.radPanel8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // radPanel9
             // 
             this.radPanel9.BackColor = System.Drawing.Color.Silver;
-            this.radPanel9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.radPanel9.Dock = System.Windows.Forms.DockStyle.Right;
             this.radPanel9.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Bold);
             this.radPanel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(48)))));
-            this.radPanel9.Location = new System.Drawing.Point(258, 0);
+            this.radPanel9.Location = new System.Drawing.Point(473, 0);
             this.radPanel9.Name = "radPanel9";
-            this.radPanel9.Size = new System.Drawing.Size(270, 35);
+            this.radPanel9.Size = new System.Drawing.Size(331, 35);
             this.radPanel9.TabIndex = 30;
-            this.radPanel9.Text = "Additional Settings";
+            this.radPanel9.Text = "Data Dividers";
             this.radPanel9.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // radPanel7
@@ -713,7 +830,7 @@ namespace NeuralNetworkProject.GUI.Forms
             this.radPanel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(48)))));
             this.radPanel7.Location = new System.Drawing.Point(0, 0);
             this.radPanel7.Name = "radPanel7";
-            this.radPanel7.Size = new System.Drawing.Size(258, 35);
+            this.radPanel7.Size = new System.Drawing.Size(201, 35);
             this.radPanel7.TabIndex = 29;
             this.radPanel7.Text = "Choose Algoritm";
             this.radPanel7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -722,7 +839,7 @@ namespace NeuralNetworkProject.GUI.Forms
             // 
             this.radPanel10.BackColor = System.Drawing.Color.LightSeaGreen;
             this.radPanel10.Controls.Add(this.materialFlatButton2);
-            this.radPanel10.Location = new System.Drawing.Point(778, 684);
+            this.radPanel10.Location = new System.Drawing.Point(795, 670);
             this.radPanel10.Name = "radPanel10";
             this.radPanel10.Size = new System.Drawing.Size(186, 61);
             this.radPanel10.TabIndex = 29;
@@ -857,81 +974,6 @@ namespace NeuralNetworkProject.GUI.Forms
             this.object_cd76de67_4fc7_4a4a_95de_8f538aac7497.StretchHorizontally = true;
             this.object_cd76de67_4fc7_4a4a_95de_8f538aac7497.StretchVertically = true;
             // 
-            // lollipopToggle1
-            // 
-            this.lollipopToggle1.AutoSize = true;
-            this.lollipopToggle1.EllipseBorderColor = "#3b73d1";
-            this.lollipopToggle1.EllipseColor = "#508ef5";
-            this.lollipopToggle1.Location = new System.Drawing.Point(163, 121);
-            this.lollipopToggle1.Name = "lollipopToggle1";
-            this.lollipopToggle1.Size = new System.Drawing.Size(80, 19);
-            this.lollipopToggle1.TabIndex = 47;
-            this.lollipopToggle1.Text = "lollipopToggle1";
-            this.lollipopToggle1.UseVisualStyleBackColor = true;
-            this.lollipopToggle1.CheckedChanged += new System.EventHandler(this.lollipopToggle1_CheckedChanged);
-            // 
-            // momentum_cntr
-            // 
-            this.momentum_cntr.Increment = 0.01D;
-            this.momentum_cntr.Location = new System.Drawing.Point(166, 170);
-            this.momentum_cntr.Name = "momentum_cntr";
-            this.momentum_cntr.Size = new System.Drawing.Size(69, 21);
-            this.momentum_cntr.TabIndex = 46;
-            this.momentum_cntr.Value = 0.9D;
-            this.momentum_cntr.Validated += new System.EventHandler(this.momentum_cntr_Validated);
-            // 
-            // EpochsNum_cntr
-            // 
-            this.EpochsNum_cntr.Increment = 1D;
-            this.EpochsNum_cntr.Location = new System.Drawing.Point(166, 36);
-            this.EpochsNum_cntr.Name = "EpochsNum_cntr";
-            this.EpochsNum_cntr.Size = new System.Drawing.Size(69, 21);
-            this.EpochsNum_cntr.TabIndex = 45;
-            this.EpochsNum_cntr.Value = 1000D;
-            this.EpochsNum_cntr.Load += new System.EventHandler(this.counter4_Load);
-            this.EpochsNum_cntr.Validating += new System.ComponentModel.CancelEventHandler(this.EpochsNum_cntr_Validating);
-            this.EpochsNum_cntr.Validated += new System.EventHandler(this.counter4_Validated);
-            // 
-            // Ratio
-            // 
-            this.Ratio.Increment = 0.1D;
-            this.Ratio.Location = new System.Drawing.Point(205, 212);
-            this.Ratio.Name = "Ratio";
-            this.Ratio.Size = new System.Drawing.Size(60, 21);
-            this.Ratio.TabIndex = 42;
-            this.Ratio.Value = 0.7D;
-            // 
-            // lollipopFile
-            // 
-            this.lollipopFile.Filter = "All Files (*.*)|*.*";
-            this.lollipopFile.FocusedColor = System.Drawing.Color.LightSeaGreen;
-            this.lollipopFile.FontColor = System.Drawing.Color.White;
-            this.lollipopFile.IsEnabled = true;
-            this.lollipopFile.Location = new System.Drawing.Point(95, 45);
-            this.lollipopFile.MaxLength = 32767;
-            this.lollipopFile.Name = "lollipopFile";
-            this.lollipopFile.ReadOnly = false;
-            this.lollipopFile.Size = new System.Drawing.Size(256, 24);
-            this.lollipopFile.TabIndex = 29;
-            this.lollipopFile.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.lollipopFile.UseSystemPasswordChar = false;
-            // 
-            // l_ctrl_mat3
-            // 
-            this.l_ctrl_mat3.BackColor = System.Drawing.Color.Transparent;
-            this.l_ctrl_mat3.Location = new System.Drawing.Point(3, 3);
-            this.l_ctrl_mat3.Name = "l_ctrl_mat3";
-            this.l_ctrl_mat3.Size = new System.Drawing.Size(242, 44);
-            this.l_ctrl_mat3.TabIndex = 23;
-            // 
-            // l_ctrl_mat4
-            // 
-            this.l_ctrl_mat4.BackColor = System.Drawing.Color.Transparent;
-            this.l_ctrl_mat4.Location = new System.Drawing.Point(3, 53);
-            this.l_ctrl_mat4.Name = "l_ctrl_mat4";
-            this.l_ctrl_mat4.Size = new System.Drawing.Size(242, 50);
-            this.l_ctrl_mat4.TabIndex = 24;
-            // 
             // CreateNN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -982,10 +1024,13 @@ namespace NeuralNetworkProject.GUI.Forms
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Momentum_tgl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel11)).EndInit();
             this.radPanel11.ResumeLayout(false);
             this.radPanel11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
@@ -1061,6 +1106,7 @@ namespace NeuralNetworkProject.GUI.Forms
         private Telerik.WinControls.UI.RadLabel radLabel3;
         private Telerik.WinControls.UI.RadLabel radLabel2;
         private Telerik.WinControls.UI.RadLabel radLabel1;
+        private Telerik.WinControls.UI.RadToggleSwitch Momentum_tgl;
         private System.Windows.Forms.NumericUpDown momentum;
         private Telerik.WinControls.UI.RadPanel radPanel11;
         private Telerik.WinControls.RootRadElement object_cd76de67_4fc7_4a4a_95de_8f538aac7497;
@@ -1068,10 +1114,13 @@ namespace NeuralNetworkProject.GUI.Forms
         private MaterialSkin.Controls.MaterialRadioButton materialRadioButton6;
         private Telerik.WinControls.UI.RadLabel radLabel9;
         private MaterialSkin.Controls.MaterialRadioButton StaticDivider;
+        private Telerik.WinControls.UI.RadLabel radLabel11;
+        private CostumControls.Counter counter1;
+        private Telerik.WinControls.UI.RadLabel radLabel13;
+        private CostumControls.Counter counter3;
         private Telerik.WinControls.UI.RadLabel radLabel12;
-        private CostumControls.Counter Ratio;
+        private CostumControls.Counter counter2;
         private CostumControls.Counter EpochsNum_cntr;
         private CostumControls.Counter momentum_cntr;
-        private LollipopToggle lollipopToggle1;
     }
 }

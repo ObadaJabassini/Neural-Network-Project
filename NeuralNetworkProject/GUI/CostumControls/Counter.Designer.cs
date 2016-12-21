@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.right = new Telerik.WinControls.UI.RadPanel();
-            this.left = new Telerik.WinControls.UI.RadPanel();
             this.Increase = new MaterialSkin.Controls.MaterialFlatButton();
+            this.left = new Telerik.WinControls.UI.RadPanel();
             this.Decrease = new MaterialSkin.Controls.MaterialFlatButton();
             this.object_2dad1df9_0118_459c_af89_179e212e3ff0 = new Telerik.WinControls.RootRadElement();
             this._value = new Telerik.WinControls.UI.RadTextBox();
@@ -51,17 +51,6 @@
             this.right.Size = new System.Drawing.Size(16, 21);
             this.right.TabIndex = 1;
             this.right.Text = "radPanel2";
-            // 
-            // left
-            // 
-            this.left.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.left.Controls.Add(this.Decrease);
-            this.left.Dock = System.Windows.Forms.DockStyle.Left;
-            this.left.Location = new System.Drawing.Point(0, 0);
-            this.left.Name = "left";
-            this.left.Size = new System.Drawing.Size(14, 21);
-            this.left.TabIndex = 2;
-            this.left.Text = "radPanel3";
             // 
             // Increase
             // 
@@ -88,6 +77,18 @@
             this.Increase.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Increase.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Increase.UseVisualStyleBackColor = false;
+            this.Increase.Click += new System.EventHandler(this.Increase_Click);
+            // 
+            // left
+            // 
+            this.left.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.left.Controls.Add(this.Decrease);
+            this.left.Dock = System.Windows.Forms.DockStyle.Left;
+            this.left.Location = new System.Drawing.Point(0, 0);
+            this.left.Name = "left";
+            this.left.Size = new System.Drawing.Size(14, 21);
+            this.left.TabIndex = 2;
+            this.left.Text = "radPanel3";
             // 
             // Decrease
             // 
@@ -114,6 +115,7 @@
             this.Decrease.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Decrease.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Decrease.UseVisualStyleBackColor = false;
+            this.Decrease.Click += new System.EventHandler(this.Decrease_Click);
             // 
             // object_2dad1df9_0118_459c_af89_179e212e3ff0
             // 
@@ -131,6 +133,8 @@
             this._value.Size = new System.Drawing.Size(49, 20);
             this._value.TabIndex = 3;
             this._value.Text = "0";
+            this._value.TextChanged += new System.EventHandler(this._value_TextChanged);
+            ((Telerik.WinControls.UI.RadTextBoxElement)(this._value.GetChildAt(0))).Text = "0";
             ((Telerik.WinControls.UI.RadTextBoxItem)(this._value.GetChildAt(0).GetChildAt(0))).ForeColor = System.Drawing.Color.Silver;
             ((Telerik.WinControls.UI.RadTextBoxItem)(this._value.GetChildAt(0).GetChildAt(0))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(48)))));
             ((Telerik.WinControls.Primitives.FillPrimitive)(this._value.GetChildAt(0).GetChildAt(1))).ForeColor = System.Drawing.Color.Silver;
@@ -146,7 +150,7 @@
             this.Name = "Counter";
             this.Size = new System.Drawing.Size(79, 21);
             this.Load += new System.EventHandler(this.Counter_Load);
-            this.Validated += new System.EventHandler(this.DecimalCounter_Validated);
+            this.Validated += new System.EventHandler(this.Counter_Validated);
             ((System.ComponentModel.ISupportInitialize)(this.right)).EndInit();
             this.right.ResumeLayout(false);
             this.right.PerformLayout();

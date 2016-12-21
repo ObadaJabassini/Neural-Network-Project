@@ -24,10 +24,14 @@ namespace NeuralNetworkProject.GUI.CostumControls
             {
                 _value.Text = value.ToString();
             }
-            get { return Convert.ToDouble(_value.Text); }
+            get
+            {
+                if (checkRegex()) return Convert.ToDouble(_value.Text);
+                return 0;
+            }
         }
 
-        [Category("Format")] 
+        [Category("Format")]
         public bool IsDecimal {
             set
             {
@@ -39,7 +43,7 @@ namespace NeuralNetworkProject.GUI.CostumControls
 
         private bool _isDecimal { set; get; }
 
-        Regex regex ;
+        private Regex regex = new Regex(@"^\d+(\.\d+)?$");
         RadToolTip _tip = new RadToolTip();
         public Counter()
         {
@@ -49,44 +53,64 @@ namespace NeuralNetworkProject.GUI.CostumControls
             _tip.ToolTipIcon = ToolTipIcon.Error;
             _tip.AutoPopDelay = 2000;
             _tip.UseAnimation = true;
-
+            
             _tip.BackColor = Color.LightSeaGreen;
             _tip.ForeColor = Color.FromArgb(34, 44, 71);
+            this.Validated += _value_TextChanged;
+            this._value.LostFocus+=ValueOnLostFocus;
         }
 
-        private void DecimalCounter_Validated(object sender, EventArgs e)
+        private void ValueOnLostFocus(object sender, EventArgs eventArgs)
         {
-            //if (regex.IsMatch(_value.Text))
-            //{
-            //    _tip.Hide();
-            //    Value = Convert.ToDouble(this.Text);
-            //}
-
-            //else
-            //{
-            //    _value.Select();
-            //    if (IsDecimal)
-            //        _tip.Show("It must be a Decimal non negative number !!", _value);
-            //    else
-            //        _tip.Show("It must be an Integer non negative number !!", _value);
-            //}
-
+            checkRegex();
         }
 
-        private void increase_Click(object sender, EventArgs e)
+        private void Counter_Validated(object sender, EventArgs e)
         {
-            this._value.Text = Convert.ToString(Value + Increment);
-            this.Refresh();
+            //checkRegex();
         }
 
-        private void decrease_Click(object sender, EventArgs e)
+        private void Increase_Click(object sender, EventArgs e)
         {
-            this._value.Text = Convert.ToString(Value - Increment);
+            if (checkRegex())
+                this._value.Text = Convert.ToString(Value + Increment);
+        }
+
+        private void Decrease_Click(object sender, EventArgs e)
+        {
+            if(checkRegex())
+                this._value.Text = Convert.ToString(Value - Increment);
         }
 
         private void Counter_Load(object sender, EventArgs e)
         {
 
         }
+
+        private void _value_TextChanged(object sender, EventArgs e)
+        {
+            checkRegex();
+        }
+
+        private bool checkRegex()
+        {
+            if (regex.IsMatch(_value.Text))
+            {
+                _tip.Hide();
+                Value = Convert.ToDouble(_value.Text);
+                return true;
+            }
+            else
+            {
+                _tip.Show(
+                    IsDecimal
+                        ? "It must be a Decimal non negative number !!"
+                        : "It must be an Integer non negative number !!", _value);
+
+                _value.Focus();
+                return false;
+            }
+        }
+
     }
 }

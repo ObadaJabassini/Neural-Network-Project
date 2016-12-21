@@ -127,7 +127,7 @@ namespace NeuralNetworkProject.GUI.Forms
         private void materialRadioButton1_CheckedChanged(object sender, EventArgs e)
         {
             Trainer.TrainingAlgorithm = _bp;
-            this.lollipopToggle1.Checked = this.momentum_cntr.Enabled = materialRadioButton1.Checked;
+
         }
 
         private void materialRadioButton2_CheckedChanged(object sender, EventArgs e)
@@ -246,6 +246,20 @@ namespace NeuralNetworkProject.GUI.Forms
 
         }
 
+        private void radToggleSwitch1_ValueChanged(object sender, EventArgs e)
+        {
+            if (Momentum_tgl.Value)
+            {
+                momentum.Enabled = true;
+                Trainer.TrainingAlgorithm = _bpm;
+            }
+            else
+            {
+                momentum.Enabled = false;
+                Trainer.TrainingAlgorithm = _bp;
+            }
+        }
+
         private void materialFlatButton2_Click(object sender, EventArgs e)
         {
             r.Show();
@@ -254,9 +268,9 @@ namespace NeuralNetworkProject.GUI.Forms
             r.EllapsedTimer.Start();
             Trainer.Subscribe(r);
             if(this.StaticDivider.Checked)
-                Trainer.Divider.Divider=new StaticDivider(Ratio.Value);
+                Trainer.Divider.Divider=new StaticDivider(.7);
             else
-                Trainer.Divider.Divider = new RandomizedDivider(Ratio.Value);
+                Trainer.Divider.Divider = new RandomizedDivider(.7);
             Trainer.Train(Params.nn, Params.Tuple.Item1, Params.Tuple.Item2, _hyperParameters);
             r.EllapsedTimer.Stop();
 
@@ -329,15 +343,8 @@ namespace NeuralNetworkProject.GUI.Forms
         {
         }
 
-        private void Momentum_tgl_ValueChanged(object sender, EventArgs e)
-        {
 
-        }
+        
 
-        private void lollipopToggle1_CheckedChanged(object sender, EventArgs e)
-        {
-            momentum_cntr.Enabled = lollipopToggle1.Checked;
-            Trainer.TrainingAlgorithm = lollipopToggle1.Checked ? _bpm : _bp;
-        }
     }
 }
