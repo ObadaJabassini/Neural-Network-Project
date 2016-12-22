@@ -1,4 +1,4 @@
-﻿using MathNet.Numerics.LinearAlgebra;
+using MathNet.Numerics.LinearAlgebra;
 using NeuralNetworkProject.Math;
 using System;
 using System.Collections.Generic;
@@ -51,23 +51,30 @@ namespace NeuralNetworkProject.NeuralNetwork
 
             return new Tuple<IList<Vector<double>>, IList<Vector<double>>>(acs, gs);
         }
+
         public void SetWeights(IList<Matrix<double>> weights) => this.HiddenWeights = weights;
         public void UpdateWeightsAt(Matrix<double> deltaW, int index) => HiddenWeights[index] += deltaW;
-        public void UpdateWeightsFromVector(Vector<double> vec)
+        public void UpdateWeightsFromVector(Vector<double> vec, bool set = false)
         {
             int v = 0;
             for(int i = 0; i < HiddenWeights.Count; ++i)
             {
                 for (int j = 0; j < HiddenWeights[i].RowCount; j++)
                 {
-                    
                     for (int k = 0; k < HiddenWeights[i].ColumnCount; k++)
                     {
-                        HiddenWeights[i][j, k] += vec[v++];
-                        //HiddenWeights[i][j, k] += vec[i + j * HiddenWeights.Count + k * HiddenWeights.Count * HiddenWeights[i].ColumnCount];
+                        HiddenWeights[i][j, k] = vec[v++] + (!set? HiddenWeights[i][j,k] : 0);
                     }
                 }
             } 
+        }
+
+        public int Size
+        {
+            get 
+            {
+                return HiddenWeights.Select(x => x.RowCount * x.ColumnCount).Sum();
+            }
         }
     }
 
