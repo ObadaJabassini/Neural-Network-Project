@@ -52,7 +52,20 @@ namespace NeuralNetworkProject.NeuralNetwork
             return new Tuple<IList<Vector<double>>, IList<Vector<double>>>(acs, gs);
         }
 
-        public void SetWeights(IList<Matrix<double>> weights) => this.HiddenWeights = weights;
+        public void SetWeights(IList<Matrix<double>> weights)
+        {
+            for (int i = 0; i < HiddenWeights.Count; ++i)
+            {
+                for (int j = 0; j < HiddenWeights[i].RowCount; j++)
+                {
+                    for (int k = 0; k < HiddenWeights[i].ColumnCount; k++)
+                    {
+                        HiddenWeights[i][j, k] = weights[i][j, k];
+                    }
+                }
+            }
+        }
+
         public void UpdateWeightsAt(Matrix<double> deltaW, int index) => HiddenWeights[index] += deltaW;
         public void UpdateWeightsFromVector(Vector<double> vec, bool set = false)
         {
@@ -63,7 +76,7 @@ namespace NeuralNetworkProject.NeuralNetwork
                 {
                     for (int k = 0; k < HiddenWeights[i].ColumnCount; k++)
                     {
-                        HiddenWeights[i][j, k] = vec[v++] + (!set? HiddenWeights[i][j,k] : 0);
+                        HiddenWeights[i][j, k] += vec[v++];
                     }
                 }
             } 
