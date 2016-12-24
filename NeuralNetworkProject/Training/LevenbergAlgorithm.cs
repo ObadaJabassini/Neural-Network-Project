@@ -31,19 +31,7 @@ namespace NeuralNetworkProject.Training
                 maxEpochs = hyperParameters.MaxEpochs;
             }
 
-            var layers = neuralNetwork.Layers;
-            var weights = neuralNetwork.HiddenWeights;
-            var blendingFactor = 0.01;
-            var maxBlending = 1e25;
-            var adjustmentFactor = 10;
-
-            /////
-            List<Matrix<double>> gradient2D = new List<Matrix<double>>();
-            for (int i = 0; i < weights.Count; ++i)
-                gradient2D.Add(Matrix<double>.Build.Dense(layers[i + 1].NeuronsNumber, layers[i].NeuronsNumber + 1));
-            Dictionary<int, List<double>> gradients = new Dictionary<int, List<double>>();
-            List<double> errors = new List<double>();
-            /////
+            double mue = 0.001, mue_adj = 10, max_mue = 1e10;
             
             TrainingErrorMessage message = new TrainingErrorMessage()
             {
@@ -55,190 +43,116 @@ namespace NeuralNetworkProject.Training
             };
             base.Notify(message);
 
-            double currentError = message.Error, nextError;
+            double currentError = message.Error;
             while (currentError >= maxError && epochs++ < maxEpochs)
             {
                 message.Epochs = epochs;
-                gradient2D.ForEach(e => e.Clear());
-                errors.Clear();
-                gradients.Clear();
 
-                for (int i = 0; i < trainingSet.RowCount; i++)
-                {
-                    Vector<double> input = trainingSet.Row(i),
-                        output = trainingSetOutput.Column(i);
-                    var temp = neuralNetwork.ForwardInput(input);
-                    IList<Vector<double>> acs = temp.Item1, gs = temp.Item2;
-                    var D = (output - acs[acs.Count - 1]).PointwiseMultiply(gs[gs.Count - 1]).ToColumnMatrix();
-                    var deltaW = D*acs[acs.Count - 2].ToRowMatrix();
-
-                    gradient2D[weights.Count - 1] = deltaW;
-                    for (int j = layers.Count - 2; j > 0; j--)
-                    {
-                        D =
-                            (neuralNetwork.HiddenWeights[j].Transpose()*D).RemoveRow(0)
-                                .PointwiseMultiply(gs[j - 1].ToColumnMatrix());
-                        deltaW = D*acs[j - 1].ToRowMatrix();
-                        gradient2D[j - 1] = deltaW;
-                    }
-                    gradients.Add(i, new List<double>());
-                    for (int j = 0; j < weights.Count; j++)
-                    {
-                        gradient2D[j].Enumerate().ForEach(e => gradients[i].Add(e));
-                    }
-
-                    var t = output - acs[acs.Count - 1];
-                    errors.Add(t.PointwiseMultiply(t).Sum()/2);
-                }
-
-                Matrix<double> jac = Matrix<double>.Build.Dense(trainingSet.RowCount, gradients[0].Count);
-                for (int i = 0; i < jac.RowCount; i++)
-                {
-                    for (int k = 0; k < jac.ColumnCount; ++k)
-                    {
-                        jac[i, k] = gradients[i][k];
-                    }
-                }
-                var jTranspose = jac.Transpose();
-                var jbyjtranspose = jTranspose*jac;
-                Matrix<double> blendingMatrix = Matrix<double>.Build.DenseDiagonal(jbyjtranspose.RowCount,
-                    jbyjtranspose.ColumnCount);
-                var err = Vector<double>.Build.DenseOfEnumerable(errors.AsEnumerable());
+                var temp = HissienAndGragient(neuralNetwork, trainingSet, trainingSetOutput);
+                var hessien = temp.Item1;
+                var gradient = temp.Item2;
+                Matrix<double> blendingMatrix = Matrix<double>.Build.DenseDiagonal(hessien.RowCount, hessien.ColumnCount);
                 var prevW = neuralNetwork.HiddenWeights.ToList();
-                int m = 1;
-
-                var deltaWeights = -(jbyjtranspose + blendingFactor*blendingMatrix).Inverse()*jTranspose*err;
-                neuralNetwork.UpdateWeightsFromVector(deltaWeights);
-                base.Notify(message);
-                nextError = message.Error;
-
-                while (nextError >= currentError)
+                //Console.WriteLine("prev :");
+                //prevW.ForEach(Console.WriteLine);
+                double nextError = 100000;
+                while (true)
                 {
-                    blendingFactor *= adjustmentFactor;
-                    neuralNetwork.SetWeights(prevW);
-                    if (blendingFactor > maxBlending)
+                    var term = hessien + mue*blendingMatrix;
+                    var det = term.Determinant();
+
+                    if (System.Math.Abs(det) > 0)
                     {
-                        blendingFactor = maxBlending;
-                        break;
+                        var deltaW = term*gradient;
+                        neuralNetwork.UpdateWeightsFromVector(deltaW);
+                        //Console.WriteLine("updated :");
+                        //neuralNetwork.HiddenWeights.ForEach(Console.WriteLine);
+                        base.Notify(message);
+                        nextError = message.Error;
                     }
-                    deltaWeights = -(jbyjtranspose + blendingFactor*blendingMatrix).Inverse()*jTranspose*err;
-                    neuralNetwork.UpdateWeightsFromVector(deltaWeights);
 
-                    base.Notify(message);
-                    nextError = message.Error;
-
-                    if (nextError < currentError)
+                    if (!(System.Math.Abs(det) > 0) || nextError >= currentError)
                     {
-                        blendingFactor /= adjustmentFactor;
+                        neuralNetwork.SetWeights(prevW);
+                        //Console.WriteLine("set to prev :");
+                        //neuralNetwork.HiddenWeights.ForEach(Console.WriteLine);
+                        mue *= mue_adj;
+                        if (mue > max_mue)
+                        {
+                            mue = max_mue;
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        mue /= mue_adj;
+                        currentError = nextError;
+                        //Console.WriteLine("the shit is here");
                         break;
                     }
                 }
+            }
+        }
 
-                currentError = nextError;
+        private Tuple<Matrix<double>, Vector<double>> HissienAndGragient(NeuralNetwork.NeuralNetwork nn, Matrix<double> trainingSet, Matrix<double> trainingSetOutput)
+        {
+            var weights = nn.HiddenWeights;
+            var layers = nn.Layers;
+            List<Matrix<double>> gradient2D = new List<Matrix<double>>();
+            for (int i = 0; i < weights.Count; ++i)
+                gradient2D.Add(Matrix<double>.Build.Dense(layers[i + 1].NeuronsNumber, layers[i].NeuronsNumber + 1));
+            Dictionary<int, List<double>> gradients = new Dictionary<int, List<double>>();
+            List<double> errors = new List<double>();
+
+            for (int i = 0; i < trainingSet.RowCount; i++)
+            {
+                //conpute gradient for one training example
+                Vector<double> input = trainingSet.Row(i),
+                    output = trainingSetOutput.Column(i);
+                var temp = nn.ForwardInput(input);
+                IList<Vector<double>> acs = temp.Item1, gs = temp.Item2;
+                var D = (output - acs[acs.Count - 1]).PointwiseMultiply(gs[gs.Count - 1]).ToColumnMatrix();
+                var deltaW = D * acs[acs.Count - 2].ToRowMatrix();
+                gradient2D[weights.Count - 1] = deltaW;
+                for (int j = layers.Count - 2; j > 0; j--)
+                {
+                    D = (nn.HiddenWeights[j].Transpose() * D).RemoveRow(0).PointwiseMultiply(gs[j - 1].ToColumnMatrix());
+                    deltaW = D * acs[j - 1].ToRowMatrix();
+                    gradient2D[j - 1] = deltaW;
+                }
+                //end
+
+                //put the gradient in 1D list
+                int m = i;
+                gradients.Add(m, new List<double>());
+                for (int j = 0; j < weights.Count; j++)
+                {
+                    gradient2D[j].Enumerate().ForEach(e => gradients[m].Add(e));
+                }
+                //end 
+
+                //compute error for one training example
+                var t = output - acs[acs.Count - 1];
+                errors.Add(t.PointwiseMultiply(t).Sum() / 2);
+                //end
             }
 
-            //    while (error >= maxError && ++epochs <= maxEpochs)
-            //    {
-            //        //var baseMatrix = trainingSet.EnumerateRows().Zip(trainingSetOutput.EnumerateColumns(), (first, second) => new Tuple<Vector<double>, Vector<double>>(first, second)).Select(sample =>
-            //        //{
-            //        //    Vector<double> input = sample.Item1,
-            //        //                   output = sample.Item2;
-            //        //    var temp = neuralNetwork.ForwardInput(input);
-            //        //    IList<Vector<double>> acs = temp.Item1, gs = temp.Item2;
-            //        //    IList<double> localErrors = new List<double>();
-            //        //    var D = (output - acs[acs.Count - 1]).PointwiseMultiply(gs[gs.Count - 1]).ToColumnMatrix();
-            //        //    var deltaW = D * acs[acs.Count - 2].ToRowMatrix();
-            //        //    IList<double> ers = new List<double>();
-            //        //    for (int i = deltaW.RowCount - 1; i >= 0; --i)
-            //        //    {
-            //        //        for (int k = deltaW.ColumnCount - 1; k >= 0; --k)
-            //        //        {
-            //        //            ers.Add(-deltaW[i, k]);
-            //        //        }
-            //        //    }
-            //        //    for (int k = layers.Count - 2; k > 0; k--)
-            //        //    {
-            //        //        D = (weights[k].Transpose() * D).RemoveRow(0).PointwiseMultiply(gs[k - 1].ToColumnMatrix());
-            //        //        deltaW = D * acs[k - 1].ToRowMatrix();
-            //        //        for (int i = deltaW.RowCount - 1; i >= 0; --i)
-            //        //        {
-            //        //            for (int v = deltaW.ColumnCount - 1; v >= 0; --v)
-            //        //            {
-            //        //                ers.Add(-deltaW[i, v]);
-            //        //            }
-            //        //        }
-            //        //    }
-            //        //    var t = output - acs[acs.Count - 1];
-            //        //    return new Tuple<Vector<double>, double>(Vector<double>.Build.DenseOfEnumerable(ers), t.PointwiseMultiply(t).Sum() / 2);
-            //        //});
-            //        var baseMatrix = trainingSet.EnumerateRows().Zip(trainingSetOutput.EnumerateColumns(), (first, second) => new Tuple<Vector<double>, Vector<double>>(first, second)).Select(sample =>
-            //        {
-            //            Vector<double> input = sample.Item1,
-            //                           output = sample.Item2;
-            //            var temp = neuralNetwork.ForwardInput(input);
-            //            IList<Vector<double>> acs = temp.Item1, gs = temp.Item2;
-            //            IList<Vector<double>> local = new List<Vector<double>>();
-            //            for (int pp = 0; pp < layers[layers.Count - 1].NeuronsNumber; pp++)
-            //            {
-            //                double delta = gs[gs.Count - 1][pp];
-            //                IList<Vector<double>> list = new List<Vector<double>>();
-            //                Vector<double> vec = delta * weights[weights.Count - 1].Row(pp) * gs[gs.Count - 2][pp];
-            //                list.Add(vec);
-            //                for (int mm = weights.Count - 2; mm >= 0; --mm)
-            //                {
-            //                    vec = (weights[mm].Transpose() * vec).PointwiseMultiply(gs[mm]);
-            //                    list.Add(vec);
-            //                }
-            //                list = list.Reverse().ToList();
-            //                IList<double> ers = new List<double>();
-            //                for (int i = list.Count - 1; i >= 0; i--)
-            //                {
-            //                    var tt = list[i].PointwiseMultiply(acs[i]);
-            //                    tt.Reverse().ToList().ForEach(ers.Add);
-            //                }
-            //                local.Add(Vector<double>.Build.DenseOfEnumerable(ers));
-            //            }
-            //            var t = output - acs[acs.Count - 1];
-            //            return new Tuple<Matrix<double>, Vector<double>>(Matrix<double>.Build.DenseOfRowVectors(local), t.PointwiseMultiply(t) / 2);
-            //        });
-            //        message.Epochs = epochs;
-            //        int index = 0;
-            //        var j = Matrix<double>.Build.Dense(trainingSet.RowCount * layers[layers.Count - 1].NeuronsNumber, layers[layers.Count - 1].NeuronsNumber);
-            //        foreach (var mat in baseMatrix.Select(element => element.Item1))
-            //        {
-            //            for (int i = 0; i < mat.RowCount; i++)
-            //            {
-            //                j.SetRow(index++, mat.Row(i));
-            //            }
-            //        }
-            //        var jTranspose = j.Transpose();
-            //        var errors = Vector<double>.Build.Dense(baseMatrix.Select(element => element.Item2.Count).Sum());
-            //        index = 0;
-            //        foreach (var vec in baseMatrix.Select(element => element.Item2))
-            //        {
-            //            for (int i = 0; i < vec.Count; i++)
-            //            {
-            //                vec[index++] = vec[i];
-            //            }
-            //        }
-            //        var prevWeights = neuralNetwork.HiddenWeights.Select(v => Matrix<double>.Build.DenseOfMatrix(v)).ToList();
-            //        var currentError = 50000.0;
-            //        var temp2 = jTranspose * j;
-            //        var blendingMatrix = Matrix<double>.Build.DenseOfDiagonalVector(temp2.Diagonal());
-            //        int m = 1;
-            //        while (currentError >= error && m++ <= 5)
-            //        {
-            //            neuralNetwork.SetWeights(prevWeights);
-            //            blendingFactor *= adjustmentFactor;
-            //            var deltaWeights = (temp2 + blendingFactor * blendingMatrix).Inverse() * jTranspose * errors;
-            //            neuralNetwork.UpdateWeightsFromVector(-deltaWeights);
-            //            base.Notify(message);
-            //            currentError = message.Error;
-            //        }
-            //        blendingFactor /= adjustmentFactor;
-            //        error = currentError;
-            //    }
-            //}
-        }
+            //initialize jaccobian matrix
+            Matrix<double> jac = Matrix<double>.Build.Dense(trainingSet.RowCount, gradients[0].Count);
+            for (int i = 0; i < jac.RowCount; i++)
+            {
+                for (int k = 0; k < jac.ColumnCount; ++k)
+                {
+                    jac[i, k] = gradients[i][k];
+                }
+            }
+            //end
+
+            //errors vector
+            var err = Vector<double>.Build.DenseOfEnumerable(errors.AsEnumerable());
+
+
+            return new Tuple<Matrix<double>, Vector<double>>(jac.Transpose()*jac, jac.Transpose()*err);
+        } 
     }
 }
