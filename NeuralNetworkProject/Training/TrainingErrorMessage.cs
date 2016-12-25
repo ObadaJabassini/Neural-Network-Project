@@ -15,6 +15,8 @@ namespace NeuralNetworkProject.Training
         internal Matrix<double> TrainingSetOutput { get; set; }
         internal Matrix<double> CrossValidationSetOutput { get; set; }
         internal double Error { get; set; } = 0;
+        internal double TrainError { get; set; }
+        internal double CrossError { get; set; }
         /**/
         internal int Epochs { get; set; }
     }

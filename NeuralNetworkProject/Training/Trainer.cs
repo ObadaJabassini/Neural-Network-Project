@@ -12,6 +12,7 @@ namespace NeuralNetworkProject.Training
 {
     public partial class Trainer : IObserver<TrainingErrorMessage>
     {
+        private bool _isLeven = false;
         public TrainingAlgorithm TrainingAlgorithm { private get; set; } = TrainingAlgorithms.Use(TrainingAlgorithms.TrainingMethod.GD);
 
         //GUI :public get 
@@ -25,6 +26,10 @@ namespace NeuralNetworkProject.Training
 
         public void Train(NeuralNetwork.NeuralNetwork neuralNetwork, Matrix<double> inputs, Matrix<double> outputs, HyperParameters hyperParamters = null)
         {
+            if (TrainingAlgorithm is LevenbergAlgorithm)
+                _isLeven = true;
+            else
+                _isLeven = false;
             TrainingAlgorithm.Subscribe(this);
             var temp = Divider.Divide(inputs, outputs);
             Console.WriteLine(temp.Item1);
@@ -64,7 +69,13 @@ namespace NeuralNetworkProject.Training
             //    return temp.Item1[temp.Item1.Count - 1];
             //}).Zip(crossValidationSetOutput.EnumerateColumns(), (first, second) => computeError(first, second)).Sum());
             //value.Error = error;
-           
+           if(_isLeven)
+            {
+                TrainingErrors.Add(value.TrainError);
+                CrossValidationErrors.Add(value.CrossError);
+                NotifyResults(new ResultMesssage(value.TrainError, value.CrossError, value.Epochs));
+                return;
+            }
             /*Trainer as observer*/
             double validationERR=0,trainingERR=0;
             //int epochsNUM=0;

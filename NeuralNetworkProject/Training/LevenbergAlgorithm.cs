@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using MathNet.Numerics.LinearAlgebra;
 using NeuralNetworkProject.NeuralNetwork;
 using Telerik.Windows.Diagrams.Core;
+using Accord.Neuro;
+using Accord.Neuro.Learning;
 
 namespace NeuralNetworkProject.Training
 {
@@ -19,6 +21,23 @@ namespace NeuralNetworkProject.Training
             Matrix<double> crossValidationSet, Matrix<double> trainingSetOutput, Matrix<double> crossValidationSetOutput,
             HyperParameters hyperParameters = null)
         {
+            //Func<Math.IActivatorFunction, IActivationFunction> to = (fun) =>
+            //{
+            //    if (fun is Math.SigmoidFunction)
+            //        return new SigmoidFunction();
+            //    if (fun is Math.IdentityFunction)
+            //        return new IdentityFunction();
+            //    return new SigmoidFunction();
+            //};
+            //IList<ActivationLayer> layers = new List<ActivationLayer>();
+            //layers.Add(new ActivationLayer(neuralNetwork.HiddenWeights[0].RowCount, trainingSet.ColumnCount, to(neuralNetwork.Layers[0].Applier.ActivatorFunction)));
+            //for (int i = 1; i < neuralNetwork.HiddenWeights.Count; i++)
+            //{
+            //    layers.Add(new ActivationLayer(neuralNetwork.HiddenWeights[i - 1].RowCount, trainingSet.ColumnCount, to(neuralNetwork.Layers[i].Applier.ActivatorFunction)));
+            //}
+            ActivationNetwork network = new ActivationNetwork(new SigmoidFunction(2), trainingSet.ColumnCount, neuralNetwork.Layers.Select(x => x.NeuronsNumber).ToArray());
+            LevenbergMarquardtLearning teacher = new LevenbergMarquardtLearning(network, true);
+
             double maxError = 0.01, error = 5;
             int maxEpochs = 1000, epochs = 0;
             if (hyperParameters != null)
@@ -30,9 +49,6 @@ namespace NeuralNetworkProject.Training
                 maxError = hyperParameters.MaxError;
                 maxEpochs = hyperParameters.MaxEpochs;
             }
-
-            double mue = 0.001, mue_adj = 10, max_mue = 1e10;
-            
             TrainingErrorMessage message = new TrainingErrorMessage()
             {
                 NeuralNetwork = neuralNetwork,
@@ -41,57 +57,105 @@ namespace NeuralNetworkProject.Training
                 TrainingSetOutput = trainingSetOutput,
                 CrossValidationSetOutput = crossValidationSetOutput
             };
-            base.Notify(message);
-
-            double currentError = message.Error;
-            while (currentError >= maxError && epochs++ < maxEpochs)
+            int iterations = 1;
+            double[][] inputs = new double[trainingSet.RowCount][],
+                      crossInputs = new double[crossValidationSet.RowCount][],
+                      outputs = new double[trainingSetOutput.RowCount][],
+                      crossOutputs = new double[crossValidationSetOutput.RowCount][];
+            for (int i = 0; i < trainingSet.RowCount; i++)
             {
-                message.Epochs = epochs;
-
-                var temp = HissienAndGragient(neuralNetwork, trainingSet, trainingSetOutput);
-                var hessien = temp.Item1;
-                var gradient = temp.Item2;
-                Matrix<double> blendingMatrix = Matrix<double>.Build.DenseDiagonal(hessien.RowCount, hessien.ColumnCount);
-                var prevW = neuralNetwork.HiddenWeights.ToList();
-                //Console.WriteLine("prev :");
-                //prevW.ForEach(Console.WriteLine);
-                double nextError = 100000;
-                while (true)
+                inputs[i] = new double[trainingSet.ColumnCount];
+                for (int j = 0; j < trainingSet.ColumnCount; j++)
                 {
-                    var term = hessien + mue*blendingMatrix;
-                    var det = term.Determinant();
-
-                    if (System.Math.Abs(det) > 0)
-                    {
-                        var deltaW = term*gradient;
-                        neuralNetwork.UpdateWeightsFromVector(deltaW);
-                        //Console.WriteLine("updated :");
-                        //neuralNetwork.HiddenWeights.ForEach(Console.WriteLine);
-                        base.Notify(message);
-                        nextError = message.Error;
-                    }
-
-                    if (!(System.Math.Abs(det) > 0) || nextError >= currentError)
-                    {
-                        neuralNetwork.SetWeights(prevW);
-                        //Console.WriteLine("set to prev :");
-                        //neuralNetwork.HiddenWeights.ForEach(Console.WriteLine);
-                        mue *= mue_adj;
-                        if (mue > max_mue)
-                        {
-                            mue = max_mue;
-                            break;
-                        }
-                    }
-                    else
-                    {
-                        mue /= mue_adj;
-                        currentError = nextError;
-                        //Console.WriteLine("the shit is here");
-                        break;
-                    }
+                    inputs[i][j] = trainingSet[i, j];
                 }
             }
+            for (int i = 0; i < trainingSetOutput.RowCount; i++)
+            {
+                outputs[i] = new double[trainingSetOutput.ColumnCount];
+                for (int j = 0; j < trainingSet.ColumnCount; j++)
+                {
+                    outputs[i][j] = trainingSetOutput[i, j];
+                }
+            }
+            for (int i = 0; i < crossValidationSet.RowCount; i++)
+            {
+                crossInputs[i] = new double[crossValidationSet.ColumnCount];
+                for (int j = 0; j < crossValidationSet.ColumnCount; j++)
+                {
+                    crossInputs[i][j] = crossValidationSet[i, j];
+                }
+            }
+            for (int i = 0; i < crossValidationSetOutput.RowCount; i++)
+            {
+                crossOutputs[i] = new double[crossValidationSetOutput.ColumnCount];
+                for (int j = 0; j < crossValidationSetOutput.ColumnCount; j++)
+                {
+                    crossOutputs[i][j] = crossValidationSetOutput[i, j];
+                }
+            }
+            while (error > maxError && iterations++ <= maxEpochs)
+            {
+                message.Epochs = iterations;
+                error = teacher.RunEpoch(inputs, outputs);
+                message.TrainError = error;
+                message.CrossError = teacher.ComputeError(crossInputs, crossOutputs);
+                base.Notify(message);
+            }
+
+            //double mue = 0.001, mue_adj = 10, max_mue = 1e10;
+
+            //base.Notify(message);
+
+            //double currentError = message.Error;
+            //while (currentError >= maxError && epochs++ < maxEpochs)
+            //{
+            //    message.Epochs = epochs;
+
+            //    var temp = HissienAndGragient(neuralNetwork, trainingSet, trainingSetOutput);
+            //    var hessien = temp.Item1;
+            //    var gradient = temp.Item2;
+            //    Matrix<double> blendingMatrix = Matrix<double>.Build.DenseDiagonal(hessien.RowCount, hessien.ColumnCount);
+            //    var prevW = neuralNetwork.HiddenWeights.ToList();
+            //    //Console.WriteLine("prev :");
+            //    //prevW.ForEach(Console.WriteLine);
+            //    double nextError = 100000;
+            //    while (true)
+            //    {
+            //        var term = hessien + mue*blendingMatrix;
+            //        var det = term.Determinant();
+
+            //        if (System.Math.Abs(det) > 0)
+            //        {
+            //            var deltaW = term*gradient;
+            //            neuralNetwork.UpdateWeightsFromVector(deltaW);
+            //            //Console.WriteLine("updated :");
+            //            //neuralNetwork.HiddenWeights.ForEach(Console.WriteLine);
+            //            base.Notify(message);
+            //            nextError = message.Error;
+            //        }
+
+            //        if (!(System.Math.Abs(det) > 0) || nextError >= currentError)
+            //        {
+            //            neuralNetwork.SetWeights(prevW);
+            //            //Console.WriteLine("set to prev :");
+            //            //neuralNetwork.HiddenWeights.ForEach(Console.WriteLine);
+            //            mue *= mue_adj;
+            //            if (mue > max_mue)
+            //            {
+            //                mue = max_mue;
+            //                break;
+            //            }
+            //        }
+            //        else
+            //        {
+            //            mue /= mue_adj;
+            //            currentError = nextError;
+            //            //Console.WriteLine("the shit is here");
+            //            break;
+            //        }
+            //    }
+            //}
         }
 
         private Tuple<Matrix<double>, Vector<double>> HissienAndGragient(NeuralNetwork.NeuralNetwork nn, Matrix<double> trainingSet, Matrix<double> trainingSetOutput)
