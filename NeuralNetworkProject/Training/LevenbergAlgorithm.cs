@@ -35,10 +35,7 @@ namespace NeuralNetworkProject.Training
             //{
             //    layers.Add(new ActivationLayer(neuralNetwork.HiddenWeights[i - 1].RowCount, trainingSet.ColumnCount, to(neuralNetwork.Layers[i].Applier.ActivatorFunction)));
             //}
-            ActivationNetwork network = new ActivationNetwork(new SigmoidFunction(2), trainingSet.ColumnCount, neuralNetwork.Layers.Select(x => x.NeuronsNumber).ToArray());
-            LevenbergMarquardtLearning teacher = new LevenbergMarquardtLearning(network, true);
-
-            double maxError = 0.01, error = 5;
+            double maxError = 0.01, error = 5, lr = 0.01;
             int maxEpochs = 1000, epochs = 0;
             if (hyperParameters != null)
             {
@@ -48,7 +45,10 @@ namespace NeuralNetworkProject.Training
                     throw new ArgumentException("Max error cannot be negative or very large");
                 maxError = hyperParameters.MaxError;
                 maxEpochs = hyperParameters.MaxEpochs;
+                lr = hyperParameters.Lr;
             }
+            ActivationNetwork network = new ActivationNetwork(new SigmoidFunction(2), trainingSet.ColumnCount, neuralNetwork.Layers.Select(x => x.NeuronsNumber).ToArray());
+            LevenbergMarquardtLearning teacher = new LevenbergMarquardtLearning(network, true) { LearningRate = lr};
             TrainingErrorMessage message = new TrainingErrorMessage()
             {
                 NeuralNetwork = neuralNetwork,
