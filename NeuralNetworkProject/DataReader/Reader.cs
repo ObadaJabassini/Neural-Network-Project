@@ -32,7 +32,6 @@ namespace NeuralNetworkProject.DataReader
                     Console.WriteLine(type);
                     if (type == "class")
                     {
-                        Console.WriteLine("Arrived");
                         int maxClassified = -1;
                         char delimiter = lines[0].Contains(",") ? ',' : ' ';
                         var mat = Matrix<double>.Build.Random(lines.Length, lines[0].Split(delimiter).Length);
@@ -52,12 +51,16 @@ namespace NeuralNetworkProject.DataReader
                             arr[(int)outputs.At(i) - 1] = 1;
                             output.SetRow(i, Vector<double>.Build.Dense(arr));
                         }
+                        for (int i = 0; i < mat.ColumnCount; i++)
+                        {
+                            double mean = mat.Column(i).Average();
+                            double stddev = System.Math.Sqrt(1 / (double)mat.RowCount * mat.Column(i).Select(x => System.Math.Pow(x - mean, 2)).Sum());
+                            mat.SetColumn(i, (mat.Column(i) - mean) / stddev);
+                        }
                         return new Tuple<Matrix<double>, Matrix<double>>(mat, output);
-
                     }
                     else
                     {
-                        Console.WriteLine("arrived");
                         char delimiter = lines[0].Contains(",") ? ',' : ' ';
                         var mat = Matrix<double>.Build.Random(lines.Length, lines[0].Split(delimiter).Length);
                         for (var i = 0; i < lines.Length; ++i)
@@ -68,6 +71,12 @@ namespace NeuralNetworkProject.DataReader
                         }
                         Vector<double> output = mat.Column(mat.ColumnCount - 1);
                         mat = mat.RemoveColumn(mat.ColumnCount - 1);
+                        for (int i = 0; i < mat.ColumnCount; i++)
+                        {
+                            double mean = mat.Column(i).Average();
+                            double stddev = System.Math.Sqrt(1 / (double)mat.RowCount * mat.Column(i).Select(x => System.Math.Pow(x - mean, 2)).Sum());
+                            mat.SetColumn(i, (mat.Column(i) - mean) / stddev);
+                        }
                         return new Tuple<Matrix<double>, Matrix<double>>(mat, Matrix<double>.Build.DenseOfRowVectors(output));
                     }
                 case "xml":
